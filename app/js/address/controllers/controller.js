@@ -186,15 +186,13 @@ let addressController = function ($http, $scope, $stateParams) {
     };
 
     $scope.getTransactions = function () {
-        let pages = Math.ceil($scope.addressData.numberOfTransactions / 100);
-        for (let i = 0; i < pages; i++) {
-            $http.get(`https://api.fusionnetwork.io/transactions/all?&page=${i}&address=${address}&size=100`).then(function (r) {
+        let page = Math.ceil($scope.addressData.numberOfTransactions / 100);
+            $http.get(`https://api.fusionnetwork.io/transactions/all?&page=${page}&address=${address}&size=100`).then(function (r) {
                 let transactions = r.data;
                 for (let transaction in transactions) {
                         $scope.processTransaction(transactions[transaction].hash);
                 }
             });
-        }
     };
 
     $scope.processTransaction = function (transactionHash) {

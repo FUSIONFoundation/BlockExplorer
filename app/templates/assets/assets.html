@@ -67,11 +67,14 @@
                                         <tbody>
                                         <tr ng-repeat="asset in allAssets | orderBy : '-verified' | filter: assetSearch | startFrom: currentPage*pageSize | limitTo:pageSize track by $index">
                                             <td class="text-fusion">
-                                                <span ng-if="!asset.hasImage" class="btn btn-blue btn-circle w32 asset-round mr-2">
+                                                <span ng-show="!asset.hasImage">
+                                                       <span ng-if="!asset.hasImage" class="btn btn-blue btn-circle w32 asset-round mr-2">
                                                     {{asset.assetSymbol}}
+                                                       </span>
                                                 </span>
-                                                <img ng-if="asset.hasImage" class="mr-2" ng-src="assets/vendor/images/{{asset.verifiedImage}}"/>
-
+                                                <span ng-show="asset.hasImage">
+                                                    <img ng-if="asset.hasImage" class="mr-2" ng-src="assets/vendor/images/{{asset.verifiedImage}}"/>
+                                                </span>
                                                 <a href="./#!/asset/{{asset.assetId}}">{{asset.assetName}}</a>
                                                 <span class="text-success" ng-show="asset.verified"
                                                       data-toggle="tooltip" data-placement="right" title="Verified">

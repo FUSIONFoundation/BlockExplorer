@@ -107,13 +107,11 @@ let assetsController = function ($http, $scope) {
     };
 
     $scope.getAssets = function () {
+        let saveAssets = [];
         let allAssets = 0;
-        $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
-            $scope.verifiedAssets = r.data;
-        });
+        $scope.verifiedAssets = window.__fsnGetAllVerifiedAssets();
         $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
             allAssets = Math.ceil(r.data.totalAssets / 100);
-            console.log(allAssets);
             for (let i = 0; i < allAssets; i++){
                 let assets = {};
                 $http.get(`https://api.fusionnetwork.io/assets/all?page=${i}&size=100&sort=desc`).then(function (r) {
@@ -143,7 +141,7 @@ let assetsController = function ($http, $scope) {
                                     hasImage: true,
                                     verifiedImage: 'EFSN_LIGHT.svg'
                                 };
-                                $scope.allAssets.push(data);
+                                saveAssets.push(data);
                                 return;
                             } else {
                                 let assetData = r.data[0];
@@ -160,9 +158,12 @@ let assetsController = function ($http, $scope) {
                                     hasImage: hasImage,
                                     verifiedImage: verifiedImage
                                 };
-                                $scope.allAssets.push(data);
+                                saveAssets.push(data);
                             }
                         });
+                        $scope.$evalAsync(function(){
+                            $scope.allAssets = saveAssets;
+                        })
                     }
                 });
                 $scope.endPage = Math.ceil($scope.allAssets.length / $scope.pageSize);
