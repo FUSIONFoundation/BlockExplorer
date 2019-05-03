@@ -109,7 +109,9 @@ let assetsController = function ($http, $scope) {
     $scope.getAssets = function () {
         let saveAssets = [];
         let allAssets = 0;
-        $scope.verifiedAssets = window.__fsnGetAllVerifiedAssets();
+        $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
+            $scope.verifiedAssets = r.data;
+        });
         $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
             allAssets = Math.ceil(r.data.totalAssets / 100);
             for (let i = 0; i < allAssets; i++){
@@ -146,14 +148,14 @@ let assetsController = function ($http, $scope) {
                             } else {
                                 let assetData = r.data[0];
                                 let assetExtraData = JSON.parse(r.data[0].data);
-                                // let amount = new BigNumber(balances[asset].toString());
-                                // let formattedBalance = amount.div($scope.countDecimals(assetExtraData.Decimals.toString()).toString());
+                                let amount = new BigNumber(assetExtraData.Total.toString());
+                                let formattedBalance = amount.div($scope.countDecimals(assetExtraData.Decimals.toString()));
                                 let data = {
                                     assetName: assetData.commandExtra2,
                                     assetSymbol: assetExtraData.Symbol,
                                     assetId: assetExtraData.AssetID,
                                     assetType: 'Fusion',
-                                    // quantity: formattedBalance.toString(),
+                                    quantity: formattedBalance.toString(),
                                     verified: verifiedAsset,
                                     hasImage: hasImage,
                                     verifiedImage: verifiedImage
@@ -161,9 +163,7 @@ let assetsController = function ($http, $scope) {
                                 saveAssets.push(data);
                             }
                         });
-                        $scope.$evalAsync(function(){
-                            $scope.allAssets = saveAssets;
-                        })
+                        $scope.allAssets = saveAssets;
                     }
                 });
                 $scope.endPage = Math.ceil($scope.allAssets.length / $scope.pageSize);
