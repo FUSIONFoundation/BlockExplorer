@@ -1,11 +1,31 @@
-let blockController = function ($http, $scope, $stateParams) {
+let blockController = function ($http, $scope) {
 
+    $scope.realTimeStatus = false;
+    $scope.walletAddressSaved = localStorage.getItem('stakingAddress');
+    $scope.walletAddress = $scope.walletAddressSaved;
+
+    console.log($scope.walletAddressSaved);
 
     $scope.$watch('realTimeStatus', function(){
         if($scope.realTimeStatus !== undefined){
             console.log($scope.realTimeStatus);
         }
-    })
+    });
+
+    $scope.saveCookie = function (){
+        console.log(window.web3.utils.isAddress($scope.walletAddress))
+        if(window.web3.utils.isAddress($scope.walletAddress)){
+            localStorage.setItem('stakingAddress', $scope.walletAddress);
+            $scope.walletAddressSaved = $scope.walletAddress;
+            $scope.getStakingInfo($scope.walletAddress);
+        }
+    };
+
+    $scope.deleteCookie = function(){
+        $scope.walletAddressSaved = '';
+        $scope.walletAddress = '';
+        localStorage.setItem('stakingAddress', '')
+    };
 
     $scope.getStakingInfo = function (walletAddress) {
         if (!walletAddress) {

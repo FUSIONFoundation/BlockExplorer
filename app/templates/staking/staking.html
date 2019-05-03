@@ -34,6 +34,47 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="row align-items-center mt-1">
+                                                    <p class=""> In order to start tracking your staking rewards,
+                                                        please fill in your wallet address.
+                                                        Not staking yet and not sure how to get started? Follow <a href="">this</a> guide.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="form-group">
+                                                    <label class="form-label">Wallet Address</label>
+                                                    <input class="form-control" placeholder="Your wallet address starting with 0x" type="text"
+                                                    ng-model="walletAddress"
+                                                    >
+                                                </div>
+                                                <div class="form-group">
+                                                    <button class="btn btn-primary" ng-click="saveCookie()"><i class="fa fa-save"></i></button>
+                                                    <button class="btn btn-danger" ng-click="deleteCookie()"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" ng-show="walletAddressSaved !== ''">
+                <div class="col-sm-12">
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
                                                     <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
                                                         Staking Status:
                                                     </div>
@@ -64,60 +105,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ng-show="blockData.transactions.length > 0">
-                <h4 class="font-weight-bold py-3 text-fusion">
-                    Transactions
-                </h4>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="mb-4">
-                            <div class="card gradient-half-primary-body-v1">
-                                <div class="card-body px-sm-4 pb-sm-4 ">
-                                    <table class="table table-responsive-sm">
-                                        <thead class="bg-white">
-                                        <tr>
-                                            <th class="label-small">Transaction Hash</th>
-                                            <th class="label-small">Block</th>
-                                            <th class="label-small">Age</th>
-                                            <th class="label-small">Type</th>
-                                            <th class="label-small">Asset(s)</th>
-                                            <th class="label-small">Fees</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr ng-repeat="transaction in transactionsInBlock">
-                                            <td class="text-fusion"><a
-                                                    href="./#!/transaction/{{transaction.txid}}">{{transaction.txid}}</a>
-                                            </td>
-                                            <td class="text-fusion"><a href="./#!/block/{{transaction.block}}">{{transaction.block}}</a>
-                                            </td>
-                                            <td class="text-fusion">{{transaction.timeStamp}}</td>
-                                            <td class="text-fusion">
-                                                {{transaction.type}}
-                                            </td>
-                                            <td class="text-fusion">
-                                                <a href="./#!/asset/{{transaction.assetId}}"
-                                                   ng-if="transaction.type == 'Create Asset'">
-                                                    {{transaction.asset}}
-                                                </a>
-                                                <span ng-if="transaction.type == 'Buy Ticket'">
-                                                    {{transaction.asset}}
-                                                </span>
-                                                <a href="./#!/asset/{{transaction.asset}}"
-                                                   ng-if="transaction.type == 'Time Lock to Time Lock'">
-                                                    {{transaction.assetId}}
-                                                </a>
-                                            </td>
-                                            <td class="label-small">0.00002</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
