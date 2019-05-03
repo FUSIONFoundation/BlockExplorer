@@ -25,6 +25,11 @@ let configRouter = function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/assets/assets.html',
             controller: 'assetsController as assetsController'
         })
+        .state('staking', {
+        url: '/staking',
+        templateUrl: 'templates/staking/staking.html',
+        controller: 'stakingController as stakingController'
+        })
         .state('address', {
             url: '/address/:address',
             templateUrl: 'templates/address/address.html',
