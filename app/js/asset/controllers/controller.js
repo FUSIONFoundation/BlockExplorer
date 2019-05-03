@@ -11,10 +11,13 @@ let assetController = function ($http, $scope, $stateParams) {
         return parseInt(returnDecimals);
     };
 
-    $scope.getAsset = function () {
+    $scope.getVerifiedAssets = function (){
         $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
             $scope.verifiedAssets = r.data;
         });
+    };
+
+    $scope.getAsset = function () {
         $http.get(`https://api.fusionnetwork.io/assets/${assetId}`).then(function (r) {
             let verifiedImage = '';
             let hasImage = false;
@@ -52,6 +55,7 @@ let assetController = function ($http, $scope, $stateParams) {
         });
     };
 
+    $scope.getVerifiedAssets();
     $scope.getAsset();
 
 };

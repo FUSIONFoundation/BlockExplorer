@@ -22,12 +22,13 @@ let addressController = function ($http, $scope, $stateParams) {
         }
         if ($scope.currentPage == 0) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.currentPage + 1 * $scope.pageSize;
+                $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
+                console.log($scope.shownRows);
             });
         }
         let shownRows = 0;
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.processTransactions.length) {
-            shownRows = $scope.processTransactions.length;
+        if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
+            shownRows = $scope.addressData.numberOfTransactions / 10;
         } else {
             shownRows = ($scope.currentPage + 1) * $scope.pageSize;
         }
@@ -42,9 +43,9 @@ let addressController = function ($http, $scope, $stateParams) {
                 $scope.currentPage = $scope.currentPage + 1;
             });
         }
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.processTransactions.length) {
+        if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.processTransactions.length;
+                $scope.shownRows = $scope.addressData.numberOfTransactions / 10;
             });
         } else {
             $scope.$eval(function () {
@@ -57,9 +58,9 @@ let addressController = function ($http, $scope, $stateParams) {
         $scope.$eval(function () {
             $scope.currentPage = 0;
         });
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.processTransactions.length) {
+        if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.processTransactions.length;
+                $scope.shownRows = $scope.addressData.numberOfTransactions / 10
             });
         } else {
             $scope.$eval(function () {
@@ -72,9 +73,9 @@ let addressController = function ($http, $scope, $stateParams) {
         $scope.$eval(function () {
             $scope.currentPage = $scope.endPage - 1;
         });
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.processTransactions.length) {
+        if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.processTransactions.length;
+                $scope.shownRows = $scope.addressData.numberOfTransactions / 10;
             });
         } else {
             $scope.$eval(function () {
@@ -89,9 +90,9 @@ let addressController = function ($http, $scope, $stateParams) {
                 $scope.currentPage = $scope.currentPage - 1;
             });
         }
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.processTransactions.length) {
+        if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.processTransactions.length;
+                $scope.shownRows = $scope.addressData.numberOfTransactions / 10;
             });
         } else {
             $scope.$eval(function () {
@@ -185,9 +186,13 @@ let addressController = function ($http, $scope, $stateParams) {
         });
     };
 
+    $scope.$watch('currentPage', function(){
+        $scope.getTransactions();
+    })
+
     $scope.getTransactions = function () {
-        let page = Math.ceil($scope.addressData.numberOfTransactions / 100);
-            $http.get(`https://api.fusionnetwork.io/transactions/all?&page=${page}&address=${address}&size=100`).then(function (r) {
+        // let page = Math.ceil($scope.addressData.numberOfTransactions / 100);
+            $http.get(`https://api.fusionnetwork.io/transactions/all?&page=${$scope.currentPage}&address=${address}&size=10`).then(function (r) {
                 let transactions = r.data;
                 for (let transaction in transactions) {
                         $scope.processTransaction(transactions[transaction].hash);
@@ -284,7 +289,9 @@ let addressController = function ($http, $scope, $stateParams) {
                 };
                 $scope.processTransactions.push(transactionSave);
             }
-            $scope.endPage = Math.ceil($scope.processTransactions.length / $scope.pageSize);
+            // let page = Math.ceil($scope.addressData.numberOfTransactions / 100);
+
+            $scope.endPage = Math.ceil($scope.addressData.numberOfTransactions / 10);
             $scope.processTransactions.length < 10 ? $scope.shownRows = $scope.processTransactions.length : $scope.shownRows = 10;
         });
     };
