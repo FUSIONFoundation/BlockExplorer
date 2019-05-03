@@ -1,0 +1,239 @@
+<div class="layout-container">
+    <div class="layout-content">
+        <!-- Page content -->
+        <div class="container flex-grow-1 container-p-y">
+            <div class="row">
+                <div class="col-md-10 col-sm-12">
+                    <h4 class="font-weight-bold text-fusion mb-4">
+                        Address
+                        <span class="badge badge-light-blue ml-2 font-weight-normal">{{address}}</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Short Address:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{addressData.notation}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Public Address:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{address}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        FUSION Balance:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{addressData.fsnBalance}} FSN</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Assets Held:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{addressData.assetsHeld}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-4 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Total Transactions:
+                                                    </div>
+                                                    <div class="col-md-8 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{addressData.numberOfTransactions}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="mb-4">
+                            <div class="card gradient-half-primary-body-v1">
+                                <ul class="nav nav-tabs tabs-alt">
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           ng-class="{'active' : assetsTab}"
+                                           ng-click="assetsTab = true; transactionsTab = false">Assets
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           ng-class="{'active' : transactionsTab}"
+                                           ng-click="transactionsTab = true; assetsTab = false">Transactions
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div ng-show="assetsTab"
+                                     class="card-body px-sm-4 pb-sm-4">
+                                    <div class="row align-items-center mt-1">
+                                        <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="assetSearch"
+                                                       placeholder="Search asset names">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i
+                                                            class="fa fas fa-search"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 text-md-right">
+                                            <span class="font-weight-sm-bold mr-1 text-blue"></span>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-responsive-sm">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small">Asset Name</th>
+                                            <th class="label-small">Asset ID</th>
+                                            <th class="label-small text-left">Asset Type</th>
+                                            <th class="label-small text-right">Quantity</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="asset in allBalances | filter:assetSearch track by $index">
+                                            <td class="text-fusion">
+                                                <img ng-if="asset.hasImage"
+                                                     class="mr-2"
+                                                     ng-src="assets/vendor/images/{{asset.verifiedImage}}"/>
+                                                <span ng-if="!asset.hasImage"
+                                                      class="btn btn-blue btn-circle w32 asset-round mr-2">
+                                                    {{asset.assetSymbol}}
+                                                </span>
+                                                <a href="./#!/asset/{{asset.assetId}}">{{asset.assetName}}</a>
+                                                <span class="text-success" ng-show="asset.verified"
+                                                      data-toggle="tooltip" data-placement="right" title="Verified">
+                                                    <i class="fa fa-check-circle"></i>
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion">
+                                                <a href="./#!/asset/{{asset.assetId}}">{{asset.assetId}}</a>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                {{asset.assetType}}
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                {{asset.quantity}} {{asset.assetSymbol}}
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div ng-show="transactionsTab"
+                                     class="card-body px-sm-4 pb-sm-4">
+                                    <div class="row align-items-center mt-1">
+                                        <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="transactionSearch"
+                                                       placeholder="Search transactions">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i
+                                                            class="fa fas fa-search"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 text-md-right">
+                                            <div class="col-md-12">
+                                                <form class="form-group form-inline float-md-right">
+                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
+                                        of {{processTransactions.length}}</span>
+                                                    <span class="small-gray-text mr-2">
+                                        {{currentPage+1}} of {{endPage}}</span>
+                                                    <span class="small-gray-text m-1"
+                                                          ng-click="firstPage()"><i class="fa fa-angle-double-left"
+                                                                                    aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text pl-1 pr-1 m-1"
+                                                          ng-click="previousPage()"><i class="fa fa-angle-left"
+                                                                                       aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text pl-1 pr-1 m-1"
+                                                          ng-click="nextPage()"><i class="fa fa-angle-right"
+                                                                                   aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text m-1"
+                                                          ng-click="lastPage()"><i class="fa fa-angle-double-right"
+                                                                                   aria-hidden="true"></i>
+                                </span>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-responsive-sm">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small">Transaction Hash</th>
+                                            <th class="label-small">Block</th>
+                                            <th class="label-small text-left">Age</th>
+                                            <th class="label-small text-left">Type</th>
+                                            <th class="label-small">Asset(s)</th>
+                                            <th class="label-small text-right">Fees</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="transaction in processTransactions | filter: transactionSearch | orderBy : '-block' | startFrom: currentPage*pageSize | limitTo:pageSize track by $index">
+                                            <td class="text-fusion">
+                                                <a href="./#!/transaction/{{transaction.txid}}">{{transaction.txid}}</a>
+                                            </td>
+                                            <td class="text-fusion">
+                                                <a href="./#!/block/{{transaction.block}}">{{transaction.block}}</a>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                {{transaction.timeStamp}}
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                {{transaction.type}}
+                                            </td>
+                                            <td class="text-fusion">
+                                                {{transaction.asset}}
+                                            </td>
+                                            <td class="text-fusion label-small text-right">
+                                                .00000002
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

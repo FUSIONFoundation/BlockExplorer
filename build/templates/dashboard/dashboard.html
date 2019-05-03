@@ -1,0 +1,218 @@
+<div class="layout-container">
+    <div class="layout-content">
+        <!-- Page content -->
+        <div class="container flex-grow-1 container-p-y">
+            <h4 class="font-weight-bold py-3 text-fusion">
+                Dashboard
+                <div class="text-muted text-tiny mt-1">
+                    <small class="font-weight-normal">Last updated: {{lastUpdated}}</small>
+                </div>
+            </h4>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <form action="/search" method="GET" autocomplete="off" spellcheck="false">
+                                    <div class="d-sm-flex align-items-baseline">
+                                        <h1 class="h5 text-primary">FUSION Blockchain Explorer</h1>
+                                    </div>
+                                    <div class="input-group input-group-main">
+                                        <input type="text" class="form-control"
+                                               placeholder="Search by Address / Txhash / Block">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fa fa-search d-inline-block d-sm-none"></i><span
+                                                    class="d-none d-sm-inline-block">Search</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card d-flex w-100 mb-4">
+                                <div class="row no-gutters row-bordered h-100">
+                                    <div class="d-flex col-sm-6 col-md-4 col-lg-6 align-items-center">
+                                        <div class="card-body media align-items-center text-body">
+                                            <span class="media-body d-block ml-3">
+                                               <small class="text-muted text-uppercase">Current FSN Price</small>
+                                                <br>
+                          <span class="fsn-big">{{fsnPriceData.price}}</span>
+
+                                                <small ng-class="{'text-danger' : fsnPriceData.change.toString().indexOf('-') == 0} || {'text-success' : fsnPriceData.change.toString().indexOf('-') == -1}">
+                                                    ({{fsnPriceData.change.toFixed(2)}}%)
+                                                </small>
+                        </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex col-sm-6 col-md-4 col-lg-6 align-items-center">
+
+                                        <div class="card-body media align-items-center text-body">
+                                            <span class="media-body d-block ml-3">
+                                                                          <small class="text-muted text-uppercase">Market Cap</small>
+                                                <br>
+                              <span class="fsn-big text-uppercase">$ {{fsnPriceData.marketCap}}</span>
+                        </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex col-sm-6 col-md-4 col-lg-6 align-items-center">
+                                        <a href="javascript:void(0)"
+                                           class="card-body media align-items-center text-body">
+                                            <span class="media-body d-block ml-3">
+                                               <small class="text-muted text-uppercase">Circulating Supply</small>
+                                                <br>
+                                                    <span class="fsn-big text-uppercase">{{fsnPriceData.circulatingSupply}}</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="d-flex col-sm-6 col-md-4 col-lg-6 align-items-center">
+                                        <div class="card-body media align-items-center text-body">
+                                            lol
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card d-flex w-100 mb-4">
+                                <div class="row no-gutters row-bordered h-100">
+                                    <div class="d-flex col-sm-6 col-md-4 col-lg-6 align-items-center">
+                                        <div class="card-body media align-items-center text-body">
+                                            <span class="media-body d-block ml-3">
+                                               <small class="text-muted text-uppercase">Block Height</small>
+                                                <br>
+                          <span class="fsn-big">{{globalData.maxBlock}}</span>
+
+                        </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex col-sm-6 col-md-4 col-lg-6 align-items-center">
+
+                                        <div class="card-body media align-items-center text-body">
+                                            <span class="media-body d-block ml-3">
+                                                                          <small class="text-muted text-uppercase">Total Transactions</small>
+                                                <br>
+                              <span class="fsn-big text-uppercase">{{globalData.totalTransactions}}</span>
+                        </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex col-sm-6 col-md-4 col-lg-6 align-items-center">
+                                        <a href="javascript:void(0)"
+                                           class="card-body media align-items-center text-body">
+                                            <span class="media-body d-block ml-3">
+                                               <small class="text-muted text-uppercase">Total Assets</small>
+                                                <br>
+                                                    <span class="fsn-big text-uppercase">{{globalData.totalAssets}}</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="d-flex col-sm-6 col-md-4 col-lg-6 align-items-center">
+                                        <a href="javascript:void(0)"
+                                           class="card-body media align-items-center text-body">
+                                            <span class="media-body d-block ml-3">
+                                               <small class="text-muted text-uppercase">Total Addresses</small>
+                                                <br>
+                                                    <span class="fsn-big text-uppercase">{{globalData.totalAddresses}}</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <h6 class="card-header text-blue">
+                            RECENT BLOCKS
+                        </h6>
+                        <div class="card-body">
+                            <div ng-repeat="block in recentBlocks">
+                                <div class="row align-items-center mt-1">
+                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                        Block Height:
+                                    </div>
+                                    <div class="col-md-6 text-md-right">
+                                        <a href="./#!/block/{{block.block}}">{{block.block}}</a> ({{block.transactions}}
+                                        Transactions)
+                                    </div>
+                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                        Miner:
+                                    </div>
+                                    <div class="col-md-6 text-md-right">
+                                        <span class="max-chars">
+                                        <a href="./#!/address/{{block.miner}}">
+                                            {{block.miner}}
+                                        </a>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                        Reward:
+                                    </div>
+                                    <div class="col-md-6 text-md-right">
+                                        <span class="badge badge-success">2.5 FSN</span>
+                                    </div>
+                                    <div class="col-md-12 font-weight-sm-normal mt-2 mb-1 mb-md-0 label-small text-md-right">
+                                        {{block.timestamp}}
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="col text-center p-2">
+                                <span class="text-primary">View all blocks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <h6 class="card-header text-blue">
+                            RECENT TRANSACTIONS
+                        </h6>
+                        <div class="card-body">
+                            <div ng-repeat="block in recentTransactions">
+                                <div class="row align-items-center mt-1">
+                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                        Transaction:
+                                    </div>
+                                    <div class="col-md-6 text-md-right max-chars">
+                                        <a href="./#!/transaction/{{block.transactionId}}">{{block.transactionId}}</a>
+                                    </div>
+                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                        Type:
+                                    </div>
+                                    <div class="col-md-6 text-md-right">
+                                        <span class="badge badge-success">{{block.type}}</span>
+                                    </div>
+                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                        From:
+                                    </div>
+                                    <div class="col-md-6 text-md-right max-chars">
+                                        <a href="./#!/address/{{block.from}}">{{block.from}}</a></span>                                    </div>
+                                    <div class="col-md-12 font-weight-sm-normal mt-2 mb-1 mb-md-0 label-small text-md-right">
+                                        {{block.timestamp}}
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="col text-center p-2">
+                                <span class="text-primary">View all transactions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

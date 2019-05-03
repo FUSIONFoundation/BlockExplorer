@@ -1,0 +1,169 @@
+<div class="layout-container">
+    <div class="layout-content">
+        <!-- Page content -->
+        <div class="container flex-grow-1 container-p-y">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <h4 class="font-weight-bold text-fusion mb-4">
+                        Transaction
+                        <span class="badge badge-light-blue ml-2 font-weight-normal">{{blockNumber}}</span>
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-12 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        <h4 class="font-weight-bold text-fusion mb-4">
+                                                            {{transactionData.transactionType}}
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small">
+                                                        From:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{transactionData.from}}</span>
+                                                    </div>
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small">
+                                                        To:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{transactionData.to}}</span>
+                                                    </div>
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small">
+                                                        Asset:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{transactionData.asset}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Status:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">
+                                                            <span class="badge badge-success">Success</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Transaction Type:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{transactionData.transactionType}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Transaction Hash:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue max-chars">{{transactionData.hash}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Block:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                                <span class="font-weight-sm-bold mr-1 text-blue">
+                                                                    <a href="./#!/block/{{transactionData.block}}">{{transactionData.block}}</a>
+                                                                </span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Age:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{transactionData.age}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Gas Used:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{transactionData.gasUsed}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Nonce:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{transactionData.nonce}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="blockData.transactions.length > 0">
+                <h4 class="font-weight-bold py-3 text-fusion">
+                    Transactions
+                </h4>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="mb-4">
+                            <div class="card gradient-half-primary-body-v1">
+                                <div class="card-body px-sm-4 pb-sm-4 ">
+                                    <table class="table table-responsive-sm">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small">Transaction Hash</th>
+                                            <th class="label-small">Block</th>
+                                            <th class="label-small">Age</th>
+                                            <th class="label-small">Type</th>
+                                            <th class="label-small">Asset(s)</th>
+                                            <th class="label-small">Fees</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="transaction in transactionsInBlock">
+                                            <td class="text-fusion">{{transaction.txid}}</td>
+                                            <td class="text-fusion"><a href="./#!/block/{{transaction.block}}">{{transaction.block}}</a>
+                                            </td>
+                                            <td class="text-fusion">{{transaction.timeStamp}}</td>
+                                            <td class="text-fusion">{{transaction.type}}</td>
+                                            <td class="text-fusion">{{transaction.asset}}</td>
+                                            <td class="label-small">0.00002</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

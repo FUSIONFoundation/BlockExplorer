@@ -1,0 +1,179 @@
+<div class="layout-container">
+    <div class="layout-content">
+        <!-- Page content -->
+        <div class="container flex-grow-1 container-p-y">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <h4 class="font-weight-bold text-fusion mb-4">
+                        Asset
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <div class="row">
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-12 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        <h4 class="font-weight-bold text-fusion mb-1">
+                                                                    <span ng-if="!assetData.hasImage"
+                                                                          class="btn btn-blue btn-circle w32 asset-round mr-2">
+                                                    {{assetData.assetSymbol}}
+                                                </span>
+                                                            <img ng-if="assetData.hasImage" class="mr-2"
+                                                                 ng-src="assets/vendor/images/{{assetData.verifiedImage}}"/>
+
+
+                                                            {{assetData.assetName}} ({{assetData.assetSymbol}})
+                                                            <span class="text-success" ng-show="assetData.verified"
+                                                                  data-toggle="tooltip" data-placement="right"
+                                                                  title="Verified">
+                                                    <i class="fa fa-check-circle"></i>
+                                                </span>
+                                                        </h4>
+                                                        <span class="small text-break pb-sm-5">{{assetData.assetId}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Asset Name:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">
+                                                            {{assetData.assetName}}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Asset Symbol:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{assetData.assetSymbol}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Asset Type:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{assetData.assetType}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Decimals:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{assetData.decimals}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Total Supply:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{assetData.totalSupply}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Issuer:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue text-break">
+                                                            <a href="./#!/address/{{assetData.issuer}}">{{assetData.issuer}}</a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Issue Height:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">
+                                                            <a href="./#!/block/{{assetData.issueHeight}}">{{assetData.issueHeight}}</a></span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Changeable Supply:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">
+                                                            <span class="badge badge-success"
+                                                                  ng-if="assetData.changeableSupply == true">Yes</span>
+                                                            <span class="badge badge-danger"
+                                                                  ng-if="assetData.changeableSupply == false">No</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="blockData.transactions.length > 0">
+                <h4 class="font-weight-bold py-3 text-fusion">
+                    Transactions
+                </h4>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="mb-4">
+                            <div class="card gradient-half-primary-body-v1">
+                                <div class="card-body px-sm-4 pb-sm-4 ">
+                                    <table class="table table-responsive-sm">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small">Transaction Hash</th>
+                                            <th class="label-small">Block</th>
+                                            <th class="label-small">Age</th>
+                                            <th class="label-small">Type</th>
+                                            <th class="label-small">Asset(s)</th>
+                                            <th class="label-small">Fees</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="transaction in transactionsInBlock">
+                                            <td class="text-fusion">{{transaction.txid}}</td>
+                                            <td class="text-fusion"><a href="./#!/block/{{transaction.block}}">{{transaction.block}}</a>
+                                            </td>
+                                            <td class="text-fusion">{{transaction.timeStamp}}</td>
+                                            <td class="text-fusion">{{transaction.type}}</td>
+                                            <td class="text-fusion">{{transaction.asset}}</td>
+                                            <td class="label-small">0.00002</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

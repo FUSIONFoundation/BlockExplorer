@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FUSION Block Explorer</title>
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/main.min.css?rev=22db586fc246df24bb1b2ba60277ef45">
+    <link rel="stylesheet" href="css/libs.min.css?rev=51c278ce3d0f02296416c2e1caf7addf">
+
+    <!-- Main font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900"
+          rel="stylesheet">
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome.css">
+    <!--<link rel="stylesheet" href="assets/vendor/fonts/ionicons.css">-->
+    <!-- <link rel="stylesheet" href="assets/vendor/fonts/linearicons.css"> -->
+    <!-- <link rel="stylesheet" href="assets/vendor/fonts/open-iconic.css"> -->
+    <!-- <link rel="stylesheet" href="assets/vendor/fonts/pe-icon-7-stroke.css"> -->
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="assets/vendor/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendor/css/appwork.css">
+    <link rel="stylesheet" href="assets/vendor/css/theme-corporate.css">
+    <link rel="stylesheet" href="assets/vendor/css/colors.css">
+    <link rel="stylesheet" href="assets/vendor/css/uikit.css">
+
+    <!-- Load polyfills -->
+    <script src="assets/vendor/js/polyfills.js"></script>
+    <script>document['documentMode'] === 10 && document.write('<script src="//polyfill.io/v3/polyfill.min.js?features=Intl.~locale.en"><\/script>')</script>
+
+    <!-- Layout helpers -->
+    <script src="assets/vendor/js/layout-helpers.js"></script>
+
+    <!-- Libs -->
+
+    <!-- `perfect-scrollbar` library required by SideNav plugin -->
+    <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-1">
+    <!-- Layout inner -->
+    <div class="layout-inner">
+        <!-- Layout navbar -->
+        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x"
+             id="layout-navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="assets/vendor/images/fsn-logo.svg" alt="">
+                </a>
+            </div>
+        </nav>
+        <div class="container">
+            <ul class="nav nav-tabs tabs-alt pt-2" ng-controller="navController">
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/blocks'}" href="./#!/blocks">Blocks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/transactions'}" href="./#!/transactions">Transactions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/assets'}" href="./#!/assets">Assets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/addresses'}" href="./#!/addresses">Addresses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/staking'}" href="./#!/staking">Staking</a>
+                </li>
+            </ul>
+        </div>
+        <!-- / Layout navbar -->
+        <div ui-view></div>
+        <footer class="footer border-gray-top p-3" role="content" aria-label="footer">
+            <article class="block__wrap" style="max-width: 1780px; margin: auto;">
+                <div class="container">
+                    <div class="row container-fluid">
+                        <section class="col-md-12 text-left p-2 mb-3">
+                            <img src="assets/vendor/images/fsn-logo.svg" width="115px">
+                        </section>
+                        <div class="col-md-3 mb-2">
+                            <span class="small-gray-text mb-2">About</span>
+                            <p class="pt-2">MFW is a free client-side interface for creating and using Fusion PSN
+                                wallets. This
+                                enables users to test a suite of innovate functions developed by the FUSION Foundation.
+
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                            <span class="small-gray-text mb-2">Related Tools</span>
+                            <ul class="list-unstyled pt-2">
+                                <li><a href="http://node.fusionnetwork.io" target="_blank">PSN Node Monitor</a></li>
+                                <li><a href="http://tickets.fusionnetwork.io" target="_blank">PSN Autobuy Ticket</a>
+                                </li>
+                                <li><a href="http://blocks.fusionnetwork.io" target="_blank">PSN Block Explorer</a></li>
+                                <li><a href="http://api.fusionnetwork.io" target="_blank">PSN API Gateway</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <span class="small-gray-text mb-2">Technology</span>
+                            <ul class="list-unstyled pt-2">
+                                <li><a href="https://www.fusion.org/technology" target="_blank">Overview</a></li>
+                                <li><a href="https://www.fusion.org/dcrm" target="_blank">DCRM Demo</a></li>
+                                <li><a href="https://www.fusion.org/technology" target="_blank">Resources</a></li>
+                                <li><a href="https://www.fusion.org/vision" target="_blank">Videos</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <span class="small-gray-text mb-2">Social</span>
+                            <div class="pt-2">
+                                <a class="p-1 text-fusion" href="https://github.com/FUSIONFoundation" target="_blank"><i
+                                        class="fab fa-2x fa-github"
+                                        aria-hidden="true"></i></a>
+                                <a class="p-1 text-fusion" href="https://twitter.com/FUSIONProtocol" target="_blank"><i
+                                        class="fab fa-2x fa-twitter"
+                                        aria-hidden="true"></i></a>
+                                <a class="p-1 text-fusion" href="https://t.me/FUSIONFoundation" target="_blank"><i
+                                        class="fab fa-2x fa-telegram"
+                                        aria-hidden="true"></i></a>
+                                <a class="p-1 text-fusion" href="https://medium.com/@fusionprotocol" target="_blank"><i
+                                        class="fab fa-2x fa-medium"
+                                        aria-hidden="true"></i></a>
+                                <a class="p-1 text-fusion" href="https://fusion.org" target="_blank"><i class="fa fa-2x fa-globe"
+                                                                                            aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </footer>
+    </div>
+</div>
+<!-- Layout inner -->
+</div>
+<script src="assets/js/main.js"></script>
+
+<script src="app.js?rev=a5098f5616f726f34efeb4970d9eb80b"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/vendor/libs/popper/popper.js"></script>
+<script src="assets/vendor/js/bootstrap.js"></script>
+<script src="assets/vendor/libs/sparkline/sparkline.js"></script>
+
+<!-- Main script -->
+</body>
+</html>

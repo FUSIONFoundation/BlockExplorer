@@ -1,0 +1,125 @@
+let blockController = function ($http, $scope, $stateParams) {
+    let block = $stateParams.blocknumber;
+    $scope.blockNumber = parseInt(block);
+    $scope.blockData = {};
+    $scope.globalData = {};
+    $scope.lastUpdated = moment(new Date().getTime()).format('LTS');
+    $scope.transactionsInBlock = [];
+
+    $scope.getBlock = function () {
+        $http.get(`https://api.fusionnetwork.io/blocks/${block}`).then(function (r) {
+            let data = JSON.parse(r.data[0].block);
+            $scope.getAllTransactions(data.transactions);
+            data.timestamp = moment(new Date(data.timestamp * 1000)).format('MMMM Do YYYY, h:mm:ss A');
+            $scope.$eval(function () {
+                $scope.blockData = data;
+            });
+        });
+    };
+
+    $scope.getAllTransactions = function (transactions){
+        console.log(transactions);
+        for(let transaction in transactions) {
+            $http.get(`https://api.fusionnetwork.io/transactions/${transactions[transaction]}`).then(function (r) {
+                let transactionSave = {};
+                let data = r.data[0];
+                let extraData = JSON.parse(data.data);
+
+                console.log(extraData);
+                if(data.fusionCommand == 'GenAssetFunc'){
+                    transactionSave = {
+                        txid : transactions[transaction],
+                        timeStamp: format(data.timeStamp * 1000),
+                        date: moment(transactions[transaction].timeStamp).format('ll'),
+                        block: data.height,
+                        from: data.fromAddress,
+                        type: 'Create Asset',
+                        asset: `${extraData.Name} (${extraData.Symbol})`,
+                        assetId: extraData.AssetID,
+                        amount : 200
+                    };
+                    $scope.transactionsInBlock.push(transactionSave);
+                }
+                if(data.fusionCommand == 'BuyTicketFunc'){
+                    transactionSave = {
+                        txid : transactions[transaction],
+                        timeStamp: format(data.timeStamp * 1000),
+                        date: moment(transactions[transaction].timeStamp).format('ll'),
+                        block: data.height,
+                        from: data.fromAddress,
+                        type: 'Buy Ticket',
+                        asset: '200 FSN',
+                        amount : 200
+                    };
+                    $scope.transactionsInBlock.push(transactionSave);
+                }
+                if(data.fusionCommand == 'TimeLockToTimeLock'){
+                    transactionSave = {
+                        txid : transactions[transaction],
+                        timeStamp: format(data.timeStamp * 1000),
+                        date: moment(transactions[transaction].timeStamp).format('ll'),
+                        asset: extraData.AssetID,
+                        block: data.height,
+                        from: data.fromAddress,
+                        to: extraData.To,
+                        type: 'Time Lock to Time Lock',
+                        start : extraData.StartTime,
+                        end : extraData.EndTime,
+                        amount : extraData.Value,
+                        assetId: extraData.AssetID,
+                    };
+                    $scope.transactionsInBlock.push(transactionSave);
+                }
+                if(data.fusionCommand == 'AssetToTimeLock'){
+                    transactionSave = {
+                        txid : transactions[transaction],
+                        timeStamp: format(data.timeStamp * 1000),
+                        date: moment(transactions[transaction].timeStamp).format('ll'),
+                        asset: extraData.AssetID,
+                        block: data.height,
+                        from: data.fromAddress,
+                        to: extraData.To,
+                        type: 'Asset To Time Lock',
+                        start : extraData.StartTime,
+                        end : extraData.EndTime,
+                        amount : extraData.Value
+                    };
+                    $scope.transactionsInBlock.push(transactionSave);
+                }
+                if(data.fusionCommand == 'GenNotationFunc'){
+                    console.log(data);
+                    transactionSave = {
+                        txid : transactions[transaction],
+                        timeStamp: format(data.timeStamp * 1000),
+                        date: moment(transactions[transaction].timeStamp).format('ll'),
+                        asset: extraData.AssetID,
+                        block: data.height,
+                        type: 'SAN Generation',
+                    };
+                    $scope.transactionsInBlock.push(transactionSave);
+                }
+            });
+        }
+    };
+
+
+    $scope.getGlobalData = function () {
+        $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
+            let globalInfo = r.data;
+            let globalData = {
+                totalTransactions: globalInfo.totalTransactions,
+                totalAddresses: globalInfo.totalAddresses,
+                totalAssets: globalInfo.totalAssets,
+                maxBlock: globalInfo.maxBlock,
+            };
+            $scope.$eval(function () {
+                $scope.globalData = globalData;
+            });
+        });
+    };
+
+    $scope.getBlock();
+    $scope.getGlobalData();
+};
+
+export default blockController;

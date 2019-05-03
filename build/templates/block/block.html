@@ -1,0 +1,222 @@
+<div class="layout-container">
+    <div class="layout-content">
+        <!-- Page content -->
+        <div class="container flex-grow-1 container-p-y">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <h4 class="font-weight-bold text-fusion mb-4">
+                        Block
+                        <span class="badge badge-light-blue ml-2 font-weight-normal">{{blockNumber}}</span>
+                    </h4>
+                </div>
+                <div class="col-md-6 col-sm-12 text-md-right layout-align-sm-center-center">
+                    <a href="./#!/block/{{blockNumber-1}}">
+                        <button class="btn btn-outline-white"><i class="fa fa-angle-left pr-2"></i> {{blockNumber-1}}
+                        </button>
+                    </a>
+                    <a href="./#!/block/{{blockNumber+1}}" ng-hide="blockNumber == globalData.maxBlock">
+                        <button class="btn btn-outline-white">{{blockNumber+1}} <i class="fa fa-angle-right pl-2"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Block Height:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{blockData.number}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Transactions:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{blockData.transactions.length}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Age:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{blockData.timestamp}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Reward:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                                <span class="font-weight-sm-bold mr-1">
+                                                                    <span class="badge badge-success">2.5 FSN</span>
+                                                                </span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Hash:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 max-chars text-blue">{{blockData.hash}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Parent Hash:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 max-chars text-blue">{{blockData.parentHash}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Miner:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">
+                                                            <a href="./#!/address/{{blockData.miner}}">{{blockData.miner}}</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Difficulty:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{blockData.difficulty}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Total Difficulty:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{blockData.totalDifficulty}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Size:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{blockData.size}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Gas Used:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                                <span class="font-weight-sm-bold mr-1 text-blue">
+                                                                {{blockData.gasUsed}}
+                                                                </span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Gas Limit:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue ">{{blockData.gasLimit}}</span>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Nonce:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{blockData.nonce}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="blockData.transactions.length > 0">
+                <h4 class="font-weight-bold py-3 text-fusion">
+                    Transactions
+                </h4>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="mb-4">
+                            <div class="card gradient-half-primary-body-v1">
+                                <div class="card-body px-sm-4 pb-sm-4 ">
+                                    <table class="table table-responsive-sm">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small">Transaction Hash</th>
+                                            <th class="label-small">Block</th>
+                                            <th class="label-small">Age</th>
+                                            <th class="label-small">Type</th>
+                                            <th class="label-small">Asset(s)</th>
+                                            <th class="label-small">Fees</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="transaction in transactionsInBlock">
+                                            <td class="text-fusion"><a
+                                                    href="./#!/transaction/{{transaction.txid}}">{{transaction.txid}}</a>
+                                            </td>
+                                            <td class="text-fusion"><a href="./#!/block/{{transaction.block}}">{{transaction.block}}</a>
+                                            </td>
+                                            <td class="text-fusion">{{transaction.timeStamp}}</td>
+                                            <td class="text-fusion">
+                                                {{transaction.type}}
+                                            </td>
+                                            <td class="text-fusion">
+                                                <a href="./#!/asset/{{transaction.assetId}}" ng-if="transaction.type == 'Create Asset'">
+                                                    {{transaction.asset}}
+                                                </a>
+                                                <span ng-if="transaction.type == 'Buy Ticket'">
+                                                    {{transaction.asset}}
+                                                </span>
+                                                <a href="./#!/asset/{{transaction.asset}}" ng-if="transaction.type == 'Time Lock to Time Lock'">
+                                                    {{transaction.assetId}}
+                                                </a>
+                                            </td>
+                                            <td class="label-small">0.00002</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
