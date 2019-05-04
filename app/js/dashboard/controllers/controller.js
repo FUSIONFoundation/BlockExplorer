@@ -14,7 +14,7 @@ let dashboardController = function ($http, $scope, $state) {
            for (let block in blocks){
                let data = {
                    block: blocks[block].height,
-                   timestamp: format(blocks[block].timeStamp * 1000),
+                       timestamp: format(blocks[block].timeStamp * 1000),
                    transactions: blocks[block].numberOfTransactions,
                    miner: blocks[block].miner
                };
@@ -70,6 +70,12 @@ let dashboardController = function ($http, $scope, $state) {
         });
     };
 
+    $scope.sparkLineData = [];
+    $scope.getSparkLineData = function (){
+        let prices = [];
+        $scope.sparkLineData = prices;
+    }
+
     $scope.updateTime = function (){
         $scope.$eval(function(){
             $scope.lastUpdated = moment(new Date().getTime()).format('LTS');
@@ -79,13 +85,14 @@ let dashboardController = function ($http, $scope, $state) {
     $scope.getLatestBlocks();
     $scope.getLatestTransactions();
     $scope.getGlobalData();
+    $scope.getSparkLineData();
 
     setInterval(function () {
         $scope.getLatestBlocks();
         $scope.getLatestTransactions();
         $scope.getGlobalData();
         $scope.updateTime();
-    }, 2000);
+    }, 15000);
 };
 
 export default dashboardController;
