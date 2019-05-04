@@ -1,0 +1,597 @@
+<div class="layout-container">
+    <div class="layout-content">
+        <!-- Page content -->
+        <div class="container flex-grow-1 container-p-y">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <h4 class="font-weight-bold text-fusion mb-4">
+                        Transactions
+                    </h4>
+                </div>
+            </div>
+
+            <div>
+                <div class="row">
+                    <!--Loading part-->
+                    <div class="col-sm-12" ng-show="loading">
+                        <div class="mb-4">
+                            <div class="card gradient-half-primary-body-v1">
+                                <div class="card-body px-sm-4 pb-sm-4">
+                                    <div class="row align-items-center mt-1">
+                                        <div class="col-md-3 col-xs-12 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                            <div class="input-group">
+                                                <input type="text"
+                                                       min="0"
+                                                       class="form-control disabled" ng-model="transactionHash"
+                                                       placeholder="Go to transaction">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fas fa-exchange-alt"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 col-xs-12 text-md-right">
+                                            <div class="col-md-12">
+                                                <form class="form-group form-inline float-md-right">
+                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
+                                        of {{totalTransactions}}</span>
+                                                    <span class="small-gray-text mr-2">
+                                        {{currentPage+1}} of {{endPage}}</span>
+                                                    <span class="small-gray-text m-1 disabled"><i
+                                                            class="fa fa-angle-double-left"
+                                                            aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text pl-1 pr-1 m-1 disabled"><i
+                                                            class="fa fa-angle-left"
+                                                            aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text pl-1 pr-1 m-1 disabled"><i
+                                                            class="fa fa-angle-right"
+                                                            aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text m-1 disabled"><i
+                                                            class="fa fa-angle-double-right"
+                                                            aria-hidden="true"></i>
+                                </span>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-responsive-sm">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small text-left">Transaction Hash</th>
+                                            <th class="label-small text-left">Block</th>
+                                            <th class="label-small text-left">Age</th>
+                                            <th class="label-small text-left">Type</th>
+                                            <th class="label-small text-right">Fees</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12" ng-hide="loading">
+                        <div class="mb-4">
+                            <div class="card gradient-half-primary-body-v1">
+                                <div class="card-body px-sm-4 pb-sm-4">
+                                    <div class="row align-items-center mt-1">
+                                        <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                            <div class="input-group">
+                                                <input type="text"
+                                                       min="0"
+                                                       class="form-control" ng-model="transactionHash"
+                                                       placeholder="Go to transaction">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <a href="./#!/transaction/{{transactionHash}}"><i
+                                                                class="fa fas fa-exchange-alt"></i></a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 text-md-right">
+                                            <div class="col-md-12">
+                                                <form class="form-group form-inline float-md-right">
+                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
+                                        of {{totalTransactions}}</span>
+                                                    <span class="small-gray-text mr-2">
+                                        {{currentPage+1}} of {{endPage}}</span>
+                                                    <span class="small-gray-text m-1"
+                                                          ng-click="firstPage()"><i class="fa fa-angle-double-left"
+                                                                                    aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text pl-1 pr-1 m-1"
+                                                          ng-click="previousPage()"><i class="fa fa-angle-left"
+                                                                                       aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text pl-1 pr-1 m-1"
+                                                          ng-hide="currentPage+1 == endPage"
+                                                          ng-click="nextPage()"><i class="fa fa-angle-right"
+                                                                                   aria-hidden="true"></i>
+                                </span>
+                                                    <span class="small-gray-text m-1"
+                                                          ng-hide="currentPage+1 == endPage"
+                                                          ng-click="lastPage()"><i class="fa fa-angle-double-right"
+                                                                                   aria-hidden="true"></i>
+                                </span>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-responsive-sm">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small text-left">Transaction Hash</th>
+                                            <th class="label-small text-left">Block</th>
+                                            <th class="label-small text-left">Age</th>
+                                            <th class="label-small text-left">Type</th>
+                                            <th class="label-small text-right">Fees</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="transaction in transactions | orderBy : '-block'">
+                                            <td class="text-fusion text-left"><a href="./#!/transaction/{{transaction.txid}}">{{transaction.txid}}</a>
+                                            </td>
+                                            <td class="text-fusion text-left"><a href="./#!/block/{{transaction.block}}">{{transaction.block}}</a></td>
+                                            <td class="text-fusion text-left">{{transaction.age}}</td>
+                                            <td class="text-fusion text-left">{{transaction.type}}
+                                            </td>
+                                            <td class="text-fusion text-right small-gray-text">{{transaction.fees}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

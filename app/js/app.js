@@ -11,6 +11,7 @@ import './assets/module.js';
 import './address/module.js';
 import './nav/module.js';
 import './staking/module.js';
+import './transactions/module.js';
 import BigNumber from 'bignumber.js';
 window.BigNumber = BigNumber;
 import moment from 'moment';
@@ -33,6 +34,7 @@ let dependencies = [
     'myApp.dashboard',
     'myApp.block',
     'myApp.transaction',
+    'myApp.transactions',
     'myApp.asset',
     'myApp.assets',
     'myApp.nav',

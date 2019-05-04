@@ -26,4 +26,10 @@ exports.returnCommand = function (command) {
     if (command == 'TakeSwapFunc') {
         return 'Take Swap';
     }
+    if (command == 'TimeLockToAsset'){
+        return 'Time Lock To Asset';
+    }
+    if (command == 'TimeLockToTimeLock'){
+        return 'Time Lock To Time Lock';
+    }
 };
