@@ -5,6 +5,7 @@ let dashboardController = function ($http, $scope, $state) {
     $scope.recentBlocks = [];
     $scope.recentTransactions = [];
     $scope.globalData = [];
+    $scope.loading = false;
 
     $scope.getLatestBlocks = function () {
         let recentBlocks = [];
@@ -80,10 +81,10 @@ let dashboardController = function ($http, $scope, $state) {
     $scope.getGlobalData();
 
     setInterval(function () {
-        // $scope.getLatestBlocks();
-        // $scope.getLatestTransactions();
-        // $scope.getGlobalData();
-        // $scope.updateTime();
+        $scope.getLatestBlocks();
+        $scope.getLatestTransactions();
+        $scope.getGlobalData();
+        $scope.updateTime();
     }, 2000);
 };
 

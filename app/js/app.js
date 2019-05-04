@@ -4,6 +4,7 @@ import 'angular-material';
 import configRouter from './config.js';
 import './dashboard/module.js';
 import './block/module.js';
+import './blocks/module.js';
 import './transaction/module.js';
 import './asset/module.js';
 import './assets/module.js';
@@ -36,6 +37,7 @@ let dependencies = [
     'myApp.assets',
     'myApp.nav',
     'myApp.address',
+    'myApp.blocks',
     'myApp.staking'
 ];
 

@@ -1,5 +1,15 @@
 <div class="layout-container">
-    <div class="layout-content">
+    <div class="layout-content" ng-show="loading">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 text-center">
+                <div class="mw-100 mh-100">
+                    Loading
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout-content" ng-show="!loading">
         <!-- Page content -->
         <div class="container flex-grow-1 container-p-y">
             <h4 class="font-weight-bold py-3 text-fusion">
@@ -199,7 +209,8 @@
                                         From:
                                     </div>
                                     <div class="col-md-6 text-md-right max-chars">
-                                        <a href="./#!/address/{{block.from}}">{{block.from}}</a></span>                                    </div>
+                                        <a href="./#!/address/{{block.from}}">{{block.from}}</a></span>
+                                    </div>
                                     <div class="col-md-12 font-weight-sm-normal mt-2 mb-1 mb-md-0 label-small text-md-right">
                                         {{block.timestamp}}
                                     </div>

@@ -163,14 +163,13 @@ let assetsController = function ($http, $scope) {
                                 saveAssets.push(data);
                             }
                         });
-                        $scope.allAssets = saveAssets;
                     }
+                    $scope.allAssets = saveAssets;
                 });
                 $scope.endPage = Math.ceil($scope.allAssets.length / $scope.pageSize);
                 $scope.allAssets.length < 10 ? $scope.shownRows = $scope.allAssets.length : $scope.shownRows = 10;
             }
         });
-
     };
 
     $scope.getAssets();
