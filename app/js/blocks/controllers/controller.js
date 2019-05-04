@@ -1,37 +1,11 @@
 let blocksController = function ($http, $scope) {
     $scope.lastUpdated = moment(new Date().getTime()).format('LTS');
-    $scope.addressData = {};
-    $scope.allBalances = [];
-    $scope.verifiedAssets = {};
-    $scope.assetsTab = true;
-    $scope.allAssets = [];
-
-
+    $scope.blocks = [];
+    $scope.loading = true;
     $scope.currentPage = 0;
-    $scope.pageSize = 10;
-    $scope.endPage = Math.ceil($scope.allAssets.length / $scope.pageSize);
-    $scope.shownRows = 10;
+    $scope.pageSize = 20;
+    $scope.shownRows = 20;
 
-
-    $scope.$watch('allAssets', function () {
-        if (typeof $scope.allAssets === 'undefined') {
-            return;
-        }
-        if ($scope.currentPage == 0) {
-            $scope.$eval(function () {
-                $scope.shownRows = $scope.currentPage + 1 * $scope.pageSize;
-            });
-        }
-        let shownRows = 0;
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.allAssets.length) {
-            shownRows = $scope.allAssets.length;
-        } else {
-            shownRows = ($scope.currentPage + 1) * $scope.pageSize;
-        }
-        $scope.$eval(function () {
-            $scope.shownRows = shownRows;
-        });
-    });
 
     $scope.nextPage = function () {
         if ($scope.currentPage !== $scope.allAssets - 1) {
@@ -39,45 +13,48 @@ let blocksController = function ($http, $scope) {
                 $scope.currentPage = $scope.currentPage + 1;
             });
         }
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.allAssets.length) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.allAssets.length;
+                $scope.shownRows = $scope.maxBlock;
             });
         } else {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
+        $scope.getBlocks($scope.currentPage);
     };
 
     $scope.firstPage = function () {
         $scope.$eval(function () {
             $scope.currentPage = 0;
         });
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.allAssets.length) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.allAssets.length;
+                $scope.shownRows = $scope.maxBlock;
             });
         } else {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
+        $scope.getBlocks($scope.currentPage);
     };
 
     $scope.lastPage = function () {
         $scope.$eval(function () {
             $scope.currentPage = $scope.endPage - 1;
         });
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.allAssets.length) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.allAssets.length;
+                $scope.shownRows = $scope.maxBlock;
             });
         } else {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
+        $scope.getBlocks($scope.currentPage);
     };
 
     $scope.previousPage = function () {
@@ -86,15 +63,16 @@ let blocksController = function ($http, $scope) {
                 $scope.currentPage = $scope.currentPage - 1;
             });
         }
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.allAssets.length) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.allAssets.length;
+                $scope.shownRows = $scope.maxBlock;
             });
         } else {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
+        $scope.getBlocks($scope.currentPage);
     };
 
 
@@ -106,74 +84,39 @@ let blocksController = function ($http, $scope) {
         return parseInt(returnDecimals);
     };
 
-    $scope.getAssets = function () {
-        let saveAssets = [];
-        let allAssets = 0;
-        $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
-            $scope.verifiedAssets = r.data;
-        });
-        $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
-            allAssets = Math.ceil(r.data.totalAssets / 100);
-            for (let i = 0; i < allAssets; i++){
-                let assets = {};
-                $http.get(`https://api.fusionnetwork.io/assets/all?page=${i}&size=100&sort=desc`).then(function (r) {
-                    assets = r.data;
-                    console.log(assets);
-                    for (let asset in assets) {
-                        let verifiedImage = '';
-                        let hasImage = false;
-                        let verifiedAsset = false;
-                        for (let a in $scope.verifiedAssets) {
-                            if (assets[asset].commandExtra == $scope.verifiedAssets[a].assetID) {
-                                // Set matched image name
-                                verifiedImage = $scope.verifiedAssets[a].image;
-                                hasImage = true;
-                                verifiedAsset = true;
-                            }
-                        }
-                        $http.get(`https://api.fusionnetwork.io/assets/${assets[asset].commandExtra}`).then(function (r) {
-                            if (assets[asset].commandExtra == '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff') {
-                                let data = {
-                                    assetName: 'FUSION (FSN)',
-                                    assetSymbol: 'FSN',
-                                    assetId: '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
-                                    assetType: 'FUSION',
-                                    // quantity: formattedBalance.toString(),
-                                    verified: true,
-                                    hasImage: true,
-                                    verifiedImage: 'EFSN_LIGHT.svg'
-                                };
-                                saveAssets.push(data);
-                                return;
-                            } else {
-                                let assetData = r.data[0];
-                                let assetExtraData = JSON.parse(r.data[0].data);
-                                let amount = new BigNumber(assetExtraData.Total.toString());
-                                let formattedBalance = amount.div($scope.countDecimals(assetExtraData.Decimals.toString()));
-                                let data = {
-                                    assetName: assetData.commandExtra2,
-                                    assetSymbol: assetExtraData.Symbol.substr(0,4),
-                                    assetId: assetExtraData.AssetID,
-                                    assetType: 'FUSION',
-                                    quantity: window.numeral(formattedBalance.toString()).format('0.00a'),
-                                    verified: verifiedAsset,
-                                    hasImage: hasImage,
-                                    verifiedImage: verifiedImage
-                                };
-                                saveAssets.push(data);
-                            }
-                        });
-                    }
-                    $scope.allAssets = saveAssets;
-                });
-                $scope.endPage = Math.ceil($scope.allAssets.length / $scope.pageSize);
-                $scope.allAssets.length < 10 ? $scope.shownRows = $scope.allAssets.length : $scope.shownRows = 10;
+    $scope.getBlocks = function (page) {
+        $scope.loading = true;
+        let blocks = {};
+        let displayBlocks = [];
+        $http.get(`https://api.fusionnetwork.io/blocks/all?sort=desc&page=${page}&size=20&field=height`).then(function (r) {
+            blocks = r.data;
+            console.log(blocks);
+            for (let block in blocks) {
+                let blocksExtraData = JSON.parse(blocks[block].block);
+                let data = {
+                    block: blocks[block].height,
+                    age: blocksExtraData.timestamp,
+                    transactions: blocks[block].numberOfTransactions,
+                    miner: blocksExtraData.miner,
+                    gasUsed: blocksExtraData.gasUsed,
+                    gasLimit: blocksExtraData.gasLimit
+                }
+                displayBlocks.push(data);
+                $scope.blocks = displayBlocks;
             }
-        });
-    };
 
-    $scope.getAssets();
-    console.log($scope.allAssets);
+        }).then(function(){
+            $scope.loading = false;
+        });
+    }
+
+    $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
+        $scope.maxBlock = r.data.maxBlock;
+        $scope.endPage = Math.ceil($scope.maxBlock / $scope.pageSize);
+    });
+
+
+    $scope.getBlocks(0);
 
 };
 
