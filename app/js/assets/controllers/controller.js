@@ -137,7 +137,7 @@ let assetsController = function ($http, $scope) {
                                     assetName: 'FUSION (FSN)',
                                     assetSymbol: 'FSN',
                                     assetId: '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
-                                    assetType: 'Fusion',
+                                    assetType: 'FUSION',
                                     // quantity: formattedBalance.toString(),
                                     verified: true,
                                     hasImage: true,
@@ -152,10 +152,10 @@ let assetsController = function ($http, $scope) {
                                 let formattedBalance = amount.div($scope.countDecimals(assetExtraData.Decimals.toString()));
                                 let data = {
                                     assetName: assetData.commandExtra2,
-                                    assetSymbol: assetExtraData.Symbol,
+                                    assetSymbol: assetExtraData.Symbol.substr(0,4),
                                     assetId: assetExtraData.AssetID,
-                                    assetType: 'Fusion',
-                                    quantity: formattedBalance.toString(),
+                                    assetType: 'FUSION',
+                                    quantity: window.numeral(formattedBalance.toString()).format('0.00a'),
                                     verified: verifiedAsset,
                                     hasImage: hasImage,
                                     verifiedImage: verifiedImage
