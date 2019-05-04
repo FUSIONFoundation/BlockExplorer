@@ -157,4 +157,18 @@ thead {
 .badge-default {
   background-color: rgba(24, 28, 33, 0.07);
   color: #4E5155;
+  box-shadow: 0 0px 3px rgba(0,0,0, .1);
+  animation: loading 3s infinite;
 }
+
+@keyframes loading {
+  /* You could think of as "step 1" */
+  0% {
+    background: rgba(24, 28, 33, 0.07);
+  }
+  /* You could think of as "step 2" */
+  100% {
+    background: rgba(24, 28, 33, 0.12);
+  }
+}
+
