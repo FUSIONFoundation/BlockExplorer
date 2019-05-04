@@ -13,9 +13,9 @@ let transactionsController = function ($http, $scope) {
                 $scope.currentPage = $scope.currentPage + 1;
             });
         }
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.totalTransactions) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.maxBlock;
+                $scope.shownRows = $scope.totalTransactions;
             });
         } else {
             $scope.$eval(function () {
@@ -29,9 +29,9 @@ let transactionsController = function ($http, $scope) {
         $scope.$eval(function () {
             $scope.currentPage = 0;
         });
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.totalTransactions) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.maxBlock;
+                $scope.shownRows = $scope.totalTransactions;
             });
         } else {
             $scope.$eval(function () {
@@ -45,9 +45,9 @@ let transactionsController = function ($http, $scope) {
         $scope.$eval(function () {
             $scope.currentPage = $scope.endPage - 1;
         });
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.totalTransactions) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.maxBlock;
+                $scope.shownRows = $scope.totalTransactions;
             });
         } else {
             $scope.$eval(function () {
@@ -63,9 +63,9 @@ let transactionsController = function ($http, $scope) {
                 $scope.currentPage = $scope.currentPage - 1;
             });
         }
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.totalTransactions) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.maxBlock;
+                $scope.shownRows = $scope.totalTransactions;
             });
         } else {
             $scope.$eval(function () {
