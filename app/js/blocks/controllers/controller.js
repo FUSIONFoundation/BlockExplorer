@@ -93,13 +93,16 @@ let blocksController = function ($http, $scope) {
             console.log(blocks);
             for (let block in blocks) {
                 let blocksExtraData = JSON.parse(blocks[block].block);
+                let gasPercentageUsed = (parseInt(blocksExtraData.gasUsed) / parseInt(blocksExtraData.gasLimit)) * 100;
+                console.log(gasPercentageUsed);
                 let data = {
                     block: blocks[block].height,
                     age: window.format(blocksExtraData.timestamp * 1000),
                     transactions: blocks[block].numberOfTransactions,
                     miner: blocksExtraData.miner,
                     gasUsed: blocksExtraData.gasUsed,
-                    gasLimit: blocksExtraData.gasLimit
+                    gasLimit: blocksExtraData.gasLimit,
+                    gasPercentageUsed : gasPercentageUsed.toFixed(2)
                 }
                 displayBlocks.push(data);
                 $scope.blocks = displayBlocks;

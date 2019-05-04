@@ -734,7 +734,7 @@
                                             <th class="label-small text-left">Age</th>
                                             <th class="label-small text-left">Transactions</th>
                                             <th class="label-small text-left">Miner</th>
-                                            <th class="label-small text-right">Gas Used</th>
+                                            <th class="label-small text-left">Gas Used</th>
                                             <th class="label-small text-right">Gas Limit</th>
                                             <th class="label-small text-right">Reward</th>
                                         </tr>
@@ -747,7 +747,7 @@
                                             <td class="text-fusion text-left">{{block.transactions}}</td>
                                             <td class="text-fusion text-right"><a href="./#!/address/{{block.miner}}">{{block.miner}}</a>
                                             </td>
-                                            <td class="text-fusion text-right">{{block.gasUsed}}</td>
+                                            <td class="text-fusion text-left">{{block.gasUsed}} ({{block.gasPercentageUsed}}%)</td>
                                             <td class="text-fusion text-right">{{block.gasLimit}}</td>
                                             <td class="text-fusion text-right">
                                                 <span class="badge badge-success">2.5 FSN</span>
