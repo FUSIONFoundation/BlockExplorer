@@ -95,7 +95,7 @@ let blocksController = function ($http, $scope) {
                 let blocksExtraData = JSON.parse(blocks[block].block);
                 let data = {
                     block: blocks[block].height,
-                    age: blocksExtraData.timestamp,
+                    age: window.format(blocksExtraData.timestamp * 1000),
                     transactions: blocks[block].numberOfTransactions,
                     miner: blocksExtraData.miner,
                     gasUsed: blocksExtraData.gasUsed,
