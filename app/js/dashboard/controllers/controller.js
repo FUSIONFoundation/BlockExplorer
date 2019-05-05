@@ -88,10 +88,10 @@ let dashboardController = function ($http, $scope, $state) {
     $scope.getSparkLineData();
 
     setInterval(function () {
-        $scope.getLatestBlocks();
-        $scope.getLatestTransactions();
-        $scope.getGlobalData();
-        $scope.updateTime();
+        // $scope.getLatestBlocks();
+        // $scope.getLatestTransactions();
+        // $scope.getGlobalData();
+        // $scope.updateTime();
     }, 15000);
 };
 

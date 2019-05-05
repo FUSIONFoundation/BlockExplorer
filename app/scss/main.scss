@@ -172,3 +172,17 @@ thead {
   }
 }
 
+.recent-blocks-item {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.font-size-12{
+  font-size:12px !important;
+}
+.recent-block-main-item{
+  background-color: rgb(245, 247, 250);
+  border-left:3px solid #02BC77;
+}
