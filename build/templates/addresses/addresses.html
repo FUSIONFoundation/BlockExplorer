@@ -22,12 +22,12 @@
                                             <div class="input-group">
                                                 <input type="number"
                                                        min="0"
-                                                       class="form-control" ng-model="blockNumber"
-                                                       placeholder="Go to block">
+                                                       class="form-control" ng-model="address"
+                                                       placeholder="Go to address">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
-                                                        <a href="./#!/block/{{blockNumber}}"><i
-                                                                class="fa fas fa-cube"></i></a></span>
+                                                        <a href="./#!/address/{{address}}"><i
+                                                                class="fa fas fa-arrow-right"></i></a></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -62,13 +62,12 @@
                                     <table class="table table-responsive-sm">
                                         <thead class="bg-white">
                                         <tr>
-                                            <th class="label-small text-left">Block</th>
-                                            <th class="label-small text-left">Age</th>
+                                            <th class="label-small text-left">Address</th>
+                                            <th class="label-small text-left">SAN</th>
+                                            <th class="label-small text-left">FSN Balance</th>
                                             <th class="label-small text-left">Transactions</th>
-                                            <th class="label-small text-left">Miner</th>
-                                            <th class="label-small text-right">Gas Used</th>
-                                            <th class="label-small text-right">Gas Limit</th>
-                                            <th class="label-small text-right">Reward</th>
+                                            <th class="label-small text-right">Assets Held</th>
+                                            <th class="label-small text-right">Staking Rewards</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -97,10 +96,6 @@
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="text-fusion text-left">
@@ -116,40 +111,6 @@
                                                 </span>
                                             </td>
                                             <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
@@ -187,10 +148,6 @@
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="text-fusion text-left">
@@ -206,40 +163,6 @@
                                                 </span>
                                             </td>
                                             <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
@@ -277,10 +200,6 @@
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="text-fusion text-left">
@@ -296,40 +215,6 @@
                                                 </span>
                                             </td>
                                             <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
@@ -367,10 +252,6 @@
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="text-fusion text-left">
@@ -386,40 +267,6 @@
                                                 </span>
                                             </td>
                                             <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
@@ -457,10 +304,6 @@
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="text-fusion text-left">
@@ -476,40 +319,6 @@
                                                 </span>
                                             </td>
                                             <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
@@ -547,10 +356,6 @@
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="text-fusion text-left">
@@ -566,40 +371,6 @@
                                                 </span>
                                             </td>
                                             <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-left">
-                                                <span class="badge badge-default w-50" style="height:18px">
-                                                </span>
-                                            </td>
-                                            <td class="text-fusion text-right">
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
@@ -637,6 +408,28 @@
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
                                             <td class="text-fusion text-right">
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
@@ -660,6 +453,132 @@
                                                 </span>
                                             </td>
                                             <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-right">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <span class="badge badge-default w-50" style="height:18px">
+                                                </span>
+                                            </td>
+                                            <td class="text-fusion text-left">
                                                 <span class="badge badge-default w-50" style="height:18px">
                                                 </span>
                                             </td>
@@ -749,7 +668,7 @@
                                             <td class="text-fusion text-left">{{address.assets}}</td>
                                             <td class="text-fusion text-right">
                                                 <span class="small-gray-text">
-                                                {{address.rewards}} FSN
+                                                {{address.rewards}} <FSN></FSN>
                                                 </span>
                                             </td>
                                         </tr>
