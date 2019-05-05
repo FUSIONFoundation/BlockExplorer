@@ -174,32 +174,21 @@
                             <i class="fa fa-chart-bar mr-2" aria-hidden="true"></i>
                             RECENT TRANSACTIONS
                         </h6>
-                        <div class="card-body">
-                            <div ng-repeat="block in recentTransactions">
-                                <div class="row align-items-center mt-1">
-                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
-                                        Transaction:
-                                    </div>
-                                    <div class="col-md-6 text-md-right max-chars">
-                                        <a href="./#!/transaction/{{block.transactionId}}">{{block.transactionId}}</a>
-                                    </div>
-                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
-                                        Type:
-                                    </div>
-                                    <div class="col-md-6 text-md-right">
+                        <div class="card-body pt-1">
+                            <div ng-repeat="block in recentTransactions" class="row recent-block-main-item mb-2 p-2">
+                                <div class="col-sm-5 recent-blocks-item">
+                                    <span class="text-fusion"><i class="fa fa-exchange-alt mr-1"></i> <a href="./#!/block/{{block.transactionId}}">{{block.transactionId}}</a></span><br>
+                                    <span class="small-gray-text">
+                                <i class="far fa-clock mr-2"></i>{{block.timestamp}}</span>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="recent-blocks-item font-size-12">
                                         <span class="badge badge-success">{{block.type}}</span>
-                                    </div>
-                                    <div class="col-md-6 font-weight-sm-normal mb-1 mb-md-0 label-small">
-                                        From:
-                                    </div>
-                                    <div class="col-md-6 text-md-right max-chars">
-                                        <a href="./#!/address/{{block.from}}">{{block.from}}</a></span>
-                                    </div>
-                                    <div class="col-md-12 font-weight-sm-normal mt-2 mb-1 mb-md-0 label-small text-md-right">
-                                        {{block.timestamp}}
+                                        <br>
+                                        by <a href="./#!/address/{{block.from}}">{{block.from}}</a><br>
+                                        -
                                     </div>
                                 </div>
-                                <hr>
                             </div>
                             <div class="col text-center p-2">
                                 <span class="text-primary">View all transactions</span>
