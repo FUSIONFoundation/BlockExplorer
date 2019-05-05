@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <h4 class="font-weight-bold text-fusion mb-4">
-                        Blocks
+                        Addresses
                     </h4>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
                                     <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
-                                        of {{maxBlock}}</span>
+                                        of {{totalAddresses}}</span>
                                                     <span class="small-gray-text mr-2">
                                         {{currentPage+1}} of {{endPage}}</span>
                                                     <span class="small-gray-text m-1 disabled"><i
@@ -688,11 +688,11 @@
                                             <div class="input-group">
                                                 <input type="number"
                                                        min="0"
-                                                       class="form-control" ng-model="blockNumber"
-                                                       placeholder="Go to block">
+                                                       class="form-control" ng-model="address"
+                                                       placeholder="Go to address">
                                                 <div class="input-group-append">
-                                                    <a class="input-group-text" href="./#!/block/{{blockNumber}}">
-                                                        <i class="fa fas fa-cube"></i></a>
+                                                    <a class="input-group-text" href="./#!/address/{{address}}">
+                                                        <i class="fa fas fa-arrow-right"></i></a>
 
                                                 </div>
                                             </div>
@@ -701,7 +701,7 @@
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
                                     <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
-                                        of {{maxBlock}}</span>
+                                        of {{totalAddresses}}</span>
                                                     <span class="small-gray-text mr-2">
                                         {{currentPage+1}} of {{endPage}}</span>
                                                     <span class="small-gray-text m-1"
@@ -730,27 +730,27 @@
                                     <table class="table table-responsive-sm">
                                         <thead class="bg-white">
                                         <tr>
-                                            <th class="label-small text-left">Block</th>
-                                            <th class="label-small text-left">Age</th>
+                                            <th class="label-small text-left">Address</th>
+                                            <th class="label-small text-left">SAN</th>
+                                            <th class="label-small text-left">FSN Balance</th>
                                             <th class="label-small text-left">Transactions</th>
-                                            <th class="label-small text-left">Miner</th>
-                                            <th class="label-small text-left">Gas Used</th>
-                                            <th class="label-small text-right">Gas Limit</th>
-                                            <th class="label-small text-right">Reward</th>
+                                            <th class="label-small text-left">Assets Held</th>
+                                            <th class="label-small text-right">Staking Rewards</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr ng-repeat="block in blocks | orderBy : '-height'">
-                                            <td class="text-fusion text-left"><a href="./#!/block/{{block.block}}">{{block.block}}</a>
+                                        <tr ng-repeat="address in addresses | orderBy : '-fsnBalance'">
+                                            <td class="text-fusion text-left"><a href="./#!/address/{{address.address}}">{{address.address}}</a>
                                             </td>
-                                            <td class="text-fusion text-left">{{block.age}}</td>
-                                            <td class="text-fusion text-left">{{block.transactions}}</td>
-                                            <td class="text-fusion text-right"><a href="./#!/address/{{block.miner}}">{{block.miner}}</a>
+                                            <td class="text-fusion text-left">{{address.san}}</td>
+                                            <td class="text-fusion text-left">{{address.fsnBalance}}</td>
+                                            <td class="text-fusion text-left">{{address.transactions}}
                                             </td>
-                                            <td class="text-fusion text-left">{{block.gasUsed}} ({{block.gasPercentageUsed}}%)</td>
-                                            <td class="text-fusion text-right">{{block.gasLimit}}</td>
+                                            <td class="text-fusion text-left">{{address.assets}}</td>
                                             <td class="text-fusion text-right">
-                                                <span class="badge badge-success">2.5 FSN</span>
+                                                <span class="small-gray-text">
+                                                {{address.rewards}} FSN
+                                                </span>
                                             </td>
                                         </tr>
                                         </tbody>

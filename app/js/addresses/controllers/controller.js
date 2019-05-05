@@ -1,6 +1,6 @@
 let blocksController = function ($http, $scope) {
     $scope.lastUpdated = moment(new Date().getTime()).format('LTS');
-    $scope.blocks = [];
+    $scope.addresses = [];
     $scope.loading = true;
     $scope.currentPage = 0;
     $scope.pageSize = 20;
@@ -13,48 +13,48 @@ let blocksController = function ($http, $scope) {
                 $scope.currentPage = $scope.currentPage + 1;
             });
         }
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.totalAddresses) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.maxBlock;
+                $scope.shownRows = $scope.totalAddresses;
             });
         } else {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
-        $scope.getBlocks($scope.currentPage);
+        $scope.getAddresses($scope.currentPage);
     };
 
     $scope.firstPage = function () {
         $scope.$eval(function () {
             $scope.currentPage = 0;
         });
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.totalAddresses) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.maxBlock;
+                $scope.shownRows = $scope.totalAddresses;
             });
         } else {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
-        $scope.getBlocks($scope.currentPage);
+        $scope.getAddresses($scope.currentPage);
     };
 
     $scope.lastPage = function () {
         $scope.$eval(function () {
             $scope.currentPage = $scope.endPage - 1;
         });
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.totalAddresses) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.maxBlock;
+                $scope.shownRows = $scope.totalAddresses;
             });
         } else {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
-        $scope.getBlocks($scope.currentPage);
+        $scope.getAddresses($scope.currentPage);
     };
 
     $scope.previousPage = function () {
@@ -63,16 +63,16 @@ let blocksController = function ($http, $scope) {
                 $scope.currentPage = $scope.currentPage - 1;
             });
         }
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.maxBlock) {
+        if (($scope.currentPage + 1) * $scope.pageSize > $scope.totalAddresses) {
             $scope.$eval(function () {
-                $scope.shownRows = $scope.maxBlock;
+                $scope.shownRows = $scope.totalAddresses;
             });
         } else {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
-        $scope.getBlocks($scope.currentPage);
+        $scope.getAddresses($scope.currentPage);
     };
 
 
@@ -84,28 +84,26 @@ let blocksController = function ($http, $scope) {
         return parseInt(returnDecimals);
     };
 
-    $scope.getBlocks = function (page) {
+    $scope.getAddresses = function (page) {
         $scope.loading = true;
-        let blocks = {};
-        let displayBlocks = [];
-        $http.get(`https://api.fusionnetwork.io/blocks/all?sort=desc&page=${page}&size=20&field=height`).then(function (r) {
-            blocks = r.data;
-            console.log(blocks);
-            for (let block in blocks) {
-                let blocksExtraData = JSON.parse(blocks[block].block);
-                let gasPercentageUsed = (parseInt(blocksExtraData.gasUsed) / parseInt(blocksExtraData.gasLimit)) * 100;
-                console.log(gasPercentageUsed);
+        let addresses = {};
+        let displayAddresses = [];
+        $http.get(`https://api.fusionnetwork.io/balances/all?sort=desc&page=${page}&size=20&field=fsnBalance`).then(function (r) {
+            addresses = r.data;
+            for (let address in addresses) {
+                console.log(addresses[address]);
+                let amount = new BigNumber(addresses[address].fsnBalance.toString());
+                let amountFinal = amount.div($scope.countDecimals(18));
                 let data = {
-                    block: blocks[block].height,
-                    age: window.format(blocksExtraData.timestamp * 1000),
-                    transactions: blocks[block].numberOfTransactions,
-                    miner: blocksExtraData.miner,
-                    gasUsed: blocksExtraData.gasUsed,
-                    gasLimit: blocksExtraData.gasLimit,
-                    gasPercentageUsed : gasPercentageUsed.toFixed(2)
-                }
-                displayBlocks.push(data);
-                $scope.blocks = displayBlocks;
+                    address : addresses[address]._id,
+                    san : addresses[address].san,
+                    fsnBalance : amountFinal.toString(),
+                    transactions : addresses[address].numberOfTransactions,
+                    assets : addresses[address].assetsHeld,
+                    rewards : addresses[address].rewardEarn
+                };
+                displayAddresses.push(data);
+                $scope.addresses = displayAddresses;
             }
 
         }).then(function(){
@@ -114,12 +112,12 @@ let blocksController = function ($http, $scope) {
     }
 
     $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
-        $scope.maxBlock = r.data.maxBlock;
-        $scope.endPage = Math.ceil($scope.maxBlock / $scope.pageSize);
+        $scope.totalAddresses = r.data.totalAddresses;
+        $scope.endPage = Math.ceil($scope.totalAddresses / $scope.pageSize);
     });
 
 
-    $scope.getBlocks(0);
+    $scope.getAddresses(0);
 
 };
 
