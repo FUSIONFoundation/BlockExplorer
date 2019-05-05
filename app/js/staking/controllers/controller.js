@@ -6,28 +6,34 @@ let blockController = function ($http, $scope) {
 
     console.log($scope.walletAddressSaved);
 
-    $scope.$watch('realTimeStatus', function(){
-        if($scope.realTimeStatus !== undefined){
+    $scope.$watch('walletAddressSaved', function () {
+        if ($scope.walletAddressSaved !== '' || $scope.walletAddressSaved === undefined) {
+            $scope.getStakingInfo($scope.walletAddressSaved);
+        }
+    })
+
+    $scope.$watch('realTimeStatus', function () {
+        if ($scope.realTimeStatus !== undefined) {
             console.log($scope.realTimeStatus);
         }
     });
 
-    $scope.saveCookie = function (){
+    $scope.saveCookie = function () {
         console.log(window.web3.utils.isAddress($scope.walletAddress))
-        if(window.web3.utils.isAddress($scope.walletAddress)){
+        if (window.web3.utils.isAddress($scope.walletAddress)) {
             localStorage.setItem('stakingAddress', $scope.walletAddress);
             $scope.walletAddressSaved = $scope.walletAddress;
             $scope.getStakingInfo($scope.walletAddress);
         }
     };
 
-    $scope.deleteCookie = function(){
+    $scope.deleteCookie = function () {
         $scope.walletAddressSaved = '';
         $scope.walletAddress = '';
         localStorage.setItem('stakingAddress', '')
     };
 
-    $scope.getStakingInfo = function (walletAddress) {
+    $scope.getStakingInfo = async function (walletAddress) {
         if (!walletAddress) {
             return
         }
@@ -35,9 +41,10 @@ let blockController = function ($http, $scope) {
             let data = {};
             let ticketsData;
             let tickets = {};
-            $http.get(`https://api.fusionnetwork.io/balances/${walletAddress}`).then(function (r) {
-                data = r.data
-            })
+            await $http.get(`https://api.fusionnetwork.io/balances/${walletAddress}`).then(function (r) {
+                data = r.data;
+                console.log(data);
+            });
 
             if (data.length === 0) {
                 $scope.$eval(function () {
@@ -50,16 +57,14 @@ let blockController = function ($http, $scope) {
                 ticketsData = JSON.parse(data[0].balanceInfo);
                 tickets = Object.keys(ticketsData.tickets);
 
-                $scope.$eval(function () {
-                    $scope.stakingRewardsEarned = data[0].rewardEarn;
-                    $scope.totalTickets = tickets.length;
-                })
+                $scope.stakingRewardsEarned = data[0].rewardEarn;
+                $scope.totalTickets = tickets.length;
+
             }
         } catch (err) {
             console.log(err)
         }
     };
-    $scope.getStakingInfo();
 };
 
 export default blockController;

@@ -9,6 +9,7 @@ import './transaction/module.js';
 import './asset/module.js';
 import './assets/module.js';
 import './address/module.js';
+import './addresses/module.js';
 import './nav/module.js';
 import './staking/module.js';
 import './transactions/module.js';
@@ -40,7 +41,8 @@ let dependencies = [
     'myApp.nav',
     'myApp.address',
     'myApp.blocks',
-    'myApp.staking'
+    'myApp.staking',
+    'myApp.addresses'
 ];
 
 angular
