@@ -146,7 +146,7 @@
                             <i class="fa fa-cubes mr-2" aria-hidden="true"></i>
                             RECENT BLOCKS
                         </h6>
-                        <div class="card-body pt-1">
+                        <div class="card-body pt-1 scrollable">
                             <div ng-repeat="block in recentBlocks" class="row recent-block-main-item mb-2 p-2">
                                 <div class="col-sm-5">
                                     <span class="text-fusion"><i class="fa fa-cube mr-1"></i> <a href="./#!/block/{{block.block}}">{{block.block}}</a></span><br>
@@ -162,9 +162,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col text-center p-2">
-                                <span class="text-primary">View all blocks</span>
-                            </div>
+                        </div>
+                        <div class="col text-center pt-2 pb-2">
+                            <span class="text-primary font-size-12">View all blocks</span>
                         </div>
                     </div>
                 </div>
@@ -174,10 +174,10 @@
                             <i class="fa fa-chart-bar mr-2" aria-hidden="true"></i>
                             RECENT TRANSACTIONS
                         </h6>
-                        <div class="card-body pt-1">
+                        <div class="card-body pt-1 scrollable">
                             <div ng-repeat="block in recentTransactions" class="row recent-block-main-item mb-2 p-2">
                                 <div class="col-sm-5 recent-blocks-item">
-                                    <span class="text-fusion"><i class="fa fa-exchange-alt mr-1"></i> <a href="./#!/block/{{block.transactionId}}">{{block.transactionId}}</a></span><br>
+                                    <span class="text-fusion"><i class="fa fa-exchange-alt mr-1"></i> <a href="./#!/transaction/{{block.transactionId}}">{{block.transactionId}}</a></span><br>
                                     <span class="small-gray-text">
                                 <i class="far fa-clock mr-2"></i>{{block.timestamp}}</span>
                                 </div>
@@ -190,9 +190,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col text-center p-2">
-                                <span class="text-primary">View all transactions</span>
-                            </div>
+                        </div>
+                        <div class="col text-center pb-2 pt-2">
+                            <span class="text-primary font-size-12">View all transactions</span>
                         </div>
                     </div>
                 </div>

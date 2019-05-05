@@ -203,3 +203,30 @@ thead {
     transform: translate3d(-100%, 0, 0);
   }
 }
+
+.scrollable {
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  height: 0px;
+  width: 0px;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+  height: 0px;
+  width: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(68, 77, 88, 0.27);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
