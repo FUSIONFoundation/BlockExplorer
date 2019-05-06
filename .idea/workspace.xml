@@ -84,6 +84,7 @@
       <find>getBlocks</find>
       <find>maxBlock</find>
       <find>RECENT BL</find>
+      <find>&lt;table class=&quot;table table-responsive-sm</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
