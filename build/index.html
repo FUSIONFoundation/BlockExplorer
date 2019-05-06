@@ -15,7 +15,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/main.min.css?rev=abe282e83cd59334e705eb33d46bd9f4">
+    <link rel="stylesheet" href="css/main.min.css?rev=f99925585611841d43e472531ac11b4d">
     <link rel="stylesheet" href="css/libs.min.css?rev=51c278ce3d0f02296416c2e1caf7addf">
 
     <!-- Main font -->
@@ -76,16 +76,16 @@
                     <a class="nav-link" ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ng-class="{'active' : $location.path() == '/blocks'}" href="./#!/blocks">Blocks</a>
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/blocks' ||  $location.path().substr(0,6) == '/block'}" href="./#!/blocks">Blocks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ng-class="{'active' : $location.path() == '/transactions'}" href="./#!/transactions">Transactions</a>
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/transactions' || $location.path().substr(0,12) == '/transaction'}" href="./#!/transactions">Transactions</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ng-class="{'active' : $location.path() == '/assets' || $location.path() == '/asset' }" href="./#!/assets">Assets</a>
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/assets' || $location.path().substr(0,6) == '/asset' }" href="./#!/assets">Assets</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" ng-class="{'active' : $location.path() == '/addresses'}" href="./#!/addresses">Addresses</a>
+                    <a class="nav-link" ng-class="{'active' : $location.path() == '/addresses' || $location.path().substr(0,8) == '/address'}" href="./#!/addresses">Addresses</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" ng-class="{'active' : $location.path() == '/staking'}" href="./#!/staking">Staking</a>
