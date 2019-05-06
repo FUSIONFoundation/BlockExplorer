@@ -9,22 +9,14 @@
                     </h4>
                 </div>
                 <div class="col-md-6 col-sm-12 text-md-right mb-3">
-                    <label class="switcher switcher-sm">
-                        <input class="switcher-input" type="checkbox" ng-model="realTimeStatus">
-                        <span class="switcher-indicator">
-          <span class="switcher-yes">
-            <span class="ion ion-md-checkmark"></span>
-          </span>
-          <span class="switcher-no">
-            <span class="ion ion-md-close"></span>
-          </span>
-        </span>
-                        <span class="switcher-label small-gray-text">Auto update</span>
-                    </label>
+                    <div class="text-muted mt-1">
+                        <small class="font-weight-normal">Last updated: {{lastUpdated}}</small>
+                    </div>
+                  <button class="btn btn-primary" ng-click="getStakingInfo(walletAddressSaved)">refresh</button>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" ng-show="walletAddressSaved == ''">
                 <div class="col-sm-12">
                     <div class="mb-4">
                         <div class="card gradient-half-primary-body-v1">
@@ -34,8 +26,8 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="row align-items-center mt-1">
-                                                    <p class=""> In order to start tracking your staking rewards,
-                                                        please fill in your wallet address.
+                                                    <p class="">In order to start tracking your staking rewards,
+                                                        please fill in your wallet address. Feel free to come back to this page at any time to resume tracking.
                                                         Not staking yet and not sure how to get started? Follow <a href="">this</a> guide.
                                                     </p>
                                                 </div>
@@ -99,7 +91,24 @@
                                                         Rewards to Date:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
-                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{stakingRewardsEarned}}</span>
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{stakingRewardsEarned}} FSN</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Address:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                                <span class="font-weight-sm-bold mr-1">
+                                                                    {{walletAddressSaved}}
+                                                    <button class="ml-2 btn btn-sm btn-danger" ng-click="deleteCookie()"><i class="fa fa-trash"></i></button>
+                                                                </span>
                                                     </div>
                                                 </div>
                                             </div>

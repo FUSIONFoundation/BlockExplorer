@@ -6,6 +6,7 @@ let dashboardController = function ($http, $scope, $state) {
     $scope.recentTransactions = [];
     $scope.globalData = [];
     $scope.loading = false;
+    $scope.totalTickets = 0;
 
     $scope.getLatestBlocks = function () {
         let recentBlocks = [];
@@ -64,6 +65,7 @@ let dashboardController = function ($http, $scope, $state) {
                 totalAssets : globalInfo.totalAssets,
                 maxBlock : globalInfo.maxBlock,
             };
+
             $scope.$eval(function(){
                 $scope.fsnPriceData = dataPrice;
                 $scope.globalData = globalData;
@@ -71,11 +73,6 @@ let dashboardController = function ($http, $scope, $state) {
         });
     };
 
-    $scope.sparkLineData = [];
-    $scope.getSparkLineData = function (){
-        let prices = [];
-        $scope.sparkLineData = prices;
-    }
 
     $scope.updateTime = function (){
         $scope.$eval(function(){
@@ -86,13 +83,12 @@ let dashboardController = function ($http, $scope, $state) {
     $scope.getLatestBlocks();
     $scope.getLatestTransactions();
     $scope.getGlobalData();
-    $scope.getSparkLineData();
 
     setInterval(function () {
-        // $scope.getLatestBlocks();
-        // $scope.getLatestTransactions();
-        // $scope.getGlobalData();
-        // $scope.updateTime();
+        $scope.getLatestBlocks();
+        $scope.getLatestTransactions();
+        $scope.getGlobalData();
+        $scope.updateTime();
     }, 15000);
 };
 
