@@ -271,3 +271,9 @@ thead {
   background: #02BC77 !important;
   color: #fff;
 }
+
+.table th, .table td {
+  padding: 0.625rem;
+  vertical-align: middle;
+  border-top: 1px solid #e8e8e9;
+}

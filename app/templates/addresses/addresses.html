@@ -62,6 +62,7 @@
                                     <table class="table table-responsive-sm table-hover">
                                         <thead class="bg-white">
                                         <tr>
+                                            <th class="label-small text-left"> </th>
                                             <th class="label-small text-left">Address</th>
                                             <th class="label-small text-left">SAN</th>
                                             <th class="label-small text-left">FSN Balance</th>
@@ -597,7 +598,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-sm-12" ng-hide="loading">
                         <div class="mb-4">
                             <div class="card gradient-half-primary-body-v1">
@@ -646,9 +646,10 @@
                                         </div>
                                     </div>
 
-                                    <table class="table table-responsive-sm table-hover">
+                                    <table class="table table-responsive table-hover">
                                         <thead class="bg-white">
                                         <tr>
+                                            <th class="label-small text-left"> </th>
                                             <th class="label-small text-left">Address</th>
                                             <th class="label-small text-left">SAN</th>
                                             <th class="label-small text-left">FSN Balance</th>
@@ -659,6 +660,7 @@
                                         </thead>
                                         <tbody>
                                         <tr ng-repeat="address in addresses | orderBy : '-fsnBalance'">
+                                            <th scope="row"><img class="btn-circle w32 p-0" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=lol" alt=""></th>
                                             <td class="text-fusion text-left"><a href="./#!/address/{{address.address}}">{{address.address}}</a>
                                             </td>
                                             <td class="text-fusion text-left">{{address.san}}</td>
