@@ -43,6 +43,7 @@ let addressController = function ($http, $scope, $stateParams) {
                 $scope.currentPage = $scope.currentPage + 1;
             });
         }
+        $scope.getTransactions($scope.currentPage);
         if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
             $scope.$eval(function () {
                 $scope.shownRows = $scope.addressData.numberOfTransactions / 10;
@@ -58,6 +59,7 @@ let addressController = function ($http, $scope, $stateParams) {
         $scope.$eval(function () {
             $scope.currentPage = 0;
         });
+        $scope.getTransactions($scope.currentPage);
         if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
             $scope.$eval(function () {
                 $scope.shownRows = $scope.addressData.numberOfTransactions / 10
@@ -90,6 +92,7 @@ let addressController = function ($http, $scope, $stateParams) {
                 $scope.currentPage = $scope.currentPage - 1;
             });
         }
+        $scope.getTransactions($scope.currentPage);
         if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
             $scope.$eval(function () {
                 $scope.shownRows = $scope.addressData.numberOfTransactions / 10;
@@ -181,120 +184,67 @@ let addressController = function ($http, $scope, $stateParams) {
             $scope.$eval(function () {
                 $scope.addressData = globalData;
                 $scope.allBalances = allBalances;
-                $scope.getTransactions();
+                $scope.getTransactions(0);
             });
         });
     };
 
-    $scope.$watch('currentPage', function(){
-        $scope.getTransactions();
-    })
 
-    $scope.getTransactions = function () {
-        // let page = Math.ceil($scope.addressData.numberOfTransactions / 100);
-            $http.get(`https://api.fusionnetwork.io/transactions/all?&page=${$scope.currentPage}&address=${address}&size=10`).then(function (r) {
-                let transactions = r.data;
-                for (let transaction in transactions) {
-                        $scope.processTransaction(transactions[transaction].hash);
-                }
-            });
-    };
+    $scope.getTransactions = function (page) {
+        let transactionSave = [];
+        $http.get(`http://api.fusionnetwork.io/transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=notickets`).then(function (r) {
+            console.log(r.data);
+            if(r.data.length == 0){
+                $scope.endPage = $scope.currentPage-2;
+                $scope.getTransactions($scope.currentPage);
+            }
+            let transactions = r.data;
+            let inout = '';
+            for (let transaction in transactions) {
+                let extraData = JSON.parse(transactions[transaction].data);
 
-    $scope.processTransaction = function (transactionHash) {
-        $http.get(`https://api.fusionnetwork.io/transactions/${transactionHash}`).then(function (r) {
-            let transactionSave = {};
-            let data = r.data[0];
-            let extraData = JSON.parse(data.data);
-            if (data.fusionCommand == 'GenAssetFunc') {
-                transactionSave = {
-                    txid: transactionHash,
-                    timeStamp: format(data.timeStamp * 1000),
-                    date: moment(data.timeStamp * 1000).format('ll'),
-                    block: data.height,
-                    from: data.fromAddress,
-                    type: 'Create Asset',
-                    asset: `${extraData.Name} (${extraData.Symbol})`,
-                    assetId: extraData.AssetID,
-                    amount: 200
-                };
-                $scope.processTransactions.push(transactionSave);
-            }
-            if (data.fusionCommand == 'BuyTicketFunc') {
-                transactionSave = {
-                    txid: transactionHash,
-                    timeStamp: format(data.timeStamp * 1000),
-                    date: moment(data.timeStamp * 1000).format('ll'),
-                    block: data.height,
-                    from: data.fromAddress,
-                    type: 'Buy Ticket',
-                    asset: '200 FSN',
-                    amount: 200
-                };
-                $scope.processTransactions.push(transactionSave);
-            }
-            if (data.fusionCommand == 'SendAssetFunc') {
-                transactionSave = {
-                    txid: transactionHash,
-                    timeStamp: format(data.timeStamp * 1000),
-                    date: moment(data.timeStamp * 1000).format('ll'),
-                    block: data.height,
-                    from: data.fromAddress,
-                    type: 'Send Asset',
+                    console.log(transactions[transaction]);
+                    console.log(extraData);
+
+                inout = $scope.returnInAndOut(transactions[transaction].fromAddress,transactions[transaction].commandExtra3,'');
+
+                let data = {
+                    txid: transactions[transaction].hash,
+                    timeStamp: format(transactions[transaction].timeStamp * 1000),
+                    date: moment(transactions[transaction].timeStamp * 1000).format('ll'),
+                    block: transactions[transaction].height,
+                    from: transactions[transaction].fromAddress,
+                    type: window.utils.returnCommand(transactions[transaction].fusionCommand),
                     asset: '',
+                    inout : inout,
+                    assetId: extraData.AssetID,
                     amount: 200
                 };
-                $scope.processTransactions.push(transactionSave);
+                transactionSave.push(data);
             }
-            if (data.fusionCommand == 'TimeLockToTimeLock') {
-                transactionSave = {
-                    txid: transactionHash,
-                    timeStamp: format(data.timeStamp * 1000),
-                    date: moment(data.timeStamp * 1000).format('ll'),
-                    asset: extraData.AssetID,
-                    block: data.height,
-                    from: data.fromAddress,
-                    to: extraData.To,
-                    type: 'Time Lock to Time Lock',
-                    start: extraData.StartTime,
-                    end: extraData.EndTime,
-                    amount: extraData.Value,
-                    assetId: extraData.AssetID,
-                };
-                $scope.processTransactions.push(transactionSave);
-            }
-            if (data.fusionCommand == 'AssetToTimeLock') {
-                transactionSave = {
-                    txid: transactionHash,
-                    timeStamp: format(data.timeStamp * 1000),
-                    date: moment(data.timeStamp * 1000).format('ll'),
-                    asset: extraData.AssetID,
-                    block: data.height,
-                    from: data.fromAddress,
-                    to: extraData.To,
-                    type: 'Asset To Time Lock',
-                    start: extraData.StartTime,
-                    end: extraData.EndTime,
-                    amount: extraData.Value
-                };
-                $scope.processTransactions.push(transactionSave);
-            }
-            if (data.fusionCommand == 'GenNotationFunc') {
-                transactionSave = {
-                    txid: transactionHash,
-                    timeStamp: format(data.timeStamp * 1000),
-                    date: moment(data.timeStamp * 1000).format('ll'),
-                    asset: extraData.AssetID,
-                    block: data.height,
-                    type: 'SAN Generation',
-                };
-                $scope.processTransactions.push(transactionSave);
-            }
-            // let page = Math.ceil($scope.addressData.numberOfTransactions / 100);
-
-            $scope.endPage = Math.ceil($scope.addressData.numberOfTransactions / 10);
-            $scope.processTransactions.length < 10 ? $scope.shownRows = $scope.processTransactions.length : $scope.shownRows = 10;
+            $scope.$eval(function(){
+                $scope.processTransactions = transactionSave;
+            })
+            console.log($scope.processTransactions)
         });
     };
+
+    $scope.returnInAndOut = function(input,address,type){
+        if(input == address){
+            return 'IN';
+        } else {
+            return 'OUT';
+        }
+        if(type){
+            if(type == 'TimeLockToAsset'){
+                if(input == web3.fsn.consts.FSNToken){
+                    return 'IN';
+                } else {
+                    return 'OUT';
+                }
+            }
+        }
+    }
 
     $scope.getAddress();
 };

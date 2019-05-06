@@ -88,7 +88,7 @@ let transactionsController = function ($http, $scope) {
         $scope.loading = true;
         let transactions = {};
         let displayTransactions = [];
-        $http.get(`https://api.fusionnetwork.io/transactions/all?sort=desc&page=${page}&size=20&field=height`).then(function (r) {
+        $http.get(`https://api.fusionnetwork.io/transactions/all?sort=desc&page=${page}&size=20&field=height&returnTickets=onlytickets`).then(function (r) {
             transactions = r.data;
             console.log(transactions);
             for (let transaction in transactions) {

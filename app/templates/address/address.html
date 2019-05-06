@@ -201,13 +201,14 @@
                                             <th class="label-small">Transaction Hash</th>
                                             <th class="label-small">Block</th>
                                             <th class="label-small text-left">Age</th>
+                                            <th class="label-small text-center"> </th>
                                             <th class="label-small text-left">Type</th>
                                             <th class="label-small">Asset(s)</th>
                                             <th class="label-small text-right">Fees</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr ng-repeat="transaction in processTransactions | filter: transactionSearch | orderBy : '-block' | startFrom: currentPage*pageSize | limitTo:pageSize track by $index">
+                                        <tr ng-repeat="transaction in processTransactions | filter: transactionSearch | orderBy : '-block'">
                                             <td class="text-fusion">
                                                 <a href="./#!/transaction/{{transaction.txid}}">{{transaction.txid}}</a>
                                             </td>
@@ -216,6 +217,11 @@
                                             </td>
                                             <td class="text-fusion text-left">
                                                 {{transaction.timeStamp}}
+                                            </td>
+                                            <td class="text-fusion text-center">
+                                                <span class="badge badge-success"
+                                                      ng-class="{'badge-danger': transaction.inout == 'OUT'}"
+                                                >{{transaction.inout}}</span>
                                             </td>
                                             <td class="text-fusion text-left">
                                                 {{transaction.type}}
