@@ -645,37 +645,36 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <table class="table table-responsive table-hover">
-                                        <thead class="bg-white">
-                                        <tr>
-                                            <th class="label-small text-left"> </th>
-                                            <th class="label-small text-left">Address</th>
-                                            <th class="label-small text-left">SAN</th>
-                                            <th class="label-small text-left">FSN Balance</th>
-                                            <th class="label-small text-left">Transactions</th>
-                                            <th class="label-small text-left">Assets Held</th>
-                                            <th class="label-small text-right">Staking Rewards</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr ng-repeat="address in addresses | orderBy : '-fsnBalance'">
-                                            <th scope="row"><img class="btn-circle w32 p-0" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=lol" alt=""></th>
-                                            <td class="text-fusion text-left"><a href="./#!/address/{{address.address}}">{{address.address}}</a>
-                                            </td>
-                                            <td class="text-fusion text-left">{{address.san}}</td>
-                                            <td class="text-fusion text-left">{{address.fsnBalance}}</td>
-                                            <td class="text-fusion text-left">{{address.transactions}}
-                                            </td>
-                                            <td class="text-fusion text-left">{{address.assets}}</td>
-                                            <td class="text-fusion text-right">
+                                        <table class="table table-responsive table-hover">
+                                            <thead class="bg-white">
+                                            <tr>
+                                                <th class="label-small text-left"> </th>
+                                                <th class="label-small text-left">Address</th>
+                                                <th class="label-small text-left">SAN</th>
+                                                <th class="label-small text-left">FSN Balance</th>
+                                                <th class="label-small text-left">Transactions</th>
+                                                <th class="label-small text-left">Assets Held</th>
+                                                <th class="label-small text-right">Staking Rewards</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="address in addresses | orderBy : '-fsnBalance'">
+                                                <th scope="row"><img class="btn-circle w32 p-0" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{address.address}}" alt=""></th>
+                                                <td class="text-fusion text-left"><a href="./#!/address/{{address.address}}">{{address.address}}</a>
+                                                </td>
+                                                <td class="text-fusion text-left">{{address.san}}</td>
+                                                <td class="text-fusion text-left">{{address.fsnBalance}}</td>
+                                                <td class="text-fusion text-left">{{address.transactions}}
+                                                </td>
+                                                <td class="text-fusion text-left">{{address.assets}}</td>
+                                                <td class="text-fusion text-right">
                                                 <span class="small-gray-text">
                                                 {{address.rewards}} <FSN></FSN>
                                                 </span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                 </div>
                             </div>
                         </div>

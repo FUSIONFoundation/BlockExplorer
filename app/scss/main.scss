@@ -63,9 +63,10 @@ hr {
 
 .btn-outline-white {
   border-radius: 3px;
-  border: solid 1px #bec5cf !important;
   background-color: white !important;
   color: #062144 !important;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16)!important;
+  border: 0 solid #fff!important;
 }
 
 .fsn-big {
@@ -120,6 +121,11 @@ hr {
   width: 32px !important;
 }
 
+.w40 {
+  height: 40px !important;
+  width: 40px !important;
+}
+
 .btn-circle {
   width: 30px !important;
   height: 30px !important;
@@ -128,6 +134,15 @@ hr {
   font-size: 12px !important;
   line-height: 1.428571429 !important;
   border-radius: 16px !important;
+}
+.btn-circle-40 {
+  width: 40px !important;
+  height: 40px !important;
+  text-align: center !important;
+  padding: 6px 0 !important;
+  font-size: 12px !important;
+  line-height: 1.428571429 !important;
+  border-radius: 20px !important;
 }
 
 .asset-round {
@@ -274,6 +289,6 @@ thead {
 
 .table th, .table td {
   padding: 0.625rem;
-  vertical-align: middle;
+  vertical-align: middle !important;
   border-top: 1px solid #e8e8e9;
 }

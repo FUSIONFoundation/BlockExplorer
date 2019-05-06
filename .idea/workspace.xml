@@ -4,15 +4,15 @@
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/address/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/address/address.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/addresses/addresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/addresses/addresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/block/block.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/main.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.min.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/templates/address/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/address/address.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/templates/addresses/addresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/addresses/addresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/templates/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/block/block.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,16 +24,16 @@
     <session id="-612098699">
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="6" />
+          <entry key="HTML" value="9" />
           <entry key="JavaScript" value="8" />
-          <entry key="SCSS" value="2" />
+          <entry key="SCSS" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="445" />
+          <entry key="HTML" value="619" />
           <entry key="JavaScript" value="1263" />
-          <entry key="SCSS" value="57" />
+          <entry key="SCSS" value="136" />
         </counts>
       </usages-collector>
     </session>
@@ -41,44 +41,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
+        <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="153" column="41" lean-forward="true" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="41" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/dashboard/controllers/controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="85" selection-start-line="85" selection-end-line="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/staking/controllers/controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="318">
+              <caret line="294" lean-forward="true" selection-start-line="294" selection-end-line="294" />
             </state>
           </provider>
         </entry>
@@ -86,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/addresses/addresses.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="662" column="78" selection-start-line="662" selection-start-column="78" selection-end-line="662" selection-end-column="78" />
+            <state relative-caret-position="428">
+              <caret line="647" column="67" selection-start-line="647" selection-start-column="67" selection-end-line="647" selection-end-column="67" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -130,27 +96,7 @@
                 <element signature="n#span#0;n#td#0;n#tr#18;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#tr#19;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#span#0;n#td#0;n#tr#19;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="122" column="11" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/staking/staking.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -174,7 +120,10 @@
       <find>RECENT BL</find>
       <find>&lt;table class=&quot;table table-responsive-sm</find>
       <find>fsnPriceData</find>
+      <find>w32</find>
       <find>sparkline</find>
+      <find>.btn-</find>
+      <find>btn-ou</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,8 +152,10 @@
         <option value="$PROJECT_DIR$/app/js/staking/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/app/js/dashboard/controllers/controller.js" />
-        <option value="$PROJECT_DIR$/app/scss/main.scss" />
         <option value="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" />
+        <option value="$PROJECT_DIR$/app/templates/address/address.html" />
+        <option value="$PROJECT_DIR$/app/templates/block/block.html" />
+        <option value="$PROJECT_DIR$/app/scss/main.scss" />
         <option value="$PROJECT_DIR$/app/templates/addresses/addresses.html" />
       </list>
     </option>
@@ -250,15 +201,7 @@
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="addresses" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
@@ -299,14 +242,7 @@
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="staking" type="462c0819:PsiDirectoryNode" />
+              <item name="block" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -358,13 +294,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29435000" />
+    <option name="totallyTimeSpent" value="31133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="981" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -380,7 +316,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32979977" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32979977" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -681,9 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/block/block.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/nav/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -702,16 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/staking/staking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,17 +662,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="122" column="11" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="153" column="41" lean-forward="true" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="41" />
+        <state relative-caret-position="-198">
+          <caret line="153" column="41" selection-start-line="153" selection-start-column="41" selection-end-line="153" selection-end-column="41" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
@@ -757,10 +673,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/staking/staking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/block/block.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="175" column="72" selection-start-line="175" selection-start-column="72" selection-end-line="175" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="294" lean-forward="true" selection-start-line="294" selection-end-line="294" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/addresses/addresses.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="662" column="78" selection-start-line="662" selection-start-column="78" selection-end-line="662" selection-end-column="78" />
+        <state relative-caret-position="428">
+          <caret line="647" column="67" selection-start-line="647" selection-start-column="67" selection-end-line="647" selection-end-column="67" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -803,6 +750,7 @@
             <element signature="n#span#0;n#td#0;n#tr#18;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#tr#19;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#span#0;n#td#0;n#tr#19;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>
