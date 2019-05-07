@@ -245,6 +245,10 @@ let addressController = function ($http, $scope, $stateParams) {
                     data.startTimeString = $scope.returnDateString(extraData.StartTime,'Start');
                     data.endTimeString = $scope.returnDateString(extraData.EndTime,'End');
                 }
+                if(data.type == 'Make Swap'){
+                    data.FromAsset = window.allAssets[extraData.FromAssetID].Symbol;
+                    data.ToAsset = window.allAssets[extraData.ToAssetID].Symbol;
+                }
                 transactionSave.push(data);
             }
             $scope.$eval(function () {

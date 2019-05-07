@@ -221,17 +221,28 @@
                                                 {{transaction.type}}
                                             </td>
                                             <td class="text-fusion">
-                                                <span class="badge badge-success" ng-class="{'badge-danger': transaction.inout == 'OUT'}">
-                                                    <span ng-show="transaction.inout == 'IN'">+</span>
-                                                    <span ng-show="transaction.inout == 'OUT'">-</span>
-                                                    {{transaction.amount}}
-                                                    <span class="badge-symbol">{{transaction.asset}}</span>
+                                                <span ng-if="transaction.type == 'Make Swap'">
+                                                    <span class="badge badge-light-blue">{{transaction.FromAsset}}</span> <i class="fa fa-exchange-alt"></i> <span class="badge badge-light-blue">{{transaction.FromAsset}}</span>
+                                                    <br>
                                                 </span>
-                                                <br>
-                                                <span ng-if="transaction.startTimeString" class="small-gray-text">
-                                                    <img src="assets/vendor/images/sendtl.svg">
-                                                        {{transaction.startTimeString}} - {{transaction.endTimeString}}
+                                                <span ng-if="
+                                                transaction.type == 'Send Asset' ||
+                                                transaction.type == 'Time Lock To Asset' ||
+                                                transaction.type == 'Time Lock To Time Lock' ||
+                                                transaction.type == 'Asset To Time Lock'">
+                                                    <span class="badge badge-success"
+                                                          ng-class="{'badge-danger': transaction.inout == 'OUT'}">
+                                                        <span ng-show="transaction.inout == 'IN'">+</span>
+                                                        <span ng-show="transaction.inout == 'OUT'">-</span>
+                                                        {{transaction.amount}}
+                                                        <span class="badge-symbol">{{transaction.asset}}</span>
                                                     </span>
+                                                        <br>
+                                                    <span ng-if="transaction.startTimeString" class="small-gray-text">
+                                                        <img src="assets/vendor/images/sendtl.svg">
+                                                            {{transaction.startTimeString}} - {{transaction.endTimeString}}
+                                                    </span>
+                                                </span>
                                             </td>
                                             <td class="text-fusion label-small text-right">
                                                 .00000002
