@@ -1,4 +1,6 @@
 import angular from 'angular';
+require('babel-polyfill');
+window.allAssets = [];
 import 'angular-ui-router';
 import 'angular-material';
 import configRouter from './config.js';

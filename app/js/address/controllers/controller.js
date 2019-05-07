@@ -113,6 +113,7 @@ let addressController = function ($http, $scope, $stateParams) {
         return parseInt(returnDecimals);
     };
 
+
     $scope.getAddress = function () {
         $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
             $scope.verifiedAssets = r.data;
@@ -189,21 +190,18 @@ let addressController = function ($http, $scope, $stateParams) {
         });
     };
 
-
     $scope.getTransactions = function (page) {
         let transactionSave = [];
         $http.get(`http://api.fusionnetwork.io/transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=notickets`).then(function (r) {
-            console.log(r.data);
-            if(r.data.length === 0 || r.data === []){
+            // console.log(r.data);
+            if (r.data.length === 0 || r.data === []) {
                 $scope.currentPage = 0;
                 $scope.getTransactions(0);
             }
             let transactions = r.data;
-            let inout = '';
             for (let transaction in transactions) {
                 let extraData = JSON.parse(transactions[transaction].data);
-                inout = $scope.returnInAndOut(transactions[transaction].fromAddress,transactions[transaction].commandExtra3,'');
-
+                let inout = $scope.returnInAndOut(address, transactions[transaction].commandExtra3, '');
                 let data = {
                     txid: transactions[transaction].hash,
                     timeStamp: format(transactions[transaction].timeStamp * 1000),
@@ -212,37 +210,55 @@ let addressController = function ($http, $scope, $stateParams) {
                     from: transactions[transaction].fromAddress,
                     type: window.utils.returnCommand(transactions[transaction].fusionCommand),
                     asset: '',
-                    inout : inout,
+                    inout: inout,
                     assetId: extraData.AssetID,
                     amount: 200
                 };
+                console.log(extraData);
+                let asset = '';
+                if(extraData.AssetID !== undefined){
+                    let amount = new BigNumber(extraData.Value.toString());
+                    let amountFinal = amount.div($scope.countDecimals(window.allAssets[extraData.AssetID].Decimals));
+                    data.asset = window.allAssets[extraData.AssetID].Symbol;
+                    data.amount = amountFinal.toString()
+                }
                 transactionSave.push(data);
             }
-            $scope.$eval(function(){
+            $scope.$eval(function () {
                 $scope.processTransactions = transactionSave;
-            })
-            console.log($scope.processTransactions)
+            });
+
         });
     };
 
-    $scope.returnInAndOut = function(input,address,type){
-        if(input == address){
+    $scope.returnInAndOut = function (input, address, type) {
+        if (input == address) {
             return 'IN';
         } else {
             return 'OUT';
         }
-        if(type){
-            if(type == 'TimeLockToAsset'){
-                if(input == web3.fsn.consts.FSNToken){
+        if (type) {
+            if (type == 'TimeLockToAsset') {
+                if (input == web3.fsn.consts.FSNToken) {
                     return 'IN';
                 } else {
                     return 'OUT';
                 }
             }
         }
+    };
+    $scope.getAssets = async function () {
+        try {
+            await web3.fsn.allAssets().then(function(r){
+                window.allAssets = r;
+                return $scope.getAddress();
+            })
+        } catch (err) {
+            console.log(err);
+        }
     }
 
-    $scope.getAddress();
+    $scope.getAssets();
 };
 
 export default addressController;

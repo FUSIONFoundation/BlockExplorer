@@ -13,6 +13,7 @@ import watchify     from 'watchify';
 import browserify   from 'browserify';
 import babelify     from 'babelify';
 import debowerify   from 'debowerify';
+
 // import ngAnnotate   from 'browserify-ngannotate';
 
 let isProd = false;

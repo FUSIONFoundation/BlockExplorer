@@ -6,7 +6,8 @@
                 <div class="col-md-10 col-sm-12">
                     <h4 class="font-weight-bold text-fusion mb-4">
                         Address
-                        <img class="btn-circle-40 w40 p-0 ml-2" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{address}}" alt="">
+                        <img class="btn-circle-40 w40 p-0 ml-2"
+                             src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{address}}" alt="">
                         <span class="badge badge-light-blue ml-2 font-weight-normal">{{address}}</span>
                     </h4>
                 </div>
@@ -199,14 +200,14 @@
                                             <th class="label-small">Transaction Hash</th>
                                             <th class="label-small">Block</th>
                                             <th class="label-small text-left">Age</th>
-                                            <th class="label-small text-center"> </th>
                                             <th class="label-small text-left">Type</th>
                                             <th class="label-small">Asset(s)</th>
                                             <th class="label-small text-right">Fees</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr ng-repeat="transaction in processTransactions | filter: transactionSearch | orderBy : '-block'">
+                                        <tr class="h68"
+                                            ng-repeat="transaction in processTransactions | filter: transactionSearch | orderBy : '-block'">
                                             <td class="text-fusion">
                                                 <a href="./#!/transaction/{{transaction.txid}}">{{transaction.txid}}</a>
                                             </td>
@@ -216,16 +217,16 @@
                                             <td class="text-fusion text-left">
                                                 {{transaction.timeStamp}}
                                             </td>
-                                            <td class="text-fusion text-center">
-                                                <span class="badge badge-success"
-                                                      ng-class="{'badge-danger': transaction.inout == 'OUT'}"
-                                                >{{transaction.inout}}</span>
-                                            </td>
                                             <td class="text-fusion text-left">
                                                 {{transaction.type}}
                                             </td>
                                             <td class="text-fusion">
-                                                {{transaction.asset}}
+                                                <span class="badge badge-success" ng-class="{'badge-danger': transaction.inout == 'OUT'}">
+                                                    <span ng-show="transaction.inout == 'IN'">+</span>
+                                                    <span ng-show="transaction.inout == 'OUT'">-</span>
+                                                    {{transaction.amount}}
+                                                    <span class="badge-symbol">{{transaction.asset}}</span>
+                                                </span>
                                             </td>
                                             <td class="text-fusion label-small text-right">
                                                 .00000002
