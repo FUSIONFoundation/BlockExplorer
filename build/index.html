@@ -15,7 +15,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/main.min.css?rev=fcf835509eeeff613701182c043307b2">
+    <link rel="stylesheet" href="css/main.min.css?rev=269ff4009a3ac4a5ac0a74ef3b3fd557">
     <link rel="stylesheet" href="css/libs.min.css?rev=51c278ce3d0f02296416c2e1caf7addf">
 
     <!-- Main font -->
@@ -60,7 +60,7 @@
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-1">
     <!-- Layout inner -->
-    <div class="layout-inner">
+    <div class="layout-inner" ng-controller="navController">
         <!-- Layout navbar -->
         <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x"
              id="layout-navbar">
@@ -68,10 +68,26 @@
                 <a href="index.html" class="navbar-brand">
                     <img src="assets/vendor/images/fsn-logo.svg" alt="">
                 </a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <div class="dropdown show">
+                            <a class="btn btn-outline-white btn-top-nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="assets/vendor/images/group-2-copy-4.svg"/>
+                                <span class="ml-2 vertical-align-middle">Block Explorer</span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </nav>
         <div class="container">
-            <ul class="nav nav-tabs tabs-alt pt-2" ng-controller="navController">
+            <ul class="nav nav-tabs tabs-alt pt-2">
                 <li class="nav-item">
                     <a class="nav-link" ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">Dashboard</a>
                 </li>
