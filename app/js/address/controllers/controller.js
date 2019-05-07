@@ -194,18 +194,14 @@ let addressController = function ($http, $scope, $stateParams) {
         let transactionSave = [];
         $http.get(`http://api.fusionnetwork.io/transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=notickets`).then(function (r) {
             console.log(r.data);
-            if(r.data.length == 0){
-                $scope.endPage = $scope.currentPage-2;
-                $scope.getTransactions($scope.currentPage);
+            if(r.data.length === 0 || r.data === []){
+                $scope.currentPage = 0;
+                $scope.getTransactions(0);
             }
             let transactions = r.data;
             let inout = '';
             for (let transaction in transactions) {
                 let extraData = JSON.parse(transactions[transaction].data);
-
-                    console.log(transactions[transaction]);
-                    console.log(extraData);
-
                 inout = $scope.returnInAndOut(transactions[transaction].fromAddress,transactions[transaction].commandExtra3,'');
 
                 let data = {
