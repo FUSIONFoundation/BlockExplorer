@@ -113,6 +113,24 @@ let addressController = function ($http, $scope, $stateParams) {
         return parseInt(returnDecimals);
     };
 
+    $scope.returnDateString = function (posixtime, position) {
+        let time = new Date(parseInt(posixtime) * 1000);
+        if (posixtime == 18446744073709552000 && position == "End") {
+            return "Forever";
+        }
+        if (position == "Start") {
+            if (posixtime == 0) {
+                return "Now";
+            }
+            // if(posixtime < time && position == 'Start'){return 'Now';}
+        }
+        let tMonth = time.getUTCMonth();
+        let tDay = time.getUTCDate();
+        let tYear = time.getUTCFullYear();
+
+        return window.months[tMonth] + " " + tDay + ", " + tYear;
+    };
+
 
     $scope.getAddress = function () {
         $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
@@ -214,6 +232,7 @@ let addressController = function ($http, $scope, $stateParams) {
                     assetId: extraData.AssetID,
                     amount: 200
                 };
+                console.log(transactions[transaction])
                 console.log(extraData);
                 let asset = '';
                 if(extraData.AssetID !== undefined){
@@ -221,6 +240,10 @@ let addressController = function ($http, $scope, $stateParams) {
                     let amountFinal = amount.div($scope.countDecimals(window.allAssets[extraData.AssetID].Decimals));
                     data.asset = window.allAssets[extraData.AssetID].Symbol;
                     data.amount = amountFinal.toString()
+                }
+                if(extraData.StartTime && extraData.EndTime){
+                    data.startTimeString = $scope.returnDateString(extraData.StartTime,'Start');
+                    data.endTimeString = $scope.returnDateString(extraData.EndTime,'End');
                 }
                 transactionSave.push(data);
             }

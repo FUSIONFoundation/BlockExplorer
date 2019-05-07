@@ -227,6 +227,11 @@
                                                     {{transaction.amount}}
                                                     <span class="badge-symbol">{{transaction.asset}}</span>
                                                 </span>
+                                                <br>
+                                                <span ng-if="transaction.startTimeString" class="small-gray-text">
+                                                    <img src="assets/vendor/images/sendtl.svg">
+                                                        {{transaction.startTimeString}} - {{transaction.endTimeString}}
+                                                    </span>
                                             </td>
                                             <td class="text-fusion label-small text-right">
                                                 .00000002
