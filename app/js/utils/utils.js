@@ -33,6 +33,6 @@ exports.returnCommand = function (command) {
         return 'Time Lock To Time Lock';
     }
     if(command == 'AssetToTimeLock'){
-        return 'Asset To Time Lock'
+        return 'Asset To Time Lock';
     }
 };
