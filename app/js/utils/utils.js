@@ -32,4 +32,7 @@ exports.returnCommand = function (command) {
     if (command == 'TimeLockToTimeLock'){
         return 'Time Lock To Time Lock';
     }
+    if(command == 'AssetToTimeLock'){
+        return 'Asset To Time Lock'
+    }
 };
