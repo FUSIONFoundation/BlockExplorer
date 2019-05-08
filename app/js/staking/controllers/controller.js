@@ -2,6 +2,9 @@ let blockController = function ($http, $scope) {
 
     $scope.realTimeStatus = false;
     $scope.walletAddressSaved = localStorage.getItem('stakingAddress');
+    if($scope.walletAddressSaved == null){
+        $scope.walletAddressSaved = '';
+    };
     $scope.walletAddress = $scope.walletAddressSaved;
     $scope.lastUpdated = moment(new Date().getTime()).format('LTS');
 
