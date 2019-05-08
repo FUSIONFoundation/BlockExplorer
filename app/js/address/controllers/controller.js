@@ -233,9 +233,7 @@ let addressController = function ($http, $scope, $stateParams) {
                     inout: inout,
                     assetId: extraData.AssetID,
                     amount: 200
-                };
-                console.log(transactions[transaction])
-                console.log(extraData);
+                };       
                 let asset = '';
                 if(extraData.AssetID !== undefined){
                     let amount = new BigNumber(extraData.Value.toString());
@@ -251,7 +249,11 @@ let addressController = function ($http, $scope, $stateParams) {
                     data.FromAsset = window.allAssets[extraData.FromAssetID].Symbol;
                     data.ToAsset = window.allAssets[extraData.ToAssetID].Symbol;
                 }
+                if(data.type == 'Take Swap'){
+                    
+                }
                 transactionSave.push(data);
+           
             }
             $scope.$eval(function () {
                 $scope.processTransactions = transactionSave;
