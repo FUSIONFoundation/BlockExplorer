@@ -16,7 +16,7 @@ import debowerify   from 'debowerify';
 
 // import ngAnnotate   from 'browserify-ngannotate';
 
-let isProd = false;
+let isProd = true;
 
 let plugins = gulpLoadPlugins();
 
@@ -91,13 +91,17 @@ gulp.task('minifyJS', () => {
     .src(PATHS.js)
     .pipe(plugins.concat(DIRS.js.app))
     .pipe(plugins.babel())
-    .pipe(plugins.uglify())
+  //   .pipe(plugins.uglify()).on('error', function(e){
+  //     console.log(e);
+  //  })
     .pipe(gulp.dest(DIRS.dest))
     .on('end', () => {
       gulp
         .src(JS_DEPENDENCIES)
         .pipe(plugins.concat(DIRS.js.libs))
-        .pipe(plugins.uglify())
+      //   .pipe(plugins.uglify()).on('error', function(e){
+      //     console.log(e);
+      //  })
         .pipe(gulp.dest(DIRS.dest));
     });
 });
@@ -105,6 +109,7 @@ gulp.task('minifyJS', () => {
 // Start the development sever task.
 gulp.task('server', () => {
   browserSync({
+    ghostMode: false,
     notify: false,
     server: DIRS.dest,
     tunnel: 'angularseedes6',
@@ -196,9 +201,11 @@ function buildScript(file) {
       .pipe(source(file))
       .pipe(gulpif(shouldCreateSourcemap, buffer()))
       .pipe(gulpif(shouldCreateSourcemap, sourcemaps.init({ loadMaps: true })))
-      .pipe(gulpif(isProd, streamify(plugins.uglify({
-        compress: { drop_console: true } // eslint-disable-line camelcase
-      }))))
+    //   .pipe(gulpif(isProd, streamify(plugins.uglify({
+    //     compress: { drop_console: true } // eslint-disable-line camelcase
+    //   })))).on('error', function(e){
+    //     console.log(e);
+    //  })
       .pipe(gulpif(shouldCreateSourcemap, sourcemaps.write(sourceMapLocation)))
       .pipe(gulp.dest(DIRS.dest))
       .pipe(browserSync.stream());

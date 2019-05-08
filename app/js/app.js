@@ -29,6 +29,7 @@ let provider;
 provider = new Web3.providers.WebsocketProvider("wss://gatewaypsn2w.fusionnetwork.io:10001");
 let web3 = new Web3(provider);
 web3 = web3FusionExtend.extend(web3);
+window.web3 = web3;
 function keepWeb3Alive(){
     provider.on("connect", function () {
         window.web3._isConnected = true;
@@ -40,16 +41,13 @@ function keepWeb3Alive(){
         web3._isConnected = false;
         // console.log("web3 connection error ", err);
         // console.log("will try to reconnect");
-        setTimeout(() => {
-            keepWeb3Alive();
-        }, 2);
+        setTimeout(keepWeb3Alive(),2);
     });
     web3 = new Web3(provider);
     web3 = window.web3FusionExtend.extend(web3);
     window.web3 = web3;
 }
 keepWeb3Alive();
-window.web3 = web3;
 let utils = require('./utils/utils.js');
 window.utils = utils;
 
