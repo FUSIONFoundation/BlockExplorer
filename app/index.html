@@ -77,7 +77,21 @@
                             </a>
                         </div>
                     </li>
+                    <li class="nav-item hidden-xs">
+                           
+                        </li>
                 </ul>
+                <div class="input-group input-group-main w-50" ng-controller="navController">
+                        <input type="text" class="form-control"
+                               ng-model="globalSearch"
+                               placeholder="Search by Address / Txhash / Block">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" ng-click="search()">
+                                <i class="fa fa-search d-inline-block d-sm-none"></i><span
+                                    class="d-none d-sm-inline-block">Search</span>
+                            </button>
+                        </div>
+                </div>  
             </div>
         </nav>
         <div class="container">

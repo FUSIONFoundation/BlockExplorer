@@ -15,7 +15,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/main.min.css?rev=269ff4009a3ac4a5ac0a74ef3b3fd557">
+    <link rel="stylesheet" href="css/main.min.css?rev=b8c480911c48008a7a35c5e31ff49f1b">
     <link rel="stylesheet" href="css/libs.min.css?rev=51c278ce3d0f02296416c2e1caf7addf">
 
     <!-- Main font -->
@@ -77,7 +77,21 @@
                             </a>
                         </div>
                     </li>
+                    <li class="nav-item hidden-xs">
+                           
+                        </li>
                 </ul>
+                <div class="input-group input-group-main w-50" ng-controller="navController">
+                        <input type="text" class="form-control"
+                               ng-model="globalSearch"
+                               placeholder="Search by Address / Txhash / Block">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" ng-click="search()">
+                                <i class="fa fa-search d-inline-block d-sm-none"></i><span
+                                    class="d-none d-sm-inline-block">Search</span>
+                            </button>
+                        </div>
+                </div>  
             </div>
         </nav>
         <div class="container">
@@ -169,7 +183,7 @@
 </div>
 <script src="assets/js/main.js"></script>
 
-<script src="app.js?rev=9d397e4c70d4c925215eb87bd72bfe87"></script>
+<script src="app.js?rev=dee54b999851a5978d227051308e89e6"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/vendor/libs/popper/popper.js"></script>

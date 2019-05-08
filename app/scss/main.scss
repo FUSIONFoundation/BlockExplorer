@@ -342,3 +342,9 @@ thead {
 .vertical-align-middle{
   vertical-align:middle !important;
 }
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
