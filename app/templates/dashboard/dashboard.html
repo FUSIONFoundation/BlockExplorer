@@ -23,15 +23,16 @@
                     <div class="mb-4">
                         <div class="card gradient-half-primary-body-v1">
                             <div class="card-body px-sm-4 pb-sm-4 ">
-                                <form action="/search" method="GET" autocomplete="off" spellcheck="false">
+                                <form>
                                     <div class="d-sm-flex align-items-baseline">
                                         <h1 class="h5 text-fusion">FUSION Blockchain Explorer</h1>
                                     </div>
                                     <div class="input-group input-group-main">
                                         <input type="text" class="form-control"
+                                               ng-model="globalSearch"
                                                placeholder="Search by Address / Txhash / Block">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="submit">
+                                            <button class="btn btn-primary" ng-click="search()">
                                                 <i class="fa fa-search d-inline-block d-sm-none"></i><span
                                                     class="d-none d-sm-inline-block">Search</span>
                                             </button>
