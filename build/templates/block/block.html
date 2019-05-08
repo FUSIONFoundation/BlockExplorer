@@ -10,8 +10,9 @@
                     </h4>
                 </div>
                 <div class="col-md-6 col-sm-12 text-md-right layout-align-sm-center-center">
-                    <a href="./#!/block/{{blockNumber-1}}">
-                        <button class="btn btn-outline-white mb-2"><i class="fa fa-angle-left pr-2"></i> {{blockNumber-1}}
+                    <a href="./#!/block/{{blockNumber-1}}" ng-hide="blockNumber == 0">
+                        <button class="btn btn-outline-white mb-2">
+                            <i class="fa fa-angle-left pr-2"></i> {{blockNumber-1}}
                         </button>
                     </a>
                     <a href="./#!/block/{{blockNumber+1}}" ng-hide="blockNumber == globalData.maxBlock">

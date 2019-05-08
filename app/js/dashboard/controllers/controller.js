@@ -99,6 +99,7 @@ let dashboardController = function ($http, $scope, $state) {
         $scope.getLatestTransactions();
         $scope.getGlobalData();
         $scope.updateTime();
+        $scope.getTotalTickets();
     }, 15000);
 };
 
