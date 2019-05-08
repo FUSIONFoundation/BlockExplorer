@@ -11,13 +11,39 @@ let assetController = function ($http, $scope, $stateParams) {
         return parseInt(returnDecimals);
     };
 
-    $scope.getVerifiedAssets = function (){
+    $scope.getVerifiedAssets = function () {
         $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
             $scope.verifiedAssets = r.data;
         });
     };
 
     $scope.getAsset = function () {
+        if (assetId === '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff') {
+            let verifiedImage = 'EFSN_LIGHT.svg';
+            let hasImage = true;
+            let verifiedAsset = true;
+            let totalSupply = new window.BigNumber('81920000000000000000000000');
+            let totalSupplyFormatted = totalSupply.div('1000000000000000000');
+            let data = {
+                assetId: assetId,
+                assetName: 'Fusion',
+                assetSymbol: 'FSN',
+                assetType: 'Issued on FUSION',
+                decimals: 18,
+                totalSupply: totalSupplyFormatted.toString(),
+                issuer: 'Coinbase',
+                issueHeight: 'Genesis Block',
+                changeableSupply: false,
+                hasImage: hasImage,
+                verifiedImage: verifiedImage,
+                verified: verifiedAsset
+            };
+            console.log(data);
+            $scope.$eval(function () {
+                $scope.assetData = data;
+            });
+            return;
+        }
         $http.get(`https://api.fusionnetwork.io/assets/${assetId}`).then(function (r) {
             let verifiedImage = '';
             let hasImage = false;
@@ -44,9 +70,9 @@ let assetController = function ($http, $scope, $stateParams) {
                 issuer: asset.fromAddress,
                 issueHeight: asset.height,
                 changeableSupply: extraAssetData.CanChange,
-                hasImage : hasImage,
-                verifiedImage : verifiedImage,
-                verified : verifiedAsset,
+                hasImage: hasImage,
+                verifiedImage: verifiedImage,
+                verified: verifiedAsset,
             };
             console.log(data);
             $scope.$eval(function () {
