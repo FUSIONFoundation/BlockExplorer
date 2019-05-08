@@ -27,6 +27,15 @@ let dashboardController = function ($http, $scope, $state) {
         });
     };
 
+    $scope.getTotalTickets = async function (){
+        await web3.fsn.totalNumberOfTickets().then(function(totalTickets){
+            console.log(totalTickets);
+            $scope.$apply(function(){
+                $scope.totalTickets = totalTickets;
+            });
+        })
+    }
+
     $scope.getLatestTransactions = function () {
         let recentTransactions = [];
         $http.get('https://api.fusionnetwork.io/transactions/all?sort=desc&size=6').then(function (r) {
@@ -83,6 +92,7 @@ let dashboardController = function ($http, $scope, $state) {
     $scope.getLatestBlocks();
     $scope.getLatestTransactions();
     $scope.getGlobalData();
+    $scope.getTotalTickets();
 
     setInterval(function () {
         $scope.getLatestBlocks();

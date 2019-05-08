@@ -16,7 +16,7 @@ import debowerify   from 'debowerify';
 
 // import ngAnnotate   from 'browserify-ngannotate';
 
-let isProd = true;
+let isProd = false;
 
 let plugins = gulpLoadPlugins();
 
