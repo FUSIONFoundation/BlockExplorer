@@ -13,26 +13,6 @@ let assetsController = function ($http, $scope) {
     $scope.shownRows = 10;
 
 
-    $scope.$watch('allAssets', function () {
-        if (typeof $scope.allAssets === 'undefined') {
-            return;
-        }
-        if ($scope.currentPage == 0) {
-            $scope.$eval(function () {
-                $scope.shownRows = $scope.currentPage + 1 * $scope.pageSize;
-            });
-        }
-        let shownRows = 0;
-        if (($scope.currentPage + 1) * $scope.pageSize > $scope.allAssets.length) {
-            shownRows = $scope.allAssets.length;
-        } else {
-            shownRows = ($scope.currentPage + 1) * $scope.pageSize;
-        }
-        $scope.$eval(function () {
-            $scope.shownRows = shownRows;
-        });
-    });
-
     $scope.nextPage = function () {
         if ($scope.currentPage !== $scope.allAssets - 1) {
             $scope.$eval(function () {
@@ -161,20 +141,17 @@ let assetsController = function ($http, $scope) {
                                     verifiedImage: verifiedImage
                                 };
                                 saveAssets.push(data);
+                                $scope.endPage = Math.ceil(saveAssets.length / $scope.pageSize);
                             }
                         });
                     }
-                    $scope.allAssets = saveAssets;
                 });
-                $scope.endPage = Math.ceil($scope.allAssets.length / $scope.pageSize);
-                $scope.allAssets.length < 10 ? $scope.shownRows = $scope.allAssets.length : $scope.shownRows = 10;
             }
+            $scope.allAssets = saveAssets;
         });
     };
 
     $scope.getAssets();
-    console.log($scope.allAssets);
-
 };
 
 export default assetsController;
