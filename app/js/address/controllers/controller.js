@@ -8,6 +8,7 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.assetsTab = true;
     $scope.allTransactions = {};
     $scope.processTransactions = [];
+    $scope.loading = true;
 
 
     $scope.currentPage = 0;
@@ -209,6 +210,7 @@ let addressController = function ($http, $scope, $stateParams) {
     };
 
     $scope.getTransactions = function (page) {
+        $scope.loading = true;
         let transactionSave = [];
         $http.get(`http://api.fusionnetwork.io/transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=notickets`).then(function (r) {
             // console.log(r.data);
@@ -254,6 +256,7 @@ let addressController = function ($http, $scope, $stateParams) {
             $scope.$eval(function () {
                 $scope.processTransactions = transactionSave;
             });
+            $scope.loading = false;
 
         });
     };
