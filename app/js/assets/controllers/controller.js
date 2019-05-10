@@ -5,6 +5,7 @@ let assetsController = function ($http, $scope) {
     $scope.verifiedAssets = {};
     $scope.assetsTab = true;
     $scope.allAssets = [];
+    $scope.loading = true;
 
 
     $scope.currentPage = 0;
@@ -87,6 +88,7 @@ let assetsController = function ($http, $scope) {
     };
 
     $scope.getAssets = function () {
+        $scope.loading = true;
         let saveAssets = [];
         let allAssets = 0;
         $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
@@ -148,6 +150,7 @@ let assetsController = function ($http, $scope) {
                 });
             }
             $scope.allAssets = saveAssets;
+            $scope.loading = false;
         });
     };
 

@@ -22,17 +22,11 @@
                                                 <div class="row align-items-center mt-1">
                                                     <div class="col-md-12 font-weight-sm-normal mb-1 mb-md-0 label-small">
                                                         <h4 class="font-weight-bold text-fusion mb-1">
-                                                             <span ng-show="!assetData.hasImage">
-                                                       <span ng-if="!assetData.hasImage"
-                                                             class="btn btn-blue btn-circle w32 asset-round mr-2">
-                                                    {{assetData.assetSymbol}}
-                                                       </span>
-                                                </span>
-                                                            <span ng-if="!assetData.hasImage"
+                                                            <span ng-show="!assetData.hasImage"
                                                                   class="btn btn-blue btn-circle w32 asset-round mr-2">
                                                     {{assetData.assetSymbol}}
-                                                </span>
-                                                            <img ng-if="assetData.hasImage" class="mr-2"
+                                                            </span>
+                                                            <img ng-show="assetData.hasImage" class="mr-2"
                                                                  ng-src="assets/vendor/images/{{assetData.verifiedImage}}"/>
 
 

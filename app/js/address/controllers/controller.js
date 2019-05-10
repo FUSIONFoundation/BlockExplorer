@@ -177,7 +177,7 @@ let addressController = function ($http, $scope, $stateParams) {
                             verified: true,
                             hasImage: true,
                             verifiedImage: 'EFSN_LIGHT.svg'
-                        };
+                        };0x135bd526d33b757457ad4d6389ece1bab5bb2360
                         allBalances.push(data);
                         return;
                     } else {
@@ -213,7 +213,6 @@ let addressController = function ($http, $scope, $stateParams) {
         $scope.loading = true;
         let transactionSave = [];
         $http.get(`http://api.fusionnetwork.io/transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=notickets`).then(function (r) {
-            // console.log(r.data);
             if (r.data.length === 0 || r.data === []) {
                 $scope.currentPage = 0;
                 $scope.getTransactions(0);
@@ -259,9 +258,51 @@ let addressController = function ($http, $scope, $stateParams) {
                 $scope.processTransactions = transactionSave;
             });
             $scope.loading = false;
+            $scope.getTimeLockBalances();
 
         });
     };
+
+    $scope.getTimeLockBalances = async function (){
+        $scope.allTimeLockBalances = [];
+        await web3.fsn.getAllTimeLockBalances(address).then(function(r){
+            console.log(r);
+            let assets = r;
+            for (let asset in assets){
+                console.log(asset); // Asset Name
+                for (let i = 0; i < assets[asset]["Items"].length; i++) {
+                    let startTimePosix = $scope.returnDateString(assets[asset]["Items"][i]["StartTime"],'Start');
+                    let endTimePosix = $scope.returnDateString(assets[asset]["Items"][i]["EndTime"],'End');
+                    let amount = new BigNumber(assets[asset]["Items"][i]["Value"]);
+                    let amountFinal = amount.div($scope.countDecimals(window.allAssets[asset].Decimals))
+                    let verifiedImage = '';
+                    let hasImage = false;
+                    let verifiedAsset = false;
+                    for (let a in $scope.verifiedAssets) {
+                        if (asset == $scope.verifiedAssets[a].assetID) {
+                            // Set matched image name
+                            verifiedImage = $scope.verifiedAssets[a].image;
+                            hasImage = true;
+                            verifiedAsset = true;
+                        }
+                    }
+                    let data = {
+                        asset_id : asset,
+                        asset_name : window.allAssets[asset].Name,
+                        asset_symbol :  window.allAssets[asset].Symbol,
+                        startTime : startTimePosix,
+                        endTime : endTimePosix,
+                        amount : amountFinal.toString(),
+                        verified: verifiedAsset,
+                        hasImage: hasImage,
+                        verifiedImage: verifiedImage
+                    }
+                    $scope.allTimeLockBalances.push(data);
+                }
+            }
+        });
+        console.log($scope.allTimeLockBalances);
+    }
 
     $scope.returnInAndOut = function (input, address, type) {
         if (input == address) {
