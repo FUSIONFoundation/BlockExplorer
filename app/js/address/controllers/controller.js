@@ -286,7 +286,12 @@ let addressController = function ($http, $scope, $stateParams) {
                             verifiedAsset = true;
                         }
                     }
-                    let data = {
+                    if (asset == '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff') {
+                        verifiedImage = 'EFSN_LIGHT.svg';
+                        hasImage = true;
+                        verifiedAsset = true;
+                    }
+                        let data = {
                         asset_id : asset,
                         asset_name : window.allAssets[asset].Name,
                         asset_symbol :  window.allAssets[asset].Symbol,

@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/address/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/address/controllers/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/assets/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/assets/controllers/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/asset/asset.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/asset/asset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/assets/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/assets/assets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/address/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/address/address.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/templates/asset/asset.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/asset/asset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/templates/assets/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/assets/assets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/templates/address/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/address/address.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +33,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="825" />
+          <entry key="HTML" value="1021" />
           <entry key="JSHint" value="4" />
           <entry key="JSON" value="5" />
           <entry key="JavaScript" value="2877" />
@@ -48,7 +42,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="7" />
+          <entry key="HTML" value="9" />
           <entry key="JSHint" value="1" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="10" />
@@ -59,11 +53,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="277" selection-start-line="277" selection-end-line="277" />
+            <state relative-caret-position="432">
+              <caret line="299" column="46" selection-start-line="299" selection-start-column="27" selection-end-line="299" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/assets/assets.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="71" column="41" lean-forward="true" selection-start-line="71" selection-start-column="41" selection-end-line="83" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="860" column="68" selection-start-line="860" selection-start-column="68" selection-end-line="860" selection-end-column="68" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,6 +109,7 @@
       <find>btn-ou</find>
       <find>babel-preset</find>
       <find>endPage</find>
+      <find>verifiedImage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,7 +139,6 @@
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/app/js/utils/utils.js" />
-        <option value="$PROJECT_DIR$/app/templates/address/address.html" />
         <option value="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" />
         <option value="$PROJECT_DIR$/app/js/staking/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/templates/addresses/addresses.html" />
@@ -130,6 +147,7 @@
         <option value="$PROJECT_DIR$/app/templates/assets/assets.html" />
         <option value="$PROJECT_DIR$/app/templates/asset/asset.html" />
         <option value="$PROJECT_DIR$/app/js/address/controllers/controller.js" />
+        <option value="$PROJECT_DIR$/app/templates/address/address.html" />
       </list>
     </option>
   </component>
@@ -339,15 +357,16 @@
       <workItem from="1557258771585" duration="7695000" />
       <workItem from="1557307724243" duration="693000" />
       <workItem from="1557345430392" duration="2438000" />
-      <workItem from="1557499225211" duration="1183000" />
+      <workItem from="1557499225211" duration="1978000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51494000" />
+    <option name="totallyTimeSpent" value="52289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="981" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -513,13 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="503" column="91" selection-start-line="503" selection-start-column="91" selection-end-line="503" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -583,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/assets/assets.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/asset/asset.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -599,8 +604,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="277" selection-start-line="277" selection-end-line="277" />
+        <state relative-caret-position="432">
+          <caret line="299" column="46" selection-start-line="299" selection-start-column="27" selection-end-line="299" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/assets/assets.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="71" column="41" lean-forward="true" selection-start-line="71" selection-start-column="41" selection-end-line="83" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="860" column="68" selection-start-line="860" selection-start-column="68" selection-end-line="860" selection-end-column="68" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
