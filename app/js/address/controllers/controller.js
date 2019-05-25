@@ -266,8 +266,8 @@ let addressController = function ($http, $scope, $stateParams) {
 
     $scope.getTimeLockBalances = async function (){
         $scope.allTimeLockBalances = [];
-        await web3.fsn.getAllTimeLockBalances(address).then(function(r){
-            let assets = r;
+        $http.get(`${window.getServer()}balances/${address}`).then(function (r) {
+            let assets = JSON.parse(r.data[0].balanceInfo).timeLockBalances;
             for (let asset in assets){
                 for (let i = 0; i < assets[asset]["Items"].length; i++) {
                     let startTimePosix = $scope.returnDateString(assets[asset]["Items"][i]["StartTime"],'Start');
