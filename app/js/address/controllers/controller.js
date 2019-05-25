@@ -213,7 +213,7 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.getTransactions = function (page) {
         $scope.loading = true;
         let transactionSave = [];
-        $http.get(`http://api.fusionnetwork.io/transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=notickets`).then(function (r) {
+        $http.get(`${window.getServer()}transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=notickets`).then(function (r) {
             if (r.data.length === 0 || r.data === []) {
                 $scope.currentPage = 0;
                 $scope.getTransactions(0);
