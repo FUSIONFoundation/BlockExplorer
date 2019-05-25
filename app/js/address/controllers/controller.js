@@ -9,6 +9,7 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.allTransactions = {};
     $scope.processTransactions = [];
     $scope.loading = true;
+    $scope.allTimeLockBalances = [];
 
 
     $scope.currentPage = 0;
@@ -104,7 +105,7 @@ let addressController = function ($http, $scope, $stateParams) {
             });
         }
     };
-
+ $scope.allTimeLockBalances = [];
 
     $scope.countDecimals = function (decimals) {
         let returnDecimals = '1';
@@ -134,10 +135,10 @@ let addressController = function ($http, $scope, $stateParams) {
 
 
     $scope.getAddress = function () {
-        $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
+        $http.get(`${window.getServer()}assets/verified`).then(function (r) {
             $scope.verifiedAssets = r.data;
         });
-        $http.get(`https://api.fusionnetwork.io/search/${address}`).then(function (r) {
+        $http.get(`${window.getServer()}search/${address}`).then(function (r) {
             let info = r.data.address[0];
             let balanceInfo = JSON.parse(r.data.address[0].balanceInfo);
             let fsnBalance = new BigNumber(info.fsnBalance.toString());
@@ -165,7 +166,7 @@ let addressController = function ($http, $scope, $stateParams) {
                         verifiedAsset = true;
                     }
                 }
-                $http.get(`https://api.fusionnetwork.io/assets/${asset}`).then(function (r) {
+                $http.get(`${window.getServer()}assets/${asset}`).then(function (r) {
                     if (asset == '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff') {
                         let data = {
                             assetName: 'FUSION (FSN)',
@@ -266,10 +267,8 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.getTimeLockBalances = async function (){
         $scope.allTimeLockBalances = [];
         await web3.fsn.getAllTimeLockBalances(address).then(function(r){
-            console.log(r);
             let assets = r;
             for (let asset in assets){
-                console.log(asset); // Asset Name
                 for (let i = 0; i < assets[asset]["Items"].length; i++) {
                     let startTimePosix = $scope.returnDateString(assets[asset]["Items"][i]["StartTime"],'Start');
                     let endTimePosix = $scope.returnDateString(assets[asset]["Items"][i]["EndTime"],'End');
@@ -306,7 +305,6 @@ let addressController = function ($http, $scope, $stateParams) {
                 }
             }
         });
-        console.log($scope.allTimeLockBalances);
     }
 
     $scope.returnInAndOut = function (input, address, type) {

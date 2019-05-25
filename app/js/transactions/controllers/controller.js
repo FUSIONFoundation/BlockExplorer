@@ -88,7 +88,7 @@ let transactionsController = function ($http, $scope) {
         $scope.loading = true;
         let transactions = {};
         let displayTransactions = [];
-        $http.get(`https://api.fusionnetwork.io/transactions/all?sort=desc&page=${page}&size=20&field=height&returnTickets=onlytickets`).then(function (r) {
+        $http.get(`${window.getServer()}transactions/all?sort=desc&page=${page}&size=20&field=height&returnTickets=onlytickets`).then(function (r) {
             transactions = r.data;
             console.log(transactions);
             for (let transaction in transactions) {
@@ -113,7 +113,7 @@ let transactionsController = function ($http, $scope) {
         });
     }
 
-    $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
+    $http.get(`${window.getServer()}fsnprice`).then(function (r) {
         $scope.totalTransactions = r.data.totalTransactions;
         $scope.endPage = Math.ceil($scope.totalTransactions / $scope.pageSize);
     });

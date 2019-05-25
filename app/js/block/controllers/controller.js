@@ -7,7 +7,7 @@ let blockController = function ($http, $scope, $stateParams) {
     $scope.transactionsInBlock = [];
 
     $scope.getBlock = function () {
-        $http.get(`https://api.fusionnetwork.io/blocks/${block}`).then(function (r) {
+        $http.get(`${window.getServer()}blocks/${block}`).then(function (r) {
             let data = JSON.parse(r.data[0].block);
             $scope.getAllTransactions(data.transactions);
             data.timestamp = moment(new Date(data.timestamp * 1000)).format('MMMM Do YYYY, h:mm:ss A');
@@ -20,7 +20,7 @@ let blockController = function ($http, $scope, $stateParams) {
     $scope.getAllTransactions = function (transactions){
         console.log(transactions);
         for(let transaction in transactions) {
-            $http.get(`https://api.fusionnetwork.io/transactions/${transactions[transaction]}`).then(function (r) {
+            $http.get(`${window.getServer()}transactions/${transactions[transaction]}`).then(function (r) {
                 let transactionSave = {};
                 let data = r.data[0];
                 let extraData = JSON.parse(data.data);
@@ -104,7 +104,7 @@ let blockController = function ($http, $scope, $stateParams) {
 
 
     $scope.getGlobalData = function () {
-        $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
+        $http.get(`${window.getServer()}fsnprice`).then(function (r) {
             let globalInfo = r.data;
             let globalData = {
                 totalTransactions: globalInfo.totalTransactions,

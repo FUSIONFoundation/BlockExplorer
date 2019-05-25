@@ -22,7 +22,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
 
     $scope.getLatestBlocks = function () {
         let recentBlocks = [];
-        $http.get('https://api.fusionnetwork.io/blocks/all?sort=desc&size=6').then(function (r) {
+        $http.get(`${window.getServer()}blocks/all?sort=desc&size=6`).then(function (r) {
            let blocks = r.data;
            for (let block in blocks){
                let data = {
@@ -50,7 +50,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
 
     $scope.getLatestTransactions = function () {
         let recentTransactions = [];
-        $http.get('https://api.fusionnetwork.io/transactions/all?sort=desc&size=6').then(function (r) {
+        $http.get(`${window.getServer()}transactions/all?sort=desc&size=6`).then(function (r) {
             let transactions = r.data;
             for (let transaction in transactions){
                 console.log(transactions[transaction]);
@@ -69,7 +69,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
     };
 
     $scope.getGlobalData = function () {
-        $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r){
+        $http.get(`${window.getServer()}fsnprice`).then(function (r){
            console.log(r.data);
            let priceInfo = r.data.priceInfo;
            let globalInfo = r.data;

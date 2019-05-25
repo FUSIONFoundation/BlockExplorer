@@ -88,7 +88,7 @@ let blocksController = function ($http, $scope) {
         $scope.loading = true;
         let blocks = {};
         let displayBlocks = [];
-        $http.get(`https://api.fusionnetwork.io/blocks/all?sort=desc&page=${page}&size=20&field=height`).then(function (r) {
+        $http.get(`${window.getServer()}blocks/all?sort=desc&page=${page}&size=20&field=height`).then(function (r) {
             blocks = r.data;
             console.log(blocks);
             for (let block in blocks) {
@@ -113,7 +113,7 @@ let blocksController = function ($http, $scope) {
         });
     }
 
-    $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
+    $http.get(`${window.getServer()}fsnprice`).then(function (r) {
         $scope.maxBlock = r.data.maxBlock;
         $scope.endPage = Math.ceil($scope.maxBlock / $scope.pageSize);
     });

@@ -91,14 +91,14 @@ let assetsController = function ($http, $scope) {
         $scope.loading = true;
         let saveAssets = [];
         let allAssets = 0;
-        $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
+        $http.get(`${window.getServer()}assets/verified`).then(function (r) {
             $scope.verifiedAssets = r.data;
         });
-        $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
+        $http.get(`${window.getServer()}fsnprice`).then(function (r) {
             allAssets = Math.ceil(r.data.totalAssets / 100);
             for (let i = 0; i < allAssets; i++){
                 let assets = {};
-                $http.get(`https://api.fusionnetwork.io/assets/all?page=${i}&size=100&sort=desc`).then(function (r) {
+                $http.get(`${window.getServer()}assets/all?page=${i}&size=100&sort=desc`).then(function (r) {
                     assets = r.data;
                     console.log(assets);
                     for (let asset in assets) {
@@ -113,7 +113,7 @@ let assetsController = function ($http, $scope) {
                                 verifiedAsset = true;
                             }
                         }
-                        $http.get(`https://api.fusionnetwork.io/assets/${assets[asset].commandExtra}`).then(function (r) {
+                        $http.get(`${window.getServer()}assets/${assets[asset].commandExtra}`).then(function (r) {
                             if (assets[asset].commandExtra == '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff') {
                                 let data = {
                                     assetName: 'FUSION (FSN)',

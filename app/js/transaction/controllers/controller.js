@@ -13,7 +13,7 @@ let transactionController = function ($http, $scope, $stateParams) {
     };
 
     $scope.getTransaction = function () {
-        $http.get(`https://api.fusionnetwork.io/transactions/${transactionHash}`).then(function (r) {
+        $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
             let tx = r.data[0];
             let txExtraData = JSON.parse(r.data[0].receipt);
             let txExtraData2 = JSON.parse(r.data[0].data);

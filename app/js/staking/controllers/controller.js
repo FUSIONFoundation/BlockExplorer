@@ -37,7 +37,7 @@ let blockController = function ($http, $scope) {
             let data = {};
             let ticketsData;
             let tickets = {};
-            $http.get(`https://api.fusionnetwork.io/balances/${walletAddress}`).then(function (r) {
+            $http.get(`${window.getServer()}balances/${walletAddress}`).then(function (r) {
                 data = r.data;
                 if (data.length === 0) {
                     $scope.$eval(function () {

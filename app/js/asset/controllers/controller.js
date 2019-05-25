@@ -12,7 +12,7 @@ let assetController = function ($http, $scope, $stateParams) {
     };
 
     $scope.getVerifiedAssets = function () {
-        $http.get('https://api.fusionnetwork.io/assets/verified').then(function (r) {
+        $http.get(`${window.getServer()}assets/verified`).then(function (r) {
             $scope.verifiedAssets = r.data;
         });
     };
@@ -44,7 +44,7 @@ let assetController = function ($http, $scope, $stateParams) {
             });
             return;
         }
-        $http.get(`https://api.fusionnetwork.io/assets/${assetId}`).then(function (r) {
+        $http.get(`${window.getServer()}assets/${assetId}`).then(function (r) {
             let verifiedImage = '';
             let hasImage = false;
             let verifiedAsset = false;

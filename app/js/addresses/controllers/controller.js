@@ -88,7 +88,7 @@ let blocksController = function ($http, $scope) {
         $scope.loading = true;
         let addresses = {};
         let displayAddresses = [];
-        $http.get(`https://api.fusionnetwork.io/balances/all?sort=desc&page=${page}&size=20&field=fsnBalance`).then(function (r) {
+        $http.get(`${window.getServer()}balances/all?sort=desc&page=${page}&size=20&field=fsnBalance`).then(function (r) {
             addresses = r.data;
             for (let address in addresses) {
                 console.log(addresses[address]);
@@ -111,7 +111,7 @@ let blocksController = function ($http, $scope) {
         });
     }
 
-    $http.get('https://api.fusionnetwork.io/fsnprice').then(function (r) {
+    $http.get(`${window.getServer()}fsnprice`).then(function (r) {
         $scope.totalAddresses = r.data.totalAddresses;
         $scope.endPage = Math.ceil($scope.totalAddresses / $scope.pageSize);
     });
