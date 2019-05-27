@@ -168,6 +168,13 @@ let addressController = function ($http, $scope, $stateParams) {
             });
         }
     };
+
+    $scope.hideTicketValue = true;
+    $scope.hideTickets = function (){
+        $scope.firstPageTL();
+        $scope.getTransactions(0);
+    }
+
  $scope.allTimeLockBalances = [];
 
     $scope.countDecimals = function (decimals) {
@@ -276,7 +283,13 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.getTransactions = function (page) {
         $scope.loading = true;
         let transactionSave = [];
-        $http.get(`${window.getServer()}transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=notickets`).then(function (r) {
+        let s = '';
+        if($scope.hideTicketValue === true){
+            s = 'notickets'
+        } else if ($scope.hideTicketValue === false){
+            s = 'all'
+        }
+        $http.get(`${window.getServer()}transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=${s}`).then(function (r) {
             if (r.data.length === 0 || r.data === []) {
                 $scope.currentPage = 0;
                 $scope.getTransactions(0);
