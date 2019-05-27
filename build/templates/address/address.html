@@ -535,22 +535,22 @@
                                         <div class="col-md-12 text-md-right">
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
-                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
+                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRowsTL}}
                                     </span>
                                                     <span class="small-gray-text m-1"
-                                                          ng-click="firstPage()"><i class="fa fa-angle-double-left"
+                                                          ng-click="firstPageTL()"><i class="fa fa-angle-double-left"
                                                                                     aria-hidden="true"></i>
                                 </span>
                                                     <span class="small-gray-text pl-1 pr-1 m-1"
-                                                          ng-click="previousPage()"><i class="fa fa-angle-left"
+                                                          ng-click="previousPageTL()"><i class="fa fa-angle-left"
                                                                                        aria-hidden="true"></i>
                                 </span>
                                                     <span class="small-gray-text pl-1 pr-1 m-1"
-                                                          ng-click="nextPage()"><i class="fa fa-angle-right"
+                                                          ng-click="nextPageTL()"><i class="fa fa-angle-right"
                                                                                    aria-hidden="true"></i>
                                 </span>
                                                     <span class="small-gray-text m-1"
-                                                          ng-click="lastPage()"><i class="fa fa-angle-double-right"
+                                                          ng-click="lastPageTL()"><i class="fa fa-angle-double-right"
                                                                                    aria-hidden="true"></i>
                                 </span>
                                                 </form>
@@ -842,7 +842,7 @@
                                         </thead>
                                         <tbody>
                                         <tr class="h68"
-                                            ng-repeat="transaction in allTimeLockBalances">
+                                            ng-repeat="transaction in allTimeLockBalances | startFrom:currentPageTL*pageSizeTL | limitTo:pageSizeTL track by $index">
                                             <td class="text-fusion">
                                                        <span ng-show="!transaction.hasImage">
                                                        <span ng-if="!transaction.hasImage" class="btn btn-blue btn-circle w32 asset-round mr-2">

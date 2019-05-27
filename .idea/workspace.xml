@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/address/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/address/controllers/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/address/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/address/address.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,32 +19,32 @@
     <session id="-612098699">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="7" />
+          <entry key="ESLintLanguageService" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1048" />
+          <entry key="HTML" value="1069" />
           <entry key="JSHint" value="4" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="3162" />
+          <entry key="JavaScript" value="3316" />
           <entry key="SCSS" value="246" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="9" />
+          <entry key="HTML" value="10" />
           <entry key="JSHint" value="1" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="13" />
@@ -55,8 +58,27 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="269" column="51" selection-start-line="269" selection-start-column="51" selection-end-line="269" selection-end-column="51" />
+            <state relative-caret-position="294">
+              <caret line="141" column="66" selection-start-line="141" selection-start-column="66" selection-end-line="141" selection-end-column="66" />
+              <folding>
+                <element signature="e#1438#2096#0" />
+                <element signature="e#2134#2679#0" />
+                <element signature="e#2716#3227#0" />
+                <element signature="e#3268#3897#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="841" column="48" lean-forward="true" selection-start-line="841" selection-start-column="48" selection-end-line="841" selection-end-column="48" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,6 +113,8 @@
       <find>https://api.fusionnetwork.io/</find>
       <find>'${window.getServer()}</find>
       <find>`${window.getServer()}/</find>
+      <find>http://api.</find>
+      <find>ng-repeat</find>
     </findStrings>
     <replaceStrings>
       <replace>${window.getServer()}</replace>
@@ -129,8 +153,8 @@
         <option value="$PROJECT_DIR$/app/js/assets/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/templates/assets/assets.html" />
         <option value="$PROJECT_DIR$/app/templates/asset/asset.html" />
-        <option value="$PROJECT_DIR$/app/templates/address/address.html" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
+        <option value="$PROJECT_DIR$/app/templates/address/address.html" />
         <option value="$PROJECT_DIR$/app/js/address/controllers/controller.js" />
       </list>
     </option>
@@ -161,7 +185,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,6 +299,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,18 +353,22 @@
       <workItem from="1557345430392" duration="2438000" />
       <workItem from="1557499225211" duration="3038000" />
       <workItem from="1557517372714" duration="2012000" />
-      <workItem from="1558786407738" duration="1516000" />
+      <workItem from="1558786407738" duration="3028000" />
+      <workItem from="1558798830705" duration="12000" />
+      <workItem from="1558800178609" duration="602000" />
+      <workItem from="1558959880362" duration="41000" />
+      <workItem from="1558961110188" duration="2025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56877000" />
+    <option name="totallyTimeSpent" value="61069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="34" width="1920" height="981" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -356,7 +384,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23085983" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23085983" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -583,21 +611,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="70" column="139" selection-start-line="70" selection-start-column="119" selection-end-line="70" selection-end-column="139" />
+        <state relative-caret-position="130">
+          <caret line="841" column="48" lean-forward="true" selection-start-line="841" selection-start-column="48" selection-end-line="841" selection-end-column="48" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#table#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="269" column="51" selection-start-line="269" selection-start-column="51" selection-end-line="269" selection-end-column="51" />
+        <state relative-caret-position="294">
+          <caret line="141" column="66" selection-start-line="141" selection-start-column="66" selection-end-line="141" selection-end-column="66" />
+          <folding>
+            <element signature="e#1438#2096#0" />
+            <element signature="e#2134#2679#0" />
+            <element signature="e#2716#3227#0" />
+            <element signature="e#3268#3897#0" />
+          </folding>
         </state>
       </provider>
     </entry>
