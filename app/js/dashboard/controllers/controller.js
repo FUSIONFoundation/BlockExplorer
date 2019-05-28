@@ -81,7 +81,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
                circulatingSupply: window.numeral(priceInfo.circulating_supply).format('0.00a')
            };
             let globalData = {
-                totalTransactions: globalInfo.totalTransactions,
+                totalTransactions: window.numeral(globalInfo.totalTransactions).format('0.00a'),
                 totalAddresses : globalInfo.totalAddresses,
                 totalAssets : globalInfo.totalAssets,
                 maxBlock : globalInfo.maxBlock,
