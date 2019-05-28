@@ -1,5 +1,41 @@
 <div class="layout-container">
-    <div class="layout-content">
+   <div class="layout-content" ng-show="transactionData.transactionType == undefined">
+       <div class="container flex-grow-1 container-p-y">
+           <div class="row">
+               <div class="col-md-12 col-sm-12">
+                   <h4 class="font-weight-bold text-fusion mb-4">
+                       Transaction
+                       <span class="badge badge-light-blue ml-2 font-weight-normal">{{blockNumber}}</span>
+                   </h4>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-sm-12">
+                   <div class="mb-4">
+                       <div class="card gradient-half-primary-body-v1">
+                           <div class="card-body px-sm-4 pb-sm-4 ">
+                               <div class="row">
+                                   <div class="col-sm-12">
+                                       <div class="media align-items-center">
+                                           <div class="media-body">
+<div class="align-items-center text-center">
+    <p>This transaction has not yet been processed, or was not emitted to the blockchain</p>
+    <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+    <div class="layout-content" ng-hide="transactionData.transactionType == undefined">
         <!-- Page content -->
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
