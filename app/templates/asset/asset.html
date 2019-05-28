@@ -99,7 +99,8 @@
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
                                                         <span class="font-weight-sm-bold mr-1 text-blue text-break">
-                                                            <a href="./#!/address/{{assetData.issuer}}">{{assetData.issuer}}</a>
+                                                            <a ng-show="assetData.issuer == 'Coinbase'">{{assetData.issuer}}</a>
+                                                            <a href="./#!/address/{{assetData.issuer}}" ng-hide="assetData.issuer == 'Coinbase'">{{assetData.issuer}}</a>
                                                         </span>
                                                     </div>
                                                 </div>
