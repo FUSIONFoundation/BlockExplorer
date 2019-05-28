@@ -111,7 +111,8 @@
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
                                                         <span class="font-weight-sm-bold mr-1 text-blue">
-                                                            <a href="./#!/block/{{assetData.issueHeight}}">{{assetData.issueHeight}}</a></span>
+                                                        <a href="./#!/block/0" ng-show="assetData.issueHeight == 'Genesis Block'">{{assetData.issueHeight}}</a>
+                                                        <a href="./#!/block/{{assetData.issueHeight}}" ng-hide="assetData.issueHeight">{{assetData.issueHeight}}</a></span>
                                                     </div>
                                                 </div>
                                                 <hr class="hr-space">
