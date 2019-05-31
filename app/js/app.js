@@ -79,7 +79,7 @@ window.months = [
 ];
 
 window.getServer = function () {
-    return 'https://api2.fusionnetwork.io/'
+    return 'https://api.fusionnetwork.io/'
 }
 
 let dependencies = [
