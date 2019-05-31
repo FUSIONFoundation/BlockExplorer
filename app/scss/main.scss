@@ -20,11 +20,11 @@
 }
 
 body {
-  background-color: #f5f7fa !important;
+  background-color: #f6f7f8 !important;
 }
 
 .layout-content {
-  background-color: #f5f7fa !important;
+  background-color: #f6f7f8 !important;
 }
 
 .text-blue {
@@ -352,4 +352,40 @@ thead {
 .search-button{
   background-color:#2a65b0 !important;
   color:white !important;
+}
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-xs-5ths {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-5ths {
+    width: 20%;
+    float: left;
+  }
 }
