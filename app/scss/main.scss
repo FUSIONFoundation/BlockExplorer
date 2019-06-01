@@ -666,8 +666,7 @@ h4:after {
 //  animation-fill-mode: backwards;
 //}
 .animation:nth-child(1) {
-    animation: FadeIn 1s linear;
+    animation: FadeIn 0.5s linear;
     animation-fill-mode: backwards;
-    animation-delay: .5s
 }
 
