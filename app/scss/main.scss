@@ -640,3 +640,8 @@ h4:after {
   background-repeat: no-repeat;
   background-position: top;
 }
+.btn-no-border{
+  color: #455a64 !important;
+  border: 0px !important;
+  box-shadow: 0 0px 0px 0 rgba(6,33,68,.1)!important;
+}

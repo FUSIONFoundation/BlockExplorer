@@ -74,7 +74,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
            let priceInfo = r.data.priceInfo;
            let globalInfo = r.data;
            let dataPrice = {
-               price: window.numeral(priceInfo.price).format('$0,0.00'),
+               price: window.numeral(priceInfo.price).format('$ 0,0.00'),
                change : priceInfo.percentChange24H,
                changeamount : priceInfo.change,
                marketCap: window.numeral(priceInfo.market_cap).format('0.00a'),
