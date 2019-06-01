@@ -645,3 +645,29 @@ h4:after {
   border: 0px !important;
   box-shadow: 0 0px 0px 0 rgba(6,33,68,.1)!important;
 }
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+//.animation {
+//  animation: FadeIn 1s linear;
+//  animation-fill-mode: backwards;
+//}
+.animation:nth-child(1) {
+    animation: FadeIn 1s linear;
+    animation-fill-mode: backwards;
+    animation-delay: .5s
+}
+
