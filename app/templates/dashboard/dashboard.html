@@ -108,23 +108,35 @@
             <div class="row">
                 <div class="col-sm-6 mb-4">
                     <div class="card">
-                        <h6 class="card-header mt-2 mb-2">
-                            Latest Blocks
-                        </h6>
-                        <div class="card-body pt-1 scrollable">
-                            <div ng-repeat="block in recentBlocks" class="row recent-block-main-item mb-2 p-2">
-                                <div class="col-sm-5">
-                                    <span class="text-fusion"><i class="fa fa-cube mr-1"></i> <a href="./#!/block/{{block.block}}">{{block.block}}</a></span><br>
-                                    <span class="small-gray-text">
-                                <i class="far fa-clock mr-2"></i>{{block.timestamp}}</span>
+                        <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="card-header mt-2 mb-2">
+                                Latest Blocks
+                            </h6>
+                        </div>
+                        </div>
+                        <div class="card-body pt-1">
+                            <div ng-repeat="block in recentBlocks" class="row recent-block-main-item mb-2 p-2 pt-2 pb-2">
+                                <div class="col-sm-2">
+                                    <button class="btn btn-outline-white btn-square p-0">
+                                        <img src="./assets/vendor/images/tab-icon-blocks-active.svg" alt="">
+                                    </button>
                                 </div>
-                                <div class="col-sm-7">
+                                <div class="col-sm-4">
+                                    <span class="block-text">
+                                        <a href="./#!/block/{{block.block}}">{{block.block}}</a>
+                                    </span>
+                                    <br>
+                                    <span class="block-time">{{block.timestamp}}</span>
+                                </div>
+                                <div class="col-sm-3">
                                     <div class="recent-blocks-item font-size-12">
-                                        <span class="badge badge-success">2.5 FSN</span>
-                                        <br>
-                                        by <a href="./#!/address/{{block.miner}}">{{block.miner}}</a><br>
-                                        {{block.transactions}} txns
+                                        MINED BY <a href="./#!/address/{{block.miner}}">{{block.miner}}</a><br>
+                                        <span class="block-time">{{block.transactions}} txns</span>
                                     </div>
+                                </div>
+                                <div class="col-sm-3 text-right align-content-end">
+                                    <span class="badge badge-success">2.5 FSN</span>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +150,7 @@
                         <h6 class="card-header mt-2 mb-2">
                             Latest Transactions
                         </h6>
-                        <div class="card-body pt-1 scrollable">
+                        <div class="card-body pt-1">
                             <div ng-repeat="block in recentTransactions" class="row recent-block-main-item mb-2 p-2">
                                 <div class="col-sm-5 recent-blocks-item">
                                     <span class="text-fusion"><i class="fa fa-exchange-alt mr-1"></i> <a href="./#!/transaction/{{block.transactionId}}">{{block.transactionId}}</a></span><br>
