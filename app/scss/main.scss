@@ -65,8 +65,8 @@ hr {
   border-radius: 3px;
   background-color: white !important;
   color: #062144 !important;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16)!important;
-  border: 0 solid #fff!important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16) !important;
+  border: 0 solid #fff !important;
 }
 
 .fsn-big {
@@ -135,6 +135,7 @@ hr {
   line-height: 1.428571429 !important;
   border-radius: 16px !important;
 }
+
 .btn-circle-40 {
   width: 40px !important;
   height: 40px !important;
@@ -168,33 +169,34 @@ thead {
   color: #6c6a75;
   font-family: Roboto
 }
+
 .badge-default {
   background-color: rgba(24, 28, 33, 0.07);
   color: #4E5155;
-  box-shadow: 0 0px 3px rgba(0,0,0, .1);
+  box-shadow: 0 0px 3px rgba(0, 0, 0, .1);
   display: inline-block;
   position: relative;
   overflow: hidden;
   vertical-align: middle;
   background-color: #DDDBDD;
 
-    &::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transform: translateX(-100%);
-      background-image: linear-gradient(
-       90deg,
-        rgba(#fff, 0) 0,
-        rgba(#fff, 0.2) 20%,
-        rgba(#fff, 0.5) 60%,
-        rgba(#fff, 0)
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+                    90deg,
+                    rgba(#fff, 0) 0,
+                    rgba(#fff, 0.2) 20%,
+                    rgba(#fff, 0.5) 60%,
+                    rgba(#fff, 0)
     );
-      animation: shimmer 2s infinite;
-      content: '';
-    }
+    animation: shimmer 2s infinite;
+    content: '';
+  }
 
   @keyframes shimmer {
     100% {
@@ -221,10 +223,11 @@ thead {
   max-width: 100%;
 }
 
-.font-size-12{
-  font-size:12px !important;
+.font-size-12 {
+  font-size: 12px !important;
 }
-.recent-block-main-item{
+
+.recent-block-main-item {
   background-color: white;
   box-shadow: inset 0 -1px 0 0 #eceff1;
 }
@@ -232,15 +235,19 @@ thead {
 .scrolled {
   transition: transform 3s ease;
   transform: translate3d(0, 0, 0);
+
   &.ng-enter {
-    transform: translate3d(100%, 0, 0);  // Move to the right (up to 100% of width)
+    transform: translate3d(100%, 0, 0); // Move to the right (up to 100% of width)
   }
+
   &.ng-enter-active {
     transform: translate3d(0, 0, 0);
   }
+
   &.ng-leave {
     transform: translate3d(0, 0, 0);
   }
+
   &.ng-leave-active {
     transform: translate3d(-100%, 0, 0);
   }
@@ -256,30 +263,34 @@ thead {
   width: 4px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-button {
   height: 0px;
   width: 0px;
 }
+
 ::-webkit-scrollbar-corner {
   background-color: transparent;
   height: 0px;
   width: 0px;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: rgba(68, 77, 88, 0.27);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #062144 !important;
 }
 
-.card{
-  box-shadow: 0 3px 6px 0 rgba(0,0,0,.16) !important;
-  border:0px solid white !important;
+.card {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16) !important;
+  border: 0px solid white !important;
 }
 
 .switcher-input:checked ~ .switcher-indicator {
@@ -292,11 +303,12 @@ thead {
   vertical-align: middle !important;
   border-top: 1px solid #e8e8e9;
 }
-.h68{
-  height:68px !important;
+
+.h68 {
+  height: 68px !important;
 }
 
-.badge-success{
+.badge-success {
   height: 24px;
   border-radius: 32px !important;
   background-color: #e7fbee !important;
@@ -310,15 +322,16 @@ thead {
   color: #0a9b3c !important;
 }
 
-.badge-danger{
-  background-color:#ffeeee !important;
-  color:#d0021b !important;
+.badge-danger {
+  background-color: #ffeeee !important;
+  color: #d0021b !important;
   height: 20px !important;
   border-radius: 10px !important;
   padding: 0.2em .417em !important;
   font-size: 14px;
 }
-.badge-symbol{
+
+.badge-symbol {
   font-family: Roboto;
   font-size: 12px;
   font-weight: normal;
@@ -344,8 +357,9 @@ thead {
   color: #062144 !important;
   vertical-align: middle !important;
 }
-.vertical-align-middle{
-  vertical-align:middle !important;
+
+.vertical-align-middle {
+  vertical-align: middle !important;
 }
 
 @media (max-width: 767px) {
@@ -354,9 +368,9 @@ thead {
   }
 }
 
-.search-button{
-  background-color:#2a65b0 !important;
-  color:white !important;
+.search-button {
+  background-color: #2a65b0 !important;
+  color: white !important;
 }
 
 .col-xs-5ths,
@@ -395,7 +409,7 @@ thead {
   }
 }
 
-.text-muted{
+.text-muted {
   font-family: Lato;
   font-size: 12px;
   font-weight: normal;
@@ -405,10 +419,11 @@ thead {
   color: #607d8b;
 }
 
-.card{
+.card {
   border-radius: 8px !important;
 }
-.card-header{
+
+.card-header {
   font-family: Lato;
   font-size: 18px !important;
   font-weight: bold !important;
@@ -418,23 +433,25 @@ thead {
   letter-spacing: normal !important;
   color: #263238;
 }
-.card-header{
-  border-color:white !important;
+
+.card-header {
+  border-color: white !important;
 }
+
 .card-header:after {
   content: ""; /* This is necessary for the pseudo element to work. */
   display: block; /* This will put the pseudo element on its own line. */
   //margin: 0 auto; /* This will center the border. */
   width: 32px; /* Change this to whatever width you want. */
-  margin-top:6px;
-  padding-top:5px;
+  margin-top: 6px;
+  padding-top: 5px;
   $border: 4px;
   color: #FFF;
   background: linear-gradient(277deg, #5bbbff, #358dcc);;
   background-clip: padding-box; /* !importanté */
 }
 
-h4{
+h4 {
   font-family: Lato;
   font-size: 18px !important;
   font-weight: bold !important;
@@ -444,25 +461,27 @@ h4{
   letter-spacing: normal !important;
   color: #263238;
 }
-h4{
-  border-color:white !important;
+
+h4 {
+  border-color: white !important;
 }
+
 h4:after {
   content: ""; /* This is necessary for the pseudo element to work. */
   display: block; /* This will put the pseudo element on its own line. */
   //margin: 0 auto; /* This will center the border. */
   width: 32px; /* Change this to whatever width you want. */
-  margin-top:6px;
-  padding-top:5px;
+  margin-top: 6px;
+  padding-top: 5px;
   $border: 4px;
   color: #FFF;
   background: linear-gradient(277deg, #5bbbff, #358dcc);;
   background-clip: padding-box; /* !importanté */
 }
 
-.nav-link{
-  padding:5px !important;
-  padding-right:15px !important;
+.nav-link {
+  padding: 5px !important;
+  padding-right: 15px !important;
   font-family: Lato;
   font-size: 14px !important;
   font-weight: bold;
@@ -473,61 +492,77 @@ h4:after {
   display: flex !important;
   justify-content: center !important;
 }
+
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
   color: #358dcc !important;
   background-color: #fff;
-  border-color: rgba(24,28,33,0.06);
+  border-color: rgba(24, 28, 33, 0.06);
 }
-.nav-link:before{
-  padding-right:7px;
+
+.nav-link:before {
+  padding-right: 7px;
 }
+
 .nav-link.dashboard:before {
   content: url('../assets/vendor/images/tab-icon-dashboard-inactive.svg');
 }
+
 .nav-link.dashboard.active:before {
   content: url('../assets/vendor/images/tab-icon-dashboard-active.svg');
 }
+
 .nav-link.blocks:before {
   content: url('../assets/vendor/images/tab-icon-blocks-inactive.svg');
 }
+
 .nav-link.blocks.active:before {
   content: url('../assets/vendor/images/tab-icon-blocks-active.svg');
 }
+
 .nav-link.transactions:before {
   content: url('../assets/vendor/images/tab-icon-transactions-inactive.svg');
 }
+
 .nav-link.transactions.active:before {
   content: url('../assets/vendor/images/tab-icon-transactions-active.svg');
 }
+
 .nav-link.assets:before {
   content: url('../assets/vendor/images/tab-icon-assets-inactive.svg');
 }
+
 .nav-link.assets.active:before {
   content: url('../assets/vendor/images/tab-icon-assets-active.svg');
 }
+
 .nav-link.addresses:before {
   content: url('../assets/vendor/images/tab-icon-addresses-inactive.svg');
 }
+
 .nav-link.addresses.active:before {
   content: url('../assets/vendor/images/tab-icon-addresses-active.svg');
 }
+
 .nav-link.staking:before {
   content: url('../assets/vendor/images/tab-icon-staking-inactive.svg');
 }
+
 .nav-link.staking.active:before {
   content: url('../assets/vendor/images/tab-icon-staking-active.svg');
 }
 
-.tabs-alt.nav-tabs .nav-link.active, .tabs-alt.nav-tabs .nav-link.active:focus, .tabs-alt.nav-tabs .nav-link.active:hover, .tabs-alt>.nav-tabs .nav-link.active, .tabs-alt>.nav-tabs .nav-link.active:focus, .tabs-alt>.nav-tabs .nav-link.active:hover {
-  box-shadow: 0 0px 0 white inset!important;
+.tabs-alt.nav-tabs .nav-link.active, .tabs-alt.nav-tabs .nav-link.active:focus, .tabs-alt.nav-tabs .nav-link.active:hover, .tabs-alt > .nav-tabs .nav-link.active, .tabs-alt > .nav-tabs .nav-link.active:focus, .tabs-alt > .nav-tabs .nav-link.active:hover {
+  box-shadow: 0 0px 0 white inset !important;
 }
+
 .layout-navbar, .nav-tabs {
-  border-bottom: 0px solid #bec5cf!important;
+  border-bottom: 0px solid #bec5cf !important;
   border-bottom-width: 0px !important;
   border-bottom-style: solid !important;
   border-bottom-color: rgb(190, 197, 207) !important;
 }
-.block-text{
+
+.block-text {
   font-family: Lato;
   font-size: 18px;
   font-weight: bold;
@@ -537,7 +572,8 @@ h4:after {
   letter-spacing: normal;
   color: #358dcc;
 }
-.block-time{
+
+.block-time {
   font-family: Lato;
   font-size: 14px;
   font-weight: normal;
@@ -548,18 +584,19 @@ h4:after {
   color: #607d8b;
 }
 
-.btn-square{
+.btn-square {
   width: 48px;
-  height:48px;
+  height: 48px;
   box-shadow: 0 2px 8px 0 rgba(38, 50, 56, 0.12) !important;
 }
 
-.card-button{
+.card-button {
   padding: .875rem 2.75rem !important;
   margin-bottom: 0;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
-.btn-outline-white-alt{
+
+.btn-outline-white-alt {
   border-radius: 5px !important;
   box-shadow: 0 1px 0 0 rgba(38, 50, 56, 0.05) !important;
   border: solid 1px #cfd8dc !important;
@@ -573,10 +610,12 @@ h4:after {
   letter-spacing: normal !important;
   color: #455a64 !important;
 }
-.btn-outline-white-alt a{
-  color:#455a64 !important;
+
+.btn-outline-white-alt a {
+  color: #455a64 !important;
 }
-.small-gray-text{
+
+.small-gray-text {
   font-size: 12px;
   font-weight: normal;
   font-style: normal;
@@ -585,7 +624,19 @@ h4:after {
   letter-spacing: normal;
   color: #607d8b;
 }
-.badge-transaction{
+
+.badge-transaction {
   color: #358dcc !important;
   background-color: #e7f3fb !important;
+}
+
+.text-success {
+  color: #0a9b3c !important;
+}
+
+.bg-dashboard {
+  background-image: url("../assets/vendor/images/WaveBackground.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
 }

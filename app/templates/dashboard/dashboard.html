@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="layout-content" ng-show="!loading">
+    <div class="layout-content bg-dashboard" ng-show="!loading">
         <!-- Page content -->
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-12 mt-4">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card d-flex w-100 mb-4">
@@ -45,13 +45,13 @@
                                     <div class="d-flex col-lg-5ths align-items-center">
                                         <div class="card-body media align-items-center text-body">
                                             <span class="media-body d-block ml-3">
-                                               <small class="text-muted text-uppercase">Current FSN Price</small>
-                                                <br>
                           <span class="fsn-big">{{fsnPriceData.price}}</span>
 
                                                 <small class="ml-2 text-success" ng-class="{'text-danger' : fsnPriceData.change.toString().indexOf('-') == 1} || {'text-success' : fsnPriceData.change.toString().indexOf('-') !== -1}">
                                                     {{fsnPriceData.change.toFixed(2)}}% (24h)
                                                 </small>
+                                                <br>
+                                                   <small class="text-muted text-uppercase">Price</small>
                         </span>
                                         </div>
 
@@ -60,9 +60,10 @@
 
                                         <div class="card-body media align-items-center text-body">
                                             <span class="media-body d-block ml-3">
-                                                                          <small class="text-muted text-uppercase">Market Cap</small>
-                                                <br>
+
                               <span class="fsn-big text-uppercase">$ {{fsnPriceData.marketCap}}</span>
+                                                <br>
+                                                              <small class="text-muted text-uppercase">Market Cap</small>
                         </span>
                                         </div>
 
@@ -70,9 +71,10 @@
                                     <div class="d-flex col-lg-5ths align-items-center">
                                         <div class="card-body media align-items-center text-body">
                                             <span class="media-body d-block ml-3">
-                                               <small class="text-muted text-uppercase">Block Height</small>
-                                                <br>
+
                           <span class="fsn-big">{{globalData.maxBlock}}</span>
+                                                <br>
+   <small class="text-muted text-uppercase">Block Height</small>
 
                         </span>
                                         </div>
@@ -82,9 +84,11 @@
 
                                         <div class="card-body media align-items-center text-body">
                                             <span class="media-body d-block ml-3">
-                                                                          <small class="text-muted text-uppercase">Total Transactions</small>
-                                                <br>
+
                               <span class="fsn-big text-uppercase">{{globalData.totalTransactions}}</span>
+                                                <br>
+                                                              <small class="text-muted text-uppercase">Transactions</small>
+
                         </span>
                                         </div>
 
@@ -93,9 +97,10 @@
                                         <a href="javascript:void(0)"
                                            class="card-body media align-items-center text-body">
                                             <span class="media-body d-block ml-3">
-                                               <small class="text-muted text-uppercase">Total Assets</small>
-                                                <br>
                                                     <span class="fsn-big text-uppercase">{{globalData.totalAssets}}</span>
+                                                <br>
+                                                    <small class="text-muted text-uppercase">Assets</small>
+
                                             </span>
                                         </a>
                                     </div>
