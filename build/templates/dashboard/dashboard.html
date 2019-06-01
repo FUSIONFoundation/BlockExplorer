@@ -49,8 +49,8 @@
                                                 <br>
                           <span class="fsn-big">{{fsnPriceData.price}}</span>
 
-                                                <small ng-class="{'text-danger' : fsnPriceData.change.toString().indexOf('-') == 0} || {'text-success' : fsnPriceData.change.toString().indexOf('-') == -1}">
-                                                    ({{fsnPriceData.change.toFixed(2)}}%)
+                                                <small class="ml-2 text-success" ng-class="{'text-danger' : fsnPriceData.change.toString().indexOf('-') == 1} || {'text-success' : fsnPriceData.change.toString().indexOf('-') !== -1}">
+                                                    {{fsnPriceData.change.toFixed(2)}}% (24h)
                                                 </small>
                         </span>
                                         </div>
