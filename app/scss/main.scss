@@ -430,6 +430,8 @@ thead {
 }
 
 .nav-link{
+  padding:5px !important;
+  padding-right:15px !important;
   font-family: Lato;
   font-size: 14px !important;
   font-weight: bold;
@@ -437,13 +439,25 @@ thead {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #358dcc;
+  display: flex !important;
+  justify-content: center !important;
 }
-
-.nav-link .active{
-  color:red !important;
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: #358dcc !important;
+  background-color: #fff;
+  border-color: rgba(24,28,33,0.06);
 }
 
 .nav-link:before {
-  content: url('/path/to/image');
+  content: url('../assets/vendor/images/tab-icon-dashboard-inactive.svg');
+}
+
+.tabs-alt.nav-tabs .nav-link.active, .tabs-alt.nav-tabs .nav-link.active:focus, .tabs-alt.nav-tabs .nav-link.active:hover, .tabs-alt>.nav-tabs .nav-link.active, .tabs-alt>.nav-tabs .nav-link.active:focus, .tabs-alt>.nav-tabs .nav-link.active:hover {
+  box-shadow: 0 0px 0 white inset!important;
+}
+.layout-navbar, .nav-tabs {
+  border-bottom: 0px solid #bec5cf!important;
+  border-bottom-width: 0px !important;
+  border-bottom-style: solid !important;
+  border-bottom-color: rgb(190, 197, 207) !important;
 }
