@@ -429,6 +429,32 @@ thead {
   background-clip: padding-box; /* !importanté */
 }
 
+h4{
+  font-family: Lato;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+  color: #263238;
+}
+h4{
+  border-color:white !important;
+}
+h4:after {
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  //margin: 0 auto; /* This will center the border. */
+  width: 32px; /* Change this to whatever width you want. */
+  margin-top:6px;
+  padding-top:5px;
+  $border: 4px;
+  color: #FFF;
+  background: linear-gradient(277deg, #5bbbff, #358dcc);;
+  background-clip: padding-box; /* !importanté */
+}
+
 .nav-link{
   padding:5px !important;
   padding-right:15px !important;
