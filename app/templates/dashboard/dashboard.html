@@ -13,7 +13,7 @@
         <!-- Page content -->
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
-                <div class="col-sm-12 d-sm-none" >
+                <div class="col-sm-12 d-sm-none">
                     <div class="mb-4">
                         <div class="card gradient-half-primary-body-v1">
                             <div class="card-body px-sm-4 pb-sm-4 ">
@@ -109,14 +109,20 @@
                 <div class="col-sm-6 mb-4">
                     <div class="card">
                         <div class="row">
-                        <div class="col-md-6">
-                            <h6 class="card-header mt-2 mb-2">
-                                Latest Blocks
-                            </h6>
-                        </div>
+                            <div class="col-md-6">
+                                <h6 class="card-header mt-2 mb-2">
+                                    Latest Blocks
+                                </h6>
+                            </div>
+                            <div class="col-md-6 text-right card-button">
+                                <a href="./#!/blocks">
+                                    <button class="btn btn-outline-white-alt mt-2 mb-2">View All</button>
+                                </a>
+                            </div>
                         </div>
                         <div class="card-body pt-1">
-                            <div ng-repeat="block in recentBlocks" class="row recent-block-main-item mb-2 p-2 pt-2 pb-2">
+                            <div ng-repeat="block in recentBlocks"
+                                 class="row recent-block-main-item mb-2 p-2 pt-2 pb-2">
                                 <div class="col-sm-2">
                                     <button class="btn btn-outline-white btn-square p-0">
                                         <img src="./assets/vendor/images/tab-icon-blocks-active.svg" alt="">
@@ -136,12 +142,9 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-3 text-right align-content-end">
-                                    <span class="badge badge-success">2.5 FSN</span>
+                                    <span class="badge badge-success pl-2 pr-2">2.5 FSN</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col text-center pt-2 pb-2">
-                            <span class="text-primary font-size-12">View all blocks</span>
                         </div>
                     </div>
                 </div>
@@ -153,7 +156,8 @@
                         <div class="card-body pt-1">
                             <div ng-repeat="block in recentTransactions" class="row recent-block-main-item mb-2 p-2">
                                 <div class="col-sm-5 recent-blocks-item">
-                                    <span class="text-fusion"><i class="fa fa-exchange-alt mr-1"></i> <a href="./#!/transaction/{{block.transactionId}}">{{block.transactionId}}</a></span><br>
+                                    <span class="text-fusion"><i class="fa fa-exchange-alt mr-1"></i> <a
+                                            href="./#!/transaction/{{block.transactionId}}">{{block.transactionId}}</a></span><br>
                                     <span class="small-gray-text">
                                 <i class="far fa-clock mr-2"></i>{{block.timestamp}}</span>
                                 </div>
