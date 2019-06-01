@@ -15,7 +15,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/main.min.css?rev=dcc96b64696b7f7478b1960ce3aabd5e">
+    <link rel="stylesheet" href="css/main.min.css?rev=147449d8d1c31ec44ad6d1145e162e1a">
     <link rel="stylesheet" href="css/libs.min.css?rev=51c278ce3d0f02296416c2e1caf7addf">
 
     <!-- Main font -->
@@ -98,7 +98,9 @@
             <div class="container">
                 <ul class="nav nav-tabs tabs-alt">
                     <li class="nav-item">
-                        <a class="nav-link" ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">Dashboard</a>
+                        <a class="nav-link" ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">
+                            <i class="fa fa-exchange-alt"></i>Dashboard
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" ng-class="{'active' : $location.path() == '/blocks' ||  $location.path().substr(0,6) == '/block'}" href="./#!/blocks">Blocks</a>
