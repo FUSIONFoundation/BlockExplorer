@@ -94,28 +94,28 @@
                 </div>
             </div>
         </nav>
-        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 mt-2">
+        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2">
             <div class="container">
-                <ul class="nav nav-tabs tabs-alt">
+                <ul class="nav nav-tabs tabs-alt pt-1">
                     <li class="nav-item">
-                        <a class="nav-link" ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">
+                        <a class="nav-link dashboard" ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-class="{'active' : $location.path() == '/blocks' ||  $location.path().substr(0,6) == '/block'}" href="./#!/blocks">Blocks</a>
+                        <a class="nav-link blocks" ng-class="{'active' : $location.path() == '/blocks' ||  $location.path().substr(0,6) == '/block'}" href="./#!/blocks">Blocks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-class="{'active' : $location.path() == '/transactions' || $location.path().substr(0,12) == '/transaction'}" href="./#!/transactions">Transactions</a>
+                        <a class="nav-link transactions" ng-class="{'active' : $location.path() == '/transactions' || $location.path().substr(0,12) == '/transaction'}" href="./#!/transactions">Transactions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-class="{'active' : $location.path() == '/assets' || $location.path().substr(0,6) == '/asset' }" href="./#!/assets">Assets</a>
+                        <a class="nav-link assets" ng-class="{'active' : $location.path() == '/assets' || $location.path().substr(0,6) == '/asset' }" href="./#!/assets">Assets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-class="{'active' : $location.path() == '/addresses' || $location.path().substr(0,8) == '/address'}" href="./#!/addresses">Addresses</a>
+                        <a class="nav-link addresses" ng-class="{'active' : $location.path() == '/addresses' || $location.path().substr(0,8) == '/address'}" href="./#!/addresses">Addresses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ng-class="{'active' : $location.path() == '/staking'}" href="./#!/staking">Staking</a>
+                        <a class="nav-link staking" ng-class="{'active' : $location.path() == '/staking'}" href="./#!/staking">Staking</a>
                     </li>
                 </ul>
             </div>

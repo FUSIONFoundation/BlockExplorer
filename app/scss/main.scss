@@ -447,9 +447,44 @@ thead {
   background-color: #fff;
   border-color: rgba(24,28,33,0.06);
 }
-
-.nav-link:before {
+.nav-link:before{
+  padding-right:7px;
+}
+.nav-link.dashboard:before {
   content: url('../assets/vendor/images/tab-icon-dashboard-inactive.svg');
+}
+.nav-link.dashboard.active:before {
+  content: url('../assets/vendor/images/tab-icon-dashboard-active.svg');
+}
+.nav-link.blocks:before {
+  content: url('../assets/vendor/images/tab-icon-blocks-inactive.svg');
+}
+.nav-link.blocks.active:before {
+  content: url('../assets/vendor/images/tab-icon-blocks-active.svg');
+}
+.nav-link.transactions:before {
+  content: url('../assets/vendor/images/tab-icon-transactions-inactive.svg');
+}
+.nav-link.transactions.active:before {
+  content: url('../assets/vendor/images/tab-icon-transactions-active.svg');
+}
+.nav-link.assets:before {
+  content: url('../assets/vendor/images/tab-icon-assets-inactive.svg');
+}
+.nav-link.assets.active:before {
+  content: url('../assets/vendor/images/tab-icon-assets-active.svg');
+}
+.nav-link.addresses:before {
+  content: url('../assets/vendor/images/tab-icon-addresses-inactive.svg');
+}
+.nav-link.addresses.active:before {
+  content: url('../assets/vendor/images/tab-icon-addresses-active.svg');
+}
+.nav-link.staking:before {
+  content: url('../assets/vendor/images/tab-icon-staking-inactive.svg');
+}
+.nav-link.staking.active:before {
+  content: url('../assets/vendor/images/tab-icon-staking-active.svg');
 }
 
 .tabs-alt.nav-tabs .nav-link.active, .tabs-alt.nav-tabs .nav-link.active:focus, .tabs-alt.nav-tabs .nav-link.active:hover, .tabs-alt>.nav-tabs .nav-link.active, .tabs-alt>.nav-tabs .nav-link.active:focus, .tabs-alt>.nav-tabs .nav-link.active:hover {

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/scss/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/css/main.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.min.css.map" afterDir="false" />
@@ -46,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="100" column="123" selection-start-line="100" selection-start-column="123" selection-end-line="100" selection-end-column="123" />
+            <state relative-caret-position="984">
+              <caret line="117" column="50" selection-start-line="117" selection-start-column="50" selection-end-line="117" selection-end-column="50" />
               <folding>
                 <element signature="n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -58,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="432" column="14" selection-start-line="432" selection-start-column="14" selection-end-line="432" selection-end-column="14" />
+            <state relative-caret-position="598">
+              <caret line="450" column="17" selection-start-line="450" selection-start-column="17" selection-end-line="450" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -280,12 +281,12 @@
       <workItem from="1559313222445" duration="117000" />
       <workItem from="1559316241396" duration="818000" />
       <workItem from="1559334451537" duration="2080000" />
-      <workItem from="1559380737473" duration="1348000" />
+      <workItem from="1559380737473" duration="2187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73033000" />
+    <option name="totallyTimeSpent" value="73872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="39" width="3000" height="1831" extended-state="6" />
@@ -545,23 +546,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="100" column="123" selection-start-line="100" selection-start-column="123" selection-end-line="100" selection-end-column="123" />
-          <folding>
-            <element signature="n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/vendor/images/tab-icon-staking-inactive.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="432" column="14" selection-start-line="432" selection-start-column="14" selection-end-line="432" selection-end-column="14" />
+        <state relative-caret-position="598">
+          <caret line="450" column="17" selection-start-line="450" selection-start-column="17" selection-end-line="450" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="984">
+          <caret line="117" column="50" selection-start-line="117" selection-start-column="50" selection-end-line="117" selection-end-column="50" />
+          <folding>
+            <element signature="n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
