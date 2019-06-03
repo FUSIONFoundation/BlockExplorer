@@ -47,7 +47,8 @@
                                             <span class="media-body d-block ml-3">
                           <span class="fsn-big">{{fsnPriceData.price}}</span>
 
-                                                <small class="ml-2 text-success" ng-class="{'text-danger' : fsnPriceData.change.toString().indexOf('-') == 1} || {'text-success' : fsnPriceData.change.toString().indexOf('-') !== -1}">
+                                                <small class="ml-2 text-success"
+                                                       ng-class="{'text-danger' : fsnPriceData.change.toString().indexOf('-') == 1} || {'text-success' : fsnPriceData.change.toString().indexOf('-') !== -1}">
                                                     {{fsnPriceData.change.toFixed(2)}}% (24h)
                                                 </small>
                                                 <br>
@@ -144,7 +145,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="recent-blocks-item font-size-12">
-                                                <span class="small-gray-text">MINED BY</span> <a href="./#!/address/{{block.miner}}">{{block.miner}}</a><br>
+                                                <span class="small-gray-text">MINED BY</span> <a
+                                                    href="./#!/address/{{block.miner}}">{{block.miner}}</a><br>
                                                 <span class="block-time">{{block.transactions}} txns</span>
                                             </div>
                                         </div>
@@ -172,26 +174,32 @@
                             </div>
                         </div>
                         <div class="card-body pt-1">
-                            <div ng-repeat="block in recentTransactions" class="row recent-block-main-item mb-2 p-2 animation">
-                                <div class="col-sm-2">
+                            <div ng-repeat="block in recentTransactions"
+                                 class="row recent-block-main-item mb-2 p-2 animation">
+                                <div class="col-xs-3 col-sm-2">
                                     <button class="btn btn-outline-white btn-square p-0">
                                         <img src="./assets/vendor/images/tab-icon-transactions-active.svg" alt="">
                                     </button>
                                 </div>
-                                <div class="col-sm-3 recent-blocks-item">
+                                <div class="col-xs-6 col-sm-7">
+                                    <div class="row">
+                                        <div class="col-sm-6 recent-blocks-item">
                                     <span class="block-text">
                                         <a href="./#!/transaction/{{block.transactionId}}">{{block.transactionId}}</a>
                                     </span>
-                                    <br>
-                                    <span class="block-time">{{block.timestamp}}</span>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="recent-blocks-item font-size-12">
-                                        <br>
-                                        <span class="small-gray-text">BY </span><a href="./#!/address/{{block.from}}">{{block.from}}</a><br>
+                                            <br>
+                                            <span class="block-time">{{block.timestamp}}</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="recent-blocks-item font-size-12">
+                                                <br>
+                                                <span class="small-gray-text">BY </span><a
+                                                    href="./#!/address/{{block.from}}">{{block.from}}</a><br>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-3 text-right align-content-end">
+                                <div class="col-xs-3 col-sm-3 text-right align-content-end">
                                     <span class="badge badge-success badge-transaction pl-2 pr-2">{{block.type}}</span>
                                 </div>
                             </div>
