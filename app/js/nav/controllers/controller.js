@@ -1,5 +1,6 @@
 let navController = function ($http, $scope, $location) {
     $scope.$location = $location;
+    $scope.showNav = false;
 
     $scope.search = function (){
         let input = $scope.globalSearch;

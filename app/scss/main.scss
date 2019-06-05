@@ -1570,3 +1570,8 @@ h4:after {
   display: inline;
   height: 32px;
 }
+.gradient-bg{
+  background-image: linear-gradient(to top, #94deff, #5bbbff) !important;
+  border: 1px solid white;
+  background-color: #8ad7fe!important;
+}
