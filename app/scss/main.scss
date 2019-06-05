@@ -1565,3 +1565,8 @@ h4:after {
     animation-fill-mode: backwards;
 }
 
+.vertical-divider{
+  border-left: 1px solid #cfd8dc;
+  display: inline;
+  height: 32px;
+}
