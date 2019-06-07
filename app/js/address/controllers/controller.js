@@ -10,12 +10,12 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.processTransactions = [];
     $scope.loading = true;
     $scope.allTimeLockBalances = [];
-
-
     $scope.currentPage = 0;
     $scope.pageSize = 10;
     $scope.endPage = Math.ceil($scope.processTransactions.length / $scope.pageSize);
     $scope.shownRows = 10;
+
+    $scope.hasNoTimeLockBalance = true;
 
 
     $scope.$watch('processTransactions', function () {
@@ -344,6 +344,9 @@ let addressController = function ($http, $scope, $stateParams) {
         $scope.allTimeLockBalances = [];
         $http.get(`${window.getServer()}balances/${address}`).then(function (r) {
             let assets = JSON.parse(r.data[0].balanceInfo).timeLockBalances;
+            if(Object.keys(assets).length !== 0){
+                return $scope.hasNoTimeLockBalance = false;
+            }
             for (let asset in assets){
                 for (let i = 0; i < assets[asset]["Items"].length; i++) {
                     let startTimePosix = $scope.returnDateString(assets[asset]["Items"][i]["StartTime"],'Start');

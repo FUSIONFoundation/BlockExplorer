@@ -92,7 +92,7 @@
                                            ng-click="assetsTab = true; transactionsTab = false; timeLockTab = false">Assets
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item" ng-hide="hasNoTimeLockBalance">
                                         <a class="nav-link"
                                            ng-class="{'active' : timeLockTab}"
                                            ng-click="timeLockTab = true; transactionsTab = false; assetsTab = false">Time-Lock
