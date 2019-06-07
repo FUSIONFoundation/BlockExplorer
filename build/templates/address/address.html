@@ -99,7 +99,7 @@
                                             Balances
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item" ng-hide="addressData.numberOfTransactions == 0">
                                         <a class="nav-link"
                                            ng-class="{'active' : transactionsTab}"
                                            ng-click="transactionsTab = true; assetsTab = false; timeLockTab = false">Transactions
