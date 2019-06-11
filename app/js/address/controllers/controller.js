@@ -311,7 +311,7 @@ let addressController = function ($http, $scope, $stateParams) {
                     amount: 200
                 };       
                 let asset = '';
-                if(extraData.AssetID !== undefined){
+                if(extraData.AssetID !== undefined && extraData.Value){
                     let amount = new BigNumber(extraData.Value.toString());
                     let amountFinal = amount.div($scope.countDecimals(window.allAssets[extraData.AssetID].Decimals));
                     data.asset = window.allAssets[extraData.AssetID].Symbol;

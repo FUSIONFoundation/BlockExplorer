@@ -14,6 +14,35 @@
         <div class="container flex-grow-1 container-p-y p-0 p-md-3">
             <div class="row">
                 <div class="col-sm-12 mb-4 p-0 p-md-3 pt-md-0 pb-md-0">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Launch demo modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog m-0 p-0 h-100" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header border-0">
+                                    <h5 class="modal-title" id="exampleModalLabel">Gateway Selector</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <img src="./assets/vendor/images/t.svg" width="20px" height="20px">
+                                    </button>
+                                </div>
+                                <div class="modal-body border-0 pt-2">
+                                    <div class="col-12 pl-0 pr-0 pb-3">
+                                        <span class="small-heading">NETWORKS</span>
+                                    </div>
+                                    <div class="col-12 pl-0 pr-0">
+                                        <button class="btn btn-primary btn-gateway w-100"><span class="button-content">Mainnet</span></button>
+                                    </div>
+                                    <div class="col-12 pl-0 pr-0 pt-3">
+                                        <button class="btn btn-primary btn-gateway w-100"><span class="button-content">Testnet</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 p-0 p-md-3 pt-md-0 pb-md-0">
                             <div class="card d-flex w-100">

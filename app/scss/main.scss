@@ -518,6 +518,66 @@ thead {
 .col-xs-offset-11 {
   margin-left: 91.667%;
 }
+.modal-backdrop {
+  z-index: -1 !important;
+}
+
+.modal-content{
+  border-radius: 0px !important;
+}
+.modal-dialog{
+  display: -webkit-box;
+}
+
+.modal-title{
+  width: 143px;
+  height: 22px;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #263238;
+}
+
+.btn-gateway{
+  text-align: left !important;
+  font-family: Lato !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  font-style: normal !important;
+  font-stretch: normal !important;
+  line-height: 1.25 !important;
+  letter-spacing: normal !important;
+  color: #455a64 !important;
+  border-radius: 5px !important;
+  background-color: #f6f7f8 !important;
+}
+
+.small-heading{
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.67;
+  letter-spacing: normal;
+  color: #607d8b;
+}
+.small-heading:after {
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  //margin: 0 auto; /* This will center the border. */
+  width: 32px; /* Change this to whatever width you want. */
+  margin-top: 6px;
+  padding-top: 5px;
+  $border: 4px;
+  color: #FFF;
+  background: linear-gradient(277deg, #5bbbff, #358dcc);;
+  background-clip: padding-box; /* !importanté */
+}
 
 .start-xs {
   -ms-flex-pack: start;
