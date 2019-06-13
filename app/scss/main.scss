@@ -1497,6 +1497,9 @@ h4:after {
   border-radius: 8px !important;
   box-shadow: 0 2px 24px 0 rgba(38, 50, 56, 0.16) !important;
 }
+.btn-gateway.active{
+  background-color: #e7f3fb !important;
+}
 
 .nav-link.dashboard:before {
   content: url('../assets/vendor/images/tab-icon-dashboard-inactive.svg');

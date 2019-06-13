@@ -92,10 +92,10 @@
                             <span class="small-heading">NETWORKS</span>
                         </div>
                         <div class="col-12 pl-0 pr-0">
-                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')"><span class="button-content">Mainnet</span></button>
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')" ng-class="{'active' : currentChain == 'Mainnet'}"><span class="button-content">Mainnet</span></button>
                         </div>
                         <div class="col-12 pl-0 pr-0 pt-3 pb-3">
-                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('testnet')"><span class="button-content">Testnet</span></button>
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('testnet')" ng-class="{'active' : currentChain == 'Testnet'}"><span class="button-content">Testnet</span></button>
                         </div>
                     </div>
                 </div>
