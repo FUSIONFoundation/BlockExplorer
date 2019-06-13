@@ -63,7 +63,7 @@
     <!-- Layout inner -->
     <div class="layout-inner" ng-controller="navController">
         <!-- Layout navbar -->
-        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 hidden-xs"
+        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 hidden-xs z-index-1"
              id="layout-navbar">
             <div class="container">
                 <a href="index.html" class="navbar-brand">
@@ -83,6 +83,22 @@
 
                     </li>
                 </ul>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-white dropdown-toggle mr-2" data-toggle="dropdown">
+                        {{currentChain}}
+                    </button>
+                    <div class="dropdown-menu p-2">
+                        <div class="col-12 pl-0 pr-0 pb-3">
+                            <span class="small-heading">NETWORKS</span>
+                        </div>
+                        <div class="col-12 pl-0 pr-0">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')"><span class="button-content">Mainnet</span></button>
+                        </div>
+                        <div class="col-12 pl-0 pr-0 pt-3 pb-3">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('testnet')"><span class="button-content">Testnet</span></button>
+                        </div>
+                    </div>
+                </div>
                 <div class="input-group input-group-main w-25 hidden-xs" ng-controller="navController">
                     <input type="text" class="form-control"
                            ng-model="globalSearch"
@@ -96,7 +112,7 @@
             </div>
         </nav>
         <!--Navbar for Desktop-->
-        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs">
+        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs z-index-0">
             <div class="container">
                 <ul class="nav nav-tabs tabs-alt pt-1">
                     <li class="nav-item">

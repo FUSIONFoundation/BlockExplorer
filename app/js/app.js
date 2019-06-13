@@ -77,9 +77,31 @@ window.months = [
     'Nov',
     'Dec'
 ];
+let cookieName = 'apiCookie';
+window.cookieName = cookieName;
+let apiServer = localStorage.getItem(window.cookieName)
+let data = apiServer ? JSON.parse(apiServer) : null
+
+// Initialize cookie if there is non
+if (data === null) {
+    let data = {
+        'chain': 'mainnet'
+    }
+    localStorage.setItem(window.cookieName, JSON.stringify(data));
+}
+
 
 window.getServer = function () {
-    return 'https://api.fusionnetwork.io/'
+    let nu = localStorage.getItem(window.cookieName)
+    let data = nu ? JSON.parse(nu) : {}
+    console.log(`Selected chain ${data.chain}`);
+    if (data.chain == '') {
+        return 'https://api2.fusionnetwork.io/'
+    } else if (data.chain == 'mainnet'){
+        return 'https://api2.fusionnetwork.io/'
+    } else if(data.chain == 'testnet'){
+        return 'https://api.fusionnetwork.io/'
+    }
 }
 
 let dependencies = [
