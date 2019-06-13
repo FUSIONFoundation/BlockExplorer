@@ -1492,6 +1492,12 @@ h4:after {
   padding-right: 7px;
 }
 
+.dropdown-menu{
+  min-width: 311px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 24px 0 rgba(38, 50, 56, 0.16) !important;
+}
+
 .nav-link.dashboard:before {
   content: url('../assets/vendor/images/tab-icon-dashboard-inactive.svg');
 }
