@@ -15,6 +15,8 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.endPage = Math.ceil($scope.processTransactions.length / $scope.pageSize);
     $scope.shownRows = 10;
     $scope.notAnAddress = false;
+    $scope.allTimeLockBalances = [];
+
 
     console.log(address);
     if(!window.web3.utils.isAddress(address)){
@@ -348,11 +350,14 @@ let addressController = function ($http, $scope, $stateParams) {
     };
 
     $scope.getTimeLockBalances = async function (){
-        $scope.allTimeLockBalances = [];
+        let timeLockBalances = [];
         $http.get(`${window.getServer()}balances/${address}`).then(function (r) {
             let assets = JSON.parse(r.data[0].balanceInfo).timeLockBalances;
+            console.log(assets);
             if(Object.keys(assets).length !== 0){
-                return $scope.hasNoTimeLockBalance = false;
+                $scope.hasNoTimeLockBalance = false;
+            } else{
+                return;
             }
             for (let asset in assets){
                 for (let i = 0; i < assets[asset]["Items"].length; i++) {
@@ -387,8 +392,12 @@ let addressController = function ($http, $scope, $stateParams) {
                         hasImage: hasImage,
                         verifiedImage: verifiedImage
                     }
-                    $scope.allTimeLockBalances.push(data);
+                    timeLockBalances.push(data);
                 }
+                $scope.$eval(function(){
+                    console.log(timeLockBalances);
+                    $scope.allTimeLockBalances = timeLockBalances;
+                })
             }
             $scope.endPageTL = Math.ceil($scope.allTimeLockBalances.length / $scope.pageSizeTL);
 
