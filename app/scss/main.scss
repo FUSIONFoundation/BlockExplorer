@@ -1451,11 +1451,11 @@ h4 {
   color: #263238;
 }
 
-h4 {
+h4.underlined {
   border-color: white !important;
 }
 
-h4:after {
+h4.underlined:after {
   content: ""; /* This is necessary for the pseudo element to work. */
   display: block; /* This will put the pseudo element on its own line. */
   //margin: 0 auto; /* This will center the border. */
