@@ -21,6 +21,15 @@
     "test": "gulp test"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "jade": "^1.11.0",
+    "less-middleware": "^3.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
     "angular": "^1.5.2",
     "angular-animate": "^1.5.7",
     "angular-aria": "^1.5.7",
@@ -38,9 +47,7 @@
     "uglify-js": "^3.5.11",
     "web3": "1.0.0-beta.36",
     "web3-fusion-extend": "1.0.0-beta.24",
-    "ws": "^6.2.1"
-  },
-  "devDependencies": {
+    "ws": "^6.2.1",
     "@babel/core": "^7.4.4",
     "babel-core": "^6.26.3",
     "babel-eslint": "^6.1.0",
