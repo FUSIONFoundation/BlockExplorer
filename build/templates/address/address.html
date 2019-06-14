@@ -1,5 +1,31 @@
 <div class="layout-container">
-    <div class="layout-content">
+    <div class="layout-content" ng-show="notAnAddress">
+        <div class="container flex-grow-1 container-p-y">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="media align-items-center">
+                                            <div class="media-body">
+                                                <div class="align-items-center text-center">
+                                                    <p>This is not a valid address. Make sure you entered a valid adddress. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout-content" ng-show="!notAnAddress">
         <!-- Page content -->
         <div class="container flex-grow-1 container-p-y">
             <div class="row">

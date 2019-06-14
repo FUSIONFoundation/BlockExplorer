@@ -14,9 +14,16 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.pageSize = 10;
     $scope.endPage = Math.ceil($scope.processTransactions.length / $scope.pageSize);
     $scope.shownRows = 10;
+    $scope.notAnAddress = false;
+
+    console.log(address);
+    if(!window.web3.utils.isAddress(address)){
+        console.log('Not a valid address');
+        $scope.notAnAddress = true;
+        return;
+    }
 
     $scope.hasNoTimeLockBalance = true;
-
 
     $scope.$watch('processTransactions', function () {
         if (typeof $scope.processTransactions === 'undefined') {
