@@ -1500,6 +1500,12 @@ h4:after {
 .btn-gateway.active{
   background-color: #e7f3fb !important;
 }
+.btn-gateway.active .button-content::after{
+  margin-left:0.7em;
+  font-size:16px;
+  content : "✔";
+  color:#5bbbff;
+}
 
 .nav-link.dashboard:before {
   content: url('../assets/vendor/images/tab-icon-dashboard-inactive.svg');
