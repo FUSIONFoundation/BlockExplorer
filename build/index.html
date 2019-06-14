@@ -15,7 +15,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/main.min.css?rev=e0e2b8d083402179dd9b59417476a015">
+    <link rel="stylesheet" href="css/main.min.css?rev=e40996cd71dc92b6071ea8544811d143">
     <link rel="stylesheet" href="css/libs.min.css?rev=51c278ce3d0f02296416c2e1caf7addf">
 
     <!-- Main font -->
@@ -84,7 +84,7 @@
                     </li>
                 </ul>
                 <div class="dropdown">
-                    <button type="button" class="btn btn-white dropdown-toggle mr-2" data-toggle="dropdown">
+                    <button type="button" class="btn btn-white border-button dropdown-toggle mr-2" data-toggle="dropdown">
                         {{currentChain}}
                     </button>
                     <div class="dropdown-menu p-2">
@@ -149,6 +149,30 @@
             </div>
         </nav>
         <!--Navbar for Mobile-->
+        <div class="modal modal-fullscreen" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-full" role="document">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title" id="exampleModalLabel">Gateway Selector</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="./assets/vendor/images/t.svg" width="20px" height="20px">
+                        </button>
+                    </div>
+                    <div class="modal-body border-0 pt-2">
+                        <div class="col-12 pl-0 pr-0 pb-3">
+                            <span class="small-heading">NETWORKS</span>
+                        </div>
+                        <div class="col-12 pl-0 pr-0">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')" ng-class="{'active' : currentChain == 'Mainnet'}"><span class="button-content">Mainnet</span></button>
+                        </div>
+                        <div class="col-12 pl-0 pr-0 pt-3">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')" ng-class="{'active' : currentChain == 'Testnet'}"><span class="button-content">Testnet</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <nav class="navbar navbar-expand-lg navbar-light bg-white d-md-none">
             <div class="container">
                 <div class="float-left">
@@ -209,6 +233,10 @@
                         <a class="nav-link staking d-inline-block w-100"
                            ng-class="{'active' : $location.path() == '/staking'}" href="./#!/staking">Staking</a>
                     </li>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-white text-left" data-toggle="modal" data-target="#exampleModal">
+                        {{currentChain}}
+                    </button>
                 </ul>
             </div>
             <div class="input-group input-group-main" ng-show="showSearch">
@@ -292,7 +320,7 @@
 </div>
 <script src="assets/js/main.js"></script>
 
-<script src="app.js?rev=1c3c8a549683a89ec37cc12b2df2c097"></script>
+<script src="app.js?rev=a97f39b1c8ff8cad14336a648e19de79"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/vendor/libs/popper/popper.js"></script>
