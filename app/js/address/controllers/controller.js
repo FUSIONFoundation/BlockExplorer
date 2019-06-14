@@ -321,6 +321,7 @@ let addressController = function ($http, $scope, $stateParams) {
                 };       
                 let asset = '';
                 if(extraData.AssetID !== undefined && extraData.Value){
+                    console.log(extraData.AssetID);
                     let amount = new BigNumber(extraData.Value.toString());
                     let amountFinal = amount.div($scope.countDecimals(window.allAssets[extraData.AssetID].Decimals));
                     data.asset = window.allAssets[extraData.AssetID].Symbol;

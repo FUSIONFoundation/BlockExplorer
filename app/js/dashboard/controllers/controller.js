@@ -27,6 +27,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
            for (let block in blocks){
                let data = {
                    block: blocks[block].height,
+                   blockFormatted: numeral(blocks[block].height).format(),
                        timestamp: format(blocks[block].timeStamp * 1000),
                    transactions: blocks[block].numberOfTransactions,
                    miner: blocks[block].miner

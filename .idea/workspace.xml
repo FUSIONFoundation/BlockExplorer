@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/address/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/address/controllers/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/dashboard/dashboard.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +17,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="785">
+              <caret line="127" column="72" selection-start-line="127" selection-start-column="72" selection-end-line="127" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/dashboard/controllers/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -32,19 +53,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="357" column="16" selection-start-line="357" selection-start-column="16" selection-end-line="357" selection-end-column="16" />
-              <folding>
-                <element signature="e#7739#11164#0" />
-                <element signature="e#11212#14013#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,11 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>https://api.fusionnetwork.io/</find>
-      <find>'${window.getServer()}</find>
-      <find>`${window.getServer()}/</find>
-      <find>http://api.</find>
-      <find>ng-repeat</find>
       <find>transaction</find>
       <find>ceil</find>
       <find>Issuer</find>
@@ -80,13 +83,18 @@
       <find>tickets</find>
       <find>center</find>
       <find>small-heading</find>
-      <find>globalData</find>
       <find>.dropdown</find>
       <find>Networks</find>
       <find>transactions</find>
       <find>currentC</find>
       <find>currentChain</find>
       <find>modal</find>
+      <find>timeLock</find>
+      <find>recentBlocks</find>
+      <find>format</find>
+      <find>globalData</find>
+      <find>fsnPric</find>
+      <find>recentBl</find>
       <find>nav-item</find>
     </findStrings>
     <replaceStrings>
@@ -126,10 +134,10 @@
         <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/app/js/nav/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/scss/main.scss" />
-        <option value="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/templates/address/address.html" />
         <option value="$PROJECT_DIR$/app/js/address/controllers/controller.js" />
+        <option value="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" />
       </list>
     </option>
   </component>
@@ -182,15 +190,28 @@
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="address" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="address" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
@@ -283,18 +304,18 @@
       <workItem from="1560436180415" duration="88000" />
       <workItem from="1560464381033" duration="815000" />
       <workItem from="1560465239847" duration="1863000" />
-      <workItem from="1560510246634" duration="2582000" />
+      <workItem from="1560510246634" duration="3398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106711000" />
+    <option name="totallyTimeSpent" value="107527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="39" width="3000" height="1831" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24896978" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24896978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -310,7 +331,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23101883" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23101883" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -514,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/dashboard/controllers/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="85" column="52" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/transaction/transaction.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -538,17 +552,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
           <caret line="168" column="202" selection-start-line="168" selection-start-column="202" selection-end-line="168" selection-end-column="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="984">
+          <caret line="222" column="19" selection-start-line="222" selection-start-column="19" selection-end-line="222" selection-end-column="19" />
+          <folding>
+            <element signature="e#14066#16475#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -559,14 +576,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
+    <entry file="file://$PROJECT_DIR$/app/js/dashboard/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="357" column="16" selection-start-line="357" selection-start-column="16" selection-end-line="357" selection-end-column="16" />
-          <folding>
-            <element signature="e#7739#11164#0" />
-            <element signature="e#11212#14013#0" />
-          </folding>
+        <state relative-caret-position="384">
+          <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="127" column="72" selection-start-line="127" selection-start-column="72" selection-end-line="127" selection-end-column="72" />
         </state>
       </provider>
     </entry>
