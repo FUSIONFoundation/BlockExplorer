@@ -20,7 +20,6 @@ let addressController = function ($http, $scope, $stateParams) {
 
     console.log(address);
     if(!window.web3.utils.isAddress(address)){
-        console.log('Not a valid address');
         $scope.notAnAddress = true;
         return;
     }
@@ -322,7 +321,7 @@ let addressController = function ($http, $scope, $stateParams) {
                 let asset = '';
                 if(extraData.AssetID !== undefined && extraData.Value){
                     console.log(extraData.AssetID);
-                    console.log(window.allAssets[extraData.AssetID]);
+                    console.log(window.allAssets);
                     let amount = new BigNumber(extraData.Value.toString());
                     let amountFinal = amount.div($scope.countDecimals(window.allAssets[extraData.AssetID].Decimals));
                     data.asset = window.allAssets[extraData.AssetID].Symbol;
@@ -355,7 +354,6 @@ let addressController = function ($http, $scope, $stateParams) {
         let timeLockBalances = [];
         $http.get(`${window.getServer()}balances/${address}`).then(function (r) {
             let assets = JSON.parse(r.data[0].balanceInfo).timeLockBalances;
-            console.log(assets);
             if(Object.keys(assets).length !== 0){
                 $scope.hasNoTimeLockBalance = false;
             } else{
@@ -397,7 +395,6 @@ let addressController = function ($http, $scope, $stateParams) {
                     timeLockBalances.push(data);
                 }
                 $scope.$eval(function(){
-                    console.log(timeLockBalances);
                     $scope.allTimeLockBalances = timeLockBalances;
                 })
             }

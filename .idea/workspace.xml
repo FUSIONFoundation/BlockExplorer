@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/BlockExplorer.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/address/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/address/controllers/controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/dashboard/dashboard.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,12 +20,13 @@
     <session id="-612098699">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="7" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="4" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -56,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/dashboard/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
+            <state relative-caret-position="1548">
               <caret line="86" column="52" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="52" />
             </state>
           </provider>
@@ -65,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="324" column="43" selection-start-line="324" selection-start-column="43" selection-end-line="324" selection-end-column="43" />
+            <state relative-caret-position="3582">
+              <caret line="199" column="9" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -74,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1930">
+            <state relative-caret-position="54">
               <caret line="3" column="16" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="16" />
               <folding>
                 <element signature="e#82#109#0" expanded="true" />
@@ -86,11 +85,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
+            <state relative-caret-position="288">
+              <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -99,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
+            <state relative-caret-position="1692">
               <caret line="94" column="116" selection-start-line="94" selection-start-column="116" selection-end-line="94" selection-end-column="116" />
             </state>
           </provider>
@@ -108,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="26982">
               <caret line="1499" column="12" selection-start-line="1499" selection-start-column="12" selection-end-line="1499" selection-end-column="12" />
             </state>
           </provider>
@@ -118,9 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>total</find>
-      <find>numberOfTransactions</find>
-      <find>https://api.fusionnetwork.io/</find>
       <find>'${window.getServer()}</find>
       <find>`${window.getServer()}/</find>
       <find>http://api.</find>
@@ -148,6 +144,9 @@
       <find>Networks</find>
       <find>getTransactions</find>
       <find>allAssets</find>
+      <find>search</find>
+      <find>fusionnetwork.io</find>
+      <find>consol</find>
     </findStrings>
     <replaceStrings>
       <replace>${window.getServer()}</replace>
@@ -225,94 +224,6 @@
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="address" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="address" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="nav" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="nav" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="address" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
@@ -406,16 +317,16 @@
       <workItem from="1560436180415" duration="88000" />
       <workItem from="1560464381033" duration="815000" />
       <workItem from="1560465239847" duration="2283000" />
-      <workItem from="1560518971939" duration="806000" />
+      <workItem from="1560518971939" duration="4354000" />
+      <workItem from="1560689121984" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105355000" />
+    <option name="totallyTimeSpent" value="109502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="34" width="1920" height="981" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24919957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -642,35 +553,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/dashboard/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
+        <state relative-caret-position="1548">
           <caret line="86" column="52" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="1499" column="12" selection-start-line="1499" selection-start-column="12" selection-end-line="1499" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="94" column="116" selection-start-line="94" selection-start-column="116" selection-end-line="94" selection-end-column="116" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="324" column="43" selection-start-line="324" selection-start-column="43" selection-end-line="324" selection-end-column="43" />
+        <state relative-caret-position="3582">
+          <caret line="199" column="9" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1930">
+        <state relative-caret-position="54">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="16" />
           <folding>
             <element signature="e#82#109#0" expanded="true" />
@@ -678,13 +575,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="94" column="116" selection-start-line="94" selection-start-column="116" selection-end-line="94" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26982">
+          <caret line="1499" column="12" selection-start-line="1499" selection-start-column="12" selection-end-line="1499" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
+        <state relative-caret-position="288">
+          <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>
