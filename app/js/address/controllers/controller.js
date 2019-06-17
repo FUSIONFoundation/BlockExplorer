@@ -17,8 +17,6 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.notAnAddress = false;
     $scope.allTimeLockBalances = [];
 
-
-    console.log(address);
     if(!window.web3.utils.isAddress(address)){
         $scope.notAnAddress = true;
         return;
@@ -33,7 +31,6 @@ let addressController = function ($http, $scope, $stateParams) {
         if ($scope.currentPage == 0) {
             $scope.$eval(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
-                console.log($scope.shownRows);
             });
         }
         let shownRows = 0;
@@ -179,8 +176,11 @@ let addressController = function ($http, $scope, $stateParams) {
 
     $scope.hideTicketValue = true;
     $scope.hideTickets = function (){
+        $scope.$eval(function(){
+            $scope.processTransactions = [];
+        });
         $scope.firstPageTL();
-        $scope.getTransactions(0);
+        return $scope.getTransactions(0);
     }
 
  $scope.allTimeLockBalances = [];
@@ -296,6 +296,7 @@ let addressController = function ($http, $scope, $stateParams) {
         } else if ($scope.hideTicketValue === false){
             s = 'all'
         }
+        $scope.processTransactions = [];
         await $http.get(`${window.getServer()}transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=${s}`).then(function (r) {
             if (r.data.length === 0 || r.data === []) {
                 $scope.currentPage = 0;
@@ -369,6 +370,9 @@ let addressController = function ($http, $scope, $stateParams) {
 
     let transactionSave = [];
     $scope.processTx = async function (transactions,transaction){
+        if(transactionSave.length == 10){
+            transactionSave = [];
+        }
             let extraData = JSON.parse(transactions[transaction].data);
             let inout = $scope.returnInAndOut(address, transactions[transaction].commandExtra3, '');
             let data = {
