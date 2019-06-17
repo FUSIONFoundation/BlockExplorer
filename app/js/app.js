@@ -1,7 +1,6 @@
 import angular from 'angular';
 
 require('babel-polyfill');
-window.allAssets = [];
 import 'angular-ui-router';
 import 'angular-material';
 import configRouter from './config.js';
@@ -17,6 +16,8 @@ import './nav/module.js';
 import './staking/module.js';
 import './transactions/module.js';
 import BigNumber from 'bignumber.js';
+let $http = angular.injector(["ng"]).get("$http");
+
 
 window.BigNumber = BigNumber;
 import moment from 'moment';
@@ -94,7 +95,6 @@ if (data === null) {
 window.getServer = function () {
     let nu = localStorage.getItem(window.cookieName)
     let data = nu ? JSON.parse(nu) : {}
-    console.log(`Selected chain ${data.chain}`);
     if (data.chain == '') {
         return 'https://api2.fusionnetwork.io/'
     } else if (data.chain == 'mainnet'){
@@ -103,6 +103,31 @@ window.getServer = function () {
         return 'https://api.fusionnetwork.io/'
     }
 }
+
+window.allAssets = {
+    '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff': {
+        CanChange: false,
+        Decimals: 18,
+        Description: 'https://fusion.org',
+        ID:'0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
+        Name: 'Fusion',
+        Owner: '0x0000000000000000000000000000000000000000',
+        Symbol: 'FSN',
+        Total: 8.192e+25
+    }
+};
+window.getAsset = async function (asset_id) {
+    let data = {};
+    if(window.allAssets[asset_id] !== undefined){
+        data = window.allAssets[asset_id];
+    } else {
+        await $http.get(`${window.getServer()}assets/${asset_id}`).then(function (r) {
+            window.allAssets[asset_id] = JSON.parse(r.data[0].data);
+            data = JSON.parse(r.data[0].data);
+        });
+    }
+    return data;
+};
 
 let dependencies = [
     'ui.router',
