@@ -299,6 +299,9 @@ let addressController = function ($http, $scope, $stateParams) {
         $scope.processTransactions = [];
         await $http.get(`${window.getServer()}transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=${s}`).then(function (r) {
             if (r.data.length === 0 || r.data === []) {
+                if($scope.addressData.numberOfTransactions != 0){
+                    return console.log('Address only has ticket transactions.')
+                }
                 $scope.currentPage = 0;
                 $scope.getTransactions(0);
             }
