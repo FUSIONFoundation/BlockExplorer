@@ -12,13 +12,18 @@ let transactionController = function ($http, $scope, $stateParams) {
         return parseInt(returnDecimals);
     };
 
-    $scope.getTransaction = function () {
-        $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
-            let tx = r.data[0];
-            let txExtraData = JSON.parse(r.data[0].receipt);
-            let txExtraData2 = JSON.parse(r.data[0].data);
-            let txTransactionData = JSON.parse(r.data[0].transaction);
-            let data = {
+    $scope.getTransaction = async function () {
+        let tx = '';
+        let txExtraData = {};
+        let txExtraData2 = {};
+        let txTransactionData = {};
+        let data = {};
+        await $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
+            tx = r.data[0];
+            txExtraData = JSON.parse(r.data[0].receipt);
+            txExtraData2 = JSON.parse(r.data[0].data);
+            txTransactionData = JSON.parse(r.data[0].transaction);
+            data = {
                 from : tx.fromAddress,
                 to : tx.commandExtra3,
                 asset : '',
@@ -31,17 +36,23 @@ let transactionController = function ($http, $scope, $stateParams) {
                 nonce : txTransactionData.nonce,
                 inputData : txTransactionData.input
             };
-            if(data.transactionType == 'Send Asset' || data.transactionType == 'Time Lock To Asset'){
-                let amount = new BigNumber(txExtraData2.Value.toString());
-                let amountFinal = amount.div($scope.countDecimals(window.getAsset(txExtraData2.AssetID).Decimals));
-                data.asset_id = txExtraData2.AssetID;
-                data.asset_symbol = `${window.getAsset(txExtraData2.AssetID).Symbol}`
-                data.amount = amountFinal.toString();
-                data.asset = `${window.getAsset(txExtraData2.AssetID).Name} (${window.getAsset(txExtraData2.AssetID).Symbol})`;
-            }
-            $scope.$eval(function(){
-                $scope.transactionData = data;
+        });
+
+        if(data.transactionType == 'Send Asset' || data.transactionType == 'Time Lock To Asset'){
+            let asset = {};
+            await window.getAsset(txExtraData2.AssetID).then(function(r){
+                asset = r;
             });
+
+            let amount = new BigNumber(txExtraData2.Value.toString());
+            let amountFinal = amount.div($scope.countDecimals(asset["Decimals"]));
+            data.asset_id = txExtraData2.AssetID;
+            data.asset_symbol = `${asset["Symbol"]}`;
+            data.amount = amountFinal.toString();
+            data.asset = `${asset["Name"]} (${asset["Symbol"]})`;
+        }
+        $scope.$apply(function(){
+            $scope.transactionData = data;
         });
     };
 
