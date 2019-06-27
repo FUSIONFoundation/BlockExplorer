@@ -53,7 +53,7 @@ gulp.task('sass', () => {
     .pipe(plugins.cleanCss())
     .pipe(plugins.sourcemaps.write(`../${DIRS.dest}`))
     .pipe(gulp.dest(DIRS.dest))
-    .pipe(browserSync.stream({match: '**/*.css'}))
+    // .pipe(browserSync.stream({match: '**/*.css'}))
     .on('end', () => {
       gulp
         .src(CSS_DEPENDENCIES)
@@ -61,8 +61,8 @@ gulp.task('sass', () => {
         .pipe(plugins.cleanCss())
         .pipe(plugins.concat('css/libs.min.css'))
         .pipe(plugins.sourcemaps.write(`../${DIRS.dest}`))
-        .pipe(gulp.dest(DIRS.dest))
-        .pipe(browserSync.stream({match: '**/*.css'}));
+        .pipe(gulp.dest(DIRS.dest));
+        // .pipe(browserSync.stream({match: '**/*.css'}));
     });
 });
 
@@ -112,7 +112,7 @@ gulp.task('server', () => {
     ghostMode: false,
     notify: false,
     server: DIRS.dest,
-    tunnel: 'angularseedes6',
+    // tunnel: 'angularseedes6',
     browser: 'google chrome',
     port: 8000
   });
@@ -207,8 +207,8 @@ function buildScript(file) {
     //     console.log(e);
     //  })
       .pipe(gulpif(shouldCreateSourcemap, sourcemaps.write(sourceMapLocation)))
-      .pipe(gulp.dest(DIRS.dest))
-      .pipe(browserSync.stream());
+      .pipe(gulp.dest(DIRS.dest));
+      // .pipe(browserSync.stream());
   }
   return rebundle();
 }
