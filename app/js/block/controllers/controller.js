@@ -18,14 +18,12 @@ let blockController = function ($http, $scope, $stateParams) {
     };
 
     $scope.getAllTransactions = function (transactions){
-        console.log(transactions);
         for(let transaction in transactions) {
             $http.get(`${window.getServer()}transactions/${transactions[transaction]}`).then(function (r) {
                 let transactionSave = {};
                 let data = r.data[0];
                 let extraData = JSON.parse(data.data);
 
-                console.log(extraData);
                 if(data.fusionCommand == 'GenAssetFunc'){
                     transactionSave = {
                         txid : transactions[transaction],
@@ -87,7 +85,6 @@ let blockController = function ($http, $scope, $stateParams) {
                     $scope.transactionsInBlock.push(transactionSave);
                 }
                 if(data.fusionCommand == 'GenNotationFunc'){
-                    console.log(data);
                     transactionSave = {
                         txid : transactions[transaction],
                         timeStamp: format(data.timeStamp * 1000),
@@ -95,6 +92,17 @@ let blockController = function ($http, $scope, $stateParams) {
                         asset: extraData.AssetID,
                         block: data.height,
                         type: 'SAN Generation',
+                    };
+                    $scope.transactionsInBlock.push(transactionSave);
+                }
+                if(data.fusionCommand == 'SendAssetFunc'){
+                    transactionSave = {
+                        txid : transactions[transaction],
+                        timeStamp: format(data.timeStamp * 1000),
+                        date: moment(transactions[transaction].timeStamp).format('ll'),
+                        asset: extraData.AssetID,
+                        block: data.height,
+                        type: 'Send Asset',
                     };
                     $scope.transactionsInBlock.push(transactionSave);
                 }
