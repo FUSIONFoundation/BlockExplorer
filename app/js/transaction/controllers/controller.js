@@ -32,8 +32,8 @@ let transactionController = function ($http, $scope, $stateParams) {
                 hash : tx.hash,
                 block : tx.height,
                 age : `${format(tx.timeStamp * 1000)} (${moment(tx.timeStamp * 1000).format('ll')})`,
-                gasUsed : txExtraData.gasUsed,
-                nonce : txTransactionData.nonce,
+                gasUsed : parseInt(txExtraData.gasUsed,16),
+                nonce : parseInt(txTransactionData.nonce,16),
                 inputData : txTransactionData.input
             };
         });
