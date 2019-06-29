@@ -349,22 +349,29 @@ let addressController = function ($http, $scope, $stateParams) {
                         hasImage = true;
                         verifiedAsset = true;
                     }
-                        let data = {
-                        asset_id : asset,
-                        asset_name : window.getAsset(asset).Name,
-                        asset_symbol :  window.getAsset(asset).Symbol,
-                        startTime : startTimePosix,
-                        endTime : endTimePosix,
-                        amount : amountFinal.toString(),
-                        verified: verifiedAsset,
-                        hasImage: hasImage,
-                        verifiedImage: verifiedImage
-                    }
-                    timeLockBalances.push(data);
+                       let assetData = {}
+                       window.getAsset(asset).then(function(r){
+                            assetData = r;
+                           let data = {
+                               asset_id : asset,
+                               asset_name : assetData["Name"],
+                               asset_symbol :  assetData["Symbol"],
+                               startTime : startTimePosix,
+                               endTime : endTimePosix,
+                               amount : amountFinal.toString(),
+                               verified: verifiedAsset,
+                               hasImage: hasImage,
+                               verifiedImage: verifiedImage
+                           }
+
+                           timeLockBalances.push(data);
+
+                           $scope.$eval(function(){
+                               $scope.allTimeLockBalances = timeLockBalances;
+                           })
+                        });
                 }
-                $scope.$eval(function(){
-                    $scope.allTimeLockBalances = timeLockBalances;
-                })
+
             }
             $scope.endPageTL = Math.ceil($scope.allTimeLockBalances.length / $scope.pageSizeTL);
 
