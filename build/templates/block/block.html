@@ -207,6 +207,14 @@
                                                 <a href="./#!/asset/{{transaction.asset}}" ng-if="transaction.type == 'Time Lock to Time Lock'">
                                                     {{transaction.assetId}}
                                                 </a>
+                                                <a href="./#!/asset/{{transaction.asset}}" ng-if="transaction.type == 'Asset To Time Lock'">
+                                                    {{transaction.asset}}
+                                                    <br>
+                                                    <span class="small-gray-text ng-binding ng-scope">
+                                                        <img src="assets/vendor/images/sendtl.svg">
+                                                    {{transaction.start}} - {{transaction.end}}
+                                                    </span>
+                                                </a>
                                             </td>
                                             <td class="label-small">0.00002</td>
                                         </tr>

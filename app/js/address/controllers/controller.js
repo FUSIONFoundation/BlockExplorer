@@ -347,7 +347,7 @@ let addressController = function ($http, $scope, $stateParams) {
                         hasImage = true;
                         verifiedAsset = true;
                     }
-                       let assetData = {}
+                       let assetData = {};
                        window.getAsset(asset).then(function(r){
                             assetData = r;
                            let amount = new BigNumber(assets[asset]["Items"][i]["Value"]);

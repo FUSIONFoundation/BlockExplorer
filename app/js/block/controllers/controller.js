@@ -6,6 +6,24 @@ let blockController = function ($http, $scope, $stateParams) {
     $scope.lastUpdated = moment(new Date().getTime()).format('LTS');
     $scope.transactionsInBlock = [];
 
+    $scope.returnDateString = function (posixtime, position) {
+        let time = new Date(parseInt(posixtime) * 1000);
+        if (posixtime == 18446744073709552000 && position == "End") {
+            return "Forever";
+        }
+        if (position == "Start") {
+            if (posixtime == 0) {
+                return "Now";
+            }
+            // if(posixtime < time && position == 'Start'){return 'Now';}
+        }
+        let tMonth = time.getUTCMonth();
+        let tDay = time.getUTCDate();
+        let tYear = time.getUTCFullYear();
+
+        return window.months[tMonth] + " " + tDay + ", " + tYear;
+    };
+
     $scope.getBlock = function () {
         $http.get(`${window.getServer()}blocks/${block}`).then(function (r) {
             let data = JSON.parse(r.data[0].block);
@@ -46,8 +64,8 @@ let blockController = function ($http, $scope, $stateParams) {
                         block: data.height,
                         from: data.fromAddress,
                         type: 'Buy Ticket',
-                        asset: '200 FSN',
-                        amount : 200
+                        asset: '5000 FSN',
+                        amount : 5000
                     };
                     $scope.transactionsInBlock.push(transactionSave);
                 }
@@ -69,6 +87,7 @@ let blockController = function ($http, $scope, $stateParams) {
                     $scope.transactionsInBlock.push(transactionSave);
                 }
                 if(data.fusionCommand == 'AssetToTimeLock'){
+                    console.log(extraData);
                     transactionSave = {
                         txid : transactions[transaction],
                         timeStamp: format(data.timeStamp * 1000),
@@ -78,8 +97,8 @@ let blockController = function ($http, $scope, $stateParams) {
                         from: data.fromAddress,
                         to: extraData.To,
                         type: 'Asset To Time Lock',
-                        start : extraData.StartTime,
-                        end : extraData.EndTime,
+                        start : $scope.returnDateString(extraData.StartTime, 'Start'),
+                        end : $scope.returnDateString(extraData.EndTime, 'End'),
                         amount : extraData.Value
                     };
                     $scope.transactionsInBlock.push(transactionSave);
