@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/js/transaction/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/transaction/controllers/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/transaction/transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/transaction/transaction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/templates/transaction/transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/transaction/transaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/address/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/address/controllers/controller.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,19 +13,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/transaction/controllers/controller.js">
+        <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2341">
-              <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+            <state relative-caret-position="41">
+              <caret line="891" column="53" selection-start-line="891" selection-start-column="44" selection-end-line="891" selection-end-column="53" />
+              <folding>
+                <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/templates/transaction/transaction.html">
+        <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="67" column="122" selection-start-line="67" selection-start-column="122" selection-end-line="67" selection-end-column="122" />
+            <state relative-caret-position="684">
+              <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -108,11 +105,11 @@
         <option value="$PROJECT_DIR$/app/js/dashboard/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/gulpfile.babel.js" />
-        <option value="$PROJECT_DIR$/app/js/address/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/js/block/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/templates/block/block.html" />
         <option value="$PROJECT_DIR$/app/js/transaction/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/templates/transaction/transaction.html" />
+        <option value="$PROJECT_DIR$/app/js/address/controllers/controller.js" />
       </list>
     </option>
   </component>
@@ -144,28 +141,22 @@
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="address" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="block" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="transaction" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="address" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
@@ -266,18 +257,18 @@
       <workItem from="1560767049290" duration="3879000" />
       <workItem from="1561627621917" duration="764000" />
       <workItem from="1561648025436" duration="330000" />
-      <workItem from="1561793030460" duration="4717000" />
+      <workItem from="1561793030460" duration="5366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123591000" />
+    <option name="totallyTimeSpent" value="124240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="39" width="3000" height="1831" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24896978" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24896978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -293,7 +284,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23101883" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23101883" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -537,23 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-281">
-          <caret line="891" column="53" selection-start-line="891" selection-start-column="44" selection-end-line="891" selection-end-column="53" />
-          <folding>
-            <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="199" column="9" selection-start-line="199" selection-start-column="9" selection-end-line="199" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/block/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="537">
@@ -579,6 +553,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
           <caret line="67" column="122" selection-start-line="67" selection-start-column="122" selection-end-line="67" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="891" column="53" selection-start-line="891" selection-start-column="44" selection-end-line="891" selection-end-column="53" />
+          <folding>
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
         </state>
       </provider>
     </entry>

@@ -569,6 +569,11 @@
                                                             {{transaction.startTimeString}} - {{transaction.endTimeString}}
                                                     </span>
                                                 </span>
+                                                <span ng-if="transaction.type == 'Create Asset'">
+                                                    <a href="./#!/asset/{{transaction.asset_id}}">
+                                                        {{transaction.asset}}
+                                                    </a>
+                                                </span>
                                             </td>
                                             <td class="text-fusion label-small text-right">
                                                 .00000002

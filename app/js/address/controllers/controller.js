@@ -428,6 +428,10 @@ let addressController = function ($http, $scope, $stateParams) {
                 if (data.type == 'Take Swap') {
 
                 }
+                if(data.type == 'Create Asset'){
+                    console.log(extraData);
+                    data.asset = `${extraData.Name} (${extraData.Symbol})`;
+                }
             } catch (err){
                 console.log(err);
             }
