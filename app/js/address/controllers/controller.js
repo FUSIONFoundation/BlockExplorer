@@ -331,8 +331,6 @@ let addressController = function ($http, $scope, $stateParams) {
                 for (let i = 0; i < assets[asset]["Items"].length; i++) {
                     let startTimePosix = $scope.returnDateString(assets[asset]["Items"][i]["StartTime"],'Start');
                     let endTimePosix = $scope.returnDateString(assets[asset]["Items"][i]["EndTime"],'End');
-                    let amount = new BigNumber(assets[asset]["Items"][i]["Value"]);
-                    let amountFinal = amount.div($scope.countDecimals(window.getAsset(asset).Decimals))
                     let verifiedImage = '';
                     let hasImage = false;
                     let verifiedAsset = false;
@@ -352,6 +350,8 @@ let addressController = function ($http, $scope, $stateParams) {
                        let assetData = {}
                        window.getAsset(asset).then(function(r){
                             assetData = r;
+                           let amount = new BigNumber(assets[asset]["Items"][i]["Value"]);
+                           let amountFinal = amount.div($scope.countDecimals(assetData["Decimals"]));
                            let data = {
                                asset_id : asset,
                                asset_name : assetData["Name"],
