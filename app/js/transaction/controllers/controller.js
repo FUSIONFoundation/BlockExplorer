@@ -57,13 +57,15 @@ let transactionController = function ($http, $scope, $stateParams) {
             };
         });
 
-        if(data.transactionType == 'Send Asset' || data.transactionType == 'Time Lock To Asset' || data.transactionType == 'Asset To Time Lock' || data.transactionType == 'Time Lock To Time Lock'){
+        if( data.transactionType == 'Send Asset' ||
+            data.transactionType == 'Time Lock To Asset' ||
+            data.transactionType == 'Asset To Time Lock' ||
+            data.transactionType == 'Time Lock To Time Lock'){
             let asset = {};
             await window.getAsset(txExtraData2.AssetID).then(function(r){
                 asset = r;
             });
 
-            console.log(txExtraData2);
             let amount = new BigNumber(txExtraData2.Value.toString());
             let amountFinal = amount.div($scope.countDecimals(asset["Decimals"]));
             data.asset_id = txExtraData2.AssetID;
@@ -73,6 +75,11 @@ let transactionController = function ($http, $scope, $stateParams) {
             if(txExtraData2.StartTime){
                 data.timelock = `${$scope.returnDateString(txExtraData2.StartTime,'Start')} - ${$scope.returnDateString(txExtraData2.EndTime,'End')}`;
             }
+        }
+        if(data.transactionType == 'Create Asset'){
+            console.log(txExtraData2);
+            data.asset = `${txExtraData2["Name"]} (${txExtraData2["Symbol"]})`;
+            data.asset_id = txExtraData2.AssetID;
             console.log(data);
         }
         $scope.$apply(function(){

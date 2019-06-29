@@ -64,6 +64,9 @@
                                                         <h3 ng-if="transactionData.transactionType == 'Send Asset' || transactionData.transactionType == 'Time Lock To Asset' || transactionData.transactionType == 'Asset To Time Lock' || transactionData.transactionType == 'Time Lock To Time Lock'">
                                                                 <span class="badge badge-light-blue">{{transactionData.amount}} {{transactionData.asset_symbol}}</span>                                                   
                                                         </h3>
+                                                        <h3 ng-if="transactionData.transactionType == 'Create Asset'">
+                                                            <span class="badge badge-light-blue">{{transactionData.asset}}</span>
+                                                        </h3>
                                                     </div>
                                                     <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small">
                                                         From:
@@ -73,10 +76,10 @@
                                                             <a href="./#!/address/{{transactionData.from}}">{{transactionData.from}}</a>
                                                         </span>
                                                     </div>
-                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small" ng-if="transactionData.transactionType != 'Create Asset'">
                                                         To:
                                                     </div>
-                                                    <div class="col-md-9 text-md-right">
+                                                    <div class="col-md-9 text-md-right" ng-if="transactionData.transactionType != 'Create Asset'">
                                                         <span class="font-weight-sm-bold mr-1 text-blue">
                                                                 <a href="./#!/address/{{transactionData.to}}">{{transactionData.to}}</a>
                                                             </span>
