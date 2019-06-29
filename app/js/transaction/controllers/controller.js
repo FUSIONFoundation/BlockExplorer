@@ -4,6 +4,25 @@ let transactionController = function ($http, $scope, $stateParams) {
     let transactionHash = $stateParams.transactionId;
     $scope.transactionData = {};
 
+    $scope.returnDateString = function (posixtime, position) {
+        let time = new Date(parseInt(posixtime) * 1000);
+        if (posixtime == 18446744073709552000 && position == "End") {
+            return "Forever";
+        }
+        if (position == "Start") {
+            if (posixtime == 0) {
+                return "Now";
+            }
+            // if(posixtime < time && position == 'Start'){return 'Now';}
+        }
+        let tMonth = time.getUTCMonth();
+        let tDay = time.getUTCDate();
+        let tYear = time.getUTCFullYear();
+
+        return window.months[tMonth] + " " + tDay + ", " + tYear;
+    };
+
+
     $scope.countDecimals = function (decimals) {
         let returnDecimals = '1';
         for (let i = 0; i < decimals; i++) {
@@ -38,18 +57,23 @@ let transactionController = function ($http, $scope, $stateParams) {
             };
         });
 
-        if(data.transactionType == 'Send Asset' || data.transactionType == 'Time Lock To Asset'){
+        if(data.transactionType == 'Send Asset' || data.transactionType == 'Time Lock To Asset' || data.transactionType == 'Asset To Time Lock'){
             let asset = {};
             await window.getAsset(txExtraData2.AssetID).then(function(r){
                 asset = r;
             });
 
+            console.log(txExtraData2);
             let amount = new BigNumber(txExtraData2.Value.toString());
             let amountFinal = amount.div($scope.countDecimals(asset["Decimals"]));
             data.asset_id = txExtraData2.AssetID;
             data.asset_symbol = `${asset["Symbol"]}`;
             data.amount = amountFinal.toString();
             data.asset = `${asset["Name"]} (${asset["Symbol"]})`;
+            if(txExtraData2.StartTime){
+                data.timelock = `${$scope.returnDateString(txExtraData2.StartTime,'Start')} - ${$scope.returnDateString(txExtraData2.EndTime,'End')}`;
+            }
+            console.log(data);
         }
         $scope.$apply(function(){
             $scope.transactionData = data;
