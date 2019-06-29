@@ -57,7 +57,7 @@ let transactionController = function ($http, $scope, $stateParams) {
             };
         });
 
-        if(data.transactionType == 'Send Asset' || data.transactionType == 'Time Lock To Asset' || data.transactionType == 'Asset To Time Lock'){
+        if(data.transactionType == 'Send Asset' || data.transactionType == 'Time Lock To Asset' || data.transactionType == 'Asset To Time Lock' || data.transactionType == 'Time Lock To Time Lock'){
             let asset = {};
             await window.getAsset(txExtraData2.AssetID).then(function(r){
                 asset = r;
