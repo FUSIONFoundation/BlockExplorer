@@ -39,6 +39,11 @@ let transactionController = function ($http, $scope, $stateParams) {
         let data = {};
         await $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
             tx = r.data[0];
+            if(tx === []){
+                setTimeout($scope.getTransaction(),5000);
+                console.log('Transaction not found, will retry in 5s..');
+                return;
+            }
             txExtraData = JSON.parse(r.data[0].receipt);
             txExtraData2 = JSON.parse(r.data[0].data);
             txTransactionData = JSON.parse(r.data[0].transaction);
