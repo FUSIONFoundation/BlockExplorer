@@ -99,6 +99,12 @@
                                                     {{transactionData.timelock}}
                                                     </span>
                                                     </div>
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small" ng-if="transactionData.swap">
+                                                        Swap Details:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right" ng-if="transactionData.swap">
+                                                    <span class="badge badge-light-blue ng-binding">{{transactionData.fromSwap}}</span> <i class="fa fa-exchange-alt"></i> <span class="badge badge-light-blue ng-binding">{{transactionData.toSwap}}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
