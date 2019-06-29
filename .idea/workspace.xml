@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/js/address/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/address/controllers/controller.js" afterDir="false" />
-    </list>
+    <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +13,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="891" column="53" selection-start-line="891" selection-start-column="44" selection-end-line="891" selection-end-column="53" />
+            <state relative-caret-position="902">
+              <caret line="573" column="77" selection-start-line="573" selection-start-column="77" selection-end-line="573" selection-end-column="77" />
               <folding>
                 <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" />
               </folding>
@@ -27,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
+            <state relative-caret-position="766">
+              <caret line="433" column="54" selection-start-line="433" selection-start-column="54" selection-end-line="433" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -97,7 +95,6 @@
         <option value="$PROJECT_DIR$/app/js/assets/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/templates/assets/assets.html" />
         <option value="$PROJECT_DIR$/app/templates/asset/asset.html" />
-        <option value="$PROJECT_DIR$/app/templates/address/address.html" />
         <option value="$PROJECT_DIR$/app/js/nav/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/scss/main.scss" />
         <option value="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" />
@@ -109,6 +106,7 @@
         <option value="$PROJECT_DIR$/app/templates/block/block.html" />
         <option value="$PROJECT_DIR$/app/js/transaction/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/templates/transaction/transaction.html" />
+        <option value="$PROJECT_DIR$/app/templates/address/address.html" />
         <option value="$PROJECT_DIR$/app/js/address/controllers/controller.js" />
       </list>
     </option>
@@ -257,12 +255,12 @@
       <workItem from="1560767049290" duration="3879000" />
       <workItem from="1561627621917" duration="764000" />
       <workItem from="1561648025436" duration="330000" />
-      <workItem from="1561793030460" duration="5366000" />
+      <workItem from="1561793030460" duration="5923000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124240000" />
+    <option name="totallyTimeSpent" value="124797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="39" width="3000" height="1831" extended-state="6" />
@@ -558,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="891" column="53" selection-start-line="891" selection-start-column="44" selection-end-line="891" selection-end-column="53" />
+        <state relative-caret-position="902">
+          <caret line="573" column="77" selection-start-line="573" selection-start-column="77" selection-end-line="573" selection-end-column="77" />
           <folding>
             <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" />
           </folding>
@@ -568,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="431" column="43" selection-start-line="431" selection-start-column="43" selection-end-line="431" selection-end-column="43" />
+        <state relative-caret-position="766">
+          <caret line="433" column="54" selection-start-line="433" selection-start-column="54" selection-end-line="433" selection-end-column="54" />
         </state>
       </provider>
     </entry>
