@@ -87,7 +87,7 @@ let blockController = function ($http, $scope, $stateParams) {
                     $scope.transactionsInBlock.push(transactionSave);
                 }
                 if(data.fusionCommand == 'AssetToTimeLock'){
-                    console.log(extraData);
+                    // console.log(extraData);
                     transactionSave = {
                         txid : transactions[transaction],
                         timeStamp: format(data.timeStamp * 1000),

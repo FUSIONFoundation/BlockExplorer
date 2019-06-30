@@ -42,7 +42,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
 
     $scope.getTotalTickets = async function (){
         await web3.fsn.totalNumberOfTickets().then(function(totalTickets){
-            console.log(totalTickets);
+            // console.log(totalTickets);
             $scope.$apply(function(){
                 $scope.totalTickets = totalTickets;
             });
@@ -54,7 +54,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
         $http.get(`${window.getServer()}transactions/all?sort=desc&size=6`).then(function (r) {
             let transactions = r.data;
             for (let transaction in transactions){
-                console.log(transactions[transaction]);
+                // console.log(transactions[transaction]);
                 let data = {
                     transactionId: transactions[transaction].hash,
                     from: transactions[transaction].fromAddress,

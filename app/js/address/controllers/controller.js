@@ -429,12 +429,12 @@ let addressController = function ($http, $scope, $stateParams) {
 
                 }
                 if(data.type == 'Create Asset'){
-                    console.log(extraData);
+                    // console.log(extraData);
                     data.asset = `${extraData.Name} (${extraData.Symbol})`;
                     data.asset_id = extraData.AssetID;
                 }
             } catch (err){
-                console.log(err);
+                // console.log(err);
             }
             transactionSave.push(data);
     }

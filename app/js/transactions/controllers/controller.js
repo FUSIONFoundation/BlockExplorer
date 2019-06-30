@@ -90,7 +90,7 @@ let transactionsController = function ($http, $scope) {
         let displayTransactions = [];
         $http.get(`${window.getServer()}transactions/all?sort=desc&page=${page}&size=20&field=height&returnTickets=onlytickets`).then(function (r) {
             transactions = r.data;
-            console.log(transactions);
+            // console.log(transactions);
             for (let transaction in transactions) {
                 let transactionExtraData = JSON.parse(transactions[transaction].receipt);
                 let a = window.BigNumber(transactionExtraData.cumulativeGasUsed.toString());
@@ -103,7 +103,7 @@ let transactionsController = function ($http, $scope) {
                     assets : '',
                     fees : fees,
                 }
-                console.log(transactions[transaction]);
+                // console.log(transactions[transaction]);
                 displayTransactions.push(data);
                 $scope.transactions = displayTransactions;
             }

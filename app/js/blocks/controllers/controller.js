@@ -90,11 +90,11 @@ let blocksController = function ($http, $scope) {
         let displayBlocks = [];
         $http.get(`${window.getServer()}blocks/all?sort=desc&page=${page}&size=20&field=height`).then(function (r) {
             blocks = r.data;
-            console.log(blocks);
+            // console.log(blocks);
             for (let block in blocks) {
                 let blocksExtraData = JSON.parse(blocks[block].block);
                 let gasPercentageUsed = (parseInt(blocksExtraData.gasUsed) / parseInt(blocksExtraData.gasLimit)) * 100;
-                console.log(gasPercentageUsed);
+                // console.log(gasPercentageUsed);
                 let data = {
                     block: blocks[block].height,
                     age: window.format(blocksExtraData.timestamp * 1000),

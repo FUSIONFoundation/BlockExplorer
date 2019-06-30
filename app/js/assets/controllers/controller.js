@@ -100,7 +100,7 @@ let assetsController = function ($http, $scope) {
                 let assets = {};
                 $http.get(`${window.getServer()}assets/all?page=${i}&size=100&sort=desc`).then(function (r) {
                     assets = r.data;
-                    console.log(assets);
+                    // console.log(assets);
                     for (let asset in assets) {
                         let verifiedImage = '';
                         let hasImage = false;

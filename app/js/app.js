@@ -38,7 +38,7 @@ web3 = web3FusionExtend.extend(web3);
 window.web3 = web3;
 
 function keepWeb3Alive() {
-    console.log(`Keep Web3 alive!`)
+    // console.log(`Keep Web3 alive!`)
     provider = new Web3.providers.WebsocketProvider('wss://gatewaypsn2w.fusionnetwork.io:10001');
 
     provider.on('connect', function () {

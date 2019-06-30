@@ -84,19 +84,19 @@ let transactionController = function ($http, $scope, $stateParams) {
         if (data.transactionType == 'Create Asset') {
             data.asset = `${txExtraData2['Name']} (${txExtraData2['Symbol']})`;
             data.asset_id = txExtraData2.AssetID;
-            console.log(data);
+            // console.log(data);
         }
         if (data.transactionType == 'Make Swap') {
-            console.log(txExtraData2);
+            // console.log(txExtraData2);
             let fromAsset = {};
             let toAsset = {};
             await window.getAsset(txExtraData2.FromAssetID).then(function (r) {
                 fromAsset = r;
-                console.log(fromAsset);
+                // console.log(fromAsset);
             });
             await window.getAsset(txExtraData2.ToAssetID).then(function (r) {
                 toAsset = r;
-                console.log(toAsset);
+                // console.log(toAsset);
             })
             data.swap = true;
             data.fromSwap = fromAsset.Symbol;

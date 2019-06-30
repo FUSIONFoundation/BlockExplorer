@@ -38,7 +38,7 @@ let assetController = function ($http, $scope, $stateParams) {
                 verifiedImage: verifiedImage,
                 verified: verifiedAsset
             };
-            console.log(data);
+            // console.log(data);
             $scope.$eval(function () {
                 $scope.assetData = data;
             });
@@ -74,7 +74,7 @@ let assetController = function ($http, $scope, $stateParams) {
                 verifiedImage: verifiedImage,
                 verified: verifiedAsset,
             };
-            console.log(data);
+            // console.log(data);
             $scope.$eval(function () {
                 $scope.assetData = data;
             });

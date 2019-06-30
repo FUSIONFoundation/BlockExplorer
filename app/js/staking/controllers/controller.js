@@ -15,7 +15,7 @@ let blockController = function ($http, $scope) {
     })
 
     $scope.saveCookie = function () {
-        console.log(window.web3.utils.isAddress($scope.walletAddress))
+        // console.log(window.web3.utils.isAddress($scope.walletAddress))
         if (window.web3.utils.isAddress($scope.walletAddress)) {
             localStorage.setItem('stakingAddress', $scope.walletAddress);
             $scope.walletAddressSaved = $scope.walletAddress;
@@ -57,7 +57,7 @@ let blockController = function ($http, $scope) {
 
             });
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
     };
 };

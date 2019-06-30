@@ -91,7 +91,7 @@ let blocksController = function ($http, $scope) {
         $http.get(`${window.getServer()}balances/all?sort=desc&page=${page}&size=20&field=fsnBalance`).then(function (r) {
             addresses = r.data;
             for (let address in addresses) {
-                console.log(addresses[address]);
+                // console.log(addresses[address]);
                 let amount = new BigNumber(addresses[address].fsnBalance.toString());
                 let amountFinal = amount.div($scope.countDecimals(18));
                 let data = {
