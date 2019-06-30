@@ -96,11 +96,11 @@ window.getServer = function () {
     let nu = localStorage.getItem(window.cookieName)
     let data = nu ? JSON.parse(nu) : {}
     if (data.chain == '') {
-        return 'https://api2.fusionnetwork.io/'
-    } else if (data.chain == 'mainnet'){
-        return 'https://api2.fusionnetwork.io/'
-    } else if(data.chain == 'testnet'){
         return 'https://api.fusionnetwork.io/'
+    } else if (data.chain == 'mainnet'){
+        return 'https://api.fusionnetwork.io/'
+    } else if(data.chain == 'testnet'){
+        return 'https://api2.fusionnetwork.io/'
     }
 }
 
