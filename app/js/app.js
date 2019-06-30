@@ -39,7 +39,7 @@ window.web3 = web3;
 
 function keepWeb3Alive() {
     // console.log(`Keep Web3 alive!`)
-    provider = new Web3.providers.WebsocketProvider('wss://gatewaypsn2w.fusionnetwork.io:10001');
+    provider = new Web3.providers.WebsocketProvider('wss://mainnetpublicgateway1.fusionnetwork.io:10001');
 
     provider.on('connect', function () {
         window.web3._isConnected = true;
@@ -60,7 +60,7 @@ function keepWeb3Alive() {
     window.web3 = web3;
 }
 
-// keepWeb3Alive();
+keepWeb3Alive();
 let utils = require('./utils/utils.js');
 window.utils = utils;
 
