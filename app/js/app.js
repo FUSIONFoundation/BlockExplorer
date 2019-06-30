@@ -60,7 +60,7 @@ function keepWeb3Alive() {
     window.web3 = web3;
 }
 
-keepWeb3Alive();
+// keepWeb3Alive();
 let utils = require('./utils/utils.js');
 window.utils = utils;
 
