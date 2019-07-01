@@ -11,7 +11,8 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="align-items-center text-center">
-                                                    <p>This is not a valid address. Make sure you entered a valid adddress. </p>
+                                                    <p>This is not a valid address. Make sure you entered a valid
+                                                        adddress. </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -33,8 +34,11 @@
                         Address
                         <img class="btn-circle-40 w40 p-0 ml-2"
                              src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{address}}" alt="">
-                        <span class="badge badge-light-blue ml-2 font-weight-normal">{{address}}</span>
-                        <i class="fa copy pad-badge" ng-click="copyToClipboard(address)"></i>
+                        <span class="badge badge-light-blue ml-2 font-weight-normal text-size-address">{{address}}</span>
+                        <span class="d-inline-flex">
+                                                    <i class="far fa-copy pad-badge"
+                                                       ng-click="copyToClipboard(address)"></i>
+                        </span>
                     </h4>
                 </div>
             </div>
@@ -205,7 +209,7 @@
                                                 <label class="switcher switcher-sm">
                                                     <input type="checkbox" class="switcher-input"
                                                            ng-model="hideTicketValue"
-                                                    ng-change="hideTickets()">
+                                                           ng-change="hideTickets()">
                                                     <span class="switcher-indicator">
                       <span class="switcher-yes">
                         <span class="ion ion-md-checkmark"></span>
