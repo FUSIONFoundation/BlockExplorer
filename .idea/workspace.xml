@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/scss/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/address/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/address/address.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/css/main.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/main.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/templates/address/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/address/address.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +35,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="181" />
+          <entry key="HTML" value="197" />
           <entry key="JavaScript" value="260" />
           <entry key="SCSS" value="73" />
         </counts>
@@ -82,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+            <state relative-caret-position="490">
+              <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -454,12 +449,12 @@
       <workItem from="1561890361708" duration="177000" />
       <workItem from="1561890543709" duration="271000" />
       <workItem from="1561891038818" duration="2632000" />
-      <workItem from="1561983979233" duration="3298000" />
+      <workItem from="1561983979233" duration="3796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125301000" />
+    <option name="totallyTimeSpent" value="125799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="981" extended-state="6" />
@@ -772,8 +767,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+        <state relative-caret-position="490">
+          <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
         </state>
       </provider>
     </entry>
