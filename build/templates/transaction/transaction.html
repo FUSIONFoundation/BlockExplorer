@@ -62,7 +62,9 @@
                                                             {{transactionData.transactionType}}
                                                         </h4>
                                                         <h3 ng-if="transactionData.transactionType == 'Send Asset' || transactionData.transactionType == 'Time Lock To Asset' || transactionData.transactionType == 'Asset To Time Lock' || transactionData.transactionType == 'Time Lock To Time Lock'">
-                                                                <span class="badge badge-light-blue">{{transactionData.amount}} {{transactionData.asset_symbol}}</span>                                                   
+                                                                <span class="badge badge-light-blue">{{transactionData.amount}} {{transactionData.asset_symbol}}</span>
+                                                            <br>
+                                                            <span class="text-fusion font-size-12" data-toggle="tooltip" data-placement="bottom" title="Token Price: {{tokenPrice}}">$ {{USDValue}} ,-</span>
                                                         </h3>
                                                         <h3 ng-if="transactionData.transactionType == 'Create Asset'">
                                                             <span class="badge badge-light-blue">{{transactionData.asset}}</span>

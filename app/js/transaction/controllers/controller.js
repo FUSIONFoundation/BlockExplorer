@@ -5,6 +5,21 @@ let transactionController = function ($http, $scope, $stateParams) {
     $scope.transactionData = {};
     $scope.copyToClipboard = window.copyToClipboard;
 
+    $scope.USDValue = 'loading';
+    $scope.tokenPrice = 'loading';
+
+
+    $scope.getFiatValue = async function (input){
+        let z = 0;
+        await $http.get(`${window.getServer()}fsnprice`).then(function (r) {
+            z = r.data.priceInfo.price
+            let tokenPrice = new BigNumber(z);
+            let totalTokens = new BigNumber(input);
+            let usdVal = totalTokens.div(tokenPrice);
+            $scope.USDValue = window.numeral(usdVal).format('0,0.00');
+            $scope.tokenPrice = window.numeral(r.data.priceInfo.price).format('0,0.00');
+        });
+    };
 
     $scope.returnDateString = function (posixtime, position) {
         let time = new Date(parseInt(posixtime) * 1000);
@@ -75,6 +90,7 @@ let transactionController = function ($http, $scope, $stateParams) {
 
             let amount = new BigNumber(txExtraData2.Value.toString());
             let amountFinal = amount.div($scope.countDecimals(asset['Decimals']));
+            $scope.getFiatValue(amountFinal.toString());
             data.asset_id = txExtraData2.AssetID;
             data.asset_symbol = `${asset['Symbol']}`;
             data.amount = amountFinal.toString();
