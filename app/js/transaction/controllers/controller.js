@@ -3,6 +3,8 @@ import BigNumber from 'bignumber.js';
 let transactionController = function ($http, $scope, $stateParams) {
     let transactionHash = $stateParams.transactionId;
     $scope.transactionData = {};
+    $scope.copyToClipboard = window.copyToClipboard;
+
 
     $scope.returnDateString = function (posixtime, position) {
         let time = new Date(parseInt(posixtime) * 1000);
