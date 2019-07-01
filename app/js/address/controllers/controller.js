@@ -16,6 +16,7 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.shownRows = 10;
     $scope.notAnAddress = false;
     $scope.allTimeLockBalances = [];
+    $scope.copyToClipboard = window.copyToClipboard;
 
     if(!window.web3.utils.isAddress(address)){
         $scope.notAnAddress = true;

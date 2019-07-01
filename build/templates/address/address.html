@@ -24,7 +24,6 @@
             </div>
         </div>
     </div>
-
     <div class="layout-content" ng-show="!notAnAddress">
         <!-- Page content -->
         <div class="container flex-grow-1 container-p-y">
@@ -35,6 +34,7 @@
                         <img class="btn-circle-40 w40 p-0 ml-2"
                              src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{address}}" alt="">
                         <span class="badge badge-light-blue ml-2 font-weight-normal">{{address}}</span>
+                        <i class="fa copy pad-badge" ng-click="copyToClipboard(address)"></i>
                     </h4>
                 </div>
             </div>

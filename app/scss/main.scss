@@ -1684,6 +1684,9 @@ h4.underlined:after {
   border: 1px solid white;
   background-color: #8ad7fe!important;
 }
+.pad-badge{
+  padding: .25em .0em;
+}
 
 .copy:after {
   display: -webkit-inline-box;
@@ -1692,7 +1695,7 @@ h4.underlined:after {
   margin-right: 5px;
   margin-top:2px;
   background-repeat: no-repeat;
-  background-image: url(../images/copy.svg);
+  background-image: url(../assets/vendor/images/copy.svg);
   background-size: 16px 16px;
   height: 16px;
   width: 16px;
