@@ -15,9 +15,9 @@ let transactionController = function ($http, $scope, $stateParams) {
             z = r.data.priceInfo.price
             let tokenPrice = new BigNumber(z);
             let totalTokens = new BigNumber(input);
-            let usdVal = totalTokens.div(tokenPrice);
-            $scope.USDValue = window.numeral(usdVal).format('0,0.00');
-            $scope.tokenPrice = window.numeral(r.data.priceInfo.price).format('0,0.00');
+            let usdVal = totalTokens.times(tokenPrice);
+            $scope.USDValue = window.numeral(usdVal).format('$0,0.00');
+            $scope.tokenPrice = window.numeral(r.data.priceInfo.price).format('$0,0.00');
         });
     };
 
