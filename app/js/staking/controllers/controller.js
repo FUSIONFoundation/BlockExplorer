@@ -39,6 +39,7 @@ let blockController = function ($http, $scope) {
             let tickets = {};
             $http.get(`${window.getServer()}balances/${walletAddress}`).then(function (r) {
                 data = r.data;
+                console.log(data);
                 if (data.length === 0) {
                     $scope.$eval(function () {
                         $scope.stakingRewardsEarned = 0;
