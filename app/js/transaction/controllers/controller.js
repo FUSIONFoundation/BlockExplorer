@@ -72,11 +72,12 @@ let transactionController = function ($http, $scope, $stateParams) {
                 transactionType: utils.returnCommand(tx.fusionCommand),
                 hash: tx.hash,
                 block: tx.height,
-                age: `${format(tx.timeStamp * 1000)} (${moment(tx.timeStamp * 1000).format('ll')})`,
+                age: `${format(tx.timeStamp * 1000)} (${moment(tx.timeStamp * 1000).format('MMMM Do YYYY, h:mm:ss A')})`,
                 gasUsed: parseInt(txExtraData.gasUsed, 16),
                 nonce: parseInt(txTransactionData.nonce, 16),
                 inputData: txTransactionData.input
             };
+            console.log(data.age);
         });
 
         if (data.transactionType == 'Send Asset' ||
