@@ -530,6 +530,8 @@
                                             <th class="label-small">Transaction Hash</th>
                                             <th class="label-small">Block</th>
                                             <th class="label-small text-left">Age</th>
+                                            <th class="label-small text-left">From</th>
+                                            <th class="label-small text-left">To</th>
                                             <th class="label-small text-left">Type</th>
                                             <th class="label-small">Asset(s)</th>
                                             <th class="label-small text-right">Fees</th>
@@ -546,6 +548,12 @@
                                             </td>
                                             <td class="text-fusion text-left">
                                                 {{transaction.timeStamp}}
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <a href="./#!/address/{{transaction.from}}">{{transaction.from}}</a>
+                                            </td>
+                                            <td class="text-fusion text-left">
+                                                <a href="./#!/address/{{transaction.to}}">{{transaction.to}}</a>
                                             </td>
                                             <td class="text-fusion text-left">
                                                 {{transaction.type}}

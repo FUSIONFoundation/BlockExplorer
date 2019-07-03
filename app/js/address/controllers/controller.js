@@ -393,6 +393,7 @@ let addressController = function ($http, $scope, $stateParams) {
                 date: moment(transactions[transaction].timeStamp * 1000).format('ll'),
                 block: transactions[transaction].height,
                 from: transactions[transaction].fromAddress,
+                to: transactions[transaction].commandExtra3,
                 type: window.utils.returnCommand(transactions[transaction].fusionCommand),
                 asset: '',
                 inout: inout,
