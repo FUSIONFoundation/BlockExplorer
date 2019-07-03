@@ -17,6 +17,8 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.notAnAddress = false;
     $scope.allTimeLockBalances = [];
     $scope.copyToClipboard = window.copyToClipboard;
+    let transactionSave = [];
+
 
     if(!window.web3.utils.isAddress(address)){
         $scope.notAnAddress = true;
@@ -176,12 +178,13 @@ let addressController = function ($http, $scope, $stateParams) {
     };
 
     $scope.hideTicketValue = true;
-    $scope.hideTickets = function (){
+    $scope.hideTickets = async function (){
+        transactionSave = []
         $scope.$eval(function(){
             $scope.processTransactions = [];
         });
         $scope.firstPageTL();
-        return $scope.getTransactions(0);
+        await $scope.getTransactions(0);
     }
 
  $scope.allTimeLockBalances = [];
@@ -315,7 +318,6 @@ let addressController = function ($http, $scope, $stateParams) {
             });
             $scope.loading = false;
             $scope.getTimeLockBalances();
-
         });
     };
 
@@ -379,7 +381,6 @@ let addressController = function ($http, $scope, $stateParams) {
         });
     };
 
-    let transactionSave = [];
     $scope.processTx = async function (transactions,transaction){
         if(transactionSave.length == 10){
             transactionSave = [];
