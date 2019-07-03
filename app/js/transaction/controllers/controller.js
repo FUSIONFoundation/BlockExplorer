@@ -48,6 +48,8 @@ let transactionController = function ($http, $scope, $stateParams) {
         return parseInt(returnDecimals);
     };
 
+    $scope.countDown = 10;
+
     $scope.getTransaction = async function () {
         let tx = '';
         let txExtraData = {};
@@ -56,9 +58,12 @@ let transactionController = function ($http, $scope, $stateParams) {
         let data = {};
         await $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
             tx = r.data[0];
-            if(tx === []){
-                setTimeout($scope.getTransaction(),5000);
+            if(tx === undefined){
                 console.log('Transaction not found, will retry in 5s..');
+                setTimeout(function() {
+                    console.log('Last check: ' + new Date);
+                    $scope.getTransaction()
+                }, 5000);
                 return;
             }
             txExtraData = JSON.parse(r.data[0].receipt);
@@ -77,7 +82,6 @@ let transactionController = function ($http, $scope, $stateParams) {
                 nonce: parseInt(txTransactionData.nonce, 16),
                 inputData: txTransactionData.input
             };
-            console.log(data.age);
         });
 
         if (data.transactionType == 'Send Asset' ||
