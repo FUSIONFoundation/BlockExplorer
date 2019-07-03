@@ -29,11 +29,19 @@ let navController = function ($http, $scope, $location) {
         }
 
     };
-    $scope.search = function () {
+    $scope.search = async function () {
         let input = $scope.globalSearch;
         let reg = new RegExp('^[0-9]*$');
         if (reg.test(input)) {
-            window.location.href = `./#!/block/${input}`;
+            try {
+                await web3.fsn.getAddressByNotation(parseInt(input)).then(function (r) {
+                    if(web3.utils.isAddress(r)){
+                        window.location.href = `./#!/address/${r}`;
+                    }
+                })
+            } catch (err){
+                window.location.href = `./#!/block/${input}`;
+            }
         } else if (input.indexOf('0x') == 0 && input.length == 42 && web3.utils.isAddress($scope.globalSearch)) {
             window.location.href = `./#!/address/${input}`;
         } else if (input.indexOf('0x') == 0 && input.length == 66) {
