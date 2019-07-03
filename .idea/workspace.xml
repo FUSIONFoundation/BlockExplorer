@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/transaction/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/transaction/controllers/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/transaction/transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/transaction/transaction.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/templates/transaction/transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/transaction/transaction.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,8 +39,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="720" />
-          <entry key="JavaScript" value="1327" />
+          <entry key="HTML" value="781" />
+          <entry key="JavaScript" value="1772" />
           <entry key="SCSS" value="254" />
         </counts>
       </usages-collector>
@@ -76,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/transaction/transaction.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="414">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -97,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/transaction/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="411">
+              <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -152,9 +148,9 @@
       <find>format</find>
       <find>fsnprice</find>
       <find>transaction</find>
-      <find>transactionS</find>
       <find>globalSearch</find>
       <find>ng-keypress</find>
+      <find>transactionS</find>
     </findStrings>
     <replaceStrings>
       <replace>${window.getServer()}</replace>
@@ -393,12 +389,12 @@
       <workItem from="1561891038818" duration="2632000" />
       <workItem from="1561983979233" duration="7424000" />
       <workItem from="1562014119743" duration="16000" />
-      <workItem from="1562145664435" duration="8102000" />
+      <workItem from="1562145664435" duration="8821000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137545000" />
+    <option name="totallyTimeSpent" value="138264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="981" extended-state="6" />
@@ -695,16 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="399" column="40" selection-start-line="399" selection-start-column="40" selection-end-line="399" selection-end-column="40" />
-          <folding>
-            <element signature="e#7809#11234#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/address/address.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -731,15 +717,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/transaction/transaction.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        <state relative-caret-position="414">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/address/controllers/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="399" column="40" selection-start-line="399" selection-start-column="40" selection-end-line="399" selection-end-column="40" />
+          <folding>
+            <element signature="e#7809#11234#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/transaction/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="411">
+          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
         </state>
       </provider>
     </entry>

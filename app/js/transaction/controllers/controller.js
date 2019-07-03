@@ -9,7 +9,7 @@ let transactionController = function ($http, $scope, $stateParams) {
     $scope.tokenPrice = 'loading';
 
 
-    $scope.getFiatValue = async function (input){
+    $scope.getFiatValue = async function (input) {
         let z = 0;
         await $http.get(`${window.getServer()}fsnprice`).then(function (r) {
             z = r.data.priceInfo.price
@@ -48,7 +48,19 @@ let transactionController = function ($http, $scope, $stateParams) {
         return parseInt(returnDecimals);
     };
 
-    $scope.countDown = 10;
+    $scope.countDown = 5;
+
+    $scope.countDownFunc = function () {
+        let counter = 5;
+        const intv = setInterval(function(){
+            $scope.$apply(function(){
+                $scope.countDown = counter;
+            })
+            counter--
+            if(counter === 0) return clearInterval(intv);
+        }, 1000);
+        if(counter === 0) return clearInterval(intv);
+    }
 
     $scope.getTransaction = async function () {
         let tx = '';
@@ -58,9 +70,10 @@ let transactionController = function ($http, $scope, $stateParams) {
         let data = {};
         await $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
             tx = r.data[0];
-            if(tx === undefined){
+            if (tx === undefined) {
+                $scope.countDownFunc();
                 console.log('Transaction not found, will retry in 5s..');
-                setTimeout(function() {
+                setTimeout(function () {
                     console.log('Last check: ' + new Date);
                     $scope.getTransaction()
                 }, 5000);
