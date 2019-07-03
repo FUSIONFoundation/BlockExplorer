@@ -47,6 +47,7 @@ let navController = function ($http, $scope, $location) {
         } else if (input.indexOf('0x') == 0 && input.length == 66) {
             window.location.href = `./#!/transaction/${input}`;
         }
+        $scope.globalSearch = '';
     }
 };
 
