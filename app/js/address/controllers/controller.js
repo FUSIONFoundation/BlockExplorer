@@ -221,6 +221,11 @@ let addressController = function ($http, $scope, $stateParams) {
             $scope.verifiedAssets = r.data;
         });
         $http.get(`${window.getServer()}search/${address}`).then(function (r) {
+            if(!r.data.address){
+                console.log('No data for this address');
+                $scope.notAnAddress = true;
+                return;
+            }
             let info = r.data.address[0];
             let balanceInfo = JSON.parse(r.data.address[0].balanceInfo);
             let fsnBalance = new BigNumber(info.fsnBalance.toString());
