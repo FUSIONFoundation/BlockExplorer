@@ -1,5 +1,5 @@
 import angular from 'angular';
-
+let angularTranslate = require("angular-translate");
 require('babel-polyfill');
 import 'angular-ui-router';
 import 'angular-material';
@@ -183,7 +183,8 @@ let dependencies = [
     'myApp.address',
     'myApp.blocks',
     'myApp.staking',
-    'myApp.addresses'
+    'myApp.addresses',
+    'pascalprecht.translate'
 ];
 
 angular
