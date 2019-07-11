@@ -5,6 +5,8 @@ nl.data = {
 
     // NAVBAR
 
+    // PLEASE MAKE USE OF SAME CAPITALIZATION
+
     NAVBAR_NETWORKS : 'NETWERKEN',
     NAVBAR_DASHBOARD : 'Dashboard',
     NAVBAR_BLOCKS : 'Blokken',
@@ -62,6 +64,18 @@ nl.data = {
     BLOCK_NONCE : 'Nonce',
     BLOCK_ASSETS : 'Assets',
     BLOCK_FEES : 'Fees',
+
+    // TRANSACTIONS PAGE
+    
+    TRANSACTIONS_TRANSACTIONS : 'Transacties',
+    TRANSACTIONS_GO_TO_TRANSACTION : 'Ga naar transactie',
+    TRANSACTIONS_ROWS : 'Rijen',
+    TRANSACTIONS_OF : 'van',
+    TRANSACTIONS_TRANSACTION_HASH : 'Transactie Hash',
+    TRANSACTIONS_BLOCK : 'Blok',
+    TRANSACTIONS_AGE : 'Leeftijd',
+    TRANSACTIONS_TYPE : 'Soort',
+    TRANSACTIONS_FEES : 'Fees',
 
 };
 

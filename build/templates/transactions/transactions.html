@@ -4,7 +4,7 @@
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <h4 class="font-weight-bold text-fusion mb-4">
+                    <h4 class="font-weight-bold text-fusion mb-4" translate="TRANSACTIONS_TRANSACTIONS">
                         Transactions
                     </h4>
                 </div>
@@ -23,7 +23,9 @@
                                                 <input type="text"
                                                        min="0"
                                                        class="form-control disabled" ng-model="transactionHash"
-                                                       placeholder="Go to transaction">
+                                                       translate
+                                                       translate-attr-placeholder="TRANSACTIONS_GO_TO_TRANSACTION"
+                                                       placeholder="Go to Transaction">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
                                                         <i class="fa fas fa-exchange-alt"></i></span>
@@ -33,10 +35,10 @@
                                         <div class="col-md-9 col-xs-12 text-md-right">
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
-                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
-                                        of {{totalTransactions}}</span>
+                                    <span class="small-gray-text text-fusion mr-2"><strong translate="TRANSACTIONS_ROWS">Rows</strong> {{shownRows}}
+                                        <span translate="TRANSACTIONS_OF">of</span> {{totalTransactions}}</span>
                                                     <span class="small-gray-text mr-2">
-                                        {{currentPage+1}} of {{endPage}}</span>
+                                                        {{currentPage+1}} <span translate="TRANSACTIONS_OF">of</span> {{endPage}}</span>
                                                     <span class="small-gray-text m-1 disabled"><i
                                                             class="fa fa-angle-double-left"
                                                             aria-hidden="true"></i>
@@ -61,11 +63,11 @@
                                     <table class="table table-responsive-sm table-hover">
                                         <thead class="bg-white">
                                         <tr>
-                                            <th class="label-small text-left">Transaction Hash</th>
-                                            <th class="label-small text-left">Block</th>
-                                            <th class="label-small text-left">Age</th>
-                                            <th class="label-small text-left">Type</th>
-                                            <th class="label-small text-right">Fees</th>
+                                            <th class="label-small text-left" translate="TRANSACTIONS_TRANSACTION_HASH">Transaction Hash</th>
+                                            <th class="label-small text-left" translate="TRANSACTIONS_BLOCK">Block</th>
+                                            <th class="label-small text-left" translate="TRANSACTIONS_AGE">Age</th>
+                                            <th class="label-small text-left" translate="TRANSACTIONS_TYPE">Type</th>
+                                            <th class="label-small text-right" translate="TRANSACTIONS_FEES">Fees</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -526,7 +528,9 @@
                                                 <input type="text"
                                                        min="0"
                                                        class="form-control" ng-model="transactionHash"
-                                                       placeholder="Go to transaction">
+                                                       translate
+                                                       translate-attr-placeholder="TRANSACTIONS_GO_TO_TRANSACTION"
+                                                       placeholder="Go to Transaction">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
                                                         <a href="./#!/transaction/{{transactionHash}}"><i
@@ -537,10 +541,10 @@
                                         <div class="col-md-9 text-md-right">
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
-                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
-                                        of {{totalTransactions}}</span>
+                                    <span class="small-gray-text text-fusion mr-2"><strong translate="TRANSACTIONS_ROWS">Rows</strong> {{shownRows}}
+                                        <span translate="TRANSACTIONS_OF">of</span> {{totalTransactions}}</span>
                                                     <span class="small-gray-text mr-2">
-                                        {{currentPage+1}} of {{endPage}}</span>
+                                        {{currentPage+1}} <span translate="TRANSACTIONS_OF">of</span> {{endPage}}</span>
                                                     <span class="small-gray-text m-1"
                                                           ng-click="firstPage()"><i class="fa fa-angle-double-left"
                                                                                     aria-hidden="true"></i>
@@ -567,11 +571,11 @@
                                     <table class="table table-responsive-sm table-hover">
                                         <thead class="bg-white">
                                         <tr>
-                                            <th class="label-small text-left">Transaction Hash</th>
-                                            <th class="label-small text-left">Block</th>
-                                            <th class="label-small text-left">Age</th>
-                                            <th class="label-small text-left">Type</th>
-                                            <th class="label-small text-right">Fees</th>
+                                            <th class="label-small text-left" translate="TRANSACTIONS_TRANSACTION_HASH">Transaction Hash</th>
+                                            <th class="label-small text-left" translate="TRANSACTIONS_BLOCK">Block</th>
+                                            <th class="label-small text-left" translate="TRANSACTIONS_AGE">Age</th>
+                                            <th class="label-small text-left" translate="TRANSACTIONS_TYPE">Type</th>
+                                            <th class="label-small text-right" translate="TRANSACTIONS_FEES">Fees</th>
                                         </tr>
                                         </thead>
                                         <tbody>
