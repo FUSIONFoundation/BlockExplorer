@@ -1,5 +1,7 @@
 import angular from 'angular';
-let angularTranslate = require("angular-translate");
+let angularTranslate = require('angular-translate');
+let marked = require('./utils/customMarked');
+window.marked = marked;
 require('babel-polyfill');
 import 'angular-ui-router';
 import 'angular-material';
@@ -177,6 +179,7 @@ window.copyToClipboard = function (text) {
     return success;
 };
 
+
 let dependencies = [
     'ui.router',
     'ngMaterial',
@@ -194,9 +197,18 @@ let dependencies = [
     'pascalprecht.translate'
 ];
 
+let en = require('./translations/en.js')
+let nl = require('./translations/nl.js')
+
 angular
     .module('myApp', dependencies)
     .config(configRouter)
+    .config(['$translateProvider', function($translateProvider) {
+        $translateProvider.translations('en', en);
+        $translateProvider.translations('nl', nl);
+        $translateProvider.preferredLanguage('nl');
+        $translateProvider.fallbackLanguage('en');
+    }])
     .filter('startFrom', function () {
         return function (input, start) {
             if (typeof input === 'undefined') {

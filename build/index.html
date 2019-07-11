@@ -90,7 +90,7 @@
                     </button>
                     <div class="dropdown-menu p-2">
                         <div class="col-12 pl-0 pr-0 pb-3">
-                            <span class="small-heading">NETWORKS</span>
+                            <span class="small-heading" translate="NAVBAR_NETWORKS">NETWORKS</span>
                         </div>
                         <div class="col-12 pl-0 pr-0">
                             <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')"
@@ -122,6 +122,7 @@
                 <ul class="nav nav-tabs tabs-alt pt-1">
                     <li class="nav-item">
                         <a class="nav-link dashboard" ng-class="{'active' : $location.path() == '/dashboard'}"
+                           translate="NAVBAR_DASHBOARD"
                            href="./#!/dashboard">
                             Dashboard
                         </a>
@@ -129,25 +130,30 @@
                     <li class="nav-item">
                         <a class="nav-link blocks"
                            ng-class="{'active' : $location.path() == '/blocks' ||  $location.path().substr(0,6) == '/block'}"
+                           translate="NAVBAR_BLOCKS"
                            href="./#!/blocks">Blocks</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link transactions"
                            ng-class="{'active' : $location.path() == '/transactions' || $location.path().substr(0,12) == '/transaction'}"
+                           translate="NAVBAR_TRANSACTIONS"
                            href="./#!/transactions">Transactions</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link assets"
                            ng-class="{'active' : $location.path() == '/assets' || $location.path().substr(0,6) == '/asset' }"
+                           translate="NAVBAR_ASSETS"
                            href="./#!/assets">Assets</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link addresses"
                            ng-class="{'active' : $location.path() == '/addresses' || $location.path().substr(0,8) == '/address'}"
+                           translate="NAVBAR_ADDRESSES"
                            href="./#!/addresses">Addresses</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link staking" ng-class="{'active' : $location.path() == '/staking'}"
+                           translate="NAVBAR_STAKING"
                            href="./#!/staking">Staking</a>
                     </li>
                 </ul>
@@ -166,7 +172,7 @@
                     </div>
                     <div class="modal-body border-0 pt-2">
                         <div class="col-12 pl-0 pr-0 pb-3">
-                            <span class="small-heading">NETWORKS</span>
+                            <span class="small-heading" translate="NAVBAR_NETWORKS">NETWORKS</span>
                         </div>
                         <div class="col-12 pl-0 pr-0">
                             <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')"
@@ -215,32 +221,38 @@
                 <ul class="navbar-nav mr-auto pt-4">
                     <li class="nav-item">
                         <a class="nav-link dashboard d-inline-block w-100"
+                           translate="NAVBAR_DASHBOARD"
                            ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link blocks d-inline-block w-100"
+                           translate="NAVBAR_BLOCKS"
                            ng-class="{'active' : $location.path() == '/blocks' ||  $location.path().substr(0,6) == '/block'}"
                            href="./#!/blocks">Blocks</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link transactions d-inline-block w-100"
+                           translate="NAVBAR_TRANSACTIONS"
                            ng-class="{'active' : $location.path() == '/transactions' || $location.path().substr(0,12) == '/transaction'}"
                            href="./#!/transactions">Transactions</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link assets d-inline-block w-100"
+                           translate="NAVBAR_ASSETS"
                            ng-class="{'active' : $location.path() == '/assets' || $location.path().substr(0,6) == '/asset' }"
                            href="./#!/assets">Assets</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link addresses d-inline-block w-100"
+                           translate="NAVBAR_ADDRESSES"
                            ng-class="{'active' : $location.path() == '/addresses' || $location.path().substr(0,8) == '/address'}"
                            href="./#!/addresses">Addresses</a>
                     </li>
                     <li class="nav-item pb-4">
                         <a class="nav-link staking d-inline-block w-100"
+                           translate="NAVBAR_STAKING"
                            ng-class="{'active' : $location.path() == '/staking'}" href="./#!/staking">Staking</a>
                     </li>
                     <!-- Button trigger modal -->
@@ -369,7 +381,7 @@
 </div>
 <script src="assets/js/main.js"></script>
 
-<script src="app.js?rev=2c7b954498e7aedaf6c29d0656e50bbf"></script>
+<script src="app.js?rev=b99773a1a0ea697943ed586418c6139e"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/vendor/libs/popper/popper.js"></script>

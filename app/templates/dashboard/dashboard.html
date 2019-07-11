@@ -2,7 +2,7 @@
     <div class="layout-content" ng-show="loading">
         <div class="row">
             <div class="col-md-12 col-xs-12 text-center">
-                <div class="mw-100 mh-100">
+                <div class="mw-100 mh-100" translate="DASHBOARD_LOADING">
                     Loading
                 </div>
             </div>
@@ -28,7 +28,7 @@
                                                     {{fsnPriceData.change.toFixed(2)}}% (24h)
                                                 </small>
                                                 <br>
-                                                   <small class="text-muted text-uppercase">Price</small>
+                                                   <small class="text-muted text-uppercase" translate="DASHBOARD_PRICE">Price</small>
                         </span>
                                         </div>
 
@@ -40,7 +40,7 @@
 
                               <span class="fsn-big text-uppercase">$ {{fsnPriceData.marketCap}}</span>
                                                 <br>
-                                                              <small class="text-muted text-uppercase">Market Cap</small>
+                                                              <small class="text-muted text-uppercase" translate="DASHBOARD_MARKETCAP">Market Cap</small>
                         </span>
                                         </div>
 
@@ -51,7 +51,7 @@
 
                           <span class="fsn-big">{{globalData.maxBlock}}</span>
                                                 <br>
-   <small class="text-muted text-uppercase">Block Height</small>
+   <small class="text-muted text-uppercase" translate="DASHBOARD_BLOCKHEIGHT">Block Height</small>
 
                         </span>
                                         </div>
@@ -64,7 +64,7 @@
 
                               <span class="fsn-big text-uppercase">{{globalData.totalTransactions}}</span>
                                                 <br>
-                                                              <small class="text-muted text-uppercase">Transactions</small>
+                                                              <small class="text-muted text-uppercase" translate="DASHBOARD_TRANSACTIONS">Transactions</small>
 
                         </span>
                                         </div>
@@ -75,7 +75,7 @@
                                             <span class="media-body d-block ml-3">
                                                     <span class="fsn-big text-uppercase">{{globalData.totalAssets}}</span>
                                                 <br>
-                                                    <small class="text-muted text-uppercase">Assets</small>
+                                                    <small class="text-muted text-uppercase" translate="DASHBOARD_ASSETS">Assets</small>
 
                                             </span>
                                         </a>
@@ -85,7 +85,7 @@
                                             <span class="media-body d-block ml-3">
                                                     <span class="fsn-big text-uppercase">{{totalTickets}}</span>
                                                 <br>
-                                                    <small class="text-muted text-uppercase">Tickets</small>
+                                                    <small class="text-muted text-uppercase" translate="DASHBOARD_TICKETS">Tickets</small>
 
                                             </span>
                                         </a>
@@ -101,13 +101,13 @@
                     <div class="card">
                         <div class="row">
                             <div class="col-md-6 col-xs-6">
-                                <h6 class="card-header mt-2 mb-2">
+                                <h6 class="card-header mt-2 mb-2" translate="DASHBOARD_LATESTBLOCKS">
                                     Latest Blocks
                                 </h6>
                             </div>
                             <div class="col-md-6 col-xs-6 text-right card-button">
                                 <a href="./#!/blocks">
-                                    <button class="btn btn-sm btn-outline-white-alt mt-2 mb-2">View All</button>
+                                    <button class="btn btn-sm btn-outline-white-alt mt-2 mb-2" translate="DASHBOARD_VIEWALL">View All</button>
                                 </a>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="recent-blocks-item font-size-12">
-                                                <span class="small-gray-text">MINED BY</span> <a
+                                                <span class="small-gray-text" translate="DASHBOARD_MINEDBY">MINED BY</span> <a
                                                     href="./#!/address/{{block.miner}}">{{block.miner}}</a><br>
                                                 <span class="block-time">{{block.transactions}} txns</span>
                                             </div>
@@ -148,13 +148,13 @@
                     <div class="card">
                         <div class="row">
                             <div class="col-md-6 col-xs-6">
-                                <h6 class="card-header mt-2 mb-2">
+                                <h6 class="card-header mt-2 mb-2" translate="DASHBOARD_LATESTTRANSACTIONS">
                                     Latest Transactions
                                 </h6>
                             </div>
                             <div class="col-md-6 col-xs-6 text-right card-button">
                                 <a href="./#!/transactions">
-                                    <button class="btn btn-outline-white-alt btn-sm mt-2 mb-2">View All</button>
+                                    <button class="btn btn-outline-white-alt btn-sm mt-2 mb-2" translate="DASHBOARD_VIEWALL">View All</button>
                                 </a>
                             </div>
                         </div>

@@ -1,10 +1,8 @@
-// English
+// Korean
 'use strict';
-var en = function () {
-}
-en.code = 'en';
+var en = function() {}
 en.data = {
-    DASHBOARD_BLOCK_TITLE: 'Block',
+    NAVBAR_NETWORKS : 'NETWORKS'
 };
 
-module.exports = en;
+module.exports = en.data;
