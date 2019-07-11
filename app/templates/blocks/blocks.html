@@ -4,7 +4,7 @@
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <h4 class="font-weight-bold text-fusion mb-4">
+                    <h4 class="font-weight-bold text-fusion mb-4" translate="BLOCKS_BLOCKS">
                         Blocks
                     </h4>
                 </div>
@@ -23,6 +23,8 @@
                                                 <input type="number"
                                                        min="0"
                                                        class="form-control" ng-model="blockNumber"
+                                                       translate
+                                                       translate-attr-placeholder="BLOCKS_GOTOBLOCK"
                                                        placeholder="Go to block">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
@@ -34,10 +36,10 @@
                                         <div class="col-md-9 col-xs-12 text-md-right">
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
-                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
-                                        of {{maxBlock}}</span>
+                                    <span class="small-gray-text text-fusion mr-2"><strong translate="BLOCKS_ROWS">Rows</strong> {{shownRows}}
+                                        <span translate="BLOCKS_OF">of</span> {{maxBlock}}</span>
                                                     <span class="small-gray-text mr-2">
-                                        {{currentPage+1}} of {{endPage}}</span>
+                                                        {{currentPage+1}} <span translate="BLOCKS_OF">of</span> {{endPage}}</span>
                                                     <span class="small-gray-text m-1 disabled"><i
                                                             class="fa fa-angle-double-left"
                                                             aria-hidden="true"></i>
@@ -62,13 +64,13 @@
                                     <table class="table table-responsive-sm table-hover">
                                         <thead class="bg-white">
                                         <tr>
-                                            <th class="label-small text-left">Block</th>
-                                            <th class="label-small text-left">Age</th>
-                                            <th class="label-small text-left">Transactions</th>
-                                            <th class="label-small text-left">Miner</th>
-                                            <th class="label-small text-right">Gas Used</th>
-                                            <th class="label-small text-right">Gas Limit</th>
-                                            <th class="label-small text-right">Reward</th>
+                                            <th class="label-small text-left" translate="BLOCKS_BLOCK">Block</th>
+                                            <th class="label-small text-left" translate="BLOCKS_AGE">Age</th>
+                                            <th class="label-small text-left" translate="BLOCKS_TRANSACTIONS">Transactions</th>
+                                            <th class="label-small text-left" translate="BLOCKS_MINER">Miner</th>
+                                            <th class="label-small text-left" translate="BLOCKS_GAS_USED">Gas Used</th>
+                                            <th class="label-small text-right" translate="BLOCKS_GAS_LIMIT">Gas Limit</th>
+                                            <th class="label-small text-right" translate="BLOCKS_REWARD">Reward</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -689,6 +691,8 @@
                                                 <input type="number"
                                                        min="0"
                                                        class="form-control" ng-model="blockNumber"
+                                                       translate
+                                                       translate-attr-placeholder="BLOCKS_GOTOBLOCK"
                                                        placeholder="Go to block">
                                                 <div class="input-group-append">
                                                     <a class="input-group-text" href="./#!/block/{{blockNumber}}">
@@ -700,10 +704,10 @@
                                         <div class="col-md-9 text-md-right">
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
-                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
-                                        of {{maxBlock}}</span>
+                                    <span class="small-gray-text text-fusion mr-2"><strong translate="BLOCKS_ROWS">Rows</strong> {{shownRows}}
+                                        <span translate="BLOCKS_OF">of</span> {{maxBlock}}</span>
                                                     <span class="small-gray-text mr-2">
-                                        {{currentPage+1}} of {{endPage}}</span>
+                                                        {{currentPage+1}} <span translate="BLOCKS_OF">of</span> {{endPage}}</span>
                                                     <span class="small-gray-text m-1"
                                                           ng-click="firstPage()"><i class="fa fa-angle-double-left"
                                                                                     aria-hidden="true"></i>
@@ -730,13 +734,13 @@
                                     <table class="table table-responsive-sm table-hover">
                                         <thead class="bg-white">
                                         <tr>
-                                            <th class="label-small text-left">Block</th>
-                                            <th class="label-small text-left">Age</th>
-                                            <th class="label-small text-left">Transactions</th>
-                                            <th class="label-small text-left">Miner</th>
-                                            <th class="label-small text-left">Gas Used</th>
-                                            <th class="label-small text-right">Gas Limit</th>
-                                            <th class="label-small text-right">Reward</th>
+                                            <th class="label-small text-left" translate="BLOCKS_BLOCK">Block</th>
+                                            <th class="label-small text-left" translate="BLOCKS_AGE">Age</th>
+                                            <th class="label-small text-left" translate="BLOCKS_TRANSACTIONS">Transactions</th>
+                                            <th class="label-small text-left" translate="BLOCKS_MINER">Miner</th>
+                                            <th class="label-small text-left" translate="BLOCKS_GAS_USED">Gas Used</th>
+                                            <th class="label-small text-right" translate="BLOCKS_GAS_LIMIT">Gas Limit</th>
+                                            <th class="label-small text-right" translate="BLOCKS_REWARD">Reward</th>
                                         </tr>
                                         </thead>
                                         <tbody>
