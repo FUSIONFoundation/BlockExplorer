@@ -12,6 +12,7 @@ nl.data = {
     NAVBAR_ASSETS : 'Assets',
     NAVBAR_ADDRESSES : 'Adressen',
     NAVBAR_STAKING : 'Staking',
+    NAVBAR_SEARCH : 'Zoek op Adres, TxHash of Blok',
 
     // DASHBOARD
 
@@ -41,6 +42,26 @@ nl.data = {
     BLOCKS_GAS_LIMIT : 'Gas Limiet',
     BLOCKS_REWARD : 'Beloning',
 
+    // BLOCK PAGE
+
+    BLOCK_BLOCKHEIGHT : 'Blokken',
+    BLOCK_TRANSACTIONS : 'Transacties',
+    BLOCK_AGE : 'Leeftijd',
+    BLOCK_REWARD : 'Beloning',
+    BLOCK_HASH : 'Hash',
+    BLOCK_PARENTHASH : 'Parent Hash',
+    BLOCK_MINER : 'Miner',
+    BLOCK_DIFFICULTY : 'Moeilijkheid',
+    BLOCK_TOTAL_DIFFICULTY : 'Totale Moeilijkheid',
+    BLOCK_SIZE : 'Grootte',
+    BLOCK_GAS_USED : 'Gas Verbruikt',
+    BLOCK_GAS_LIMIT : 'Gas Limiet',
+    BLOCK_TRANSACTION_HASH : 'Transactie Hash',
+    BLOCK_BLOCK : 'Blok',
+    BLOCK_TYPE : 'Soort',
+    BLOCK_NONCE : 'Nonce',
+    BLOCK_ASSETS : 'Assets',
+    BLOCK_FEES : 'Fees',
 
 };
 

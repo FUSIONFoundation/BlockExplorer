@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/translations/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/translations/nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/blocks/blocks.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/blocks/blocks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/block/block.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/templates/blocks/blocks.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/blocks/blocks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/templates/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/block/block.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +31,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="21" />
+          <entry key="HTML" value="25" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="26" />
+          <entry key="JavaScript" value="27" />
           <entry key="SCSS" value="2" />
           <entry key="SVG" value="1" />
           <entry key="SourceMap" value="1" />
@@ -45,15 +46,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1395" />
-          <entry key="JavaScript" value="2761" />
+          <entry key="HTML" value="1602" />
+          <entry key="JavaScript" value="3145" />
           <entry key="SCSS" value="263" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.35325506">
+    <splitter split-orientation="horizontal" split-proportion="0.33511207">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -77,8 +78,17 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/js/translations/nl.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="32" column="20" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="20" />
+                <state relative-caret-position="384">
+                  <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/templates/block/block.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="508">
+                  <caret line="203" column="75" selection-start-line="203" selection-start-column="75" selection-end-line="203" selection-end-column="75" />
                 </state>
               </provider>
             </entry>
@@ -88,10 +98,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/templates/blocks/blocks.html">
+            <entry file="file://$PROJECT_DIR$/app/templates/block/block.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="25" column="109" selection-start-line="25" selection-start-column="109" selection-end-line="25" selection-end-column="109" />
+                <state relative-caret-position="1432">
+                  <caret line="236" column="34" selection-start-line="236" selection-start-column="34" selection-end-line="236" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -102,8 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getTransactions</find>
-      <find>search</find>
       <find>fusionnetwork.io</find>
       <find>consol</find>
       <find>console.log(</find>
@@ -132,6 +140,8 @@
       <find>currentChain</find>
       <find>cookieName</find>
       <find>mainnet</find>
+      <find>Go To Block</find>
+      <find>Search By</find>
     </findStrings>
     <replaceStrings>
       <replace>${window.getServer()}</replace>
@@ -153,7 +163,6 @@
         <option value="$PROJECT_DIR$/app/js/config.js" />
         <option value="$PROJECT_DIR$/app/js/addresses/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/templates/staking/staking.html" />
-        <option value="$PROJECT_DIR$/app/templates/block/block.html" />
         <option value="$PROJECT_DIR$/app/js/blocks/controllers/controller.js" />
         <option value="$PROJECT_DIR$/app/js/transactions/controllers/controller.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
@@ -178,10 +187,11 @@
         <option value="$PROJECT_DIR$/app/js/translations/translate.js" />
         <option value="$PROJECT_DIR$/app/js/app.js" />
         <option value="$PROJECT_DIR$/app/js/translations/en.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/templates/dashboard/dashboard.html" />
-        <option value="$PROJECT_DIR$/app/js/translations/nl.js" />
         <option value="$PROJECT_DIR$/app/templates/blocks/blocks.html" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/templates/block/block.html" />
+        <option value="$PROJECT_DIR$/app/js/translations/nl.js" />
       </list>
     </option>
   </component>
@@ -200,6 +210,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
     <option name="y" value="34" />
     <option name="width" value="1920" />
     <option name="height" value="981" />
@@ -233,6 +244,13 @@
               <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlockExplorer" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="block" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlockExplorer" type="b2602c69:ProjectViewProjectNode" />
@@ -357,15 +375,15 @@
       <workItem from="1562145664435" duration="10674000" />
       <workItem from="1562188708023" duration="104000" />
       <workItem from="1562846705399" duration="6654000" />
-      <workItem from="1562884670296" duration="2627000" />
+      <workItem from="1562884670296" duration="3391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149502000" />
+    <option name="totallyTimeSpent" value="150266000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="34" width="1920" height="981" extended-state="6" />
+    <frame x="1920" y="34" width="1920" height="981" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24919957" />
@@ -384,7 +402,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25441697" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25441697" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -561,13 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/block/block.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="189" column="75" selection-start-line="189" selection-start-column="75" selection-end-line="189" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webServer.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -708,13 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2294">
-          <caret line="223" column="54" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -722,17 +726,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/translations/nl.js">
+    <entry file="file://$PROJECT_DIR$/app/templates/blocks/blocks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="20" />
+        <state relative-caret-position="142">
+          <caret line="693" column="51" lean-forward="true" selection-start-line="693" selection-start-column="51" selection-end-line="695" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/blocks/blocks.html">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="25" column="109" selection-start-line="25" selection-start-column="109" selection-end-line="25" selection-end-column="109" />
+        <state relative-caret-position="178">
+          <caret line="109" column="24" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/block/block.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="203" column="75" selection-start-line="203" selection-start-column="75" selection-end-line="203" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/translations/nl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
         </state>
       </provider>
     </entry>

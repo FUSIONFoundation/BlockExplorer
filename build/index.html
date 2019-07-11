@@ -107,6 +107,8 @@
                 <div class="input-group input-group-main w-25 hidden-xs" ng-controller="navController">
                     <input type="text" class="form-control"
                            ng-model="globalSearch"
+                           translate
+                           translate-attr-placeholder="NAVBAR_SEARCH"
                            placeholder="Search by Address / Txhash / Block">
                     <div class="input-group-append">
                         <button class="btn btn-primary search-button" ng-click="search()">
@@ -265,6 +267,8 @@
             <div class="input-group input-group-main" ng-show="showSearch">
                 <input type="text" class="form-control"
                        ng-model="globalSearch"
+                       translate
+                       translate-attr-placeholder="NAVBAR_SEARCH"
                        placeholder="Search by Address / Txhash / Block">
                 <div class="input-group-append">
                     <button class="btn btn-primary gradient-bg" ng-click="search()">
@@ -381,7 +385,7 @@
 </div>
 <script src="assets/js/main.js"></script>
 
-<script src="app.js?rev=c80297cc9367da744ca3173b1f0a237a"></script>
+<script src="app.js?rev=0cf04ac35846bcb53a552047b54fce18"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/vendor/libs/popper/popper.js"></script>
