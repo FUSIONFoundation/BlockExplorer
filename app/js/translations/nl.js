@@ -16,7 +16,7 @@ nl.data = {
     NAVBAR_STAKING : 'Staking',
     NAVBAR_SEARCH : 'Zoek op Adres, TxHash of Blok',
 
-    // DASHBOARD
+    // DASHBOARD PAGE
 
     DASHBOARD_LOADING : 'Loading',
     DASHBOARD_PRICE : 'Prijs',
@@ -66,7 +66,7 @@ nl.data = {
     BLOCK_FEES : 'Fees',
 
     // TRANSACTIONS PAGE
-    
+
     TRANSACTIONS_TRANSACTIONS : 'Transacties',
     TRANSACTIONS_GO_TO_TRANSACTION : 'Ga naar transactie',
     TRANSACTIONS_ROWS : 'Rijen',
@@ -76,6 +76,26 @@ nl.data = {
     TRANSACTIONS_AGE : 'Leeftijd',
     TRANSACTIONS_TYPE : 'Soort',
     TRANSACTIONS_FEES : 'Fees',
+
+    // TRANSACTION PAGE
+
+    TRANSACTION_NOT_EMITTED_MESSAGE : 'Deze transactie is nog niet verwerkt of is niet bekend op de blockchain',
+    TRANSACTION_RETRYING_IN : 'Opnieuw controleren in',
+    TRANSACTION_SECONDS : 'seconden',
+    TRANSACTION_TRANSACTION : 'Transactie',
+    TRANSACTION_TIME_LOCK : 'Time Lock',
+    TRANSACTION_SWAP_DETAILS : 'Swap Detials',
+    TRANSACTION_FROM : 'Van:',
+    TRANSACTION_TO: 'Naar:',
+    TRANSACTION_ASSET : 'Asset:',
+    TRANSACTION_STATUS : 'Status',
+    TRANSACTION_TRANSACTION_TYPE : 'Transactie Soort',
+    TRANSACTION_TRANSACTION_HASH : 'Transactie Hash',
+    TRANSACTION_BLOCK : 'Blok',
+    TRANSACTION_AGE : 'Leeftijd',
+    TRANSACTION_GAS_USED : 'Gas Verbruikt',
+    TRANSACTION_NONCE : 'Nonce',
+
 
 };
 

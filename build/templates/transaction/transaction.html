@@ -3,7 +3,8 @@
        <div class="container flex-grow-1 container-p-y">
            <div class="row">
                <div class="col-md-12 col-sm-12">
-                   <h4 class="font-weight-bold text-fusion mb-4">
+                   <h4 class="font-weight-bold text-fusion mb-4"
+                       translate="TRANSACTION_TRANSACTION">
                        Transaction
                        <span class="badge badge-light-blue ml-2 font-weight-normal">{{blockNumber}}</span>
                    </h4>
@@ -19,10 +20,10 @@
                                        <div class="media align-items-center">
                                            <div class="media-body">
 <div class="align-items-center text-center">
-    <p>This transaction has not yet been processed, or was not emitted to the blockchain
-        <br>
-    Retrying in {{countDown}} seconds
+    <p translate="TRANSACTION_NOT_EMITTED_MESSAGE">This transaction has not yet been processed, or was not emitted to the blockchain
     </p>
+        <span translate="TRANSACTION_RETRYING_IN">Retrying in</span> {{countDown}} <span translate="TRANSACTION_SECONDS">seconds</span>
+    <br>
     <div class="spinner-grow text-primary" role="status">
         <span class="sr-only">Loading...</span>
     </div>
@@ -43,7 +44,8 @@
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <h4 class="font-weight-bold text-fusion mb-4">
+                    <h4 class="font-weight-bold text-fusion mb-4"
+                        translate="TRANSACTION_TRANSACTION">
                         Transaction
                         <span class="badge badge-light-blue ml-2 font-weight-normal">{{blockNumber}}</span>
                     </h4>
@@ -73,7 +75,8 @@
                                                             <span class="badge badge-light-blue">{{transactionData.asset}}</span>
                                                         </h3>
                                                     </div>
-                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small"
+                                                         translate="TRANSACTION_FROM">
                                                         From:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -81,7 +84,8 @@
                                                             <a href="./#!/address/{{transactionData.from}}">{{transactionData.from}}</a>
                                                         </span>
                                                     </div>
-                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small" ng-if="transactionData.transactionType != 'Create Asset'">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small" ng-if="transactionData.transactionType != 'Create Asset'"
+                                                         translate="TRANSACTION_TO">
                                                         To:
                                                     </div>
                                                     <div class="col-md-9 text-md-right" ng-if="transactionData.transactionType != 'Create Asset'">
@@ -89,13 +93,15 @@
                                                                 <a href="./#!/address/{{transactionData.to}}">{{transactionData.to}}</a>
                                                             </span>
                                                     </div>
-                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small"
+                                                         translate="TRANSACTION_ASSET">
                                                         Asset:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
                                                         <span class="font-weight-sm-bold mr-1 text-blue"><a href="./#!/asset/{{transactionData.asset_id}}">{{transactionData.asset}}</a></span>
                                                     </div>
-                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small" ng-if="transactionData.timelock">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small" ng-if="transactionData.timelock"
+                                                         translate="TRANSACTION_TIME_LOCK">
                                                         Time Lock:
                                                     </div>
                                                     <div class="col-md-9 text-md-right" ng-if="transactionData.timelock">
@@ -104,7 +110,8 @@
                                                     {{transactionData.timelock}}
                                                     </span>
                                                     </div>
-                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small" ng-if="transactionData.swap">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-2 mb-md-0 label-small" ng-if="transactionData.swap"
+                                                         translate="TRANSACTION_SWAP_DETAILS">
                                                         Swap Details:
                                                     </div>
                                                     <div class="col-md-9 text-md-right" ng-if="transactionData.swap">
@@ -118,7 +125,8 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="TRANSACTION_STATUS">
                                                         Status:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -129,7 +137,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="TRANSACTION_TRANSACTION_TYPE">
                                                         Transaction Type:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -138,7 +147,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="TRANSACTION_TRANSACTION_HASH">
                                                         Transaction Hash:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -148,7 +158,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="TRANSACTION_BLOCK">
                                                         Block:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -159,7 +170,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="TRANSACTION_AGE">
                                                         Age:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -168,7 +180,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="TRANSACTION_GAS_USED">
                                                         Gas Used:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -177,7 +190,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="TRANSACTION_NONCE">
                                                         Nonce:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -187,44 +201,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ng-show="blockData.transactions.length > 0">
-                <h4 class="font-weight-bold py-3 text-fusion">
-                    Transactions
-                </h4>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="mb-4">
-                            <div class="card gradient-half-primary-body-v1">
-                                <div class="card-body px-sm-4 pb-sm-4 ">
-                                    <table class="table table-responsive-sm table-hover">
-                                        <thead class="bg-white">
-                                        <tr>
-                                            <th class="label-small">Transaction Hash</th>
-                                            <th class="label-small">Block</th>
-                                            <th class="label-small">Age</th>
-                                            <th class="label-small">Type</th>
-                                            <th class="label-small">Asset(s)</th>
-                                            <th class="label-small">Fees</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr ng-repeat="transaction in transactionsInBlock">
-                                            <td class="text-fusion">{{transaction.txid}}</td>
-                                            <td class="text-fusion"><a href="./#!/block/{{transaction.block}}">{{transaction.block}}</a>
-                                            </td>
-                                            <td class="text-fusion">{{transaction.timeStamp}}</td>
-                                            <td class="text-fusion">{{transaction.type}}</td>
-                                            <td class="text-fusion">{{transaction.asset}}</td>
-                                            <td class="label-small">0.00002</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
