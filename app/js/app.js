@@ -200,13 +200,18 @@ let dependencies = [
 let en = require('./translations/en.js')
 let nl = require('./translations/nl.js')
 
+let nu = localStorage.getItem(window.cookieName)
+nu = JSON.parse(nu);
+!nu.language ? window.currentLanguage = 'en' : window.currentLanguage = nu.language;
+
+console.log(window.currentLanguage);
 angular
     .module('myApp', dependencies)
     .config(configRouter)
     .config(['$translateProvider', function($translateProvider) {
         $translateProvider.translations('en', en);
         $translateProvider.translations('nl', nl);
-        $translateProvider.preferredLanguage('nl');
+        $translateProvider.preferredLanguage(window.currentLanguage);
         $translateProvider.fallbackLanguage('en');
     }])
     .filter('startFrom', function () {

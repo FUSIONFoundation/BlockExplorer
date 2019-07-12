@@ -86,6 +86,25 @@
                 <div class="dropdown">
                     <button type="button" class="btn btn-white border-button dropdown-toggle mr-2"
                             data-toggle="dropdown">
+                        {{currentLanguage}}
+                    </button>
+                    <div class="dropdown-menu p-2">
+                        <div class="col-12 pl-0 pr-0 pb-3">
+                            <span class="small-heading" translate="NAVBAR_NETWORKS">Select Language</span>
+                        </div>
+                        <div class="col-12 pl-0 pr-0">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentLanguage('en')"
+                                    ng-class="{'active' : currentLanguage == 'en'}"><span class="button-content">English</span>
+                            </button>
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentLanguage('nl')"
+                                    ng-class="{'active' : currentLanguage == 'nl'}"><span class="button-content">Nederlands</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-white border-button dropdown-toggle mr-2"
+                            data-toggle="dropdown">
                         {{currentChain}}
                     </button>
                     <div class="dropdown-menu p-2">
@@ -107,8 +126,6 @@
                 <div class="input-group input-group-main w-25 hidden-xs" ng-controller="navController">
                     <input type="text" class="form-control"
                            ng-model="globalSearch"
-                           translate
-                           translate-attr-placeholder="NAVBAR_SEARCH"
                            placeholder="Search by Address / Txhash / Block">
                     <div class="input-group-append">
                         <button class="btn btn-primary search-button" ng-click="search()">
@@ -267,8 +284,6 @@
             <div class="input-group input-group-main" ng-show="showSearch">
                 <input type="text" class="form-control"
                        ng-model="globalSearch"
-                       translate
-                       translate-attr-placeholder="NAVBAR_SEARCH"
                        placeholder="Search by Address / Txhash / Block">
                 <div class="input-group-append">
                     <button class="btn btn-primary gradient-bg" ng-click="search()">
