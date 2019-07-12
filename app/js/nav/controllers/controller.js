@@ -21,7 +21,6 @@ let navController = function ($http, $scope, $location,$window) {
         nu = JSON.parse(nu);
         nu.language = code;
         localStorage.setItem(window.cookieName, JSON.stringify(nu));
-
         $window.location.reload();
     }
 
