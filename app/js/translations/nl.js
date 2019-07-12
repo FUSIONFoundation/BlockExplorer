@@ -16,6 +16,7 @@ nl.data = {
     NAVBAR_ADDRESSES: 'Adressen',
     NAVBAR_STAKING: 'Staking',
     NAVBAR_SEARCH: 'Zoek op Adres, TxHash of Blok',
+    NAVBAR_SELECT_LANGUAGE: 'TAAL SELECTEREN',
 
     // DASHBOARD PAGE
 

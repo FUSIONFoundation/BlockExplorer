@@ -16,6 +16,7 @@ gb.data = {
     NAVBAR_ADDRESSES: 'Addresses',
     NAVBAR_STAKING: 'Staking',
     NAVBAR_SEARCH: 'Search by Address / TxHash / Block',
+    NAVBAR_SELECT_LANGUAGE: 'SELECT LANGUAGE',
 
     // DASHBOARD PAGE
 
