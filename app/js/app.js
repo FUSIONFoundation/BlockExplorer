@@ -87,7 +87,7 @@ window.months = [
     'Nov',
     'Dec'
 ];
-let cookieName = 'apiCookie';
+let cookieName = 'apiCookieLanguage';
 window.cookieName = cookieName;
 let apiServer = localStorage.getItem(window.cookieName)
 let data = apiServer ? JSON.parse(apiServer) : null
