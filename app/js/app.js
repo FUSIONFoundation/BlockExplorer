@@ -96,7 +96,7 @@ let data = apiServer ? JSON.parse(apiServer) : null
 if (data === null) {
     let data = {
         'chain': 'mainnet',
-        'language' : 'en'
+        'language' : 'gb'
     }
     localStorage.setItem(window.cookieName, JSON.stringify(data));
 }
