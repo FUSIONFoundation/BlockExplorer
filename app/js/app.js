@@ -34,7 +34,7 @@ window.format = format;
 let Web3 = require('web3');
 let web3FusionExtend = require('web3-fusion-extend');
 let provider;
-provider = new Web3.providers.WebsocketProvider('wss://gatewaypsn2w.fusionnetwork.io:10001');
+provider = new Web3.providers.WebsocketProvider('wss://mainnetpublicgateway1.fusionnetwork.io:10001');
 let web3 = new Web3(provider);
 web3 = web3FusionExtend.extend(web3);
 window.web3 = web3;
