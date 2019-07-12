@@ -202,6 +202,7 @@ let gb = require('./translations/gb.js')
 let nl = require('./translations/nl.js')
 let cn = require('./translations/cn.js')
 let ru = require('./translations/ru.js')
+let de = require('./translations/de.js')
 
 let nu = localStorage.getItem(window.cookieName)
 nu = JSON.parse(nu);
@@ -216,6 +217,7 @@ angular
         $translateProvider.translations('nl', nl);
         $translateProvider.translations('cn', cn);
         $translateProvider.translations('ru', ru);
+        $translateProvider.translations('de', de);
         $translateProvider.preferredLanguage(window.currentLanguage);
         $translateProvider.fallbackLanguage('gb');
     }])
