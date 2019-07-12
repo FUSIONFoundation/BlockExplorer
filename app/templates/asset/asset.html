@@ -4,7 +4,7 @@
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    <h4 class="font-weight-bold text-fusion mb-4">
+                    <h4 class="font-weight-bold text-fusion mb-4" translate="ASSET_ASSET">
                         Asset
                     </h4>
                 </div>
@@ -47,7 +47,8 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="ASSET_ASSET_NAME">
                                                         Asset Name:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -58,7 +59,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="ASSET_ASSET_SYMBOL">
                                                         Asset Symbol:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -67,16 +69,18 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="ASSET_TYPE">
                                                         Asset Type:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
-                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{assetData.assetType}}</span>
+                                                        <span class="font-weight-sm-bold mr-1 text-blue" translate="ASSET_ISSUED_ON_FUSION">{{assetData.assetType}}</span>
                                                     </div>
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="ASSET_DECIMALS">
                                                         Decimals:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -85,7 +89,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="ASSET_TOTAL_SUPPLY">
                                                         Total Supply:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -94,7 +99,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="ASSET_ISSUER">
                                                         Issuer:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -106,7 +112,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="ASSET_ISSUE_HEIGHT">
                                                         Issue Height:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -117,15 +124,16 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                         translate="ASSET_CHANGEABLE_SUPPLY">
                                                         Changeable Supply:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
                                                         <span class="font-weight-sm-bold mr-1 text-blue">
                                                             <span class="badge badge-success"
-                                                                  ng-if="assetData.changeableSupply == true">Yes</span>
+                                                                  ng-if="assetData.changeableSupply == true" translate="ASSET_YES">Yes</span>
                                                             <span class="badge badge-danger"
-                                                                  ng-if="assetData.changeableSupply == false">No</span>
+                                                                  ng-if="assetData.changeableSupply == false" translate="ASSET_NO">No</span>
                                                         </span>
                                                     </div>
                                                 </div>

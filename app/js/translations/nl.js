@@ -104,7 +104,23 @@ nl.data = {
     ASSETS_QUANTITY : 'Kwantiteit',
     ASSETS_OF : 'van',
     ASSETS_ROWS : 'Rijen',
-    ASSETS_SEARCH_ASSET : 'Zoek naar assets'
+    ASSETS_SEARCH_ASSET : 'Zoek naar assets',
+
+    // ASSETS PAGE
+
+    ASSET_ASSET : 'Asset',
+    ASSET_ASSET_NAME : 'Asset Naam',
+    ASSET_ASSET_SYMBOL : 'Asset Symbool',
+    ASSET_TYPE : 'Asset Soort',
+    ASSET_ISSUED_ON_FUSION : 'Uitgegeven op FUSION',
+    ASSET_DECIMALS : 'Decimalen',
+    ASSET_TOTAL_SUPPLY : 'Totale Kwantiteit',
+    ASSET_ISSUER : 'Uitgever',
+    ASSET_ISSUE_HEIGHT : 'Uitgegeven op',
+    ASSET_CHANGEABLE_SUPPLY : 'Veranderbare Kwaniteit',
+    ASSET_YES : 'Ja',
+    ASSET_NO : 'Nee',
+
 
 };
 
