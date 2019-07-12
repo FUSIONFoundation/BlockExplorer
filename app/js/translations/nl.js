@@ -4,9 +4,9 @@ var nl = function () {
 }
 nl.data = {
 
-    // NAVBAR
-
     // PLEASE MAKE USE OF SAME CAPITALIZATION
+
+    // NAVBAR
 
     NAVBAR_NETWORKS: 'NETWERKEN',
     NAVBAR_DASHBOARD: 'Dashboard',
@@ -135,8 +135,19 @@ nl.data = {
     STAKING_INPUT_FIELD: 'Je wallet adres beginnend met 0x',
     STAKING_INFORMATION: 'Om te beginnen met het bijhouden van je staking beloningen voer je hier je wallet adres in. Kom terug naar deze pagina op elk moment op het bijhouden te hervatten. Nog niet aan het staken?',
 
+    // FOOTER PAGE
 
-
+    FOOTER_INFORMATION: 'FUSION Block Explorer is een tool ontwikkeld om alle transacties bij te houden op de blockchain.',
+    FOOTER_FUSION_TOOLS: 'FUSION Tools',
+    FOOTER_MORE: 'MEER',
+    FOOTER_FUSION_NETWORK: 'FUSION Netwerk',
+    FOOTER_FSN_TOKEN: 'FSN Token',
+    FOOTER_ABOUT_US: 'Over Ons',
+    FOOTER_SUPPORT: 'Ondersteuning',
+    FOOTER_CONTACT: 'Contact',
+    FOOTER_FAQ: 'Veel gestelde vragen',
+    FOOTER_SUBMIT_AN_ISSUE: 'Probleem indienen',
+    FOOTER_ALL_RIGHTS_RESERVED: 'Alle Rechten Voorbehouden'
 };
 
 module.exports = nl.data;
