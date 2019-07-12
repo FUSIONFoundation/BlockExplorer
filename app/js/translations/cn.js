@@ -114,7 +114,7 @@ cn.data = {
     ASSET_ASSET_SYMBOL: '资产代号',
     ASSET_TYPE: '资产类别',
     ASSET_ISSUED_ON_FUSION: '在FUSION上发行',
-    ASSET_DECIMALS: '小数点',
+    ASSET_DECIMALS: '进位制',
     ASSET_TOTAL_SUPPLY: '总供应量',
     ASSET_ISSUER: '发行人',
     ASSET_ISSUE_HEIGHT: '发行高度',
