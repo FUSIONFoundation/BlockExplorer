@@ -4,13 +4,13 @@
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <h4 class="font-weight-bold text-fusion mb-4">
+                    <h4 class="font-weight-bold text-fusion mb-4" translate="STAKING_STAKING">
                         Staking
                     </h4>
                 </div>
                 <div class="col-md-6 col-sm-12 text-md-right mb-3">
                     <div class="text-muted mt-1">
-                        <small class="font-weight-normal">Last updated: {{lastUpdated}}<i class="fa fa-sync ml-2" ng-click="getStakingInfo(walletAddressSaved)"></i></small>
+                        <small class="font-weight-normal"><span translate="STAKING_LAST_UPDATED">Last updated:</span> {{lastUpdated}}<i class="fa fa-sync ml-2" ng-click="getStakingInfo(walletAddressSaved)"></i></small>
                     </div>
                 </div>
             </div>
@@ -25,9 +25,8 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="row align-items-center mt-1">
-                                                    <p class="">In order to start tracking your staking rewards,
+                                                    <p translate="STAKING_INFORMATION">In order to start tracking your staking rewards,
                                                         please fill in your wallet address. Feel free to come back to this page at any time to resume tracking.
-                                                        Not staking yet and not sure how to get started? Follow <a href="">this</a> guide.
                                                     </p>
                                                 </div>
                                             </div>
@@ -38,7 +37,11 @@
                                             <div class="media-body">
                                                 <div class="form-group">
                                                     <label class="form-label">Wallet Address</label>
-                                                    <input class="form-control" placeholder="Your wallet address starting with 0x" type="text"
+                                                    <input class="form-control"
+                                                           translate
+                                                           translate-attr-placeholder="STAKING_INPUT_FIELD"
+                                                           placeholder="Your wallet address starting with 0xn"
+                                                           type="text"
                                                     ng-model="walletAddress"
                                                     >
                                                 </div>
@@ -66,18 +69,20 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                    translate="STAKING_STAKING_STATUS">
                                                         Staking Status:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
                                                                 <span class="font-weight-sm-bold mr-1">
-                                                                    <span class="badge badge-success">Active</span>
+                                                                    <span class="badge badge-success" translate="STAKING_ACTIVE">Active</span>
                                                                 </span>
                                                     </div>
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                    translate="STAKING_TICKETS">
                                                         Tickets:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -86,7 +91,8 @@
                                                 </div>
                                                 <hr class="hr-space">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                    translate="STAKING_REWARDS_TO_DATE">
                                                         Rewards to Date:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
@@ -100,7 +106,8 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                    translate="STAKING_ADDRESS">
                                                         Address:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
