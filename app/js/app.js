@@ -197,22 +197,22 @@ let dependencies = [
     'pascalprecht.translate'
 ];
 
-let en = require('./translations/en.js')
+let gb = require('./translations/gb.js')
 let nl = require('./translations/nl.js')
 
 let nu = localStorage.getItem(window.cookieName)
 nu = JSON.parse(nu);
-!nu.language ? window.currentLanguage = 'en' : window.currentLanguage = nu.language;
+!nu.language ? window.currentLanguage = 'gb' : window.currentLanguage = nu.language;
 
 console.log(window.currentLanguage);
 angular
     .module('myApp', dependencies)
     .config(configRouter)
     .config(['$translateProvider', function($translateProvider) {
-        $translateProvider.translations('en', en);
+        $translateProvider.translations('gb', gb);
         $translateProvider.translations('nl', nl);
         $translateProvider.preferredLanguage(window.currentLanguage);
-        $translateProvider.fallbackLanguage('en');
+        $translateProvider.fallbackLanguage('gb');
     }])
     .filter('startFrom', function () {
         return function (input, start) {
