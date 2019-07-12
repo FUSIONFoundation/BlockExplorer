@@ -1,4 +1,3 @@
-// Korean
 'use strict';
 var nl = function () {
 }

@@ -1,4 +1,3 @@
-// Korean
 'use strict';
 var gb = function () {
 }
