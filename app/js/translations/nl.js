@@ -96,6 +96,15 @@ nl.data = {
     TRANSACTION_GAS_USED : 'Gas Verbruikt',
     TRANSACTION_NONCE : 'Nonce',
 
+    // ASSETS PAGE
+
+    ASSETS_ASSETS : 'Assets',
+    ASSETS_ASSET_ID : 'Asset ID',
+    ASSETS_ASSET_NAME : 'Asset Naam',
+    ASSETS_QUANTITY : 'Kwantiteit',
+    ASSETS_OF : 'van',
+    ASSETS_ROWS : 'Rijen',
+    ASSETS_SEARCH_ASSET : 'Zoek naar assets'
 
 };
 

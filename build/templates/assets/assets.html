@@ -4,7 +4,8 @@
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <h4 class="font-weight-bold text-fusion mb-4">
+                    <h4 class="font-weight-bold text-fusion mb-4"
+                        translate="ASSETS_ASSETS">
                         Assets
                     </h4>
                 </div>
@@ -20,6 +21,8 @@
                                         <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
                                             <div class="input-group">
                                                 <input type="text" class="form-control" ng-model="assetSearch"
+                                                       translate
+                                                       translate-attr-placeholder="ASSETS_SEARCH_ASSET"
                                                        placeholder="Search asset names">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"><i
@@ -30,10 +33,10 @@
                                         <div class="col-md-9 text-md-right">
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
-                                    <span class="small-gray-text text-fusion mr-2"><strong>Rows</strong> {{shownRows}}
-                                        of {{allAssets.length}}</span>
+                                    <span class="small-gray-text text-fusion mr-2"><strong translate="ASSETS_ROWS">Rows</strong> {{shownRows}}
+                                        <span translate="ASSETS_OF">of</span> {{allAssets.length}}</span>
                                                     <span class="small-gray-text mr-2">
-                                        {{currentPage+1}} of {{endPage}}</span>
+                                        {{currentPage+1}} <span translate="ASSETS_OF">of</span> {{endPage}}</span>
                                                     <span class="small-gray-text m-1"
                                                           ng-click="firstPage()"><i class="fa fa-angle-double-left"
                                                                                     aria-hidden="true"></i>
@@ -60,9 +63,9 @@
                                     <table class="table table-responsive-sm table-hover">
                                         <thead class="bg-white">
                                         <tr>
-                                            <th class="label-small">Asset Name</th>
-                                            <th class="label-small">Asset ID</th>
-                                            <th class="label-small text-right">Quantity</th>
+                                            <th class="label-small" translate="ASSETS_ASSET_NAME">Asset Name</th>
+                                            <th class="label-small" translate="ASSETS_ASSET_ID">Asset ID</th>
+                                            <th class="label-small text-right" translate="ASSETS_QUANTITY">Quantity</th>
                                         </tr>
                                         </thead>
                                         <tbody>
