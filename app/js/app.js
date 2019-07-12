@@ -95,7 +95,8 @@ let data = apiServer ? JSON.parse(apiServer) : null
 // Initialize cookie if there is non
 if (data === null) {
     let data = {
-        'chain': 'mainnet'
+        'chain': 'mainnet',
+        'language' : 'en'
     }
     localStorage.setItem(window.cookieName, JSON.stringify(data));
 }
