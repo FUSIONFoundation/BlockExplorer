@@ -123,6 +123,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-12">
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <div class="col-xs-12">
+                                    <table class="table table-responsive-sm table-hover">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small text-left">Purchased on Block</th>
+                                            <th class="label-small text-left">Purchase & Expiry Date</th>
+                                            <th class="label-small text-left">Value</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="ticket in activeTickets | orderBy : '-block'">
+                                            <td class="text-fusion text-left"><a href="./#!/block/{{ticket.block}}">{{ticket.block}}</a></td>
+                                            <td class="text-fusion text-left">{{ticket.timespan}}</td>
+                                            <td class="text-fusion text-left">{{ticket.value}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
