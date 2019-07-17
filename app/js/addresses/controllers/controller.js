@@ -6,6 +6,16 @@ let blocksController = function ($http, $scope) {
     $scope.pageSize = 20;
     $scope.shownRows = 20;
 
+    $scope.searchAddress = async function (){
+        if (window.web3.utils.isAddress($scope.address)) {
+            window.location.href = `./#!/address/${$scope.address}`;
+        } else if (!window.web3.utils.isAddress($scope.walletAddress && $scope.address.length > 42)){
+            await window.web3.fsn.getAddressByNotation(parseInt($scope.address)).then(function(r){
+                window.location.href = `./#!/address/${r}`;
+            })
+        }
+    };
+
 
     $scope.nextPage = function () {
         if ($scope.currentPage !== $scope.allAssets - 1) {

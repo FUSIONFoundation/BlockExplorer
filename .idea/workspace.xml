@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/js/staking/controllers/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/staking/controllers/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/app/templates/staking/staking.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="665">
-              <caret line="46" column="98" lean-forward="true" selection-start-line="46" selection-start-column="98" selection-end-line="46" selection-end-column="98" />
+              <caret line="46" column="98" selection-start-line="46" selection-start-column="98" selection-end-line="46" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -81,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/staking/controllers/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="36" column="10" selection-start-line="36" selection-end-line="37" />
+            <state relative-caret-position="735">
+              <caret line="46" column="13" selection-start-line="36" selection-start-column="10" selection-end-line="46" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -350,18 +345,18 @@
       <workItem from="1562931615156" duration="10426000" />
       <workItem from="1562957854754" duration="272000" />
       <workItem from="1563278694083" duration="84000" />
-      <workItem from="1563356237198" duration="670000" />
+      <workItem from="1563356237198" duration="917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163974000" />
+    <option name="totallyTimeSpent" value="164221000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="39" width="3000" height="1831" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24896978" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24896978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -377,7 +372,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.40298507" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.40298507" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -699,14 +694,14 @@
     <entry file="file://$PROJECT_DIR$/app/templates/staking/staking.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
-          <caret line="46" column="98" lean-forward="true" selection-start-line="46" selection-start-column="98" selection-end-line="46" selection-end-column="98" />
+          <caret line="46" column="98" selection-start-line="46" selection-start-column="98" selection-end-line="46" selection-end-column="98" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/staking/controllers/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="36" column="10" selection-start-line="36" selection-end-line="37" />
+        <state relative-caret-position="735">
+          <caret line="46" column="13" selection-start-line="36" selection-start-column="10" selection-end-line="46" selection-end-column="13" />
         </state>
       </provider>
     </entry>
