@@ -33,13 +33,18 @@ let blockController = function ($http, $scope) {
         return window.months[tMonth] + " " + tDay + ", " + tYear;
     };
 
-    $scope.saveCookie = function () {
-        // console.log(window.web3.utils.isAddress($scope.walletAddress))
-        if (window.web3.utils.isAddress($scope.walletAddress)) {
-            localStorage.setItem('stakingAddress', $scope.walletAddress);
-            $scope.walletAddressSaved = $scope.walletAddress;
-            $scope.getStakingInfo($scope.walletAddress);
-        }
+    $scope.saveCookie = async function () {
+            if (window.web3.utils.isAddress($scope.walletAddress)) {
+                localStorage.setItem('stakingAddress', $scope.walletAddress);
+                $scope.walletAddressSaved = $scope.walletAddress;
+                $scope.getStakingInfo($scope.walletAddress);
+            } else if (!window.web3.utils.isAddress($scope.walletAddress)){
+                await window.web3.fsn.getAddressByNotation(parseInt($scope.walletAddress)).then(function(r){
+                    localStorage.setItem('stakingAddress', r);
+                    $scope.walletAddressSaved = r;
+                    $scope.getStakingInfo(r);
+                })
+            }
     };
 
     $scope.deleteCookie = function () {
