@@ -85,7 +85,7 @@ gb.data = {
     TRANSACTION_SECONDS: 'seconds',
     TRANSACTION_TRANSACTION: 'Transaction',
     TRANSACTION_TIME_LOCK: 'Time Lock',
-    TRANSACTION_SWAP_DETAILS: 'Swap Detials',
+    TRANSACTION_SWAP_DETAILS: 'Swap Details',
     TRANSACTION_FROM: 'From:',
     TRANSACTION_TO: 'To:',
     TRANSACTION_ASSET: 'Asset:',
