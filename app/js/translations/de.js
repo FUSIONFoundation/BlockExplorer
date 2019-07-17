@@ -8,20 +8,20 @@ de.data = {
     // NAVBAR
 
     NAVBAR_NETWORKS: 'NETZWERKE',
-    NAVBAR_DASHBOARD: 'Dashboard',
+    NAVBAR_DASHBOARD: 'Übersicht',
     NAVBAR_BLOCKS: 'Blöcke',
     NAVBAR_TRANSACTIONS: 'Transaktionen',
     NAVBAR_ASSETS: 'Assets',
-    NAVBAR_ADDRESSES: 'Addressen',
+    NAVBAR_ADDRESSES: 'Adressen',
     NAVBAR_STAKING: 'Staking',
-    NAVBAR_SEARCH: 'Suche nach Addresse / TxHash / Block',
+    NAVBAR_SEARCH: 'Suche nach Adresse / TxHash / Block',
     NAVBAR_SELECT_LANGUAGE: 'Wähle Sprache',
 
     // DASHBOARD PAGE
 
     DASHBOARD_LOADING: 'Lade',
     DASHBOARD_PRICE: 'Preis',
-    DASHBOARD_MARKETCAP: 'Marktkapitalisierung',
+    DASHBOARD_MARKETCAP: 'Markt-Kapitalisierung',
     DASHBOARD_BLOCKHEIGHT: 'Aktueller Block',
     DASHBOARD_TRANSACTIONS: 'Transaktionen',
     DASHBOARD_ASSETS: 'Assets',
@@ -42,7 +42,7 @@ de.data = {
     BLOCKS_TRANSACTIONS: 'Transaktionen',
     BLOCKS_MINER: 'Miner',
     BLOCKS_GAS_USED: 'Gas verwendet',
-    BLOCKS_GAS_LIMIT: 'Gas Limit',
+    BLOCKS_GAS_LIMIT: 'Gas maximal',
     BLOCKS_REWARD: 'Belohnung',
 
     // BLOCK PAGE
@@ -52,13 +52,13 @@ de.data = {
     BLOCK_AGE: 'Alter',
     BLOCK_REWARD: 'Belohnung',
     BLOCK_HASH: 'Eltern-Hash',
-    BLOCK_PARENTHASH: 'Parent Hash',
+    BLOCK_PARENTHASH: 'Eltern-Hash',
     BLOCK_MINER: 'Miner',
     BLOCK_DIFFICULTY: 'Schwierigkeit',
-    BLOCK_TOTAL_DIFFICULTY: 'Gesamtschwierigkeit',
+    BLOCK_TOTAL_DIFFICULTY: 'Schwierigkeit gesamt',
     BLOCK_SIZE: 'Größe',
     BLOCK_GAS_USED: 'Gas verwendet',
-    BLOCK_GAS_LIMIT: 'Gas Limit',
+    BLOCK_GAS_LIMIT: 'Gas maximal',
     BLOCK_TRANSACTION_HASH: 'Transaktions-Hash',
     BLOCK_BLOCK: 'Block',
     BLOCK_TYPE: 'Typ',
@@ -130,9 +130,9 @@ de.data = {
     STAKING_ACTIVE: 'Aktiv',
     STAKING_TICKETS: 'Tickets',
     STAKING_REWARDS_TO_DATE: 'Bisherige Belohnungen',
-    STAKING_ADDRESS: 'Addresse',
-    STAKING_WALLET_ADDRESS: 'Wallet Addresse',
-    STAKING_INPUT_FIELD: 'Ihre Wallet Addresse beginnend mit 0x',
+    STAKING_ADDRESS: 'Adresse',
+    STAKING_WALLET_ADDRESS: 'Wallet Adresse',
+    STAKING_INPUT_FIELD: 'Ihre Wallet Adresse beginnend mit 0x',
     STAKING_INFORMATION: 'Geben Sie bitte Ihre Wallet Adresse ein, um sich Ihre bisherigen Staking Belohnungen anzusehen. Sie können diese Seite jederzeit wieder aufrufen.',
 
     // FOOTER PAGE
@@ -147,7 +147,7 @@ de.data = {
     FOOTER_CONTACT: 'Kontakt',
     FOOTER_FAQ: 'FAQ',
     FOOTER_SUBMIT_AN_ISSUE: 'Problem melden',
-    FOOTER_ALL_RIGHTS_RESERVED: 'Alle Rechte vorbehalten'
+    FOOTER_ALL_RIGHTS_RESERVED: 'alle Rechte vorbehalten'
 };
 
 module.exports = de.data;
