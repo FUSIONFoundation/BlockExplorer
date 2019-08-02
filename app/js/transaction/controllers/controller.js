@@ -122,6 +122,9 @@ let transactionController = function ($http, $scope, $stateParams) {
             data.asset_id = txExtraData2.AssetID;
             // console.log(data);
         }
+        if(data.transactionType == 'Take Swap'){
+            console.log('take swap');
+        }
         if (data.transactionType == 'Make Swap') {
             // console.log(txExtraData2);
             let fromAsset = {};

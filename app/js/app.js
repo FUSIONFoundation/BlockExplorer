@@ -103,7 +103,7 @@ if (data === null) {
 
 
 window.getServer = function () {
-    let nu = localStorage.getItem(window.cookieName)
+    let nu = localStorage.getItem(window.cookieName);
     let data = nu ? JSON.parse(nu) : {}
     if (data.chain == '') {
         return 'https://api.fusionnetwork.io/'

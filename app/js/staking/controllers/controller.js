@@ -2,9 +2,10 @@ let blockController = function ($http, $scope) {
 
     $scope.realTimeStatus = false;
     $scope.walletAddressSaved = localStorage.getItem('stakingAddress');
-    if($scope.walletAddressSaved == null){
+    if ($scope.walletAddressSaved == null) {
         $scope.walletAddressSaved = '';
-    };
+    }
+    ;
     $scope.walletAddress = $scope.walletAddressSaved;
     $scope.lastUpdated = moment(new Date().getTime()).format('LTS');
     $scope.activeTickets = [];
@@ -15,14 +16,26 @@ let blockController = function ($http, $scope) {
         }
     });
 
+    $scope.getProbabilty = async function () {
+        console.log('Checking probability');
+        let t = 0;
+        await web3.fsn.totalNumberOfTickets().then(function (tickets) {
+            t = tickets;
+        });
+        $scope.$applyAsync(function () {
+            $scope.totalNumberOfTicketsOnChain = t;
+            $scope.stakingProbability = ($scope.totalTickets  / t * 100).toFixed(2);
+        });
+    };
+
     $scope.returnDateString = function (posixtime, position) {
         let time = new Date(parseInt(posixtime) * 1000);
-        if (posixtime == 18446744073709552000 && position == "End") {
-            return "Forever";
+        if (posixtime == 18446744073709552000 && position == 'End') {
+            return 'Forever';
         }
-        if (position == "Start") {
+        if (position == 'Start') {
             if (posixtime == 0) {
-                return "Now";
+                return 'Now';
             }
             // if(posixtime < time && position == 'Start'){return 'Now';}
         }
@@ -30,21 +43,21 @@ let blockController = function ($http, $scope) {
         let tDay = time.getUTCDate();
         let tYear = time.getUTCFullYear();
 
-        return window.months[tMonth] + " " + tDay + ", " + tYear;
+        return window.months[tMonth] + ' ' + tDay + ', ' + tYear;
     };
 
     $scope.saveCookie = async function () {
-            if (window.web3.utils.isAddress($scope.walletAddress)) {
-                localStorage.setItem('stakingAddress', $scope.walletAddress);
-                $scope.walletAddressSaved = $scope.walletAddress;
-                $scope.getStakingInfo($scope.walletAddress);
-            } else if (!window.web3.utils.isAddress($scope.walletAddress)){
-                await window.web3.fsn.getAddressByNotation(parseInt($scope.walletAddress)).then(function(r){
-                    localStorage.setItem('stakingAddress', r);
-                    $scope.walletAddressSaved = r;
-                    $scope.getStakingInfo(r);
-                })
-            }
+        if (window.web3.utils.isAddress($scope.walletAddress)) {
+            localStorage.setItem('stakingAddress', $scope.walletAddress);
+            $scope.walletAddressSaved = $scope.walletAddress;
+            $scope.getStakingInfo($scope.walletAddress);
+        } else if (!window.web3.utils.isAddress($scope.walletAddress)) {
+            await window.web3.fsn.getAddressByNotation(parseInt($scope.walletAddress)).then(function (r) {
+                localStorage.setItem('stakingAddress', r);
+                $scope.walletAddressSaved = r;
+                $scope.getStakingInfo(r);
+            })
+        }
     };
 
     $scope.deleteCookie = function () {
@@ -81,30 +94,33 @@ let blockController = function ($http, $scope) {
                 $scope.getActiveTickets(walletAddress);
                 $scope.lastUpdated = moment(new Date().getTime()).format('LTS');
             });
+
+            $scope.getProbabilty();
+
         } catch (err) {
             // console.log(err)
         }
     };
     $scope.getActiveTickets = async function (walletAddress) {
         $scope.activeTickets = [];
-        let activeTickets = []
+        let activeTickets = [];
         if (!walletAddress) {
             return
         }
         try {
-          await window.web3.fsn.allTicketsByAddress(walletAddress).then(function(tickets){
-             for(let ticket in tickets){
-                 let data = {
-                     block : tickets[ticket].Height,
-                     timespan : `${$scope.returnDateString(tickets[ticket].StartTime,'Start')} - ${$scope.returnDateString(tickets[ticket].ExpireTime,'End')}`,
-                     value : '5000 FSN',
-                 }
-                 activeTickets.push(data);
-             }
-             $scope.$apply(function(){
-                 $scope.activeTickets = activeTickets;
-             })
-          });
+            await window.web3.fsn.allTicketsByAddress(walletAddress).then(function (tickets) {
+                for (let ticket in tickets) {
+                    let data = {
+                        block: tickets[ticket].Height,
+                        timespan: `${$scope.returnDateString(tickets[ticket].StartTime, 'Start')} - ${$scope.returnDateString(tickets[ticket].ExpireTime, 'End')}`,
+                        value: '5000 FSN',
+                    }
+                    activeTickets.push(data);
+                }
+                $scope.$apply(function () {
+                    $scope.activeTickets = activeTickets;
+                })
+            });
         } catch (err) {
             // console.log(err)
         }
