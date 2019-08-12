@@ -448,11 +448,14 @@ let addressController = function ($http, $scope, $stateParams) {
     }
 
     $scope.returnInAndOut = function (input, address, type) {
-        if (input.toLowerCase() == address.toLowerCase()) {
-            return 'IN';
-        } else {
-            return 'OUT';
+        if(address) {
+            if (input.toLowerCase() == address.toLowerCase()) {
+                return 'IN';
+            } else {
+                return 'OUT';
+            }
         }
+
         if (type) {
             if (type == 'TimeLockToAsset') {
                 if (input.toLowerCase() == web3.fsn.consts.FSNToken.toLowerCase()) {
