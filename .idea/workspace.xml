@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/assets/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/assets/assets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/templates/assets/assets.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/templates/assets/assets.html" afterDir="false" />
-    </list>
+    <list default="true" id="f916ebe1-1842-4e3d-ab7c-ba5a5fec74a9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +12,7 @@
     <session id="-612098699">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.opened" value="3" />
         </counts>
@@ -33,7 +26,7 @@
         <counts>
           <entry key="HTML" value="18" />
           <entry key="JavaScript" value="430" />
-          <entry key="SCSS" value="18" />
+          <entry key="SCSS" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -89,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="164" column="17" lean-forward="true" selection-start-line="164" selection-start-column="17" selection-end-line="164" selection-end-column="17" />
+            <state relative-caret-position="188">
+              <caret line="157" column="163" selection-start-line="157" selection-start-column="163" selection-end-line="157" selection-end-column="163" />
             </state>
           </provider>
         </entry>
@@ -99,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="1648" column="60" selection-start-line="1648" selection-start-column="60" selection-end-line="1648" selection-end-column="60" />
+              <caret line="1648" column="44" selection-start-line="1648" selection-start-column="44" selection-end-line="1648" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -117,7 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>transactionS</find>
       <find>waves</find>
       <find>getAddress</find>
       <find>valid</find>
@@ -147,6 +139,7 @@
       <find>fees</find>
       <find>take swap</find>
       <find>Swap Details</find>
+      <find>bg-nav</find>
     </findStrings>
     <replaceStrings>
       <replace>${window.getServer()}</replace>
@@ -438,18 +431,18 @@
       <workItem from="1564770861028" duration="2178000" />
       <workItem from="1565602238108" duration="299000" />
       <workItem from="1565604514659" duration="1804000" />
-      <workItem from="1565607143778" duration="483000" />
+      <workItem from="1565607143778" duration="823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181372000" />
+    <option name="totallyTimeSpent" value="181712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="34" width="1920" height="981" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24919957" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24919957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -465,7 +458,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25441697" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25441697" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -803,15 +796,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="164" column="17" lean-forward="true" selection-start-line="164" selection-start-column="17" selection-end-line="164" selection-end-column="17" />
+        <state relative-caret-position="188">
+          <caret line="157" column="163" selection-start-line="157" selection-start-column="163" selection-end-line="157" selection-end-column="163" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scss/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="1648" column="60" selection-start-line="1648" selection-start-column="60" selection-end-line="1648" selection-end-column="60" />
+          <caret line="1648" column="44" selection-start-line="1648" selection-start-column="44" selection-end-line="1648" selection-end-column="44" />
         </state>
       </provider>
     </entry>

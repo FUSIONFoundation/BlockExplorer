@@ -127,8 +127,13 @@ let transactionController = function ($http, $scope, $stateParams) {
             let d;
             let fromAsset;
             let toAsset;
-
-            await $http.get(`${window.getServer()}swaps2/${txExtraData2.SwapID}`).then(function (r) {
+            let url;
+            if (txExtraData2.Deleted) {
+                url = 'swaps';
+            } else if (!txExtraData2.Deleted) {
+                url = 'swaps2';
+            }
+            await $http.get(`${window.getServer()}${url}/${txExtraData2.SwapID}`).then(function (r) {
                 d = JSON.parse(r.data[0].data);
             });
             console.log(txExtraData2);
