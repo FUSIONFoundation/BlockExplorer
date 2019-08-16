@@ -70,6 +70,7 @@ let transactionController = function ($http, $scope, $stateParams) {
         let data = {};
         await $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
             tx = r.data[0];
+            console.log(tx);
             if (tx === undefined) {
                 $scope.countDownFunc();
                 console.log('Transaction not found, will retry in 5s..');

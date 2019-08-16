@@ -64,11 +64,16 @@ let addressController = function ($http, $scope, $stateParams) {
             });
         }
     };
-    $scope.firstPage = function () {
+    $scope.firstPage = async function () {
+        transactionSave = [];
+        $scope.$applyAsync(function(){
+            $scope.processTransactions = [];
+        });
+
         $scope.$eval(function () {
             $scope.currentPage = 0;
         });
-        $scope.getTransactions($scope.currentPage);
+        await $scope.getTransactions($scope.currentPage);
         if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
             $scope.$eval(function () {
                 $scope.shownRows = $scope.addressData.numberOfTransactions / 10
@@ -299,13 +304,13 @@ let addressController = function ($http, $scope, $stateParams) {
 
     $scope.getTransactions = async function (page) {
         $scope.loading = true;
+        $scope.processTransactions = [];
         let s = '';
         if($scope.hideTicketValue === true){
             s = 'notickets'
         } else if ($scope.hideTicketValue === false){
             s = 'all'
         }
-        $scope.processTransactions = [];
         await $http.get(`${window.getServer()}transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=${s}`).then(function (r) {
             if (r.data.length === 0 || r.data === []) {
                 if($scope.addressData.numberOfTransactions != 0){
