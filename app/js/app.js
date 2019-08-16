@@ -108,7 +108,7 @@ window.getServer = function () {
     if (data.chain == '') {
         return 'https://api.fusionnetwork.io/'
     } else if (data.chain == 'mainnet'){
-        return 'https://api.fusionnetwork.io/'
+        return 'http://localhost:3000/'
     } else if(data.chain == 'testnet'){
         return 'https://testnetapi.fusionnetwork.io/'
     }

@@ -166,8 +166,7 @@ let transactionController = function ($http, $scope, $stateParams) {
         }
         if(!data.transactionType){
             data.transactionType = 'Send Asset';
-            await web3.eth.getTransaction(`0x39b764548a01822eb7ba78f808e305349cbd55f3bd014e8139787208aa22cb1a`).then(function(r){
-                let asset = {};
+            await web3.eth.getTransaction(`${transactionHash}`).then(function(r){
                 let amount = new BigNumber(r.value.toString());
                 let amountFinal = amount.div($scope.countDecimals(18));
                 $scope.getFiatValue(amountFinal.toString());

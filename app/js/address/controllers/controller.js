@@ -1,3 +1,5 @@
+import BigNumber from 'bignumber.js';
+
 let addressController = function ($http, $scope, $stateParams) {
     let address = $stateParams.address;
     $scope.address = address;
@@ -303,15 +305,19 @@ let addressController = function ($http, $scope, $stateParams) {
     };
 
     $scope.getTransactions = async function (page) {
+        console.log('Running getTransactions')
         $scope.loading = true;
+
         $scope.processTransactions = [];
         let s = '';
         if($scope.hideTicketValue === true){
-            s = 'notickets'
+            s = '&returnTickets=notickets'
         } else if ($scope.hideTicketValue === false){
-            s = 'all'
+            s = '&returnTickets=all'
         }
-        await $http.get(`${window.getServer()}transactions/all?address=${address}&sort=desc&page=${page}&size=10&field=height&returnTickets=${s}`).then(function (r) {
+        console.log(address.toLowerCase());
+        await $http.get(`${window.getServer()}transactions/all?address=${address.toLowerCase()}&sort=desc&page=${page}&size=10&field=height${s}`).then(function (r) {
+            console.log(r);
             if (r.data.length === 0 || r.data === []) {
                 if($scope.addressData.numberOfTransactions != 0){
                     return console.log('Address only has ticket transactions.')
@@ -392,9 +398,9 @@ let addressController = function ($http, $scope, $stateParams) {
     };
 
     $scope.processTx = async function (transactions,transaction){
-        if(transactionSave.length == 10){
-            transactionSave = [];
-        }
+            if(transactionSave.length == 10){
+                transactionSave = [];
+            }
             let extraData = JSON.parse(transactions[transaction].data);
             let inout = $scope.returnInAndOut(address, transactions[transaction].commandExtra3, '');
             let data = {
@@ -407,47 +413,64 @@ let addressController = function ($http, $scope, $stateParams) {
                 type: window.utils.returnCommand(transactions[transaction].fusionCommand),
                 asset: '',
                 inout: inout,
-                assetId: extraData.AssetID,
                 amount: 200
             };
             let asset = '';
             try {
-                if (extraData.AssetID !== undefined && extraData.Value) {
-                    let extraDataGetAsset = {};
-                    await window.getAsset(extraData.AssetID).then(function(r){
-                        extraDataGetAsset = r;
-                    })
-                    let amount = new BigNumber(extraData.Value.toString());
-                    let amountFinal = amount.div($scope.countDecimals(extraDataGetAsset.Decimals));
-                    data.asset = extraDataGetAsset.Symbol;
-                    data.amount = amountFinal.toString()
-                }
-                if (extraData.StartTime && extraData.EndTime) {
-                    data.startTimeString = $scope.returnDateString(extraData.StartTime, 'Start');
-                    data.endTimeString = $scope.returnDateString(extraData.EndTime, 'End');
-                }
-                if (data.type == 'Make Swap') {
-                    let fromGetAsset = {};
-                    await window.getAsset(extraData.FromAssetID).then(function(r){
-                        fromGetAsset = r;
-                    })
-                    let toGetAsset = {};
-                    await window.getAsset(extraData.ToAssetID).then(function(r){
-                        toGetAsset = r;
-                    })
-                    data.FromAsset = fromGetAsset.Symbol;
-                    data.ToAsset = toGetAsset.Symbol;
-                }
-                if (data.type == 'Take Swap') {
+                if(extraData) {
+                    if (extraData.AssetID !== undefined && extraData.Value) {
+                        let extraDataGetAsset = {};
+                        await window.getAsset(extraData.AssetID).then(function (r) {
+                            extraDataGetAsset = r;
+                        })
+                        let amount = new BigNumber(extraData.Value.toString());
+                        let amountFinal = amount.div($scope.countDecimals(extraDataGetAsset.Decimals));
+                        data.asset = extraDataGetAsset.Symbol;
+                        data.amount = amountFinal.toString();
+                    }
+                    if (extraData.StartTime && extraData.EndTime) {
+                        data.startTimeString = $scope.returnDateString(extraData.StartTime, 'Start');
+                        data.endTimeString = $scope.returnDateString(extraData.EndTime, 'End');
+                    }
+                    if (data.type == 'Make Swap') {
+                        let fromGetAsset = {};
+                        await window.getAsset(extraData.FromAssetID).then(function (r) {
+                            fromGetAsset = r;
+                        })
+                        let toGetAsset = {};
+                        await window.getAsset(extraData.ToAssetID).then(function (r) {
+                            toGetAsset = r;
+                        })
+                        data.FromAsset = fromGetAsset.Symbol;
+                        data.ToAsset = toGetAsset.Symbol;
+                    }
+                    if (data.type == 'Take Swap') {
 
+                    }
+                    if (data.type == 'Create Asset') {
+                        // console.log(extraData);
+                        data.asset = `${extraData.Name} (${extraData.Symbol})`;
+                        data.asset_id = extraData.AssetID;
+                    }
                 }
-                if(data.type == 'Create Asset'){
-                    // console.log(extraData);
-                    data.asset = `${extraData.Name} (${extraData.Symbol})`;
-                    data.asset_id = extraData.AssetID;
+                if(!data.type){
+                    data.type = 'Send Asset';
+                    await web3.eth.getTransaction(`${transactions[transaction].hash}`).then(function(r){
+                        console.log(r);
+                        let amount = new BigNumber(r.value.toString());
+                        let amountFinal = amount.div($scope.countDecimals(18));
+                        data.asset_id = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
+                        data.asset = 'FSN';
+                        data.amount = amountFinal.toString();
+                        data.from = r.from;
+                        data.to = r.to;
+                        console.log(`${address} => ${r.to}`)
+                        data.inout = $scope.returnInAndOut(address, r.to, '');
+                        console.log(data);
+                    })
                 }
             } catch (err){
-                // console.log(err);
+                console.log(err);
             }
             transactionSave.push(data);
     }
@@ -456,7 +479,7 @@ let addressController = function ($http, $scope, $stateParams) {
         if(address) {
             if (input.toLowerCase() == address.toLowerCase()) {
                 return 'IN';
-            } else {
+            } else if (input.toLowerCase() !== address.toLowerCase()){
                 return 'OUT';
             }
         }
