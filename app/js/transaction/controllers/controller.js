@@ -106,7 +106,6 @@ let transactionController = function ($http, $scope, $stateParams) {
             await window.getAsset(txExtraData2.AssetID).then(function (r) {
                 asset = r;
             });
-
             let amount = new BigNumber(txExtraData2.Value.toString());
             let amountFinal = amount.div($scope.countDecimals(asset['Decimals']));
             $scope.getFiatValue(amountFinal.toString());
@@ -164,6 +163,20 @@ let transactionController = function ($http, $scope, $stateParams) {
             data.swap = true;
             data.fromSwap = fromAsset.Symbol;
             data.toSwap = toAsset.Symbol;
+        }
+        if(!data.transactionType){
+            data.transactionType = 'Send Asset';
+            await web3.eth.getTransaction(`0x39b764548a01822eb7ba78f808e305349cbd55f3bd014e8139787208aa22cb1a`).then(function(r){
+                let asset = {};
+                let amount = new BigNumber(r.value.toString());
+                let amountFinal = amount.div($scope.countDecimals(18));
+                $scope.getFiatValue(amountFinal.toString());
+                data.asset_id = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
+                data.asset_symbol = 'FSN';
+                data.amount = amountFinal.toString();
+                data.asset = 'Fusion';
+                data.to = r.to;
+            })
         }
         $scope.$apply(function () {
             $scope.transactionData = data;
