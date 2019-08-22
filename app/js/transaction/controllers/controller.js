@@ -52,14 +52,14 @@ let transactionController = function ($http, $scope, $stateParams) {
 
     $scope.countDownFunc = function () {
         let counter = 5;
-        const intv = setInterval(function(){
-            $scope.$apply(function(){
+        const intv = setInterval(function () {
+            $scope.$apply(function () {
                 $scope.countDown = counter;
             })
             counter--
-            if(counter === 0) return clearInterval(intv);
+            if (counter === 0) return clearInterval(intv);
         }, 1000);
-        if(counter === 0) return clearInterval(intv);
+        if (counter === 0) return clearInterval(intv);
     }
 
     $scope.getTransaction = async function () {
@@ -70,6 +70,7 @@ let transactionController = function ($http, $scope, $stateParams) {
         let data = {};
         await $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
             tx = r.data[0];
+            console.log(tx);
             if (tx === undefined) {
                 $scope.countDownFunc();
                 console.log('Transaction not found, will retry in 5s..');
@@ -105,7 +106,6 @@ let transactionController = function ($http, $scope, $stateParams) {
             await window.getAsset(txExtraData2.AssetID).then(function (r) {
                 asset = r;
             });
-
             let amount = new BigNumber(txExtraData2.Value.toString());
             let amountFinal = amount.div($scope.countDecimals(asset['Decimals']));
             $scope.getFiatValue(amountFinal.toString());
@@ -122,8 +122,31 @@ let transactionController = function ($http, $scope, $stateParams) {
             data.asset_id = txExtraData2.AssetID;
             // console.log(data);
         }
-        if(data.transactionType == 'Take Swap'){
+        if (data.transactionType == 'Take Swap') {
             console.log('take swap');
+            let d;
+            let fromAsset;
+            let toAsset;
+            let url;
+            if (txExtraData2.Deleted) {
+                url = 'swaps';
+            } else if (!txExtraData2.Deleted) {
+                url = 'swaps2';
+            }
+            await $http.get(`${window.getServer()}${url}/${txExtraData2.SwapID}`).then(function (r) {
+                d = JSON.parse(r.data[0].data);
+            });
+            console.log(txExtraData2);
+            console.log(d);
+            await window.getAsset(d.FromAssetID).then(function (r) {
+                fromAsset = r;
+            });
+            await window.getAsset(d.ToAssetID).then(function (r) {
+                toAsset = r;
+            })
+            data.swap = true;
+            data.fromSwap = fromAsset.Symbol;
+            data.toSwap = toAsset.Symbol;
         }
         if (data.transactionType == 'Make Swap') {
             // console.log(txExtraData2);
@@ -140,6 +163,19 @@ let transactionController = function ($http, $scope, $stateParams) {
             data.swap = true;
             data.fromSwap = fromAsset.Symbol;
             data.toSwap = toAsset.Symbol;
+        }
+        if(!data.transactionType){
+            data.transactionType = 'Send Asset';
+            await web3.eth.getTransaction(`${transactionHash}`).then(function(r){
+                let amount = new BigNumber(r.value.toString());
+                let amountFinal = amount.div($scope.countDecimals(18));
+                $scope.getFiatValue(amountFinal.toString());
+                data.asset_id = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
+                data.asset_symbol = 'FSN';
+                data.amount = amountFinal.toString();
+                data.asset = 'Fusion';
+                data.to = r.to;
+            })
         }
         $scope.$apply(function () {
             $scope.transactionData = data;
