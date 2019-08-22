@@ -423,9 +423,13 @@ let addressController = function ($http, $scope, $stateParams) {
                 }
                 if (data.type == 'Make Swap') {
                     let fromGetAsset = {};
-                    await window.getAsset(extraData.FromAssetID).then(function(r){
-                        fromGetAsset = r;
-                    })
+                    if (extraData.FromAssetID == "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe"){
+                        fromGetAsset.Symbol = "USAN";
+                    } else {
+                        await window.getAsset(extraData.FromAssetID).then(function (r) {
+                            fromGetAsset = r;
+                        })
+                    }
                     let toGetAsset = {};
                     await window.getAsset(extraData.ToAssetID).then(function(r){
                         toGetAsset = r;
