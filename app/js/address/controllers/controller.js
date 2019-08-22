@@ -417,7 +417,6 @@ let addressController = function ($http, $scope, $stateParams) {
             };
             let asset = '';
             try {
-<<<<<<< HEAD
                 if (extraData.AssetID !== undefined && extraData.Value) {
                     let extraDataGetAsset = {};
                     await window.getAsset(extraData.AssetID).then(function(r){
@@ -449,7 +448,8 @@ let addressController = function ($http, $scope, $stateParams) {
                     data.ToAsset = toGetAsset.Symbol;
                 }
                 if (data.type == 'Take Swap') {
-=======
+
+                }
                 if(extraData) {
                     if (extraData.AssetID !== undefined && extraData.Value) {
                         let extraDataGetAsset = {};
@@ -478,7 +478,6 @@ let addressController = function ($http, $scope, $stateParams) {
                         data.ToAsset = toGetAsset.Symbol;
                     }
                     if (data.type == 'Take Swap') {
->>>>>>> 5292335d870a2ff2e83347d3998851c4a2d2b2e6
 
                     }
                     if (data.type == 'Create Asset') {
