@@ -155,7 +155,7 @@
             </div>
         </nav>
         <!--Navbar for Desktop-->
-        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs z-index-0 mb-2 b-shadow">
+        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs z-index-0" ng-class="{'mb-2 b-shadow' : $location.path() !== '/dashboard'}">
             <div class="container">
                 <ul class="nav nav-tabs tabs-alt pt-1">
                     <li class="nav-item">
