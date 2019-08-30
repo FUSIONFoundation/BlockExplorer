@@ -88,6 +88,7 @@ let transactionsController = function ($http, $scope) {
     $scope.hideTickets = async function (){
         $scope.hideTicketValue ? !$scope.hideTicketValue : $scope.hideTicketValue;
         $scope.getTransactions(0);
+        $scope.firstPage();
     }
 
     $scope.getTransactions = function (page) {
