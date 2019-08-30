@@ -125,6 +125,83 @@ let blockController = function ($http, $scope) {
             // console.log(err)
         }
     };
+
+
+    $scope.allLastMinedBlocks = [];
+    $scope.getLastMinedBlocks = async () => {
+        let minedBlocks = [];
+        await $http.get(`${window.getServer()}blocks/all?address=0x5b723fc08fb5cd14062ca0b7d05cacd8c4ac1ba0&sort=desc&page=0&size=40&field=height}`).then(function (r) {
+            console.log(r);
+            let blocks = r.data;
+            for (let block in blocks){
+                let d = new Date(blocks[block].timeStamp * 1000);
+                let day = d.getUTCDay();
+                let month = d.getUTCMonth();
+                let z = day + ' - ' + month;
+
+                let data = {
+                    time: z,
+                    block: blocks[block].height
+                }
+
+
+                minedBlocks.push(data)
+            }
+
+            $scope.$eval(function(){
+                $scope.allLastMinedBlocks = minedBlocks;
+            })
+
+            $scope.renderChart();
+        });
+    }
+
+    $scope.getLastMinedBlocks();
+
+    $scope.renderChart = async () => {
+        console.log($scope.allLastMinedBlocks)
+        var labels = $scope.allLastMinedBlocks.map(function(e) {
+            return e.time;
+        });
+
+        var map = labels.reduce(function(prev, cur) {
+            prev[cur] = (prev[cur] || 0) + 1;
+            return prev;
+        }, {});
+
+        console.log(map);
+
+        labels = labels.filter(function(item, pos) {
+            return labels.indexOf(item) == pos;
+        });
+
+        console.log(labels);
+
+        var data = $scope.allLastMinedBlocks.map(function(e) {
+            return e.block;
+        });;
+
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Mined Blocks',
+                    backgroundColor: '#062144',
+                    borderColor: '#062144',
+                    data: map.values()
+                }]
+            },
+            // Configuration options go here
+            options: {}
+        });
+    }
+
 };
 
 export default blockController;

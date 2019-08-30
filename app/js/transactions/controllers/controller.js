@@ -84,11 +84,23 @@ let transactionsController = function ($http, $scope) {
         return parseInt(returnDecimals);
     };
 
+    $scope.hideTicketValue = true;
+    $scope.hideTickets = async function (){
+        $scope.hideTicketValue ? !$scope.hideTicketValue : $scope.hideTicketValue;
+        $scope.getTransactions(0);
+    }
+
     $scope.getTransactions = function (page) {
         $scope.loading = true;
         let transactions = {};
         let displayTransactions = [];
-        $http.get(`${window.getServer()}transactions/all?sort=desc&page=${page}&size=20&field=height&returnTickets=onlytickets`).then(function (r) {
+        let x;
+        if($scope.hideTicketValue){
+            x = '&returnTickets=notickets';
+        } else {
+            x = '&returnTickets=all';
+        }
+        $http.get(`${window.getServer()}transactions/all?sort=desc&page=${page}&size=20&field=height${x}`).then(function (r) {
             transactions = r.data;
             // console.log(transactions);
             for (let transaction in transactions) {

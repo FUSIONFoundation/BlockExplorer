@@ -538,7 +538,25 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-9 text-md-right">
+                                        <div class="col-md-3">
+                                            <div class="input-group">
+                                                <label class="switcher switcher-sm">
+                                                    <input type="checkbox" class="switcher-input"
+                                                           ng-model="hideTicketValue"
+                                                           ng-change="hideTickets()">
+                                                    <span class="switcher-indicator">
+                      <span class="switcher-yes">
+                        <span class="ion ion-md-checkmark"></span>
+                      </span>
+                      <span class="switcher-no">
+                        <span class="ion ion-md-close"></span>
+                      </span>
+                    </span>
+                                                    <span class="switcher-label">Hide Ticket Transactions</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 text-md-right">
                                             <div class="col-md-12">
                                                 <form class="form-group form-inline float-md-right">
                                     <span class="small-gray-text text-fusion mr-2"><strong translate="TRANSACTIONS_ROWS">Rows</strong> {{shownRows}}

@@ -44,6 +44,8 @@
     <!-- Layout helpers -->
     <script src="assets/vendor/js/layout-helpers.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 
     <!-- Libs -->
 
@@ -312,8 +314,13 @@
             </div>
         </nav>
 
+        <style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-    ng-cloak {
+                display: none !important;
+            }
+        </style>
         <!-- / Layout navbar -->
-        <div class="scrolled">
+        <div ng-cloak class="scrolled">
             <div ui-view></div>
         </div>
         <footer class="footer p-3" role="content" aria-label="footer">
@@ -425,7 +432,7 @@
 </div>
 <script src="assets/js/main.js"></script>
 
-<script src="app.js?rev=792b2f920654946baa59ef54ac404233"></script>
+<script src="app.js?rev=8ad6a0a8b3b8bd3954e0e06b40d0063e"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/vendor/libs/popper/popper.js"></script>

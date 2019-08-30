@@ -1,5 +1,6 @@
 <div class="layout-container">
     <div class="layout-content">
+
         <!-- Page content -->
         <div class="container flex-grow-1 container-p-y">
             <div class="row">
@@ -13,6 +14,15 @@
                         <small class="font-weight-normal"><span translate="STAKING_LAST_UPDATED">Last updated:</span> {{lastUpdated}}<i class="fa fa-sync ml-2" ng-click="getStakingInfo(walletAddressSaved)"></i></small>
                     </div>
                 </div>
+            </div>
+
+            <div class="container flex-grow-1 container-p-y">
+            <div class="col-sm-6">
+                <div class="mb-4">
+                    Blocks Mined
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
             </div>
 
             <div class="row" ng-show="walletAddressSaved == ''">
