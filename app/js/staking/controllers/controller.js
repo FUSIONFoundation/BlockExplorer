@@ -56,6 +56,7 @@ let blockController = function ($http, $scope) {
                 localStorage.setItem('stakingAddress', r);
                 $scope.walletAddressSaved = r;
                 $scope.getStakingInfo(r);
+                $scope.getLastMinedBlocks(r);
             })
         }
     };
@@ -124,27 +125,22 @@ let blockController = function ($http, $scope) {
         } catch (err) {
             // console.log(err)
         }
+        $scope.getLastMinedBlocks(walletAddress);
     };
 
-
     $scope.allLastMinedBlocks = [];
-    $scope.getLastMinedBlocks = async () => {
+    $scope.getLastMinedBlocks = async (walletAddress) => {
         let minedBlocks = [];
-        await $http.get(`${window.getServer()}blocks/all?address=0x5b723fc08fb5cd14062ca0b7d05cacd8c4ac1ba0&sort=desc&page=0&size=40&field=height}`).then(function (r) {
+        await $http.get(`${window.getServer()}blocks/all?address=${walletAddress}&sort=desc&page=0&size=40&field=height}`).then(function (r) {
             console.log(r);
             let blocks = r.data;
             for (let block in blocks){
-                let d = new Date(blocks[block].timeStamp * 1000);
-                let day = d.getUTCDay();
-                let month = d.getUTCMonth();
-                let z = day + ' - ' + month;
-
                 let data = {
-                    time: z,
+                    hash: blocks[block].hash,
+                    time: moment(blocks[block].timeStamp * 1000).format('MMMM Do YYYY, h:mm:ss A'),
+                    ago: format(blocks[block].timeStamp * 1000),
                     block: blocks[block].height
                 }
-
-
                 minedBlocks.push(data)
             }
 
@@ -152,11 +148,9 @@ let blockController = function ($http, $scope) {
                 $scope.allLastMinedBlocks = minedBlocks;
             })
 
-            $scope.renderChart();
+            // $scope.renderChart();
         });
     }
-
-    $scope.getLastMinedBlocks();
 
     $scope.renderChart = async () => {
         console.log($scope.allLastMinedBlocks)
@@ -194,7 +188,7 @@ let blockController = function ($http, $scope) {
                     label: 'Mined Blocks',
                     backgroundColor: '#062144',
                     borderColor: '#062144',
-                    data: map.values()
+                    data: map
                 }]
             },
             // Configuration options go here

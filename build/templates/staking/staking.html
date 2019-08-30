@@ -16,15 +16,6 @@
                 </div>
             </div>
 
-            <div class="container flex-grow-1 container-p-y">
-            <div class="col-sm-6">
-                <div class="mb-4">
-                    Blocks Mined
-                    <canvas id="myChart"></canvas>
-                </div>
-            </div>
-            </div>
-
             <div class="row" ng-show="walletAddressSaved == ''">
                 <div class="col-sm-12">
                     <div class="mb-4">
@@ -82,8 +73,11 @@
                                                         Staking Status:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
-                                                                <span class="font-weight-sm-bold mr-1">
+                                                                <span class="font-weight-sm-bold mr-1" ng-show="activeTickets.length > 0">
                                                                     <span class="badge badge-success" translate="STAKING_ACTIVE">Active</span>
+                                                                </span>
+                                                                <span class="font-weight-sm-bold mr-1" ng-show="activeTickets.length === 0">
+                                                                    <span class="badge badge-danger">Inactive</span>
                                                                 </span>
                                                     </div>
                                                 </div>
@@ -94,7 +88,7 @@
                                                         Tickets:
                                                     </div>
                                                     <div class="col-md-9 text-md-right">
-                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{totalTickets}}</span>
+                                                        <span class="font-weight-sm-bold mr-1 text-blue">{{activeTickets.length}}</span>
                                                     </div>
                                                 </div>
                                                 <hr class="hr-space">
@@ -123,14 +117,25 @@
                                         <div class="media align-items-center">
                                             <div class="media-body">
                                                 <div class="row align-items-center mt-1">
-                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small"
+                                                    <div class="col-md-2 font-weight-sm-normal mb-1 mb-md-0 label-small"
                                                     translate="STAKING_ADDRESS">
                                                         Address:
                                                     </div>
-                                                    <div class="col-md-9 text-md-right">
+                                                    <div class="col-md-10 text-md-right">
                                                                 <span class="font-weight-sm-bold mr-1">
                                                                     {{walletAddressSaved}}
-                                                    <button class="ml-2 btn btn-sm btn-danger" ng-click="deleteCookie()"><i class="fa fa-trash"></i></button>
+                                                                </span>
+                                                        <button class="ml-2 btn btn-sm btn-danger" ng-click="deleteCookie()"><i class="fa fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                                <hr class="hr-space">
+                                                <div class="row align-items-center mt-1">
+                                                    <div class="col-md-3 font-weight-sm-normal mb-1 mb-md-0 label-small">
+                                                        Last Mined Block:
+                                                    </div>
+                                                    <div class="col-md-9 text-md-right">
+                                                                <span class="font-weight-sm-bold mr-1">
+                                                {{allLastMinedBlocks[0].ago}} <span class="small-gray-text">({{allLastMinedBlocks[0].time}})</span>
                                                                 </span>
                                                     </div>
                                                 </div>
@@ -142,7 +147,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-12" ng-hide="activeTickets.length === 0">
+                        <h4 class="font-weight-bold text-fusion mb-4">
+                            Active Tickets
+                        </h4>
                     <div class="mb-4">
                         <div class="card gradient-half-primary-body-v1">
                             <div class="card-body px-sm-4 pb-sm-4 ">
@@ -160,6 +168,37 @@
                                             <td class="text-fusion text-left"><a href="./#!/block/{{ticket.block}}">{{ticket.block}}</a></td>
                                             <td class="text-fusion text-left">{{ticket.timespan}}</td>
                                             <td class="text-fusion text-left">{{ticket.value}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12" ng-hide="allLastMinedBlocks.length === 0">
+                    <h4 class="font-weight-bold text-fusion mb-4">
+                        Mined Blocks History
+                    </h4>
+                    <div class="mb-4">
+                        <div class="card gradient-half-primary-body-v1">
+                            <div class="card-body px-sm-4 pb-sm-4 ">
+                                <div class="col-xs-12">
+                                    <table class="table table-responsive-sm table-hover">
+                                        <thead class="bg-white">
+                                        <tr>
+                                            <th class="label-small text-left">Hash</th>
+                                            <th class="label-small text-left">Height</th>
+                                            <th class="label-small text-left">Date</th>
+                                            <th class="label-small text-left">Ago</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="block in allLastMinedBlocks | orderBy : '-height'">
+                                            <td class="text-fusion text-left"><a href="./#!/block/{{block.hash}}">{{block.hash}}</a></td>
+                                            <td class="text-fusion text-left">{{block.block}}</td>
+                                            <td class="text-fusion text-left">{{block.time}}</td>
+                                            <td class="text-fusion text-left">{{block.ago}}</td>
                                         </tr>
                                         </tbody>
                                     </table>
