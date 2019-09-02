@@ -132,7 +132,6 @@ let blockController = function ($http, $scope) {
     $scope.getLastMinedBlocks = async (walletAddress) => {
         let minedBlocks = [];
         await $http.get(`${window.getServer()}blocks/all?address=${walletAddress}&sort=desc&page=0&size=40&field=height}`).then(function (r) {
-            console.log(r);
             let blocks = r.data;
             for (let block in blocks){
                 let data = {
@@ -147,55 +146,8 @@ let blockController = function ($http, $scope) {
             $scope.$eval(function(){
                 $scope.allLastMinedBlocks = minedBlocks;
             })
-
-            // $scope.renderChart();
         });
     }
-
-    $scope.renderChart = async () => {
-        console.log($scope.allLastMinedBlocks)
-        var labels = $scope.allLastMinedBlocks.map(function(e) {
-            return e.time;
-        });
-
-        var map = labels.reduce(function(prev, cur) {
-            prev[cur] = (prev[cur] || 0) + 1;
-            return prev;
-        }, {});
-
-        console.log(map);
-
-        labels = labels.filter(function(item, pos) {
-            return labels.indexOf(item) == pos;
-        });
-
-        console.log(labels);
-
-        var data = $scope.allLastMinedBlocks.map(function(e) {
-            return e.block;
-        });;
-
-
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
-
-            // The data for our dataset
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Mined Blocks',
-                    backgroundColor: '#062144',
-                    borderColor: '#062144',
-                    data: map
-                }]
-            },
-            // Configuration options go here
-            options: {}
-        });
-    }
-
 };
 
 export default blockController;
