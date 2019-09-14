@@ -86,21 +86,31 @@ let assetsController = function ($http, $scope) {
         }
         return parseInt(returnDecimals);
     };
+    let saveAssets = [];
 
-    $scope.getAssets = function () {
+    $scope.getTrueTotalSupply = async (index, asset_id) => {
+        await window.web3.fsn.getAsset(asset_id).then(function (r) {
+            let amount = new BigNumber(r.Total.toString());
+            let formattedBalance = amount.div($scope.countDecimals(r.Decimals.toString()));
+            saveAssets[index].quantity = window.numeral(formattedBalance.toString()).format('0.00a');
+            $scope.$apply();
+        });
+    }
+
+    $scope.getAssets = async () => {
         $scope.loading = true;
-        let saveAssets = [];
+        saveAssets = [];
         let allAssets = 0;
         $http.get(`${window.getServer()}assets/verified`).then(function (r) {
             $scope.verifiedAssets = r.data;
         });
-        $http.get(`${window.getServer()}fsnprice`).then(function (r) {
+        await $http.get(`${window.getServer()}fsnprice`).then(function (r) {
             allAssets = Math.ceil(r.data.totalAssets / 100);
-            for (let i = 0; i < allAssets; i++){
+            for (let i = 0; i < allAssets; i++) {
                 let assets = {};
                 $http.get(`${window.getServer()}assets/all?page=${i}&size=100&sort=desc`).then(function (r) {
                     assets = r.data;
-                    // console.log(assets);
+                    console.log(assets);
                     for (let asset in assets) {
                         let verifiedImage = '';
                         let hasImage = false;
@@ -134,7 +144,7 @@ let assetsController = function ($http, $scope) {
                                 let formattedBalance = amount.div($scope.countDecimals(assetExtraData.Decimals.toString()));
                                 let data = {
                                     assetName: assetData.commandExtra2,
-                                    assetSymbol: assetExtraData.Symbol.substr(0,4),
+                                    assetSymbol: assetExtraData.Symbol.substr(0, 4),
                                     assetId: assetExtraData.AssetID,
                                     assetType: 'FUSION',
                                     quantity: window.numeral(formattedBalance.toString()).format('0.00a'),
@@ -142,19 +152,27 @@ let assetsController = function ($http, $scope) {
                                     hasImage: hasImage,
                                     verifiedImage: verifiedImage
                                 };
-                                saveAssets.push(data);
+                                if (verifiedAsset) {
+                                    $scope.getTrueTotalSupply(asset, assetExtraData.AssetID);
+                                }
+                                saveAssets[asset] = data;
+                                $scope.allAssets = saveAssets;
                                 $scope.endPage = Math.ceil(saveAssets.length / $scope.pageSize);
                             }
                         });
                     }
                 });
             }
+        });
+        $scope.$eval(function () {
             $scope.allAssets = saveAssets;
             $scope.loading = false;
         });
     };
 
-    $scope.getAssets();
+    $scope.getAssets().then(function () {
+        $scope.$apply();
+    });
 };
 
 export default assetsController;
