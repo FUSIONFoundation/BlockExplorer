@@ -15,7 +15,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/main.min.css?rev=abc42dc4663b3dfad47107bcec12f124">
+    <link rel="stylesheet" href="css/main.min.css?rev=33bb6e6b74412e3db134f1a8119e47e6">
     <link rel="stylesheet" href="css/libs.min.css?rev=51c278ce3d0f02296416c2e1caf7addf">
 
     <!-- Main font -->
@@ -147,17 +147,35 @@
                 <div class="input-group input-group-main w-25 hidden-xs" ng-controller="navController">
                     <input type="text" class="form-control"
                            ng-model="globalSearch"
+                           ng-change="checkBlockOrUSAN()"
                            placeholder="Search by Address / Txhash / Block">
                     <div class="input-group-append">
                         <button class="btn btn-primary search-button" ng-click="search()">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
+                    <div class="col-md-12">
+                        <div class="dropdown-menu p-2" ng-class="{'show' : isUSAN && isBlock, 'hide' : !isUSAN || !isBlock}">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-gateway w-100">
+                                        USAN {{globalSearch}}
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-gateway w-100"><span
+                                            class="button-content">Block {{globalSearch}}</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
         <!--Navbar for Desktop-->
-        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs z-index-0" ng-class="{'mb-2 b-shadow' : $location.path() !== '/dashboard'}">
+        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs z-index-0"
+             ng-class="{'mb-2 b-shadow' : $location.path() !== '/dashboard'}">
             <div class="container">
                 <ul class="nav nav-tabs tabs-alt pt-1">
                     <li class="nav-item">
@@ -315,7 +333,7 @@
         </nav>
 
         <style>
-            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-    ng-cloak {
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
                 display: none !important;
             }
         </style>
@@ -360,7 +378,8 @@
                         <div class="col-md-3 col-xs-6">
                             <span class="footer-gray mb-2" translate="FOOTER_MORE">More</span>
                             <ul class="list-unstyled pt-2">
-                                <li><a class="footer-link" href="https://www.fusion.org/products/fusion-network" target="_blank"
+                                <li><a class="footer-link" href="https://www.fusion.org/products/fusion-network"
+                                       target="_blank"
                                        translate="FOOTER_FUSION_NETWORK">Fusion
                                     Network</a></li>
                                 <li><a class="footer-link" href="https://www.fusion.org/fsn-token" target="_blank"
@@ -377,10 +396,13 @@
                                 <li><a class="footer-link" href="https://www.fusion.org/contact" target="_blank"
                                        translate="FOOTER_CONTACT">Contact</a>
                                 </li>
-                                <li><a class="footer-link" href="https://fusionnetworks.zendesk.com/hc/en-us/categories/360001287813-FAQs" target="_blank"
+                                <li><a class="footer-link"
+                                       href="https://fusionnetworks.zendesk.com/hc/en-us/categories/360001287813-FAQs"
+                                       target="_blank"
                                        translate="FOOTER_FAQ">FAQ</a>
                                 </li>
-                                <li><a class="footer-link" href="https://fusionnetworks.zendesk.com/hc/en-us/requests/new" target="_blank"
+                                <li><a class="footer-link"
+                                       href="https://fusionnetworks.zendesk.com/hc/en-us/requests/new" target="_blank"
                                        translate="FOOTER_SUBMIT_AN_ISSUE">Submit
                                     an Issue</a></li>
                             </ul>
@@ -432,7 +454,7 @@
 </div>
 <script src="assets/js/main.js"></script>
 
-<script src="app.js?rev=c84b7db1ba96d04daf3369ee10c693e9"></script>
+<script src="app.js?rev=d7aa1f613d325558bca96c44cf91c041"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/vendor/libs/popper/popper.js"></script>

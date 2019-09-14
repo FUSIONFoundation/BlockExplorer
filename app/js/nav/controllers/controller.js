@@ -32,6 +32,34 @@ let navController = function ($http, $scope, $location, $window) {
             window.location.reload();
         };
 
+        $scope.checkBlockOrUSAN = async () => {
+            let input = $scope.globalSearch;
+            let reg = new RegExp('^[0-9]*$');
+            if (reg.test(input)) {
+                console.log($scope.globalSearch);
+                try {
+                    await web3.fsn.getAddressByNotation(parseInt(input)).then(function (r) {
+                        if (web3.utils.isAddress(r)) {
+                            $scope.isUSAN = true;
+                        }
+                    })
+                } catch (err) {
+                    $scope.isUSAN = false;
+                }
+                let latestBlock = await web3.eth.getBlockNumber();
+                console.log(latestBlock);
+                if (latestBlock > input) {
+                    $scope.isBlock = true;
+                } else {
+                    $scope.isBlock = false;
+                }
+            } else {
+                $scope.isUSAN = false;
+                $scope.isBlock = false;
+            }
+            $scope.$apply();
+        }
+
         $scope.search = async function () {
             let input = $scope.globalSearch;
             console.log(input);

@@ -147,17 +147,35 @@
                 <div class="input-group input-group-main w-25 hidden-xs" ng-controller="navController">
                     <input type="text" class="form-control"
                            ng-model="globalSearch"
+                           ng-change="checkBlockOrUSAN()"
                            placeholder="Search by Address / Txhash / Block">
                     <div class="input-group-append">
                         <button class="btn btn-primary search-button" ng-click="search()">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
+                    <div class="col-md-12">
+                        <div class="dropdown-menu p-2" ng-class="{'show' : isUSAN && isBlock, 'hide' : !isUSAN || !isBlock}">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-gateway w-100">
+                                        USAN {{globalSearch}}
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-gateway w-100"><span
+                                            class="button-content">Block {{globalSearch}}</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
         <!--Navbar for Desktop-->
-        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs z-index-0" ng-class="{'mb-2 b-shadow' : $location.path() !== '/dashboard'}">
+        <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs z-index-0"
+             ng-class="{'mb-2 b-shadow' : $location.path() !== '/dashboard'}">
             <div class="container">
                 <ul class="nav nav-tabs tabs-alt pt-1">
                     <li class="nav-item">
@@ -315,7 +333,7 @@
         </nav>
 
         <style>
-            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-    ng-cloak {
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
                 display: none !important;
             }
         </style>
@@ -360,7 +378,8 @@
                         <div class="col-md-3 col-xs-6">
                             <span class="footer-gray mb-2" translate="FOOTER_MORE">More</span>
                             <ul class="list-unstyled pt-2">
-                                <li><a class="footer-link" href="https://www.fusion.org/products/fusion-network" target="_blank"
+                                <li><a class="footer-link" href="https://www.fusion.org/products/fusion-network"
+                                       target="_blank"
                                        translate="FOOTER_FUSION_NETWORK">Fusion
                                     Network</a></li>
                                 <li><a class="footer-link" href="https://www.fusion.org/fsn-token" target="_blank"
@@ -377,10 +396,13 @@
                                 <li><a class="footer-link" href="https://www.fusion.org/contact" target="_blank"
                                        translate="FOOTER_CONTACT">Contact</a>
                                 </li>
-                                <li><a class="footer-link" href="https://fusionnetworks.zendesk.com/hc/en-us/categories/360001287813-FAQs" target="_blank"
+                                <li><a class="footer-link"
+                                       href="https://fusionnetworks.zendesk.com/hc/en-us/categories/360001287813-FAQs"
+                                       target="_blank"
                                        translate="FOOTER_FAQ">FAQ</a>
                                 </li>
-                                <li><a class="footer-link" href="https://fusionnetworks.zendesk.com/hc/en-us/requests/new" target="_blank"
+                                <li><a class="footer-link"
+                                       href="https://fusionnetworks.zendesk.com/hc/en-us/requests/new" target="_blank"
                                        translate="FOOTER_SUBMIT_AN_ISSUE">Submit
                                     an Issue</a></li>
                             </ul>
