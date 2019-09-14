@@ -32,6 +32,7 @@ let navController = function ($http, $scope, $location, $window) {
             window.location.reload();
         };
 
+        $scope.resolvedUSAN = '';
         $scope.checkBlockOrUSAN = async () => {
             let input = $scope.globalSearch;
             let reg = new RegExp('^[0-9]*$');
@@ -41,6 +42,7 @@ let navController = function ($http, $scope, $location, $window) {
                     await web3.fsn.getAddressByNotation(parseInt(input)).then(function (r) {
                         if (web3.utils.isAddress(r)) {
                             $scope.isUSAN = true;
+                            $scope.resolvedUSAN = r;
                         }
                     })
                 } catch (err) {
