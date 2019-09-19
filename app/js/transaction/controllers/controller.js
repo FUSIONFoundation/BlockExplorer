@@ -69,34 +69,53 @@ let transactionController = function ($http, $scope, $stateParams) {
         let txTransactionData = {};
         let data = {};
         await $http.get(`${window.getServer()}transactions/${transactionHash}`).then(function (r) {
-            tx = r.data[0];
-            console.log(tx);
-            if (tx === undefined) {
-                $scope.countDownFunc();
-                console.log('Transaction not found, will retry in 5s..');
-                setTimeout(function () {
-                    console.log('Last check: ' + new Date);
-                    $scope.getTransaction()
-                }, 5000);
-                return;
+                tx = r.data[0];
+                console.log(tx);
+                if (tx === undefined) {
+                    $scope.countDownFunc();
+                    console.log('Transaction not found, will retry in 5s..');
+                    let url = window.getServer();
+                    let fallBackURL = '';
+                    if (url === 'https://api.fusionnetwork.io/') {
+                        fallBackURL = 'https://testnetapi.fusionnetwork.io/';
+                    } else if (url === 'https://testnetapi.fusionnetwork.io/') {
+                        fallBackURL = 'https://api.fusionnetwork.io';
+                    }
+                    $http.get(`${fallBackURL}transactions/${transactionHash}`).then(function (r) {
+                        tx = r.data[0];
+                        if (tx !== undefined) {
+                            console.log('THIS TRANSACTION IS ON A DIFFERENT NET!')
+                            let nu = localStorage.getItem(window.cookieName)
+                            nu = JSON.parse(nu);
+                            nu.chain = fallBackURL == 'https://api.fusionnetwork.io/' ? 'mainnet': 'testnet';
+                            localStorage.setItem(window.cookieName, JSON.stringify(nu));
+                            window.location.reload();
+                        }
+                    });
+                    setTimeout(function () {
+                        console.log('Last check: ' + new Date);
+                        $scope.getTransaction()
+                    }, 5000);
+                    return;
+                }
+                txExtraData = JSON.parse(r.data[0].receipt);
+                txExtraData2 = JSON.parse(r.data[0].data);
+                txTransactionData = JSON.parse(r.data[0].transaction);
+                data = {
+                    from: tx.fromAddress,
+                    to: tx.commandExtra3,
+                    asset: '',
+                    status: txExtraData.status,
+                    transactionType: utils.returnCommand(tx.fusionCommand),
+                    hash: tx.hash,
+                    block: tx.height,
+                    age: `${format(tx.timeStamp * 1000)} (${moment(tx.timeStamp * 1000).format('MMMM Do YYYY, h:mm:ss A')})`,
+                    gasUsed: parseInt(txExtraData.gasUsed, 16),
+                    nonce: parseInt(txTransactionData.nonce, 16),
+                    inputData: txTransactionData.input
+                };
             }
-            txExtraData = JSON.parse(r.data[0].receipt);
-            txExtraData2 = JSON.parse(r.data[0].data);
-            txTransactionData = JSON.parse(r.data[0].transaction);
-            data = {
-                from: tx.fromAddress,
-                to: tx.commandExtra3,
-                asset: '',
-                status: txExtraData.status,
-                transactionType: utils.returnCommand(tx.fusionCommand),
-                hash: tx.hash,
-                block: tx.height,
-                age: `${format(tx.timeStamp * 1000)} (${moment(tx.timeStamp * 1000).format('MMMM Do YYYY, h:mm:ss A')})`,
-                gasUsed: parseInt(txExtraData.gasUsed, 16),
-                nonce: parseInt(txTransactionData.nonce, 16),
-                inputData: txTransactionData.input
-            };
-        });
+        );
 
         if (data.transactionType == 'Send Asset' ||
             data.transactionType == 'Time Lock To Asset' ||
@@ -164,9 +183,9 @@ let transactionController = function ($http, $scope, $stateParams) {
             data.fromSwap = fromAsset.Symbol;
             data.toSwap = toAsset.Symbol;
         }
-        if(!data.transactionType){
+        if (!data.transactionType) {
             data.transactionType = 'Send Asset';
-            await web3.eth.getTransaction(`${transactionHash}`).then(function(r){
+            await web3.eth.getTransaction(`${transactionHash}`).then(function (r) {
                 let amount = new BigNumber(r.value.toString());
                 let amountFinal = amount.div($scope.countDecimals(18));
                 $scope.getFiatValue(amountFinal.toString());
