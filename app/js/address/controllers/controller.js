@@ -402,6 +402,8 @@ let addressController = function ($http, $scope, $stateParams) {
                 transactionSave = [];
             }
             let extraData = JSON.parse(transactions[transaction].data);
+            let gas = parseInt(JSON.parse(transactions[transaction].receipt)["cumulativeGasUsed"],16);
+
             let inout = $scope.returnInAndOut(address, transactions[transaction].commandExtra3, '');
             let data = {
                 txid: transactions[transaction].hash,
@@ -413,7 +415,8 @@ let addressController = function ($http, $scope, $stateParams) {
                 type: window.utils.returnCommand(transactions[transaction].fusionCommand),
                 asset: '',
                 inout: inout,
-                amount: 200
+                amount: 200,
+                gas : gas
             };
             let asset = '';
             try {
