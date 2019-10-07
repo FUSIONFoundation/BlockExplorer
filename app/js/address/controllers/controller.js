@@ -34,7 +34,7 @@ let addressController = function ($http, $scope, $stateParams) {
             return;
         }
         if ($scope.currentPage == 0) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
@@ -44,24 +44,24 @@ let addressController = function ($http, $scope, $stateParams) {
         } else {
             shownRows = ($scope.currentPage + 1) * $scope.pageSize;
         }
-        $scope.$eval(function () {
+        $scope.$applyAsync(function () {
             $scope.shownRows = shownRows;
         });
     });
 
     $scope.nextPage = function () {
         if ($scope.currentPage !== $scope.processTransactions - 1) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.currentPage = $scope.currentPage + 1;
             });
         }
         $scope.getTransactions($scope.currentPage);
         if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = $scope.addressData.numberOfTransactions / 10;
             });
         } else {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
@@ -72,47 +72,47 @@ let addressController = function ($http, $scope, $stateParams) {
             $scope.processTransactions = [];
         });
 
-        $scope.$eval(function () {
+        $scope.$applyAsync(function () {
             $scope.currentPage = 0;
         });
         await $scope.getTransactions($scope.currentPage);
         if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = $scope.addressData.numberOfTransactions / 10
             });
         } else {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
     };
     $scope.lastPage = function () {
-        $scope.$eval(function () {
+        $scope.$applyAsync(function () {
             $scope.currentPage = $scope.endPage - 1;
         });
         if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = $scope.addressData.numberOfTransactions / 10;
             });
         } else {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
     };
     $scope.previousPage = function () {
         if ($scope.currentPage !== 0) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.currentPage = $scope.currentPage - 1;
             });
         }
         $scope.getTransactions($scope.currentPage);
         if (($scope.currentPage + 1) * $scope.pageSize > ($scope.addressData.numberOfTransactions / 10)) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = $scope.addressData.numberOfTransactions / 10;
             });
         } else {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRows = ($scope.currentPage + 1) * $scope.pageSize;
             });
         }
@@ -125,60 +125,60 @@ let addressController = function ($http, $scope, $stateParams) {
 
     $scope.nextPageTL = function () {
         if ($scope.currentPageTL+1 !== $scope.endPageTL) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.currentPageTL = $scope.currentPageTL + 1;
             });
         }
         if (($scope.currentPageTL + 1) * $scope.pageSizeTL > ($scope.allTimeLockBalances.length / 10)) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRowsTL = $scope.addressData.numberOfTransactions / 10;
             });
         } else {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRowsTL = ($scope.currentPageTL + 1) * $scope.pageSizeTL;
             });
         }
     };
     $scope.firstPageTL = function () {
-        $scope.$eval(function () {
+        $scope.$applyAsync(function () {
             $scope.currentPageTL = 0;
         });
         if (($scope.currentPageTL + 1) * $scope.pageSizeTL > ($scope.allTimeLockBalances.length / 10)) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRowsTL = $scope.allTimeLockBalances.length / 10
             });
         } else {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRowsTL = ($scope.currentPageTL + 1) * $scope.pageSizeTL;
             });
         }
     };
     $scope.lastPageTL = function () {
-        $scope.$eval(function () {
+        $scope.$applyAsync(function () {
             $scope.currentPageTL = $scope.endPageTL - 1;
         });
         if (($scope.currentPageTL + 1) * $scope.pageSizeTL > ($scope.allTimeLockBalances.length / 10)) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRowsTL = $scope.allTimeLockBalances.length / 10;
             });
         } else {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRowsTL = ($scope.currentPageTL + 1) * $scope.pageSizeTL;
             });
         }
     };
     $scope.previousPageTL = function () {
         if ($scope.currentPageTL !== 0) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.currentPageTL = $scope.currentPageTL - 1;
             });
         }
         if (($scope.currentPageTL + 1) * $scope.pageSizeTL > ($scope.allTimeLockBalances.length / 10)) {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRowsTL = $scope.allTimeLockBalances.length / 10;
             });
         } else {
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.shownRowsTL = ($scope.currentPageTL + 1) * $scope.pageSizeTL;
             });
         }
@@ -187,7 +187,7 @@ let addressController = function ($http, $scope, $stateParams) {
     $scope.hideTicketValue = true;
     $scope.hideTickets = async function (){
         transactionSave = []
-        $scope.$eval(function(){
+        $scope.$applyAsync(function(){
             $scope.processTransactions = [];
         });
         $scope.firstPageTL();
@@ -296,7 +296,7 @@ let addressController = function ($http, $scope, $stateParams) {
                 });
             }
 
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.addressData = globalData;
                 $scope.allBalances = allBalances;
                 $scope.getTransactions(0);
@@ -329,7 +329,7 @@ let addressController = function ($http, $scope, $stateParams) {
             for (let transaction in transactions) {
               $scope.processTx(transactions,transaction);
             }
-            $scope.$eval(function () {
+            $scope.$applyAsync(function () {
                 $scope.processTransactions = transactionSave;
             });
             $scope.loading = false;
@@ -385,14 +385,16 @@ let addressController = function ($http, $scope, $stateParams) {
 
                            timeLockBalances.push(data);
 
-                           $scope.$eval(function(){
+                           $scope.$applyAsync(function(){
                                $scope.allTimeLockBalances = timeLockBalances;
                            })
                         });
                 }
 
             }
-            $scope.endPageTL = Math.ceil($scope.allTimeLockBalances.length / $scope.pageSizeTL);
+            $scope.$applyAsync(function(){
+                $scope.endPageTL = Math.ceil($scope.allTimeLockBalances.length / $scope.pageSizeTL);
+            })
 
         });
     };
