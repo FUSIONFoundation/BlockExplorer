@@ -70,7 +70,7 @@ let dashboardController = function ($http, $scope, $state, $location) {
     };
 
     $scope.getGlobalData = function () {
-        $http.get(`${window.getServer()}fsnprice`).then(function (r){
+        $http.get(`https://api.fusionnetwork.io/fsnprice`).then(function (r){
            let priceInfo = r.data.priceInfo;
            let globalInfo = r.data;
            let dataPrice = {
