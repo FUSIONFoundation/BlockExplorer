@@ -196,9 +196,11 @@ let transactionController = function ($http, $scope, $stateParams) {
                 data.to = r.to;
             })
         }
-        $scope.$apply(function () {
+        $scope.$applyAsync(function () {
             $scope.transactionData = data;
+            console.log($scope.transactionData);
         });
+
     };
 
     $scope.getTransaction();
