@@ -124,6 +124,16 @@ window.allAssets = {
         Owner: '0x0000000000000000000000000000000000000000',
         Symbol: 'FSN',
         Total: 8.192e+25
+    },
+    '0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe': {
+        CanChange: false,
+        Decimals: 0,
+        Description: 'https://fusion.org',
+        ID:'0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe',
+        Name: 'USAN',
+        Owner: '0x0000000000000000000000000000000000000000',
+        Symbol: 'USAN',
+        Total: 8.192e+25
     }
 };
 window.getAsset = async function (asset_id) {
