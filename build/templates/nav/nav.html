@@ -1,0 +1,386 @@
+<div class="layout-inner" ng-controller="navController">
+    <!-- Layout navbar -->
+    <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 hidden-xs z-index-1"
+         id="layout-navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="assets/vendor/images/fsn-logo.svg" width="125px" height="35px">
+            </a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <div class="dropdown show">
+                        <a class="btn btn-outline-white btn-top-nav btn-no-border" href="#" role="button"
+                           id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="assets/vendor/images/app-grid.svg"/>
+                            <span class="ml-2 vertical-align-middle">Block Explorer</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item hidden-xs">
+
+                </li>
+            </ul>
+            <div class="dropdown">
+                <button type="button" class="btn btn-white border-button dropdown-toggle mr-2"
+                        data-toggle="dropdown">
+                    <span class="flag-icon flag-icon-{{currentLanguage}}"></span>
+                </button>
+                <div class="dropdown-menu p-2">
+                    <div class="col-12 pl-0 pr-0 pb-3">
+                        <span class="small-heading" translate="NAVBAR_SELECT_LANGUAGE">Select Language</span>
+                    </div>
+                    <div class="col-12 pl-0 pr-0">
+                        <div class="col-12 pl-0 pr-0">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentLanguage('gb')"
+                                    ng-class="{'active' : currentLanguage == 'gb'}"><span class="button-content">English</span>
+                            </button>
+                        </div>
+                        <div class="col-12 pl-0 pr-0 pt-3">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentLanguage('cn')"
+                                    ng-class="{'active' : currentLanguage == 'cn'}"><span class="button-content">Chinese</span>
+                            </button>
+                        </div>
+                        <div class="col-12 pl-0 pr-0 pt-3">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentLanguage('ru')"
+                                    ng-class="{'active' : currentLanguage == 'ru'}"><span class="button-content">Russian</span>
+                            </button>
+                        </div>
+                        <div class="col-12 pl-0 pr-0 pt-3">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentLanguage('nl')"
+                                    ng-class="{'active' : currentLanguage == 'nl'}"><span class="button-content">Dutch</span>
+                            </button>
+                        </div>
+                        <div class="col-12 pl-0 pr-0 pt-3">
+                            <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentLanguage('de')"
+                                    ng-class="{'active' : currentLanguage == 'de'}"><span class="button-content">German</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button type="button" class="btn btn-white border-button dropdown-toggle mr-2"
+                        data-toggle="dropdown">
+                    {{currentChain}}
+                </button>
+                <div class="dropdown-menu p-2">
+                    <div class="col-12 pl-0 pr-0 pb-3">
+                        <span class="small-heading" translate="NAVBAR_NETWORKS">NETWORKS</span>
+                    </div>
+                    <div class="col-12 pl-0 pr-0">
+                        <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')"
+                                ng-class="{'active' : currentChain == 'Mainnet'}"><span class="button-content">Mainnet</span>
+                        </button>
+                    </div>
+                    <div class="col-12 pl-0 pr-0 pt-3 pb-3">
+                        <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('testnet')"
+                                ng-class="{'active' : currentChain == 'Testnet'}"><span class="button-content">Testnet</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group input-group-main w-25 hidden-xs" ng-controller="navController">
+                <input type="text" class="form-control"
+                       ng-model="globalSearch"
+                       ng-change="checkBlockOrUSAN()"
+                       placeholder="Search by Address / Txhash / Block">
+                <div class="input-group-append">
+                    <button class="btn btn-primary search-button" ng-click="search()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="col-md-12">
+                    <div class="dropdown-menu p-2" ng-class="{'show' : isUSAN && isBlock, 'hide' : !isUSAN || !isBlock}">
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-primary btn-gateway w-100">
+                                    <a ng-click="globalSearch = ''; isUSAN = false" href="./#!/address/{{resolvedUSAN}}">USAN {{globalSearch}}</a>
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-primary btn-gateway w-100">
+                                    <a ng-click="globalSearch = ''; isBlock = false" href="./#!/block/{{globalSearch}}">Block {{globalSearch}}</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar for Desktop-->
+    <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-navbar-theme container-p-x border-0 p-0 pt-2 hidden-xs z-index-0"
+         ng-class="{'mb-2 b-shadow' : $location.path() !== '/dashboard'}">
+        <div class="container">
+            <ul class="nav nav-tabs tabs-alt pt-1">
+                <li class="nav-item">
+                    <a class="nav-link dashboard" ng-class="{'active' : $location.path() == '/dashboard'}"
+                       translate="NAVBAR_DASHBOARD"
+                       href="./#!/dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link blocks"
+                       ng-class="{'active' : $location.path() == '/blocks' ||  $location.path().substr(0,6) == '/block'}"
+                       translate="NAVBAR_BLOCKS"
+                       href="./#!/blocks">Blocks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link transactions"
+                       ng-class="{'active' : $location.path() == '/transactions' || $location.path().substr(0,12) == '/transaction'}"
+                       translate="NAVBAR_TRANSACTIONS"
+                       href="./#!/transactions">Transactions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link assets"
+                       ng-class="{'active' : $location.path() == '/assets' || $location.path().substr(0,6) == '/asset' }"
+                       translate="NAVBAR_ASSETS"
+                       href="./#!/assets">Assets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link addresses"
+                       ng-class="{'active' : $location.path() == '/addresses' || $location.path().substr(0,8) == '/address'}"
+                       translate="NAVBAR_ADDRESSES"
+                       href="./#!/addresses">Addresses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link staking" ng-class="{'active' : $location.path() == '/staking'}"
+                       translate="NAVBAR_STAKING"
+                       href="./#!/staking">Staking</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Navbar for Mobile-->
+    <div class="modal modal-fullscreen" id="exampleModal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-full" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Gateway Selector</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="./assets/vendor/images/t.svg" width="20px" height="20px">
+                    </button>
+                </div>
+                <div class="modal-body border-0 pt-2">
+                    <div class="col-12 pl-0 pr-0 pb-3">
+                        <span class="small-heading" translate="NAVBAR_NETWORKS">NETWORKS</span>
+                    </div>
+                    <div class="col-12 pl-0 pr-0">
+                        <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('mainnet')"
+                                ng-class="{'active' : currentChain == 'Mainnet'}"><span class="button-content">Mainnet</span>
+                        </button>
+                    </div>
+                    <div class="col-12 pl-0 pr-0 pt-3">
+                        <button class="btn btn-primary btn-gateway w-100" ng-click="setCurrentChain('testnet')"
+                                ng-class="{'active' : currentChain == 'Testnet'}"><span class="button-content">Testnet</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white d-md-none">
+        <div class="container">
+            <div class="float-left">
+                <a href="index.html" class="navbar-brand">
+                    <img src="assets/vendor/images/explorer-logo.svg" width="31px" height="32px">
+                </a>
+                <div class="vertical-divider"></div>
+                <a class="btn btn-outline-white btn-top-nav btn-no-border" href="#" role="button"
+                   id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="assets/vendor/images/app-grid.svg"/>
+                    <span class="ml-2 vertical-align-middle">Block Explorer</span>
+                </a>
+            </div>
+            <div class="float-right">
+                <button class="navbar-toggler border-0" type="button" ng-click="showSearch = !showSearch">
+                        <span>
+                            <img src="assets/vendor/images/search-blue.svg" width="20px" height="20px"/>
+                        </span>
+                </button>
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span>
+                            <img src="assets/vendor/images/menu.svg" width="20px" height="20px"/>
+                        </span>
+                </button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto pt-4">
+                <li class="nav-item">
+                    <a class="nav-link dashboard d-inline-block w-100"
+                       translate="NAVBAR_DASHBOARD"
+                       ng-class="{'active' : $location.path() == '/dashboard'}" href="./#!/dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link blocks d-inline-block w-100"
+                       translate="NAVBAR_BLOCKS"
+                       ng-class="{'active' : $location.path() == '/blocks' ||  $location.path().substr(0,6) == '/block'}"
+                       href="./#!/blocks">Blocks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link transactions d-inline-block w-100"
+                       translate="NAVBAR_TRANSACTIONS"
+                       ng-class="{'active' : $location.path() == '/transactions' || $location.path().substr(0,12) == '/transaction'}"
+                       href="./#!/transactions">Transactions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link assets d-inline-block w-100"
+                       translate="NAVBAR_ASSETS"
+                       ng-class="{'active' : $location.path() == '/assets' || $location.path().substr(0,6) == '/asset' }"
+                       href="./#!/assets">Assets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link addresses d-inline-block w-100"
+                       translate="NAVBAR_ADDRESSES"
+                       ng-class="{'active' : $location.path() == '/addresses' || $location.path().substr(0,8) == '/address'}"
+                       href="./#!/addresses">Addresses</a>
+                </li>
+                <li class="nav-item pb-4">
+                    <a class="nav-link staking d-inline-block w-100"
+                       translate="NAVBAR_STAKING"
+                       ng-class="{'active' : $location.path() == '/staking'}" href="./#!/staking">Staking</a>
+                </li>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-white text-left" data-toggle="modal"
+                        data-target="#exampleModal">
+                    {{currentChain}}
+                </button>
+            </ul>
+        </div>
+        <div class="input-group input-group-main" ng-show="showSearch">
+            <input type="text" class="form-control"
+                   ng-model="globalSearch"
+                   placeholder="Search by Address / Txhash / Block">
+            <div class="input-group-append">
+                <button class="btn btn-primary gradient-bg" ng-click="search()">
+                    <img src="assets/vendor/images/search.svg" width="14px" height="14px">
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
+            display: none !important;
+        }
+    </style>
+    <!-- / Layout navbar -->
+    <div ng-cloak class="scrolled">
+        <div ui-view></div>
+    </div>
+    <footer class="footer p-3" role="content" aria-label="footer">
+        <article class="block__wrap" style="max-width: 1780px; margin: auto;">
+            <div class="container pt-3 mx-auto">
+                <div class="row">
+                    <div class="col-md-3 mb-2">
+
+                        <img src="assets/vendor/images/fsn-logo.svg" width="115px">
+                        <p class="pt-2" translate="FOOTER_INFORMATION">Fusion Wallet is a free client-side interface
+                            for creating and using
+                            wallets. The Fusion wallet allows for asset creation/ management and uninhibited
+                            interoperability.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-xs-6">
+                        <span class="footer-gray mb-2">FUSION Tools</span>
+                        <ul class="list-unstyled pt-2">
+                            <li><a class="footer-link" href="https://node.fusionnetwork.io" target="_blank">
+                                Node Monitor
+                                <img src="assets/vendor/images/external-link.svg" width="24px" height="24px">
+                            </a>
+                            </li>
+                            <li><a class="footer-link" href="https://blocks.fusionnetwork.io" target="_blank">
+                                Block
+                                Explorer <img src="assets/vendor/images/external-link.svg" width="24px"
+                                              height="24px">
+                            </a>
+                            </li>
+                            <li><a class="footer-link" href="https://api.fusionnetwork.io" target="_blank">API
+                                Gateway <img src="assets/vendor/images/external-link.svg" width="24px"
+                                             height="24px">
+                            </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-xs-6">
+                        <span class="footer-gray mb-2" translate="FOOTER_MORE">More</span>
+                        <ul class="list-unstyled pt-2">
+                            <li><a class="footer-link" href="https://www.fusion.org/products/fusion-network"
+                                   target="_blank"
+                                   translate="FOOTER_FUSION_NETWORK">Fusion
+                                Network</a></li>
+                            <li><a class="footer-link" href="https://www.fusion.org/fsn-token" target="_blank"
+                                   translate="FOOTER_FSN_TOKEN">FSN
+                                Token</a></li>
+                            <li><a class="footer-link" href="https://www.fusion.org/about-us" target="_blank"
+                                   translate="FOOTER_ABOUT_US">About
+                                Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <span class="footer-gray mb-2" translate="FOOTER_SUPPORT">Support</span>
+                        <ul class="list-unstyled pt-2">
+                            <li><a class="footer-link" href="https://www.fusion.org/contact" target="_blank"
+                                   translate="FOOTER_CONTACT">Contact</a>
+                            </li>
+                            <li><a class="footer-link"
+                                   href="https://fusionnetworks.zendesk.com/hc/en-us/categories/360001287813-FAQs"
+                                   target="_blank"
+                                   translate="FOOTER_FAQ">FAQ</a>
+                            </li>
+                            <li><a class="footer-link"
+                                   href="https://fusionnetworks.zendesk.com/hc/en-us/requests/new" target="_blank"
+                                   translate="FOOTER_SUBMIT_AN_ISSUE">Submit
+                                an Issue</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </footer>
+    <footer class="footer ice-blue-bg p-4">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <ul class="list-unstyled list-inline social text-center">
+                    <a class="p-1" href="https://t.me/FUSIONFoundation" target="_blank">
+                        <img src="assets/vendor/images/telegram.svg" width="40px" height="40px">
+                    </a>
+                    <a class="p-1" href="https://medium.com/@fusionprotocol" target="_blank">
+                        <img src="assets/vendor/images/medium.svg" width="40px" height="40px">
+                    </a>
+                    <a class="p-1" href="https://github.com/FUSIONFoundation" target="_blank">
+                        <img src="assets/vendor/images/github.svg" width="40px" height="40px">
+                    </a>
+                    <a class="p-1" href="https://twitter.com/FUSIONProtocol" target="_blank">
+                        <img src="assets/vendor/images/twitter.svg" width="40px" height="40px">
+                    </a>
+                    <a class="p-1" href="https://www.reddit.com/r/FusionFoundation" target="_blank">
+                        <img src="assets/vendor/images/reddit.svg" width="40px" height="40px">
+                    </a>
+                    <a class="p-1" href="https://www.linkedin.com/company/fusion-foundation/" target="_blank">
+                        <img src="assets/vendor/images/linkedin.svg" width="40px" height="40px">
+                    </a>
+                    <a class="p-1" href="https://www.youtube.com/channel/UCVZ_1c6x7jRlOs4g2hMZZMQ" target="_blank">
+                        <img src="assets/vendor/images/youtube.svg" width="40px" height="40px">
+                    </a>
+                </ul>
+            </div>
+            </hr>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center sub-foot-text">
+                <p>©2016 - 2019 Fusion Foundation Ltd, <span translate="FOOTER_ALL_RIGHTS_RESERVED">All Rights Reserved</span>
+                </p>
+            </div>
+            </hr>
+        </div>
+    </footer>
+</div>

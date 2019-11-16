@@ -35,4 +35,13 @@ exports.returnCommand = function (command) {
     if(command == 'AssetToTimeLock'){
         return 'Asset To Time Lock';
     }
+    if(command == 'TakeMultiSwapFunc'){
+        return 'Take Multi Swap';
+    }
+    if(command == 'MakeMultiSwapFunc'){
+        return 'Make Multi Swap';
+    }
+    if(command == 'RecallMultiSwapFunc'){
+        return 'Recall Multi Swap';
+    }
 };

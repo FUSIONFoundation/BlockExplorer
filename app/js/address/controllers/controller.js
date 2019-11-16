@@ -407,6 +407,7 @@ let addressController = function ($http, $scope, $stateParams) {
             let gas = parseInt(JSON.parse(transactions[transaction].receipt)["cumulativeGasUsed"],16);
 
             let inout = $scope.returnInAndOut(address, transactions[transaction].commandExtra3, '');
+            console.log(transactions[transaction].fusionCommand);
             let data = {
                 txid: transactions[transaction].hash,
                 timeStamp: format(transactions[transaction].timeStamp * 1000),
@@ -422,40 +423,7 @@ let addressController = function ($http, $scope, $stateParams) {
             };
             let asset = '';
             try {
-                if (extraData.AssetID !== undefined && extraData.Value) {
-                    let extraDataGetAsset = {};
-                    await window.getAsset(extraData.AssetID).then(function(r){
-                        extraDataGetAsset = r;
-                    })
-                    let amount = new BigNumber(extraData.Value.toString());
-                    let amountFinal = amount.div($scope.countDecimals(extraDataGetAsset.Decimals));
-                    data.asset = extraDataGetAsset.Symbol;
-                    data.amount = amountFinal.toString()
-                }
-                if (extraData.StartTime && extraData.EndTime) {
-                    data.startTimeString = $scope.returnDateString(extraData.StartTime, 'Start');
-                    data.endTimeString = $scope.returnDateString(extraData.EndTime, 'End');
-                }
-                if (data.type == 'Make Swap') {
-                    let fromGetAsset = {};
-                    if (extraData.FromAssetID == "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe"){
-                        fromGetAsset.Symbol = "USAN";
-                    } else {
-                        await window.getAsset(extraData.FromAssetID).then(function (r) {
-                            fromGetAsset = r;
-                        })
-                    }
-                    let toGetAsset = {};
-                    await window.getAsset(extraData.ToAssetID).then(function(r){
-                        toGetAsset = r;
-                    })
-                    data.FromAsset = fromGetAsset.Symbol;
-                    data.ToAsset = toGetAsset.Symbol;
-                }
-                if (data.type == 'Take Swap') {
-
-                }
-                if(extraData) {
+                if(data.type !== 'Make Multi Swap') {
                     if (extraData.AssetID !== undefined && extraData.Value) {
                         let extraDataGetAsset = {};
                         await window.getAsset(extraData.AssetID).then(function (r) {
@@ -464,13 +432,53 @@ let addressController = function ($http, $scope, $stateParams) {
                         let amount = new BigNumber(extraData.Value.toString());
                         let amountFinal = amount.div($scope.countDecimals(extraDataGetAsset.Decimals));
                         data.asset = extraDataGetAsset.Symbol;
-                        data.amount = amountFinal.toString();
+                        data.amount = amountFinal.toString()
                     }
                     if (extraData.StartTime && extraData.EndTime) {
                         data.startTimeString = $scope.returnDateString(extraData.StartTime, 'Start');
                         data.endTimeString = $scope.returnDateString(extraData.EndTime, 'End');
                     }
-                    if (data.type == 'Make Swap') {
+                }
+                if (data.type == 'Make Swap' || data.type == "Make Multi Swap") {
+                    if(data.type == 'Make Swap') {
+                        let fromGetAsset = {};
+                        console.log(extraData);
+                        if (extraData.FromAssetID == "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe") {
+                            fromGetAsset.Symbol = "USAN";
+                        } else {
+                            await window.getAsset(extraData.FromAssetID).then(function (r) {
+                                fromGetAsset = r;
+                            })
+                        }
+                        let toGetAsset = {};
+                        await window.getAsset(extraData.ToAssetID).then(function (r) {
+                            toGetAsset = r;
+                        })
+                        data.FromAsset = fromGetAsset.Symbol;
+                        data.ToAsset = toGetAsset.Symbol;
+                    } else if (data.type == "Make Multi Swap"){
+                        data.FromAsset = extraData.FromAssetID.length;
+                        data.ToAsset = extraData.ToAssetID.length;
+                    }
+                }
+                if(extraData) {
+                    if(data.type !== 'Make Multi Swap') {
+                        if (extraData.AssetID !== undefined && extraData.Value) {
+                            let extraDataGetAsset = {};
+                            await window.getAsset(extraData.AssetID).then(function (r) {
+                                extraDataGetAsset = r;
+                            })
+                            let amount = new BigNumber(extraData.Value.toString());
+                            let amountFinal = amount.div($scope.countDecimals(extraDataGetAsset.Decimals));
+                            data.asset = extraDataGetAsset.Symbol;
+                            data.amount = amountFinal.toString();
+                        }
+                        if (extraData.StartTime && extraData.EndTime) {
+                            data.startTimeString = $scope.returnDateString(extraData.StartTime, 'Start');
+                            data.endTimeString = $scope.returnDateString(extraData.EndTime, 'End');
+                        }
+                    }
+                    if (data.type == 'Make Swap' || data.type == "Make Multi Swap") {
                         let fromGetAsset = {};
                         await window.getAsset(extraData.FromAssetID).then(function (r) {
                             fromGetAsset = r;
@@ -482,7 +490,7 @@ let addressController = function ($http, $scope, $stateParams) {
                         data.FromAsset = fromGetAsset.Symbol;
                         data.ToAsset = toGetAsset.Symbol;
                     }
-                    if (data.type == 'Take Swap') {
+                    if (data.type == 'Take Swap' || data.type == "Take Multi Swap") {
 
                     }
                     if (data.type == 'Create Asset') {
