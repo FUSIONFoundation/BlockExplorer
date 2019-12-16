@@ -42,6 +42,8 @@ let blockController = function ($http, $scope, $stateParams) {
                 let data = r.data[0];
                 let extraData = JSON.parse(data.data);
 
+                console.log(data);
+
                 if(data.fusionCommand == 'GenAssetFunc'){
                     transactionSave = {
                         txid : transactions[transaction],
@@ -114,12 +116,23 @@ let blockController = function ($http, $scope, $stateParams) {
                     };
                     $scope.transactionsInBlock.push(transactionSave);
                 }
+                if( data.fusionCommand === null) {
+                    transactionSave = {
+                        txid : transactions[transaction],
+                        timeStamp: format(data.timeStamp * 1000),
+                        date: moment(transactions[transaction].timeStamp).format('ll'),
+                        asset: '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
+                        block: data.height,
+                        type: 'Send Asset',
+                    };
+                    $scope.transactionsInBlock.push(transactionSave);
+                }
                 if(data.fusionCommand == 'SendAssetFunc'){
                     transactionSave = {
                         txid : transactions[transaction],
                         timeStamp: format(data.timeStamp * 1000),
                         date: moment(transactions[transaction].timeStamp).format('ll'),
-                        asset: extraData.AssetID,
+                        asset: extraData.AssetID ? extraData.AssetID : '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
                         block: data.height,
                         type: 'Send Asset',
                     };
