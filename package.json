@@ -84,7 +84,7 @@
     "watchify": "^3.7.0",
     "web3": "1.0.0-beta.36",
     "web3-fusion-extend": "1.0.0-beta.24",
-    "ws": "^6.2.1"
+    "ws": "^7.4.6"
   },
   "bugs": {
     "url": "https://github.com/gusgard/angular-seed-es6/issues"
