@@ -28,7 +28,7 @@
     "express": "^4.16.4",
     "jade": "^1.11.0",
     "less-middleware": "^3.0.1",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "path": "^0.12.7"
   },
   "devDependencies": {
